@@ -1,0 +1,559 @@
+#container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+
+
+.menuTitle {
+
+    color: #000;
+    font-family: Work Sans;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #000;
+    font-family: Work Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.mainHeaderLogoBIMT {
+
+    @media(max-width:2048px) {
+        width: 10rem;
+    }
+
+    @media(max-width:1920px) {
+        width: 10rem;
+    }
+
+    @media(max-width:1440px) {
+        width: 10rem;
+    }
+
+    @media(max-width:1024px) {
+        width: 9rem;
+    }
+
+    @media(max-width:1105px) {
+        width: 7rem;
+    }
+
+    @media(max-width:800px) {
+        width: 6rem;
+    }
+}
+
+.MainMenuContactBtn {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #272A5D;
+    width: 200px;
+    height: 56px;
+    padding: 0px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: Work Sans;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    /* Initial text color */
+    border-radius: 0.5rem;
+    background: #272A5D;
+    cursor: pointer;
+
+    /* Text color transition */
+    span {
+        position: relative;
+        z-index: 2;
+        transition: color 0.3s ease;
+    }
+
+    /* Background animation */
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: #ffffff;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.4s ease-in-out;
+        z-index: 1;
+        /* Ensure it's behind the text */
+    }
+
+    /* Hover state */
+    &:hover {
+        span {
+            color: #000000;
+            /* Change text color on hover */
+        }
+
+        &::before {
+            transform: scaleY(1);
+            /* Fill bottom-to-top */
+        }
+    }
+
+    /* Mouse leave state */
+    &:not(:hover)::before {
+        transform: scaleY(0);
+        /* Remove bottom-to-top */
+        transform-origin: top;
+        /* Keep animation consistent */
+    }
+
+    @media(max-width:1440px) {
+        width: 190px;
+    }
+
+    @media(max-width:1300px) {
+        width: 142px;
+    }
+
+    @media(max-width:1024px) {
+        width: 126px;
+    }
+
+    @media(max-width:1024px) {
+        font-size: 13px;
+    }
+
+    @media(max-width:1105px) {
+        width: 110px;
+        height: 48px;
+        font-size: 12px;
+    }
+
+    @media(max-width:880px) {
+        width: 110px;
+    }
+
+    @media (max-width:840px) {
+        height: 47px;
+    }
+
+    @media(max-width:800px) {
+        height: 46px;
+        font-size: 11px;
+    }
+
+    @media(max-width:768px) {
+        width: 86px;
+        font-size: 9px;
+        height: 42px;
+    }
+}
+
+
+.contactSecondNumber {
+    @media(max-width:1440px) {
+        display: none;
+    }
+}
+
+
+.menuBtn {
+    display: flex;
+    width: 200px;
+    height: 56px;
+    padding: 0px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #272A5D;
+    color: #fff;
+    font-family: Work Sans;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid #272A5D;
+    background: #272A5D;
+}
+
+.navigationMenu {
+    color: #000;
+    font-family: Avenir LT Std;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.navigationMenu {
+    color: #000; // Default color for breadcrumb links
+
+    &.active {
+        color: #1e3a8a; // Highlight active menu items
+    }
+}
+
+.headerSubmenu {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.menuContactTitle {
+    color: #000;
+    font-family: "Work Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @media(max-width:2048px) {
+        font-size: 14px;
+    }
+
+    @media(max-width:1920px) {
+        font-size: 18px;
+    }
+
+    @media(max-width:1440px) {
+        font-size: 18px;
+    }
+
+    @media(max-width:1380px) {
+        font-size: 17px;
+    }
+
+    @media(max-width:1105px) {
+        font-size: 14px;
+    }
+
+    @media(max-width: 1080px) {
+        display: none;
+    }
+}
+
+.mainMenuPhoneIcon {
+    @media (max-width:2048px) {
+        width: 18px;
+        height: 18px;
+    }
+
+    @media (max-width: 1920px) {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media(max-width:1440px) {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media(max-width:1105px) {
+        width: 16px;
+        height: 16px;
+    }
+
+    @media(max-width: 1080px) {
+        display: none;
+    }
+}
+
+.mainMenuandContactDevider {
+
+    border-left: 2px solid black;
+    padding-left: 20px;
+    height: 30px;
+    align-content: center;
+
+    @media(max-width:1440px) {
+        height: 26px;
+    }
+
+    @media(max-width:1080px) {
+        display: none;
+    }
+}
+
+.menuTitleLink {
+    position: relative;
+    /* Ensure the pseudo-element positions relative to the text */
+    padding-bottom: 8px;
+    /* Add space between the text and underline */
+}
+
+.menuTitle {
+    position: relative;
+    /* Ensure the pseudo-element positions relative to the text */
+    padding-bottom: 8px;
+
+    /* Add space between the text and underline */
+    @media(max-width: 2048px) {
+        font-size: 14px;
+    }
+
+    @media(max-width:1920px) {
+        font-size: 20px;
+    }
+
+    @media(max-width:1440px) {
+        font-size: 18px;
+    }
+
+    @media(max-width:1380px) {
+        font-size: 17px;
+    }
+
+    @media (max-width:1105px) {
+        font-size: 14px;
+    }
+
+    @media(max-width:880px) {
+        font-size: 13px;
+    }
+
+    @media (max-width:800px) {
+        font-size: 12px;
+    }
+}
+
+.menuTitle::after {
+    content: '';
+    /* Create an empty pseudo-element */
+    position: absolute;
+    bottom: 0;
+    /* Position it at the bottom of the element */
+    left: 0;
+    width: 0%;
+    /* Start with no underline */
+    height: 2px;
+    /* Set the thickness of the underline */
+    background-color: #A02629;
+    /* Set the underline color */
+    transition: width 0.3s ease;
+    /* Add transition for smooth animation */
+}
+
+.menuTitle:hover::after {
+    width: 100%;
+    /* Expand the underline on hover */
+}
+
+
+.menuTitle:hover::after {
+    width: 100%;
+    /* On hover, the underline expands to the full width */
+}
+
+
+.menuTitleList {
+    padding-top: 20px;
+}
+
+
+.header-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 50;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+    box-shadow: none;
+}
+
+.header-container.sticky {
+    position: fixed;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .header-container {
+        will-change: transform, background-color;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navigationMenu {
+        font-size: 14px;
+    }
+}
+
+
+
+.subheading {
+    color: #272A5D;
+    font-family: "Avenir LT Std";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 53px;
+    /* 132.5% */
+}
+
+.paragraph {
+    color: #5A5A5A;
+    text-align: justify;
+    font-family: "Work Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    /* 130% */
+}
+
+
+/* Full-width container and hiding overflow */
+.banner-container {
+    width: 100%;
+    height: 100px;
+    /* Adjust as needed */
+    overflow: hidden;
+    background-color: #fff;
+    /* Optional background */
+    position: relative;
+}
+
+.banner-slider {
+    display: flex;
+    align-items: center;
+    gap: 42.5px;
+    /* Adds consistent spacing between images */
+    animation: scroll-left 20s linear infinite;
+    white-space: nowrap;
+}
+
+.imgs {
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Keyframes for left-to-right scrolling */
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%);
+        /* Start outside the viewport (right side) */
+    }
+
+    to {
+        transform: translateX(-100%);
+        /* End outside the viewport (left side) */
+    }
+}
+
+
+.navMenu {
+    margin: 0 auto;
+    max-width: 1530px;
+    padding-top: 25px;
+    padding-bottom: 0px;
+
+    // Media queries for responsiveness
+    @media (max-width: 1024px) {
+        // Tablet and smaller laptops
+        padding: 0 12px; // Reduce padding
+    }
+
+    @media (max-width: 768px) {
+        max-width: 728px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 440px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+
+    }
+
+    @media(max-width:425px) {
+        max-width: 377px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    @media(max-width:375px) {
+        max-width: 330px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    @media (max-width:320px) {
+        max-width: 278px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+
+    }
+}
+
+
+.desktopHeaderBotton {
+    margin-right: 10px;
+}
+
+
+
+.mobileMainMenuContactBtn {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #272A5D;
+    height: 50px;
+    padding: 0px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: Work Sans;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    /* Initial text color */
+    border-radius: 0.5rem;
+    background: #272A5D;
+    cursor: pointer;
+
+    /* Text color transition */
+    span {
+        position: relative;
+        z-index: 2;
+        transition: color 0.3s ease;
+    }
+
+    /* Background animation */
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: #ffffff;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.4s ease-in-out;
+        z-index: 1;
+        /* Ensure it's behind the text */
+    }
+
+    /* Hover state */
+    &:hover {
+        span {
+            color: #000000;
+            /* Change text color on hover */
+        }
+
+        &::before {
+            transform: scaleY(1);
+            /* Fill bottom-to-top */
+        }
+    }
+
+    /* Mouse leave state */
+    &:not(:hover)::before {
+        transform: scaleY(0);
+        /* Remove bottom-to-top */
+        transform-origin: top;
+        /* Keep animation consistent */
+    }
+}

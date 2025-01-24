@@ -1,0 +1,130 @@
+.navigationMenu {
+    color: #000;
+    font-family: Avenir LT Std;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.navigationMenu {
+    color: #000; // Default color for breadcrumb links
+
+    &.active {
+        color: #1e3a8a; // Highlight active menu items
+    }
+}
+
+.headerSubmenu {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.menuContactTitle {
+    color: #000;
+    font-family: "Work Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.menuTitleLink {
+    position: relative;
+    /* Ensure the pseudo-element positions relative to the text */
+    padding-bottom: 8px;
+    /* Add space between the text and underline */
+}
+
+.menuTitle {
+    position: relative;
+    /* Ensure the pseudo-element positions relative to the text */
+    padding-bottom: 8px;
+    /* Add space between the text and underline */
+}
+
+.menuTitle::after {
+    content: '';
+    /* Create an empty pseudo-element */
+    position: absolute;
+    bottom: 0;
+    /* Position it at the bottom of the element */
+    left: 0;
+    width: 0%;
+    /* Start with no underline */
+    height: 2px;
+    /* Set the thickness of the underline */
+    background-color: #A02629;
+    /* Set the underline color */
+    transition: width 0.3s ease;
+    /* Add transition for smooth animation */
+}
+
+.menuTitle:hover::after {
+    width: 100%;
+    /* Expand the underline on hover */
+}
+
+
+.menuTitle:hover::after {
+    width: 100%;
+    /* On hover, the underline expands to the full width */
+}
+
+
+.menuTitleList {
+    padding-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .navigationMenu {
+        font-size: 14px; // Smaller font for mobile
+    }
+}
+
+
+.navMenu {
+    margin: 0 auto;
+    max-width: 1530px;
+    padding-top: 25px;
+    padding-bottom: 0px;
+
+    // Media queries for responsiveness
+    @media (max-width: 1024px) {
+        // Tablet and smaller laptops
+        padding: 0 12px; // Reduce padding
+    }
+
+    @media (max-width: 768px) {
+        max-width: 728px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 440px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+
+    }
+
+    @media(max-width:425px) {
+        max-width: 377px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    @media(max-width:375px) {
+        max-width: 330px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    @media (max-width:320px) {
+        max-width: 278px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+
+    }
+}

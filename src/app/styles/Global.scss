@@ -1,0 +1,169 @@
+.bluBorderWhitebgTextblack {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #272A5D;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #272A5D;
+  /* Initial text color */
+  border-radius: 0.5rem;
+  background: none;
+  cursor: pointer;
+
+  /* Text color transition */
+  span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+  }
+
+  /* Background animation */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #272A5D;
+    color: #fff;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1;
+    /* Ensure it's behind the text */
+  }
+
+  /* Hover state */
+  &:hover {
+    span {
+      color: #ffffff;
+      /* Change text color on hover */
+    }
+
+    &::before {
+      transform: scaleY(1);
+      /* Fill bottom-to-top */
+    }
+  }
+
+  /* Mouse leave state */
+  &:not(:hover)::before {
+    transform: scaleY(0);
+    /* Remove bottom-to-top */
+    transform-origin: top;
+    /* Keep animation consistent */
+  }
+}
+
+
+.viewEvents {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #272A5D;
+  color: #272A5D;
+  /* Initial text color */
+  border-radius: 0.5rem;
+  background: none;
+  cursor: pointer;
+
+  /* Text color transition */
+  span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+  }
+
+  /* Background animation */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #272A5D;
+    color: #fff;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1;
+    /* Ensure it's behind the text */
+  }
+
+  /* Hover state */
+  &:hover {
+    span {
+      color: #ffffff;
+      /* Change text color on hover */
+    }
+
+    &::before {
+      transform: scaleY(1);
+      /* Fill bottom-to-top */
+    }
+  }
+
+  /* Mouse leave state */
+  &:not(:hover)::before {
+    transform: scaleY(0);
+    /* Remove bottom-to-top */
+    transform-origin: top;
+    /* Keep animation consistent */
+  }
+}
+
+
+
+.CourseDetailsBtn {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #272A5D;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: Work Sans;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  /* Initial text color */
+  border-radius: 0.5rem;
+  background: #272A5D;
+  cursor: pointer;
+
+  /* Text color transition */
+  span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+  }
+
+  /* Background animation */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #ffffff;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1;
+    /* Ensure it's behind the text */
+  }
+
+  /* Hover state */
+  &:hover {
+    span {
+      color: #000000;
+      /* Change text color on hover */
+    }
+
+    &::before {
+      transform: scaleY(1);
+      /* Fill bottom-to-top */
+    }
+  }
+
+  /* Mouse leave state */
+  &:not(:hover)::before {
+    transform: scaleY(0);
+    /* Remove bottom-to-top */
+    transform-origin: top;
+    /* Keep animation consistent */
+  }
+}

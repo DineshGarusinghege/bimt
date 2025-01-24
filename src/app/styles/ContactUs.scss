@@ -1,0 +1,50 @@
+.contactFell {
+    color: #272A5D;
+    text-align: left;
+    font-family: "Avenir LT Std";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.formbtn {
+    display: flex;
+    width: 200px;
+    height: 56px;
+    padding: 0px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 2px solid #272A5D;
+    color: #272A5D;
+    font-family: "Work Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.formbtn:hover {
+    background-color: #272A5D;
+    color: #ffffff;
+}
+
+.gettingToush {
+    color: #272A5D;
+    text-align: left;
+    font-family: "Avenir LT Std";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.iconBg {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+    border: 1px solid #272A5D;
+    background: #272A5D;
+}

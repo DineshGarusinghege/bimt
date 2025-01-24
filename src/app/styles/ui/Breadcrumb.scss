@@ -1,0 +1,54 @@
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 0.875rem; // Small font size for mobile screens
+    gap: 0.5rem;
+    position: absolute;
+    left: 300px;
+    bottom: 920px;
+    color: #000;
+    font-family: "Avenir LT Std";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    @media (min-width: 768px) {
+        font-size: 1rem; // Increase font size for larger screens
+    }
+
+    li {
+        list-style: none;
+
+        .breadcrumb-link {
+            color: #000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #1d4ed8; // Blue on hover
+                text-decoration: underline;
+            }
+        }
+
+        .breadcrumb-text {
+            color: #4b5563; // Gray text for inactive items
+        }
+    }
+
+    .breadcrumb-icon {
+        color: #9ca3af; // Lighter gray for the icon
+        padding-top: 0rem; // Adjust vertical alignment
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .breadcrumb{
+        left:15px;
+        top: 0px;
+    }
+}

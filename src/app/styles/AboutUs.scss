@@ -1,0 +1,778 @@
+.section-about {
+    margin-top: 100px;
+
+    .heading {
+        color: #272A5D;
+        font-family: "Work Sans";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        @media (max-width:480px) {
+            margin-top: 200px;
+        }
+    }
+
+    .subheading {
+        color: #272A5D;
+        font-family: "Avenir LT Std";
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 53px;
+        padding-left: 0px;
+        /* 132.5% */
+    }
+
+    .paragraph {
+        color: #5A5A5A;
+        text-align: justify;
+        font-family: "Work Sans";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 26px;
+        /* 130% */
+    }
+}
+
+
+/* Full-width container and hiding overflow */
+.banner-container {
+    width: 100%;
+    height: 100px;
+    /* Adjust as needed */
+    overflow: hidden;
+    background-color: #fff;
+    /* Optional background */
+    position: relative;
+}
+
+.banner-slider {
+    display: flex;
+    align-items: center;
+    gap: 42.5px;
+    /* Adds consistent spacing between images */
+    animation: scroll-left 20s linear infinite;
+    white-space: nowrap;
+}
+
+img {
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Keyframes for left-to-right scrolling */
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%);
+        /* Start outside the viewport (right side) */
+    }
+
+    to {
+        transform: translateX(-100%);
+        /* End outside the viewport (left side) */
+    }
+}
+
+
+
+
+.visionBox {
+    // Default styles (desktop)
+    position: relative;
+    height: 300px;
+    width: 100%;
+    left: -40px;
+    top: 100px;
+
+    // Tablet styles
+    @media (max-width: 1024px) {
+        left: -20px; // Adjust X-axis
+        top: 80px; // Adjust Y-axis
+    }
+
+    // Mobile styles
+    @media (max-width: 768px) {
+        left: -10px; // Adjust X-axis
+        top: 50px; // Adjust Y-axis
+    }
+
+    // Small mobile
+    @media (max-width: 480px) {
+        left: -70; // Center on X-axis
+        top: -25px; // Reduce Y-axis
+    }
+}
+
+
+
+.visionBoxBackgroundLine {
+    @media(max-width:425px) {
+        width: 235px;
+        height: 235px;
+        flex-shrink: 0;
+    }
+
+    @media(max-width:375px) {}
+
+    @media (max-width:320px) {}
+}
+
+
+.visionBoxSecondLine {
+    z-index: 11;
+    background: #fff;
+    border: 15px solid #272A5D;
+    border-radius: 450px;
+
+    @media(max-width:425px) {
+
+        width: 215px;
+        height: 215px;
+        flex-shrink: 0;
+        left: 48px;
+        top: 10px;
+
+        border: 5px solid #272A5D;
+        border-radius: 210px;
+    }
+
+}
+
+
+.VisionHeader {
+    color: #000;
+    text-align: center;
+    font-family: 'Avenir LT Std';
+    font-size: 64px;
+    /* Default for desktop */
+    font-weight: 700;
+    line-height: 53px;
+    padding-top: 111px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .VisionHeader {
+        font-size: 48px;
+        /* Adjust for tablets */
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .VisionHeader {
+        font-size: 32px;
+        /* Adjust for mobile */
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .VisionHeader {
+        font-size: 28px;
+        /* Adjust for smaller phones */
+        line-height: 36px;
+        padding-top: 10px;
+    }
+}
+
+
+
+.VisionParagraph {
+    color: #5A5A5A;
+    text-align: center;
+    font-family: "Work Sans";
+    font-size: 20px;
+    /* Default for desktop */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    padding-left: 54px;
+    padding-right: 55px;
+    padding-top: 15px;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        /* Mobile font size */
+        line-height: 20px;
+        /* Adjust line height */
+    }
+
+    // Small mobile
+    @media (max-width: 480px) {
+        color: #5A5A5A;
+        text-align: center;
+        font-family: "Work Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 0px;
+        /* 125% */
+    }
+}
+
+
+
+.MissionBox {
+    position: relative;
+    left: -155px;
+    /* X-axis adjustment for desktop */
+    top: -170px;
+    /* Y-axis adjustment for desktop */
+
+    @media (max-width: 1024px) {
+        left: -100px;
+        /* Adjust for tablets */
+        top: -120px;
+    }
+
+    @media (max-width: 768px) {
+        left: -50px;
+        /* Adjust for mobile */
+        top: -80px;
+    }
+
+    @media (max-width: 480px) {
+        left: -460px;
+        /* Center for smaller devices */
+        top: -360px;
+    }
+}
+
+.missionboxLine {
+    z-index: 12;
+    border: 2px solid #AB1E25;
+    border-radius: 438px;
+
+    // Small mobile
+    @media (max-width: 480px) {
+        width: 230px;
+        height: 230px;
+        border-radius: 230px;
+    }
+}
+
+
+.missionBoxSecondLine {
+    z-index: 12;
+    border: 15px solid #AB1E25;
+    border-radius: 350px;
+
+    @media (max-width: 480px) {
+        border: 5px solid #AB1E25;
+        border-radius: 210px;
+        width: 210px;
+        height: 210px;
+        top: 210px;
+        left: 510px;
+    }
+}
+
+.missionHeading {
+    align-self: stretch;
+    color: #000;
+    text-align: center;
+    font-family: Avenir LT Std;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 53px;
+    padding-top: 81px;
+
+    @media (max-width: 480px) {
+        color: #000000;
+        text-align: center;
+        font-family: "Avenir LT Std";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 53px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+.missionParagraph {
+    display: absolute;
+    color: #5A5A5A;
+    text-align: center;
+    font-family: Work Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    padding-left: 40px;
+    padding-right: 41px;
+    padding-top: 15px;
+
+    @media (max-width: 480px) {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 0px;
+        color: #5A5A5A;
+        text-align: center;
+        font-family: "Work Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+    }
+}
+
+.coreBox {
+    position: relative;
+    left: -165px;
+    /* X-axis adjustment for desktop */
+    top: -150px;
+    /* Y-axis adjustment for desktop */
+
+    @media (max-width: 1024px) {
+        /* Tablet */
+        left: -100px;
+        top: -120px;
+    }
+
+    @media (max-width: 768px) {
+        /* Mobile */
+        left: -50px;
+        top: -80px;
+    }
+
+    @media (max-width: 480px) {
+        /* Small Mobile */
+        left: -860px;
+        top: -100px;
+    }
+}
+
+
+.coreBoxLine {
+    z-index: 12;
+    border: 2px solid #272A5D;
+    border-radius: 400px;
+
+    @media (max-width: 480) {
+        width: 180px;
+        height: 180px;
+        flex-shrink: 0;
+    }
+}
+
+.coreBoxSecondLine {
+    z-index: 12;
+    border: 10px solid #272A5D;
+    background: #fff;
+    border-radius: 330px;
+
+    @media (max-width: 480px) {
+        width: 165px;
+        height: 165px;
+        border-radius: 165px;
+        flex-shrink: 0;
+        top: 98px;
+        transform: translateX(-24px);
+    }
+}
+
+.coreValueHeading {
+    color: #000;
+    text-align: center;
+    font-family: Avenir LT Std;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 53px;
+    padding-top: 90px;
+
+    @media (max-width: 480px) {
+        color: #000;
+        text-align: center;
+        font-family: "Avenir LT Std";
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 37px;
+        padding-top: 30px;
+        ;
+    }
+}
+
+
+
+.intergerityBox {
+    @media (max-width: 480px) {
+        left: -860px;
+        top: -265px;
+    }
+}
+
+.intergerityBoxLine {
+    z-index: 17;
+    background: #D86027;
+    border-radius: 170px;
+    width: 170px;
+    height: 170px;
+
+    @media (max-width: 480px) {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.intergerityBoxSecondLine {
+    z-index: 16;
+    border: 2px solid #D86027;
+    border-radius: 190px;
+
+    @media (max-width: 480px) {
+        width: 110px;
+        height: 110px;
+        border-radius: 110px;
+        top: 285px;
+        transform: translateX(7px);
+    }
+}
+
+.IntergrityHeading {
+    color: #fff;
+    font-family: Avenir LT Std;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 0px;
+    padding-top: 70px;
+
+    @media (max-width: 480px) {
+        color: #FFF;
+        font-family: "Avenir LT Std";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding-top: 40px;
+    }
+}
+
+
+.accountabilityBox {
+    @media (max-width: 480px) {
+        left: -980px;
+        top: -170px;
+        z-index: 1;
+    }
+}
+
+.accountabilityBoxLine {
+    border-radius: 170px;
+    z-index: 23;
+    background: #272A5D;
+    border-radius: 170px;
+
+
+    @media (max-width: 480px) {
+        width: 140px;
+        height: 140px;
+        flex-shrink: 0;
+    }
+}
+
+.accountabiityBoxSecondLine {
+    z-index: 22;
+    border: 2px solid #272A5D;
+    border-radius: 190px;
+
+    @media (max-width: 480px) {
+        width: 155px;
+        height: 155px;
+        flex-shrink: 0;
+        border-radius: 155px;
+        top: 284px;
+        transform: translateX(5px);
+    }
+}
+
+.accountabilityHeading {
+    color: #fff;
+    font-family: Avenir LT Std;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 5px;
+    padding-top: 70px;
+
+    @media (max-width: 480px) {
+        color: #FFF;
+        font-family: "Avenir LT Std";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding-top: 60px;
+        padding-left: 0px;
+    }
+}
+
+
+.InnovationBox {
+    @media (max-width: 480px) {
+        left: -868px;
+        top: -50px;
+        z-index: 1;
+    }
+}
+
+.InnovationBoxLine {
+    border-radius: 170px;
+    z-index: 21;
+    background: #818541;
+
+    @media (max-width: 480px) {
+        width: 110px;
+        height: 110px;
+        flex-shrink: 0;
+    }
+}
+
+.InnovationBoxSecondLine {
+    z-index: 20;
+    border: 2px solid #818541;
+    border-radius: 190px;
+
+
+
+    @media (max-width: 480px) {
+        width: 125px;
+        height: 125px;
+        flex-shrink: 0;
+        border-radius: 150px;
+        top: 283px;
+        transform: translateX(5px);
+    }
+}
+
+.InnovationHeading {
+    color: #fff;
+    font-family: Avenir LT Std;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 0px;
+    padding-top: 70px;
+
+    @media (max-width: 480px) {
+        color: #FFF;
+        font-family: "Avenir LT Std";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding-top: 45px;
+        padding-left: 0px;
+    }
+}
+
+.RespectBox {
+    @media (max-width: 480px) {
+        left: -1046px;
+        top: -38px;
+        z-index: 1;
+    }
+}
+
+.RespectBoxLine {
+    border-radius: 170px;
+    z-index: 23;
+    background: #A02629;
+
+    @media (max-width: 480px) {
+        width: 90px;
+        height: 90px;
+        flex-shrink: 0;
+    }
+}
+
+.RespectBoxSecondLine {
+    z-index: 22;
+    border: 2px solid #A02629;
+    border-radius: 190px;
+
+    @media (max-width: 480px) {
+        width: 105px;
+        height: 105px;
+        flex-shrink: 0;
+        border-radius: 105px;
+        top: 283px;
+        transform: translateX(4px);
+    }
+}
+
+.RespectHeading {
+    color: #fff;
+    font-family: Avenir LT Std;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 0px;
+    padding-top: 70px;
+
+    @media (max-width: 480px) {
+        color: #FFF;
+        font-family: "Avenir LT Std";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding-top: 35px;
+        padding-left: 0px;
+    }
+}
+
+
+
+.LearningBox {
+    @media (max-width: 480px) {
+        left: -775px;
+        top: 235px;
+        z-index: 1;
+    }
+}
+
+
+.LearningBoxLine {
+    border-radius: 190px;
+    z-index: 12;
+    background: #AA318A;
+
+    @media (max-width: 480px) {
+        width: 100px;
+        height: 100px;
+        flex-shrink: 0;
+        z-index: 1;
+    }
+}
+
+
+.LearningBoxSecondLine {
+    z-index: 13;
+    border: 2px solid #AA318A;
+    border-radius: 170px;
+
+    @media (max-width: 480px) {
+        width: 115px;
+        height: 115px;
+        flex-shrink: 0;
+        border-radius: 115px;
+        z-index: 0;
+        top: 83px;
+        transform: translateX(3px);
+    }
+}
+
+.LearningHeading {
+    color: #fff;
+    font-family: Avenir LT Std;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 35px;
+    padding-top: 45px;
+
+    @media (max-width: 480px) {
+        color: #FFF;
+        font-family: "Avenir LT Std";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding-top: 40px;
+        padding-left: 15px;
+    }
+}
+
+
+.CommunityBox {
+    @media (max-width: 480px) {
+        left: -860px;
+        top: 290px;
+        z-index: 1;
+    }
+}
+
+
+.CommunityBoxLine {
+    border-radius: 190px;
+    z-index: 15;
+    background: #5DB7E0;
+    border-radius: 170px;
+
+    @media (max-width: 480px) {
+        width: 100px;
+        height: 100px;
+        flex-shrink: 0;
+    }
+}
+
+.CommunityBoxSecondLine {
+    z-index: 14;
+    border: 2px solid #5DB7E0;
+    border-radius: 190px;
+
+    @media (max-width: 480px) {
+        width: 120px;
+        height: 120px;
+        flex-shrink: 0;
+        border-radius: 120px;
+        top: 80px;
+        transform: translateX(3px);
+    }
+}
+
+.CommunityHeading {
+    color: #fff;
+    font-family: Avenir LT Std;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 20px;
+    padding-top: 70px;
+
+    @media (max-width: 480px) {
+        color: #FFF;
+        font-family: "Avenir LT Std";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding-top: 40px;
+        padding-left: 5px;
+    }
+}
+
+.mobileonlyShowBox {
+    @media (max-width: 480) {
+        top: 900px;
+        width: 305px;
+        left: 10px;
+        color: #FFF;
+        text-align: justify;
+        font-family: "Work Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25px;
+        /* 156.25% */
+    }
+}

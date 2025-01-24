@@ -1,0 +1,53 @@
+.promotion {
+    position: relative;
+    overflow: hidden;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  
+    // Transition text color
+    span {
+      position: relative;
+      z-index: 2;
+      transition: color 0.3s ease;
+  
+    }
+  
+    // Background animation
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: #000000;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.4s ease-in-out;
+      z-index: 1;
+      /* Ensure it's behind the text */
+    }
+  
+    // Hover state
+    &:hover {
+      color: white;
+  
+      /* Change text color on hover */
+  
+      &::before {
+        transform: scaleY(1);
+  
+        /* Fill bottom-to-top */
+      }
+    }
+  
+    // Mouse leave state
+    &:not(:hover)::before {
+      transform: scaleY(0);
+      /* Remove bottom-to-top */
+      transform-origin: top;
+  
+      /* Keep animation consistent */
+    }
+  }

@@ -1,0 +1,514 @@
+// Variables for colors
+$primary-color: #db9334; // Blue fill color
+$text-color-hover: #fff; // White text color when hovered
+$text-color-default: #272A5D; // Default text color
+$border-color: #272A5D; // Border color
+
+
+
+.button {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid $border-color;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: $text-color-default;
+  border-radius: 0.5rem;
+  background: none;
+  color: #272A5D;
+  cursor: pointer;
+
+  // Transition text color
+  span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+  }
+
+  // Background animation
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: $border-color;
+    color: #fff;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1;
+  }
+
+  // Hover state
+  &:hover {
+    color: $text-color-hover; // Change text color to white
+
+
+    &::before {
+      transform: scaleY(1); // Fill bottom-to-top
+    }
+  }
+
+  // Mouse leave state
+  &:not(:hover)::before {
+    transform: scaleY(0); // Remove bottom-to-top
+    transform-origin: top; // Keep animation consistent
+  }
+}
+
+.btnWhiteFill {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  /* Set background to red in normal state */
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  /* Text color in normal state */
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  // Transition text color
+  span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+
+  }
+
+  // Background animation
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #b1b3c9;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1;
+    /* Ensure it's behind the text */
+  }
+
+  // Hover state
+  &:hover {
+    color: #ffffff;
+
+    /* Change text color on hover */
+
+    &::before {
+      transform: scaleY(1);
+
+      /* Fill bottom-to-top */
+    }
+  }
+
+  // Mouse leave state
+  &:not(:hover)::before {
+    transform: scaleY(0);
+    /* Remove bottom-to-top */
+    transform-origin: top;
+
+    /* Keep animation consistent */
+  }
+}
+
+.studentPortal {
+  position: relative;
+  /* Set to relative to position ::before properly */
+  overflow: hidden;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  /* Initial text color */
+  border-radius: 0.5rem;
+  background: none;
+  cursor: pointer;
+
+  /* Text color transition */
+  span {
+    position: relative;
+    z-index: 2;
+    /* Ensure text is above the background */
+    transition: color 0.3s ease;
+  }
+
+  /* Background animation */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #ffffff;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1;
+    /* Ensure it's below text and icon */
+  }
+
+  /* Hover state */
+  &:hover {
+    span {
+      color: #000000;
+      /* Change text color on hover */
+    }
+
+    &::before {
+      transform: scaleY(1);
+      /* Fill bottom-to-top */
+    }
+  }
+
+  /* Ensure the normal background is visible below the pseudo-element */
+  &:not(:hover)::before {
+    transform: scaleY(0);
+    /* Remove bottom-to-top */
+    transform-origin: top;
+    /* Keep animation consistent */
+  }
+}
+
+.studentPortalIcon {
+  position: absolute;
+  top: 309px;
+  /* Adjust for desired positioning */
+  left: 5px;
+  /* Adjust for desired positioning */
+  z-index: 100;
+  /* Ensure the icon is above the background and text */
+  rotate: (-10.795deg)
+}
+
+
+.btnBlue {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #272A5D;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  /* Initial text color */
+  border-radius: 0.5rem;
+  background: #272A5D;
+  cursor: pointer;
+
+  /* Text color transition */
+  span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+  }
+
+  /* Background animation */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #ffffff;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1;
+    /* Ensure it's behind the text */
+  }
+
+  /* Hover state */
+  &:hover {
+    span {
+      color: #000000;
+      /* Change text color on hover */
+    }
+
+    &::before {
+      transform: scaleY(1);
+      /* Fill bottom-to-top */
+    }
+  }
+
+  /* Mouse leave state */
+  &:not(:hover)::before {
+    transform: scaleY(0);
+    /* Remove bottom-to-top */
+    transform-origin: top;
+    /* Keep animation consistent */
+  }
+}
+
+
+
+.btnWhite {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #ffffff;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  /* Initial text color */
+  border-radius: 0.5rem;
+  background: none;
+  cursor: pointer;
+
+  /* Text color transition */
+  span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+  }
+
+  /* Background animation */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #ffffff;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1;
+    /* Ensure it's behind the text */
+  }
+
+  /* Hover state */
+  &:hover {
+    span {
+      color: #000000;
+      /* Change text color on hover */
+    }
+
+    &::before {
+      transform: scaleY(1);
+      /* Fill bottom-to-top */
+    }
+  }
+
+  /* Mouse leave state */
+  &:not(:hover)::before {
+    transform: scaleY(0);
+    /* Remove bottom-to-top */
+    transform-origin: top;
+    /* Keep animation consistent */
+  }
+}
+
+
+
+.underline-hover {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #991B1B;
+  cursor: pointer;
+
+  // Text hover effect
+  &:hover {
+    color: #991B1B; // Change text color on hover
+  }
+
+  // Underline animation
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0; // Place underline at the bottom of the text
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #991B1B; // Blue underline color
+    transform: scaleX(0); // Initially hidden
+    transform-origin: left; // Start animation from the left
+    transition: transform 0.3s ease-in-out;
+  }
+
+  // Hover state
+  &:hover::after {
+    transform: scaleX(1); // Expand underline on hover
+  }
+
+  // Leave state
+  &:not(:hover)::after {
+    transform-origin: right; // Reset the animation origin to left
+    transform: scaleX(0); // Collapse underline on leave
+  }
+}
+
+.meetOurDedicated {
+  @media(max-width: 480px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.heroDescription {
+
+  @media(max-width:480px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+.allProgramViewBtn {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid $border-color;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: $text-color-default;
+  border-radius: 0.5rem;
+  background: none;
+  color: #272A5D;
+  cursor: pointer;
+
+  // Transition text color
+  span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+  }
+
+  // Background animation
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: $border-color;
+    color: #fff;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1;
+  }
+
+  // Hover state
+  &:hover {
+    color: $text-color-hover; // Change text color to white
+
+
+    &::before {
+      transform: scaleY(1); // Fill bottom-to-top
+      color: #000;
+    }
+  }
+
+  // Mouse leave state
+  &:not(:hover)::before {
+    transform: scaleY(0); // Remove bottom-to-top
+    transform-origin: top; // Keep animation consistent
+  }
+}
+
+// Hero Section styles and responsive Home page
+
+
+.heroSection {
+  height: 692px;
+
+  @media (max-width:480) {
+    height: 692px;
+    overflow: hidden;
+  }
+}
+
+.hreBgSection {
+  @media (max-width: 480) {
+    width: 160%;
+    height: auto;
+  }
+}
+
+.heroBackgroundImg {
+  object-fit: cover;
+
+  @media (max-width: 480px) {
+    object-fit: cover;
+    object-position: right;
+  }
+}
+
+.overlay-mobile {
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+
+.video-container {
+  @media(max-width: 480px) {
+    display: none;
+  }
+}
+
+.announsmentBar {
+  z-index: 50;
+  position: relative;
+  padding: 10px 10px 10px 10px;
+}
+
+.annousmentText {
+  color: #fff;
+  font-family: Work Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+
+  @media(max-width: 480px) {
+    color: #fff;
+    font-family: Work Sans;
+    font-size: 12px;
+    font-style: normal;
+  }
+}
+
+
+.annousmentbarfindout {
+  font-size: 12px;
+}
+
+
+.heroOurTeamParagraph {
+  font-size: 14px;
+  padding: 0px;
+}
+
+
+
+// Search Bar 
+.searchProgram {
+  @media(max-width:480px) {
+    width: 100%;
+  }
+}
+
+.searchIcon {
+  @media(max-width: 480px) {
+    width: 65%;
+    height: 65%;
+  }
+}
+
+.searchBarBox {
+  @media(max-width: 480px) {
+    padding: 6px 10px 6px 15px;
+  }
+}
+
+.searchBtn {
+  @media(max-width: 480px) {
+    display: none;
+  }
+}
+
+.dropDownIcon {
+  @media(max-width: 480px) {
+    display: none;
+  }
+}
+
+.textContentBox {
+  @media(max-width: 480px) {
+    padding: 0px;
+  }
+}
