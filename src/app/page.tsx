@@ -232,8 +232,8 @@ const HomePage: React.FC = () => {
             <div
                 className="min-h-screen bg-fixed bg-cover bg-no-repeat"
                 style={{
-                    backgroundImage: "url('/images/bg1.jpg')", // Path to your image
-                    backgroundPosition: "bottom", // Position the image at the bottom
+                    backgroundImage: "url('/images/bg1.jpg')", 
+                    backgroundPosition: "bottom", 
                 }}
             >
                 <head>
@@ -254,7 +254,7 @@ const HomePage: React.FC = () => {
                             loop
                             className="w-full h-full object-cover"
                         >
-                            <source src="/videos/Wesite_Video4.mp4" type="video/mp4" />
+                            <source src="/0124.webm" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>
