@@ -5,21 +5,6 @@
 }
 
 
-.menuTitle {
-
-    color: #000;
-    font-family: Work Sans;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #000;
-    font-family: Work Sans;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
 
 .mainHeaderLogoBIMT {
 
@@ -48,12 +33,113 @@
     }
 }
 
+.MainMenuContactBtn1 {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #272a5d;
+    width: 143px;
+    height: 50px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: Work Sans;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: .5rem;
+    background: #272a5d;
+    cursor: pointer;
+
+    /* Text color transition */
+    span {
+        position: relative;
+        z-index: 2;
+        transition: color 0.3s ease;
+    }
+
+    /* Background animation */
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: #ffffff;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.4s ease-in-out;
+        z-index: 1;
+        /* Ensure it's behind the text */
+    }
+
+    /* Hover state */
+    &:hover {
+        span {
+            color: #000000;
+            /* Change text color on hover */
+        }
+
+        &::before {
+            transform: scaleY(1);
+            /* Fill bottom-to-top */
+        }
+    }
+
+    /* Mouse leave state */
+    &:not(:hover)::before {
+        transform: scaleY(0);
+        /* Remove bottom-to-top */
+        transform-origin: top;
+        /* Keep animation consistent */
+    }
+
+    @media(max-width:1440px) {
+        width: 190px;
+    }
+
+    @media(max-width:1300px) {
+        width: 142px;
+    }
+
+    @media(max-width:1024px) {
+        width: 126px;
+    }
+
+    @media(max-width:1024px) {
+        font-size: 13px;
+    }
+
+    @media(max-width:1105px) {
+        width: 110px;
+        height: 48px;
+        font-size: 12px;
+    }
+
+    @media(max-width:880px) {
+        width: 110px;
+    }
+
+    @media (max-width:840px) {
+        height: 47px;
+    }
+
+    @media(max-width:800px) {
+        height: 46px;
+        font-size: 11px;
+    }
+
+    @media(max-width:768px) {
+        width: 86px;
+        font-size: 9px;
+        height: 42px;
+    }
+}
+
 .MainMenuContactBtn {
     position: relative;
     overflow: hidden;
     border: 2px solid #272A5D;
-    width: 200px;
-    height: 56px;
+    width: 180px;
+    height: 50px;
     padding: 0px 10px;
     justify-content: center;
     align-items: center;
@@ -194,15 +280,47 @@
     }
 }
 
-.headerSubmenu {
-    padding-top: 20px;
-    padding-bottom: 20px;
+// .headerSubmenu {
+//     padding-top: 20px;
+//     padding-bottom: 20px;
+// }
+
+.menuContactNumber1 {
+    color: #272A5D;
+    font-family: "Work Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @media(max-width:2048px) {
+        font-size: 14px;
+    }
+
+    @media(max-width:1920px) {
+        font-size: 18px;
+    }
+
+    @media(max-width:1440px) {
+        font-size: 18px;
+    }
+
+    @media(max-width:1380px) {
+        font-size: 17px;
+    }
+
+    @media(max-width:1105px) {
+        font-size: 14px;
+    }
+
+    @media(max-width: 1080px) {
+        display: none;
+    }
 }
 
 .menuContactTitle {
-    color: #000;
+    color: #272A5D;
     font-family: "Work Sans";
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -260,15 +378,10 @@
 
 .mainMenuandContactDevider {
 
-    border-left: 2px solid black;
+    border-left: 2px solid #272A5D;
     padding-left: 20px;
-    height: 30px;
+    height: 26px;
     align-content: center;
-
-    @media(max-width:1440px) {
-        height: 26px;
-    }
-
     @media(max-width:1080px) {
         display: none;
     }
@@ -282,22 +395,18 @@
 }
 
 .menuTitle {
+
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #000;
+    font-family: Work Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     position: relative;
-    /* Ensure the pseudo-element positions relative to the text */
-    padding-bottom: 8px;
-
-    /* Add space between the text and underline */
-    @media(max-width: 2048px) {
-        font-size: 14px;
-    }
-
-    @media(max-width:1920px) {
-        font-size: 20px;
-    }
-
-    @media(max-width:1440px) {
-        font-size: 18px;
-    }
 
     @media(max-width:1380px) {
         font-size: 17px;
@@ -327,7 +436,7 @@
     /* Start with no underline */
     height: 2px;
     /* Set the thickness of the underline */
-    background-color: #A02629;
+    // background-color: #A02629;
     /* Set the underline color */
     transition: width 0.3s ease;
     /* Add transition for smooth animation */
@@ -342,11 +451,6 @@
 .menuTitle:hover::after {
     width: 100%;
     /* On hover, the underline expands to the full width */
-}
-
-
-.menuTitleList {
-    padding-top: 20px;
 }
 
 
