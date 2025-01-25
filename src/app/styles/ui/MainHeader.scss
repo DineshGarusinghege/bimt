@@ -238,7 +238,7 @@
 
 
 .contactSecondNumber {
-    @media(max-width:1440px) {
+    @media(max-width:1536px) {
         display: none;
     }
 }
@@ -292,6 +292,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
     @media(max-width:2048px) {
         font-size: 14px;
     }
@@ -382,7 +383,8 @@
     padding-left: 20px;
     height: 26px;
     align-content: center;
-    @media(max-width:1080px) {
+
+    @media(max-width:1280px) {
         display: none;
     }
 }
@@ -659,5 +661,30 @@
         /* Remove bottom-to-top */
         transform-origin: top;
         /* Keep animation consistent */
+    }
+}
+
+/* Media Query for screens >=768px (md equivalent) */
+@media (min-width: 768px) {
+    .desktop-menu {
+        display: flex;
+        /* Show the desktop menu */
+    }
+
+    .mobile-menu {
+        display: none;
+        /* Hide the mobile menu */
+    }
+}
+
+@media (max-width: 767px) {
+    .desktop-menu {
+        display: none;
+        /* Hide the desktop menu */
+    }
+
+    .mobile-menu {
+        display: block;
+        /* Show the mobile menu */
     }
 }
