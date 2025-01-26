@@ -148,7 +148,7 @@ const MainHeader = () => {
                                     <path d="M12 16l-6-6h12l-6 6z" />
                                 </svg></Link>
                             {hoveredMenu === 'life' && (
-                                <ul className="absolute left-0 top-full bg-[#272A5D] shadow-lg rounded-lg text-white w-64 z-50 headerSubmenu" style={{
+                                 <ul className="absolute left-0 top-full bg-[#272A5D] shadow-lg rounded-lg text-white w-64 z-50 headerSubmenu" style={{
                                     borderBottom: '2px solid #A02629'
                                 }}>
                                     <li><Link href="/CampusLife" className="block px-7 py-4 text-white hover:bg-pink-500 hover:text-white">Campus Life</Link></li>
@@ -175,9 +175,9 @@ const MainHeader = () => {
                                 <path d="M12 16l-6-6h12l-6 6z" />
                             </svg></Link>
                             {hoveredMenu === 'contact' && (
-                                <ul className="absolute left-0 top-full bg-[#272A5D] shadow-lg rounded-lg text-white w-64 z-50 headerSubmenu" style={{
-                                    borderBottom: '2px solid #A02629'
-                                }}>
+                               <ul className="absolute left-0 top-full bg-[#272A5D] shadow-lg rounded-lg text-white w-64 z-50 headerSubmenu" style={{
+                                borderBottom: '2px solid #A02629'
+                            }}>
                                     <li className="menuTitleList"><Link href="/ContactUs" className="block px-7 py-4 text-white hover:bg-pink-500 hover:text-white">Contact Us</Link></li>
                                     <hr className="border-gray-300" />
                                     {/* <li className="menuTitleList"><Link href="/ConnectwithUs" className="hover:text-[#A02629] menuTitle">Connect with Us</Link></li> */}
