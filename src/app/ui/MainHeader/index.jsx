@@ -52,7 +52,7 @@ const MainHeader = () => {
                     <nav className="hidden md:flex space-x-8 z-48 font-medium text-gray-800 items-center">
                         {/* Home */}
                         <div className="relative">
-                            <Link href="/" className="hover:text-[#272A5D] menuTitle flex items-center">Home</Link>
+                            <Link href="/" className="hover:text-[#272A5D] menuTitle flex items-center headerHome">Home</Link>
                         </div>
                         {/* About Us */}
                         <div
@@ -60,7 +60,7 @@ const MainHeader = () => {
                             onMouseEnter={() => toggleMenu('about')}
                             onMouseLeave={() => toggleMenu(null)}
                         >
-                            <Link href="/AboutUs" className="hover:text-[#272A5D] menuTitle font-bold flex items-center gap-3">
+                            <Link href="/AboutUs" className="hover:text-[#272A5D] menuTitle menuTitleGap font-bold flex items-center">
                                 About Us
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ const MainHeader = () => {
                             onMouseEnter={() => toggleMenu('programs')}
                             onMouseLeave={() => toggleMenu(null)}
                         >
-                            <Link href="/Search" className="hover:text-[#272A5D] menuTitle flex items-center gap-3">Programmes <svg
+                            <Link href="/Search" className="hover:text-[#272A5D] menuTitle flex items-center menuTitleGap">Programmes <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
                                 height="24"
@@ -137,7 +137,7 @@ const MainHeader = () => {
                             onMouseEnter={() => toggleMenu('life')}
                             onMouseLeave={() => toggleMenu(null)}
                         >
-                            <Link href="/CampusLife" className="hover:text-[#272A5D] menuTitle flex items-center gap-3">Life at BIMT
+                            <Link href="/CampusLife" className="hover:text-[#272A5D] menuTitle flex items-center menuTitleGap">Life at BIMT
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -165,7 +165,7 @@ const MainHeader = () => {
                             onMouseEnter={() => toggleMenu('contact')}
                             onMouseLeave={() => toggleMenu(null)}
                         >
-                            <Link href="/ContactUs" className="hover:text-[#272A5D] menuTitle flex items-center gap-3">Connect with Us  <svg
+                            <Link href="/ContactUs" className="hover:text-[#272A5D] menuTitle flex items-center menuTitleGap">Connect with Us  <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
                                 height="24"
@@ -195,7 +195,7 @@ const MainHeader = () => {
                         </div>
 
                         {/* Vertical Divider */}
-                        <div className="mainMenuandContactDevider flex items-center gap-3" >
+                        <div className="mainMenuandContactDevider flex items-center menuTitleGap" >
                             {/* Icon */}
                             <svg className="mainMenuPhoneIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 22 22" fill="none">
                                 <g clip-path="url(#clip0_579_4343)">
