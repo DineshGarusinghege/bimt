@@ -1,0 +1,97 @@
+/* Container styles */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%; /* Set container width to 30% */
+    gap: 20px;  /* Vertical gap between images */
+  }
+  
+  /* Image movement transition */
+  .image-move {
+    transition: transform 1s ease-in-out; /* Smooth horizontal movement over 1 second */
+  }
+  
+  /* Move the image horizontally after 1 second */
+  .move {
+    transform: translateX(20px); /* Move the image 20px horizontally */
+  }
+  
+
+
+  
+/* Container for the Quick Links section */
+.quick-links-container {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    width: 15%; /* Width of the container set to 15% */
+    gap: 10px; /* Vertical spacing between elements */
+  }
+  
+  /* Styling for the title */
+  .quick-links-title {
+    color: white; /* White text color */
+    font-family: 'Playfair Display', serif; /* Custom font */
+    font-size: 26px; /* Font size */
+    font-weight: 600; /* Font weight */
+  }
+  
+  /* Styling for the horizontal divider line */
+  .quick-links-divider {
+    border: none; /* Remove default border */
+    border-top: 2px solid #fff; /* Solid white line with 2px thickness */
+    width: 23%; /* Set width to 23% */
+    margin-left: 0; /* Align to the left */
+    margin-right: auto; /* Keep the right margin as auto (to align left) */
+  }
+  
+  
+  /* Styling for the icon list */
+  .icon-list {
+    display: flex;
+    justify-content: space-between; /* Space between the items */
+    gap: 24px; /* Horizontal gap between icons */
+  }
+  
+  /* Icon item style */
+  .icon-item {
+    color: white; /* White color for icons */
+  }
+  
+  
+  /* Parent container for carousel */
+.image-carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* Make sure it fills the parent width */
+  height: 200px; /* Adjust the height as needed */
+}
+
+/* The images wrapper */
+.images-wrapper {
+  display: flex;
+  gap: 1rem;
+  animation: moveImages 6s infinite; /* 6s for one full cycle */
+}
+
+/* Image styles */
+.carousel-image {
+  width: 33.33%; /* Each image will take up one-third of the width */
+  object-fit: cover;
+  height: auto;
+}
+
+/* Keyframe for moving images */
+@keyframes moveImages {
+  0% {
+    transform: translateX(0); /* Start at normal position */
+  }
+  33.33% {
+    transform: translateX(-100%); /* Move the images to the left */
+  }
+  66.66% {
+    transform: translateX(-200%); /* Move all images further to the left */
+  }
+  100% {
+    transform: translateX(0); /* Reset the position for the next loop */
+  }
+}

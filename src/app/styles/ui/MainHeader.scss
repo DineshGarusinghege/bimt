@@ -100,23 +100,24 @@
         width: 142px;
     }
 
-    @media(max-width:1024px) {
-        width: 126px;
+    @media(max-width:1110px) {
+        width: 79px;
+        font-size: 10px;
     }
 
     @media(max-width:1024px) {
-        font-size: 13px;
+        width: 79px;
+        font-size: 10px;
     }
 
-    @media(max-width:1105px) {
-        width: 110px;
-        height: 48px;
-        font-size: 12px;
+    @media(max-width:992px) {
+        width: 79px;
+        font-size: 10px;
     }
 
-    @media(max-width:880px) {
-        width: 110px;
-    }
+    // @media(max-width:880px) {
+     
+    // }
 
     @media (max-width:840px) {
         height: 47px;
@@ -124,11 +125,9 @@
 
     @media(max-width:800px) {
         height: 46px;
-        font-size: 11px;
     }
 
     @media(max-width:768px) {
-        width: 86px;
         font-size: 9px;
         height: 42px;
     }
@@ -202,22 +201,19 @@
         width: 142px;
     }
 
-    @media(max-width:1024px) {
-        width: 126px;
+    @media(max-width:1110px) {
+        width: 79px;
+        font-size: 10px;
     }
 
     @media(max-width:1024px) {
-        font-size: 13px;
+        width: 79px;
+        font-size: 10px;
     }
 
-    @media(max-width:1105px) {
-        width: 110px;
-        height: 48px;
-        font-size: 12px;
-    }
-
-    @media(max-width:880px) {
-        width: 110px;
+    @media(max-width:992px) {
+        width: 79px;
+        font-size: 10px;
     }
 
     @media (max-width:840px) {
@@ -226,7 +222,6 @@
 
     @media(max-width:800px) {
         height: 46px;
-        font-size: 11px;
     }
 
     @media(max-width:768px) {
@@ -413,17 +408,18 @@
     @media(max-width:1380px) {
         font-size: 17px;
     }
-
-    @media (max-width:1105px) {
-        font-size: 14px;
-    }
-
-    @media(max-width:880px) {
-        font-size: 13px;
-    }
-
-    @media (max-width:800px) {
+    @media(max-width:1110px) {
         font-size: 12px;
+    }
+
+    @media(max-width:1024px) {
+        font-size: 12px;
+    }
+    @media(max-width:992px) {
+        font-size: 12px;
+    }
+    @media(max-width:768px) {
+        font-size: 10px;
     }
 }
 
@@ -454,6 +450,25 @@
     width: 100%;
     /* On hover, the underline expands to the full width */
 }
+
+
+.menuTitleGap {
+    gap: 10px;
+    @media(max-width:1110px) {
+        gap:0px;
+    }
+    @media(max-width:1024px) {
+        gap:0px;
+    }
+    @media(max-width:992px) {
+        gap:0px;
+    }
+    @media(max-width:768px) {
+        gap:0px;
+    }
+}
+
+
 
 
 .header-container {
@@ -686,5 +701,11 @@
     .mobile-menu {
         display: block;
         /* Show the mobile menu */
+    }
+}
+
+@media(max-width:880px){
+    .headerHome {
+        display: none;
     }
 }

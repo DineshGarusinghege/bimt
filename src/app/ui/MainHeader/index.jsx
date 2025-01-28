@@ -41,18 +41,20 @@ const MainHeader = () => {
                 <div className="flex justify-between items-center p-4 z-48 w-full mx-auto">
                     {/* Logo */}
                     <div className="flex items-center">
-                        <img
-                            src="/images/bimtLogo.png"
-                            alt="BIMT Campus Logo"
-                            className="w-56 h-auto mainHeaderLogoBIMT"
-                        />
+                        <Link href="/#" >
+                            <img
+                                src="/images/bimtLogo.png"
+                                alt="BIMT Campus Logo"
+                                className="w-56 h-auto mainHeaderLogoBIMT"
+                            />
+                        </Link>
                     </div>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex space-x-8 z-48 font-medium text-gray-800 items-center">
                         {/* Home */}
                         <div className="relative">
-                            <Link href="/" className="hover:text-[#272A5D] menuTitle flex items-center">Home</Link>
+                            <Link href="/" className="hover:text-[#272A5D] menuTitle flex items-center headerHome">Home</Link>
                         </div>
                         {/* About Us */}
                         <div
@@ -60,7 +62,7 @@ const MainHeader = () => {
                             onMouseEnter={() => toggleMenu('about')}
                             onMouseLeave={() => toggleMenu(null)}
                         >
-                            <Link href="/AboutUs" className="hover:text-[#272A5D] menuTitle font-bold flex items-center gap-3">
+                            <Link href="/AboutUs" className="hover:text-[#272A5D] menuTitle menuTitleGap font-bold flex items-center">
                                 About Us
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +98,7 @@ const MainHeader = () => {
                             onMouseEnter={() => toggleMenu('programs')}
                             onMouseLeave={() => toggleMenu(null)}
                         >
-                            <Link href="/Search" className="hover:text-[#272A5D] menuTitle flex items-center gap-3">Programmes <svg
+                            <Link href="/Search" className="hover:text-[#272A5D] menuTitle flex items-center menuTitleGap">Programmes <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
                                 height="24"
@@ -137,7 +139,7 @@ const MainHeader = () => {
                             onMouseEnter={() => toggleMenu('life')}
                             onMouseLeave={() => toggleMenu(null)}
                         >
-                            <Link href="/CampusLife" className="hover:text-[#272A5D] menuTitle flex items-center gap-3">Life at BIMT
+                            <Link href="/CampusLife" className="hover:text-[#272A5D] menuTitle flex items-center menuTitleGap">Life at BIMT
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -148,7 +150,7 @@ const MainHeader = () => {
                                     <path d="M12 16l-6-6h12l-6 6z" />
                                 </svg></Link>
                             {hoveredMenu === 'life' && (
-                                 <ul className="absolute left-0 top-full bg-[#272A5D] shadow-lg rounded-lg text-white w-64 z-50 headerSubmenu" style={{
+                                <ul className="absolute left-0 top-full bg-[#272A5D] shadow-lg rounded-lg text-white w-64 z-50 headerSubmenu" style={{
                                     borderBottom: '2px solid #A02629'
                                 }}>
                                     <li><Link href="/CampusLife" className="block px-7 py-4 text-white hover:bg-pink-500 hover:text-white">Campus Life</Link></li>
@@ -165,7 +167,7 @@ const MainHeader = () => {
                             onMouseEnter={() => toggleMenu('contact')}
                             onMouseLeave={() => toggleMenu(null)}
                         >
-                            <Link href="/ContactUs" className="hover:text-[#272A5D] menuTitle flex items-center gap-3">Connect with Us  <svg
+                            <Link href="/ContactUs" className="hover:text-[#272A5D] menuTitle flex items-center menuTitleGap">Connect with Us  <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
                                 height="24"
@@ -175,9 +177,9 @@ const MainHeader = () => {
                                 <path d="M12 16l-6-6h12l-6 6z" />
                             </svg></Link>
                             {hoveredMenu === 'contact' && (
-                               <ul className="absolute left-0 top-full bg-[#272A5D] shadow-lg rounded-lg text-white w-64 z-50 headerSubmenu" style={{
-                                borderBottom: '2px solid #A02629'
-                            }}>
+                                <ul className="absolute left-0 top-full bg-[#272A5D] shadow-lg rounded-lg text-white w-64 z-50 headerSubmenu" style={{
+                                    borderBottom: '2px solid #A02629'
+                                }}>
                                     <li className="menuTitleList"><Link href="/ContactUs" className="block px-7 py-4 text-white hover:bg-pink-500 hover:text-white">Contact Us</Link></li>
                                     <hr className="border-gray-300" />
                                     {/* <li className="menuTitleList"><Link href="/ConnectwithUs" className="hover:text-[#A02629] menuTitle">Connect with Us</Link></li> */}
@@ -195,7 +197,7 @@ const MainHeader = () => {
                         </div>
 
                         {/* Vertical Divider */}
-                        <div className="mainMenuandContactDevider flex items-center gap-3" >
+                        <div className="mainMenuandContactDevider flex items-center menuTitleGap" >
                             {/* Icon */}
                             <svg className="mainMenuPhoneIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 22 22" fill="none">
                                 <g clip-path="url(#clip0_579_4343)">
