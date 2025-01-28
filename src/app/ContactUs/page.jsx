@@ -7,7 +7,7 @@ import MainHeader from '../ui/MainHeader';
 import '../styles/ContactUs.scss'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ContactForm from '../componets/ContactForm';
+// import ContactForm from '../componets/ContactForm';
 
 export default function ContactUs() {
 

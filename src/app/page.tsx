@@ -23,6 +23,7 @@ interface CountdownProps {
     eventDate: string;
 }
 
+console.log(PopupMoel);
 // Countdown Component
 const CountdownComponent: React.FC<CountdownProps> = ({ eventDate }) => {
     const [countdown, setCountdown] = useState<string>('Loading...');
@@ -76,6 +77,7 @@ const HomePage: React.FC = () => {
             // Only set timeout if screen width is > 480px
             timer = setTimeout(() => {
                 setShowVideo(true);
+                console.log(showVideo);
             }, 10000); // 10 seconds delay
         } else {
             setShowVideo(false); // Ensure video is hidden on small screens
