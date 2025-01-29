@@ -11,6 +11,26 @@ import Link from "next/link";
 
 
 const AboutUs = () => {
+    const images = [
+        "/images/british counsil.jpg",
+        "/images/b-logo1.png",
+        "/images/b-logo2.png",
+        "/images/cminew.jpg",
+        "/images/b-logo4.png",
+        "/images/b-logo3.png",
+        "/images/ACCA.jpg",
+        "/images/athe.jpg",
+        "/images/edupro.jpg",
+        "/images/british counsil.jpg",
+        "/images/b-logo1.png",
+        "/images/b-logo2.png",
+        "/images/cminew.jpg",
+        "/images/b-logo4.png",
+        "/images/b-logo3.png",
+        "/images/ACCA.jpg",
+        "/images/athe.jpg",
+        "/images/edupro.jpg",
+    ];
 
     const breadcrumbLinks = [
         { label: "Home", url: "/" },
@@ -879,7 +899,7 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
 
                 <section
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1450px] mx-auto" style={{ marginTop: '64px' }}
-                 >
+                >
 
                     {/* <!-- Card 1 --> */}
                     <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
@@ -980,45 +1000,40 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
             </div>
 
 
-            <section className="max-w-[1300px] mx-auto section-about">
+
+            {/* FAQS */}
+            <section id="FAQ" className="max-w-[1450px] mx-auto section-about mt-[110px] mb-[110px]">
                 <h2 className="text-[#272A5D] font-work-sans text-[24px] sm:text-[28px] font-normal leading-normal mb-4 heading">
                     FAQs
                 </h2>
-                <h3 className="text-[#272A5D] font-avenir text-[36px] sm:text-[40px] font-semibold leading-[1.3] mb-6 subheading">
+                <h3 className="text-[#272A5D] font-avenir text-[36px] sm:text-[40px] font-semibold leading-[1.3] mb-6 subheading" style={{
+                    paddingBottom: '40px'
+                }}>
                     Find Answers to Your Questions
                 </h3>
+
                 <div>
                     {faqData.map((item, index) => (
                         <div
                             key={index}
-                            className={`relative mb-4 shadow overflow-hidden transition-all duration-300`}
+                            className={`relative bg-[#F0F4F7] mb-4 shadow overflow-hidden transition-all duration-300 
+                        hover:bg-[#A83585] hover:text-white 
+                        active:bg-[#272A5D] active:text-white`}
                         >
-                            {/* Question Header */}
                             <div
-                                className="relative flex justify-between items-center p-4 cursor-pointer"
+                                className={`relative flex justify-between items-center p-4 cursor-pointer transition-colors duration-300 group
+        ${activeIndex === index ? "bg-[#272A5D] text-white" : "bg-[#F0F4F7] text-[#272A5D] hover:bg-[#A83585] hover:text-white"}`}
                                 onClick={() => toggleAnswer(index)}
                             >
-                                {/* Question Background Layer */}
-                                <div
-                                    className="absolute inset-0"
-                                    style={{
-                                        backgroundImage: "url('/images/bgimgqa.jpg')",
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                        opacity: 0.5, // Question opacity
-                                        zIndex: -1, // Behind content
-                                    }}
-                                ></div>
-
                                 {/* Question Text */}
                                 <h3
-                                    className="text-lg font-medium"
-                                    style={{
-                                        color: "#272A5D", // Text color for the question
-                                    }}
+                                    className={`text-lg font-medium transition-colors duration-300 
+        ${activeIndex === index ? "text-white" : "text-[#272A5D]"} 
+        group-hover:text-white`}
                                 >
                                     {item.question}
                                 </h3>
+
                                 <span>
                                     {activeIndex === index ? (
                                         <svg
@@ -1026,14 +1041,10 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={2}
-                                            stroke="#272A5D" // Arrow color
-                                            className="w-6 h-6"
+                                            className="w-6 h-6 transition-transform duration-300 rotate-180 
+                stroke-white group-hover:stroke-white"
                                         >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M19 14l-7-7-7 7"
-                                            />
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 10l-7 7-7-7" />
                                         </svg>
                                     ) : (
                                         <svg
@@ -1041,117 +1052,57 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={2}
-                                            stroke="#272A5D" // Arrow color
-                                            className="w-6 h-6"
+                                            className="w-6 h-6 transition-transform duration-300 
+                stroke-[#272A5D] group-hover:stroke-white"
                                         >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M19 10l-7 7-7-7"
-                                            />
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7-7-7 7" />
                                         </svg>
                                     )}
                                 </span>
                             </div>
 
+
                             {/* Answer Section */}
                             {activeIndex === index && (
-                                <div
-                                    className="relative p-4 text-sm flex justify-between items-center"
-                                    style={{
-                                        color: "#fff", // Text color for the answer
-                                    }}
-                                >
-                                    {/* Answer Background Layer */}
-                                    <div
-                                        className="absolute inset-0"
-                                        style={{
-                                            backgroundImage: "url('/images/bgimgqa.jpg')",
-                                            backgroundSize: "cover",
-                                            backgroundPosition: "center",
-                                            opacity: 0.5, // Answer background opacity
-                                            zIndex: -1, // Place behind the content
-                                        }}
-                                    ></div>
-
-                                    {/* Render Text and Button for Question 10 */}
-                                    {index === 9 ? ( // Check if it's question 10
-                                        <div className='relative p-4 text-sm flex justify-left items-left'>
-                                            <p>
-                                                For other queries, please reach out to our team.
-                                            </p>
-                                            <button
-                                                className="ml-4 px-4 py-2 text-white bg-blue-500 hover:bg-blue-600"
-                                                style={{
-                                                    display: 'flex',
-                                                    height: '56px',
-                                                    width: '200px',
-                                                    padding: '0px 10px',
-                                                    justifyContent: 'center',
-                                                    alignItems: 'center',
-                                                    gap: '10px',
-                                                    borderRadius: '10px',
-                                                    border: '2px solid #272A5D',
-                                                    background: '#272A5D'
-                                                }}
-                                                onClick={() => alert("Contacting Support")}
-                                            >
-                                                Contact Us
-                                            </button>
+                                <div className="relative p-4 text-sm flex justify-between items-center text-white bg-[#272A5D]">
+                                    {index === 9 ? (
+                                        <div className="relative p-4 text-sm flex justify-left items-left">
+                                            <p>For other queries, please reach out to our team.</p>
+                                            <Link href={'/ContactUs'}>
+                                                <button
+                                                    className="AboutUsBtn1"
+                                                    onClick={() => alert("Contacting Support")}
+                                                >
+                                                    <span> Contact Us</span>
+                                                </button>
+                                            </Link>
                                         </div>
                                     ) : (
-                                        <p>{item.answer}</p> // Render regular answer for other questions
+                                        <p>{item.answer}</p>
                                     )}
                                 </div>
                             )}
                         </div>
                     ))}
                 </div>
-
             </section>
-            <div
-                className="banner-container relative mx-auto mt-[110px] mb-[110px] max-w-[1900px] w-full overflow-x-auto"
-            >
-                <div
-                    className="banner-slider flex items-center gap-6"
-                    style={{
-                        whiteSpace: "nowrap", // Ensures images are in a single row
-                    }}
-                >
-                    {/* Image Tags with Fixed Dimensions */}
-                    {[
-                        "/images/british counsil.jpg",
-                        "/images/b-logo1.png",
-                        "/images/b-logo2.png",
-                        "/images/cminew.jpg",
-                        "/images/b-logo4.png",
-                        "/images/b-logo3.png",
-                        "/images/ACCA.jpg",
-                        "/images/athe.jpg",
-                        "/images/edupro.jpg",
-                    ].map((src, index) => (
-                        <div
-                            key={index}
-                            className="flex-shrink-0"
-                            style={{
-                                width: "350px", // Fixed width
-                                height: "105px", // Fixed height
-                            }}
-                        >
-                            <Image
-                                src={src}
-                                alt={`Brand ${index + 1}`}
-                                width={350}
-                                height={350}
-                                className="object-contain w-full h-full"
-                            />
+
+
+
+
+            {/* Banner Section */}
+            <div className="carousel-container overflow-hidden relative">
+                <div className="carousel-track flex items-center">
+                    {/* Duplicate images for smooth infinite scrolling */}
+                    {[...images, ...images].map((src, index) => (
+                        <div key={index} className="carousel-item">
+                            <img src={src} alt={`Logo ${index}`} layout="intrinsic" className="object-contain w-full h-auto" />
                         </div>
                     ))}
                 </div>
             </div>
 
-
-
+            
 
             {/* Testimonials */}
 
