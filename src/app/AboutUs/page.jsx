@@ -883,7 +883,7 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
 
                     {/* <!-- Card 1 --> */}
                     <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
-                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#9F3181] px-3 py-2" style={{ width: '382px', padding: '15px' }}>
+                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#9F3181] px-3 py-2" style={{ width: '92%', padding: '15px' }}>
                             <img
                                 src="/images/idea 1.svg"
                                 alt="Learning Icon"
@@ -898,7 +898,7 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
 
                     {/* <!-- Card 2 --> */}
                     <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
-                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#5DB7E0] px-3 py-2" style={{ width: '382px', padding: '15px' }}>
+                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#5DB7E0] px-3 py-2" style={{ width: '92%', padding: '15px' }}>
                             <img
                                 src="/images/communities 1.svg"
                                 alt="Community Icon"
@@ -913,7 +913,7 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
 
                     {/* <!-- Card 3 --> */}
                     <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
-                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#D86027] px-3 py-2" style={{ width: '382px', padding: '15px' }}>
+                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#D86027] px-3 py-2" style={{ width: '92%', padding: '15px' }}>
                             <img
                                 src="/images/data-integration 1.svg"
                                 alt="Integrity Icon"
@@ -933,7 +933,7 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                 >
                     {/* <!-- Card 4 --> */}
                     <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
-                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#232F65] px-3 py-2" style={{ width: '382px', padding: '15px' }}>
+                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#232F65] px-3 py-2" style={{ width: '92%', padding: '15px' }}>
                             <img
                                 src="/images/accountability 1.svg"
                                 alt="Learning Icon"
@@ -948,7 +948,7 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
 
                     {/* <!-- Card 5 --> */}
                     <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
-                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#818541] px-3 py-2" style={{ width: '382px', padding: '15px' }}>
+                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#818541] px-3 py-2" style={{ width: '92%', padding: '15px' }}>
                             <img
                                 src="/images/innovation 1.svg"
                                 alt="Community Icon"
@@ -963,7 +963,7 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
 
                     {/* <!-- Card 6 --> */}
                     <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
-                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#A81E25] px-3 py-2" style={{ width: '382px', padding: '15px' }}>
+                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#A81E25] px-3 py-2" style={{ width: '92%', padding: '15px' }}>
                             <img
                                 src="/images/shake 1.svg"
                                 alt="Integrity Icon"
