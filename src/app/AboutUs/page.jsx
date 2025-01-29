@@ -6,6 +6,7 @@ import Breadcrumb from '../ui/Breadcrumb';
 import '../styles/AboutUs.scss'
 import Image from 'next/image';
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -150,13 +151,48 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                 />
             </head>
             <MainHeader />
-            {/* <AnnounsmentBar /> */}
-            <section className="relative bg-gray-100">
-                {/* Full-width background */}
-                <div className="w-full bg-gray-100">
-                    <div className="relative bg-gray-100 px-10 h-[1000px] w-[1920px] mx-auto">
 
-                        <Breadcrumb links={breadcrumbLinks} />
+
+
+
+            <section className="w-full flex justify-center items-center relative bg-gray-100">
+                {/* Full-width background */}
+                <div className="w-full bg-gray-100 scaling-section relative">
+                    <div className="relative bg-gray-100 overViewSection px-10 w-[1920px] mx-auto">
+                        {/* Breadcrum menubar */}
+                        <nav>
+                            <ol className="breadcrumb breadCrumbAbout">
+                                {breadcrumbLinks.map((link, index) => (
+                                    <React.Fragment key={index}>
+                                        <li>
+                                            {link.url ? (
+                                                <Link href={link.url} className="breadcrumb-link">
+                                                    {link.label}
+                                                </Link>
+                                            ) : (
+                                                <span className="breadcrumb-text">{link.label}</span>
+                                            )}
+                                        </li>
+                                        {index < breadcrumbLinks.length - 1 && (
+                                            <span className="breadcrumb-icon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="15"
+                                                    height="15"
+                                                    viewBox="0 0 15 15"
+                                                    fill="none"
+                                                >
+                                                    <path
+                                                        d="M11.667 6.9147L4.99178 0.239632C4.83739 0.0851213 4.6313 0 4.41154 0C4.19179 0 3.98569 0.0851213 3.83131 0.239632L3.33972 0.731092C3.01985 1.05133 3.01985 1.57182 3.33972 1.89157L8.94504 7.49689L3.3335 13.1084C3.17912 13.2629 3.09387 13.4689 3.09387 13.6885C3.09387 13.9084 3.17912 14.1144 3.3335 14.269L3.82509 14.7604C3.9796 14.9149 4.18557 15 4.40533 15C4.62508 15 4.83118 14.9149 4.98556 14.7604L11.667 8.0792C11.8217 7.9242 11.9067 7.71725 11.9062 7.49726C11.9067 7.2764 11.8217 7.06958 11.667 6.9147Z"
+                                                        fill="black"
+                                                    />
+                                                </svg>
+                                            </span>
+                                        )}
+                                    </React.Fragment>
+                                ))}
+                            </ol>
+                        </nav>
                         {/* Overlapping Boxes Section */}
                         <div style={{ display: 'flow', justifyContent: 'center', alignContent: 'center', alignItems: 'center' }}>
                             {/* Vision Box */}
@@ -803,43 +839,47 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                 </div>
             </section>
 
-            <section className="max-w-[1300px] mx-auto section-about">
+
+
+            <section className="max-w-[1450px] mx-auto section-about">
                 <h2 className="text-[#272A5D] font-work-sans text-[24px] sm:text-[28px] font-normal leading-normal mb-4 heading">
                     {/* About us */}
                 </h2>
-                <h3 className="text-[#272A5D] font-avenir text-[36px] sm:text-[40px] font-semibold leading-[1.3] mb-6 subheading">
-                    About Us
+                <h3 className="text-white font-avenir text-[36px] sm:text-[40px] font-semibold leading-[1.3] mb-6 subheadingAbout"
+                >
+                    ABOUT US
                 </h3>
-                <p className="text-[#5A5A5A] text-justify font-work-sans text-[18px] sm:text-[20px] font-normal leading-[1.5] paragraph">
+                <p className="text-[#5A5A5A] text-justify font-workSans text-[16px] sm:text-[20px] font-normal leading-[1.5] paragraph">
                     The BIMT Campus was established to offer opportunities to acquire the right knowledge in the areas of management and technology with the collaboration of a  prominent international organization. We have aimed  to offer a high-standard education that is affordable for  students who are eager to study, while being one of  the tertiary education providers in Sri Lanka.
                 </p>
-                <p className="text-[#5A5A5A] text-justify font-work-sans text-[18px] sm:text-[20px] font-normal leading-[1.5] paragraph pt-[25px]">
+                <p className="text-[#5A5A5A] text-justify font-workSans text-[16px] sm:text-[20px] font-normal leading-[1.5] paragraph pt-[25px]">
                     We have created a unique learning environment that  will empower our students with the necessary skills to  achieve their corporate ambitions. Their success  depends upon the application of theoretical skills and  practical experience.
                 </p>
-                <p className="text-[#5A5A5A] text-justify font-work-sans text-[18px] sm:text-[20px] font-normal leading-[1.5] paragraph pt-[25px]">
+                <p className="text-[#5A5A5A] text-justify font-workSans text-[16px] sm:text-[20px] font-normal leading-[1.5] paragraph pt-[25px]">
                     The campus has a strong panel of lecturers who are  academically and professionally qualified to share  their knowledge and guide them to succeed in their  careers. Our lecturers are in the art of adapting  modern and structured coaching methods to make  the students employable.
                 </p>
-                <p className="text-[#5A5A5A] text-justify font-work-sans text-[18px] sm:text-[20px] font-normal leading-[1.5] paragraph pt-[25px]">
+                <p className="text-[#5A5A5A] text-justify font-workSans text-[16px] sm:text-[20px] font-normal leading-[1.5] paragraph pt-[25px]">
                     BIMT Campus is an ISO 9001:2015- certified educational organization and the fastest-growing private  sector higher educational institute in Sri Lanka. We  offer a range of internationally recognized education al programs in partnership with globally reputed  universities and awarding bodies. We have picked  the best courses that offer the qualifications suitable  for Sri Lankan students to gain a complete knowledge on subject matters.
                 </p>
             </section>
 
 
-            <div className="max-w-[1300px] mx-auto section-about">
+            <div className="max-w-[1450px] mx-auto section-about">
 
                 <section className="flex flex-col items-center justify-center text-center">
-                    <h2 className="text-[#272A5D] font-work-sans text-[24px] sm:text-[28px] font-normal leading-normal mb-4 heading">
-                        Our Values
-                    </h2>
-                    <h3 className="text-[#272A5D] font-avenir text-[36px] sm:text-[40px] font-semibold leading-[1.3] mb-6 subheading">
+                    <h3 className="text-center text-[#272A5D] font-avenir text-[40px] font-semibold leading-[53px]"
+                    >
+                        OUR VALUES
+                    </h3>
+                    <h3 className="text-[#272A5D] text-center text-[24px] leading-[28px] mb-[20px] mt-[20px]">
                         BUILDING SUCCESS THROUGH CORE PRINCIPLES
                     </h3>
                 </section>
 
 
                 <section
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1300px] mx-auto" style={{ marginTop: '64px' }}
-                >
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1450px] mx-auto" style={{ marginTop: '64px' }}
+                 >
 
                     {/* <!-- Card 1 --> */}
                     <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
@@ -1070,45 +1110,45 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
 
             </section>
             <div
-  className="banner-container relative mx-auto mt-[110px] mb-[110px] max-w-[1900px] w-full overflow-x-auto"
->
-  <div
-    className="banner-slider flex items-center gap-6"
-    style={{
-      whiteSpace: "nowrap", // Ensures images are in a single row
-    }}
-  >
-    {/* Image Tags with Fixed Dimensions */}
-    {[
-      "/images/british counsil.jpg",
-      "/images/b-logo1.png",
-      "/images/b-logo2.png",
-      "/images/cminew.jpg",
-      "/images/b-logo4.png",
-      "/images/b-logo3.png",
-      "/images/ACCA.jpg",
-      "/images/athe.jpg",
-      "/images/edupro.jpg",
-    ].map((src, index) => (
-      <div
-        key={index}
-        className="flex-shrink-0"
-        style={{
-          width: "350px", // Fixed width
-          height: "105px", // Fixed height
-        }}
-      >
-        <Image
-          src={src}
-          alt={`Brand ${index + 1}`}
-          width={350}
-          height={350}
-          className="object-contain w-full h-full"
-        />
-      </div>
-    ))}
-  </div>
-</div>
+                className="banner-container relative mx-auto mt-[110px] mb-[110px] max-w-[1900px] w-full overflow-x-auto"
+            >
+                <div
+                    className="banner-slider flex items-center gap-6"
+                    style={{
+                        whiteSpace: "nowrap", // Ensures images are in a single row
+                    }}
+                >
+                    {/* Image Tags with Fixed Dimensions */}
+                    {[
+                        "/images/british counsil.jpg",
+                        "/images/b-logo1.png",
+                        "/images/b-logo2.png",
+                        "/images/cminew.jpg",
+                        "/images/b-logo4.png",
+                        "/images/b-logo3.png",
+                        "/images/ACCA.jpg",
+                        "/images/athe.jpg",
+                        "/images/edupro.jpg",
+                    ].map((src, index) => (
+                        <div
+                            key={index}
+                            className="flex-shrink-0"
+                            style={{
+                                width: "350px", // Fixed width
+                                height: "105px", // Fixed height
+                            }}
+                        >
+                            <Image
+                                src={src}
+                                alt={`Brand ${index + 1}`}
+                                width={350}
+                                height={350}
+                                className="object-contain w-full h-full"
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
 
 
 
