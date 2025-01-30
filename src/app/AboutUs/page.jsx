@@ -9,7 +9,6 @@ import Link from "next/link";
 import BreadcrumbSection from "../componets/BreadcrumbAboutLinks";
 
 const AboutUs = () => {
-    const [activeBox, setActiveBox] = useState(null);
 
     const images = [
         "/images/british counsil.jpg",
