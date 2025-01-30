@@ -68,9 +68,10 @@
 }
 
 .breadCrumbAbout {
-    top:10px;
+    top: 10px;
+
     @media(max-width: 1536px) {
-        top:45px;
+        top: 45px;
     }
 }
 
@@ -103,44 +104,57 @@
         padding-bottom: 10px;
         background-color: #272A5D;
         width: 17%;
-        @media(max-width:1280px){
+
+        @media(max-width:1280px) {
             width: 20%;
         }
-        @media(max-width:1110px){
-            width:24%;
+
+        @media(max-width:1110px) {
+            width: 24%;
         }
-        @media(max-width:1024px){
-            width:27%;
+
+        @media(max-width:1024px) {
+            width: 27%;
         }
-        @media(max-width:768px){
-            width:34%;
+
+        @media(max-width:768px) {
+            width: 34%;
         }
-        @media(max-width:640px){
-            width:41%;
+
+        @media(max-width:640px) {
+            width: 41%;
         }
-        @media(max-width:600px){
-            width:44%;
+
+        @media(max-width:600px) {
+            width: 44%;
         }
-        @media(max-width:576px){
-            width:56%;
+
+        @media(max-width:576px) {
+            width: 56%;
         }
-        @media(max-width:470px){
-            width:60%;
+
+        @media(max-width:470px) {
+            width: 60%;
         }
-        @media(max-width:440px){
-            width:61%;
+
+        @media(max-width:440px) {
+            width: 61%;
         }
-        @media(max-width:425px){
-            width:64%;
+
+        @media(max-width:425px) {
+            width: 64%;
         }
-        @media(max-width:400px){
-            width:68%;
+
+        @media(max-width:400px) {
+            width: 68%;
         }
-        @media(max-width:375px){
-            width:73%;
+
+        @media(max-width:375px) {
+            width: 73%;
         }
-        @media(max-width:320px){
-            width:90%;
+
+        @media(max-width:320px) {
+            width: 90%;
         }
     }
 
@@ -165,32 +179,151 @@
         line-height: 26px;
         /* 130% */
     }
-    @media(max-width:1280px){
+
+    @media(max-width:1280px) {
         padding-left: 20px;
         padding-right: 20px;
     }
 }
 
 
-/* Full-width container and hiding overflow */
-.banner-container {
-    width: 100%;
-    height: 100px;
-    /* Adjust as needed */
-    overflow: hidden;
-    background-color: #fff;
-    /* Optional background */
+.AboutUsBtn1 {
     position: relative;
+    overflow: hidden;
+    border: 2px solid #ffffff;
+    width: 143px;
+    height: 50px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: Work Sans;
+    font-size: 16px;
+    font-weight: 600;
+    color: #272a5d;
+    border-radius: .5rem;
+    background: #ffffff;
+    cursor: pointer;
+    margin-left: 20px;
+
+
+    /* Text color transition */
+    span {
+        position: relative;
+        z-index: 2;
+        transition: color 0.3s ease;
+    }
+
+    /* Background animation */
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: #272a5d;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.4s ease-in-out;
+        z-index: 1;
+        /* Ensure it's behind the text */
+    }
+
+    /* Hover state */
+    &:hover {
+        span {
+            color: #ffffff;
+            /* Change text color on hover */
+        }
+
+        &::before {
+            transform: scaleY(1);
+            /* Fill bottom-to-top */
+        }
+    }
+
+    /* Mouse leave state */
+    &:not(:hover)::before {
+        transform: scaleY(0);
+        /* Remove bottom-to-top */
+        transform-origin: top;
+        /* Keep animation consistent */
+    }
+
+    @media(max-width:1440px) {
+        width: 190px;
+    }
+
+    @media(max-width:1300px) {
+        width: 142px;
+    }
+
+    @media(max-width:1110px) {
+        width: 79px;
+        font-size: 10px;
+    }
+
+    @media(max-width:1024px) {
+        width: 79px;
+        font-size: 10px;
+    }
+
+    @media(max-width:992px) {
+        width: 79px;
+        font-size: 10px;
+    }
+
+    // @media(max-width:880px) {
+
+    // }
+
+    @media (max-width:840px) {
+        height: 47px;
+    }
+
+    @media(max-width:800px) {
+        height: 46px;
+    }
+
+    @media(max-width:768px) {
+        font-size: 9px;
+        height: 42px;
+    }
 }
 
-.banner-slider {
+
+.carousel-container {
+    width: 100%;
+    margin: auto;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 42.5px;
-    /* Adds consistent spacing between images */
-    animation: scroll-left 20s linear infinite;
-    white-space: nowrap;
 }
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    /* Space between images */
+    animation: scroll-left 20s linear infinite;
+}
+
+.carousel-item {
+    flex: 0 0 calc(100% / 6);
+    /* Exactly 6 images visible at a time */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
 
 img {
     height: 100%;
