@@ -2,7 +2,6 @@
 import React from 'react';
 import MainHeader from '../ui/MainHeader';
 // import AnnounsmentBar from '../ui/AnnounsmentBar';
-import Breadcrumb from '../ui/Breadcrumb';
 import '../styles/AboutUs.scss'
 import Image from 'next/image';
 import { useState, useEffect } from "react";
