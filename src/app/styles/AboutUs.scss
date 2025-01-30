@@ -418,7 +418,6 @@ img {
     /* Default for desktop */
     font-weight: 700;
     line-height: 53px;
-    padding-top: 111px;
 }
 
 /* Media queries for responsiveness */
@@ -461,6 +460,7 @@ img {
     padding-left: 54px;
     padding-right: 55px;
     padding-top: 15px;
+    padding-bottom: 25px;
 
     @media (max-width: 768px) {
         font-size: 16px;
@@ -714,8 +714,7 @@ img {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    padding-left: 0px;
-    padding-top: 70px;
+    padding-top: 60px;
 
     @media (max-width: 480px) {
         color: #FFF;
@@ -833,7 +832,7 @@ img {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    padding-left: 0px;
+    padding-left: 27px;
     padding-top: 70px;
 
     @media (max-width: 480px) {
@@ -890,7 +889,7 @@ img {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    padding-left: 0px;
+    padding-left: 40px;
     padding-top: 70px;
 
     @media (max-width: 480px) {
@@ -953,8 +952,7 @@ img {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    padding-left: 35px;
-    padding-top: 45px;
+    padding-bottom: 50px;
 
     @media (max-width: 480px) {
         color: #FFF;
@@ -1013,7 +1011,6 @@ img {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    padding-left: 20px;
     padding-top: 70px;
 
     @media (max-width: 480px) {

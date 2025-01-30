@@ -9,6 +9,8 @@ import Link from "next/link";
 import BreadcrumbSection from "../componets/BreadcrumbAboutLinks";
 
 const AboutUs = () => {
+    const [activeBox, setActiveBox] = useState(null);
+
     const images = [
         "/images/british counsil.jpg",
         "/images/b-logo1.png",
@@ -37,7 +39,7 @@ const AboutUs = () => {
 
     ];
 
-    
+
     const [activeIndex, setActiveIndex] = useState(null);
     const toggleAnswer = (index) => {
         // If the clicked index is already active, close it; otherwise, open it
@@ -181,6 +183,10 @@ const AboutUs = () => {
         );
     };
 
+
+
+
+
     return (
         <>
 
@@ -204,15 +210,17 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                 {/* Full-width background */}
                 <div className="w-full bg-gray-100 scaling-section relative">
                     <div className="relative bg-gray-100 overViewSection px-10 w-[1920px] mx-auto">
-                    <BreadcrumbSection breadcrumbLinks={breadcrumbLinks} />
+                        <BreadcrumbSection breadcrumbLinks={breadcrumbLinks} />
                         {/* Breadcrum menubar */}
-                       
+
                         {/* Overlapping Boxes Section */}
                         <div style={{ display: 'flow', justifyContent: 'center', alignContent: 'center', alignItems: 'center' }}>
                             {/* Vision Box */}
                             <div className="relative h-[300px] w-full left-[-40px] top-[100px] visionBox">
+                                {/* Outer Background Circle */}
                                 <div
-                                    className="absolute top-0 left-10 w-[550px] h-[550px] shadow-lg hover:scale-105 active:scale-95 hover:shadow-2xl transition-all duration-300 visionBoxBackgroundLine"
+                                    className="absolute top-0 left-10 w-[550px] h-[550px] shadow-lg 
+        hover:scale-105 active:scale-95 hover:shadow-2xl transition-all duration-300 visionBoxBackgroundLine"
                                     style={{
                                         zIndex: 11,
                                         border: "2px solid #91278F",
@@ -220,19 +228,21 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                                         borderRadius: '550px',
                                     }}
                                 ></div>
+
+                                {/* Inner Content Box */}
                                 <div
-                                    className="absolute top-[50px] left-[89px] w-[450px] h-[450px] visionBoxSecondLine"
+                                    className="absolute top-[50px] left-[89px] w-[450px] h-[450px] 
+        shadow-lg hover:scale-105 active:scale-95 hover:shadow-xl transition-all duration-300 visionBoxSecondLine"
                                 >
-                                    <div style={{ display: 'flow', justifyContent: 'center', alignItems: 'center' }}>
-                                        <h1 className='VisionHeader'>
-                                            Vision
-                                        </h1>
-                                        <p className='VisionParagraph'>
+                                    <div className="flex flex-col justify-center items-center h-full">
+                                        <h1 className="VisionHeader">Vision</h1>
+                                        <p className="VisionParagraph">
                                             To be leaders in originating intellectuals who are immensely competent to face the global challenges
                                         </p>
                                     </div>
                                 </div>
                             </div>
+
 
                             {/* Mission Box */}
                             <div className="relative left-[-155px] top-[-170px] MissionBox">
@@ -268,21 +278,27 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                                 </div>
                             </div>
 
-                            {/* Learning */}
+                            {/* Learning Box */}
                             <div className="relative left-[-50px] top-[-240px] LearningBox">
+                                {/* Outer Background Circle */}
                                 <div
-                                    className="absolute left-[824px] top-[80px] w-[190px] h-[190px] shadow-lg hover:scale-105 active:scale-95 hover:shadow-2xl transition-all duration-300 LearningBoxSecondLine"
+                                    className="absolute left-[824px] top-[80px] w-[190px] h-[190px] shadow-lg 
+        hover:scale-110 active:scale-95 hover:shadow-2xl transition-all duration-300 ease-in-out LearningBoxSecondLine"
                                 ></div>
+
+                                {/* Foreground Clickable Circle */}
                                 <div
-                                    className={`absolute left-[835px] top-[90px] w-[170px] h-[170px] shadow-lg hover:scale-105 active:scale-95 hover:shadow-xl transition-all duration-300 LearningBoxLine ${selectedBox === "Learning" ? "bg-[#272A5D]" : "bg-[#FFFFFF]"
-                                        }`}
+                                    className={`absolute left-[835px] top-[90px] w-[170px] h-[170px] shadow-lg 
+        hover:scale-110 active:scale-95 hover:shadow-xl transition-all duration-300 ease-in-out LearningBoxLine 
+        ${selectedBox === "Learning" ? "bg-[#272A5D]" : "bg-[#FFFFFF]"}`}
                                     onClick={() => handleBoxClick("Learning")}
                                 >
-                                    <div style={{ display: 'flow', justifyContent: 'center', alignItems: 'center', zIndex: 6 }}>
+                                    <div className="flex justify-center items-center h-full">
                                         <h4 className="LearningHeading">Learning</h4>
                                     </div>
                                 </div>
                             </div>
+
 
                             {/* Community */}
                             <div className="relative left-[-110px] top-[-190px] CommunityBox">
@@ -382,22 +398,7 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                                 ></div>
                             </div>
                         </div>{/* Respect Box */}
-                        <div className="relative left-[-240px] top-[-5px] RespectBox">
-                            {/* Background Circle */}
-                            <div
-                                className="absolute left-[1012px] top-[280px] w-[190px] h-[190px] shadow-lg hover:scale-105 active:scale-95 hover:shadow-2xl transition-all duration-300 RespectBoxSecondLine"
-                            ></div>
 
-                            {/* Foreground Clickable Circle */}
-                            <div
-                                className="absolute left-[1024px] top-[290px] bg-green-500 w-[170px] h-[170px] shadow-lg hover:scale-105 active:scale-95 hover:shadow-xl transition-all duration-300 RespectBoxLine"
-                                onClick={() => handleBoxClick("Respect")}
-                            >
-                                <div className="flex justify-center items-center">
-                                    <h4 className="RespectHeading">Respect</h4>
-                                </div>
-                            </div>
-                        </div>
 
 
                         {/* 1st dashed line */}
@@ -503,178 +504,70 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                         </div>
 
                         {/* 01 Text box */}
-                        <div className="hidden sm:block relative left-[1243px] top-[72px]"
-                            style={{ zIndex: 50 }}
-                        >
-                            <div style={{
-                                display: 'flex',
-                                padding: '10px',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                gap: '10px',
-                                alignSelf: 'stretch',
-                                background: '#A02629',
-                                borderRadius: '10px',
-                                width: '600px'
-                            }}>
-                                <p style={{
-                                    color: '#fff',
-                                    textAlign: 'justify',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '16px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    lineHeight: '25px'
-                                }}>
+                        <div className="hidden sm:block relative left-[1243px] top-[87px] z-50">
+                            <div className="flex justify-center items-center p-4 bg-[#A02629] rounded-lg w-[600px] shadow-lg 
+        transition-transform duration-300 hover:scale-110">
+                                <p className="text-white text-justify font-['Work_Sans'] text-[16px] font-normal leading-[25px]">
                                     Promoting a school community that appreciates the value of students, families, colleagues, and cultures.
                                 </p>
                             </div>
                         </div>
 
+
                         {/* 02 Text box */}
-                        <div className="hidden sm:block relative left-[1243px] top-[-130px]"
-                            style={{ zIndex: 50 }}
-                        >
-                            <div style={{
-                                display: 'flex',
-                                padding: '10px',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                gap: '10px',
-                                alignSelf: 'stretch',
-                                background: '#818541',
-                                borderRadius: '10px',
-                                width: '600px'
-                            }}>
-                                <p style={{
-                                    color: '#fff',
-                                    textAlign: 'justify',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '16px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    lineHeight: '25px'
-                                }}>
-                                    We challenging ourselves to create unique ideas and innovative solutions to meet the challenge of providing an inclusive and equitable education for all, we confront the global learning crisis by growing more leaders worldwide who will take the initiative to accelerate change.
+                        <div className="hidden sm:block relative left-[1243px] top-[-134px] z-50">
+                            <div className="flex justify-center items-center p-4 bg-[#818541] rounded-lg w-[600px] shadow-lg 
+        transition-transform duration-300 hover:scale-110 active:scale-125">
+                                <p className="text-white text-justify font-['Work_Sans'] text-[16px] font-normal leading-[25px]">
+                                    We challenge ourselves to create unique ideas and innovative solutions to meet the challenge of providing an inclusive and equitable education for all, we confront the global learning crisis by growing more leaders worldwide who will take the initiative to accelerate change.
                                 </p>
                             </div>
                         </div>
 
+
                         {/* 03 Text box */}
-                        <div className="hidden sm:block relative left-[1243px] top-[-357px]"
-                            style={{ zIndex: 50 }}
-                        >
-                            <div style={{
-                                display: 'flex',
-                                padding: '10px',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                gap: '10px',
-                                alignSelf: 'stretch',
-                                background: '#272A5D',
-                                borderRadius: '10px',
-                                width: '600px'
-                            }}>
-                                <p style={{
-                                    color: '#fff',
-                                    textAlign: 'justify',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '16px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    lineHeight: '25px'
-                                }}>
+                        <div className="hidden sm:block relative left-[1243px] top-[-380px] z-50">
+                            <div className="flex justify-center items-center p-4 bg-[#272A5D] rounded-lg w-[600px] shadow-lg 
+        transition-transform duration-300 hover:scale-110 active:scale-125">
+                                <p className="text-white text-justify font-['Work_Sans'] text-[16px] font-normal leading-[25px]">
                                     All of us contribute to the success of our students and our college. We act with responsibility when we do our job well and help others do the same. We act professionally and respectfully. We are accountable for what we say and do.
                                 </p>
                             </div>
                         </div>
 
+
                         {/* 04 Text box */}
-                        <div className="hidden sm:block relative left-[1243px] top-[-558px]"
-                            style={{ zIndex: 50 }}
-                        >
-                            <div style={{
-                                display: 'flex',
-                                padding: '10px',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                gap: '10px',
-                                alignSelf: 'stretch',
-                                background: '#D86027',
-                                borderRadius: '10px',
-                                width: '600px'
-                            }}>
-                                <p style={{
-                                    color: '#fff',
-                                    textAlign: 'justify',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '16px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    lineHeight: '25px'
-                                }}>
+                        <div className="hidden sm:block relative left-[1243px] top-[-602px] z-50">
+                            <div className="flex justify-center items-center p-4 bg-[#D86027] rounded-lg w-[600px] shadow-lg 
+        transition-transform duration-300 hover:scale-110 active:scale-125">
+                                <p className="text-white text-justify font-['Work_Sans'] text-[16px] font-normal leading-[25px]">
                                     Trust and honesty are the cornerstones of our college. We keep our commitments, act consistently and fairly, and do what we say we will. Our students and constituents know what to expect when they deal with us. We are ethical and forthright.
                                 </p>
                             </div>
                         </div>
 
+
                         {/* 05 Text box */}
-                        <div className="hidden sm:block relative left-[1243px] top-[-759px]"
-                            style={{ zIndex: 50 }}
-                        >
-                            <div style={{
-                                display: 'flex',
-                                padding: '10px',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                gap: '10px',
-                                alignSelf: 'stretch',
-                                background: '#5DB7E0',
-                                borderRadius: '10px',
-                                width: '600px'
-                            }}>
-                                <p style={{
-                                    color: '#fff',
-                                    textAlign: 'justify',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '16px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    lineHeight: '25px'
-                                }}>
+                        <div className="hidden sm:block relative left-[1243px] top-[-823px] z-50">
+                            <div className="flex justify-center items-center p-4 bg-[#5DB7E0] rounded-lg w-[600px] shadow-lg 
+        transition-transform duration-300 hover:scale-110 active:scale-125">
+                                <p className="text-white text-justify font-[Work Sans] text-[16px] font-normal leading-[25px]">
                                     Creating and maintaining meaningful relationships among students, families, teachers, staff, and community partners to change the world for the better by building and supporting a sense of community.
                                 </p>
                             </div>
                         </div>
 
+
                         {/* 06 Text box */}
-                        <div className="hidden sm:block relative left-[1243px] top-[-935px]"
-                            style={{ zIndex: 50 }}
-                        >
-                            <div style={{
-                                display: 'flex',
-                                padding: '10px',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                gap: '10px',
-                                alignSelf: 'stretch',
-                                background: '#9F3181',
-                                borderRadius: '10px',
-                                width: '600px'
-                            }}>
-                                <p style={{
-                                    color: '#fff',
-                                    textAlign: 'justify',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '16px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    lineHeight: '25px'
-                                }}>
+                        <div className="hidden sm:block relative left-[1243px] top-[-1018px] z-50">
+                            <div className="flex justify-center items-center p-4 bg-[#9F3181] rounded-lg w-[600px] shadow-lg 
+        transition-transform duration-300 hover:scale-110 active:scale-125">
+                                <p className="text-white text-justify font-[Work Sans] text-[16px] font-normal leading-[25px]">
                                     Supporting a learning environment that continuously motivates all individuals to change the world by increasing knowledge and skills.
                                 </p>
                             </div>
                         </div>
+
 
                         {/* Left Side Backround Circls */}
                         {/* 1st bg line */}
