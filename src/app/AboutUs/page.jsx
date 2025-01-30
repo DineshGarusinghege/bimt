@@ -6,7 +6,7 @@ import '../styles/AboutUs.scss'
 import Image from 'next/image';
 import { useState, useEffect } from "react";
 import Link from "next/link";
-
+import BreadcrumbSection from "../componets/BreadcrumbAboutLinks";
 
 const AboutUs = () => {
     const images = [
@@ -37,6 +37,7 @@ const AboutUs = () => {
 
     ];
 
+    
     const [activeIndex, setActiveIndex] = useState(null);
     const toggleAnswer = (index) => {
         // If the clicked index is already active, close it; otherwise, open it
@@ -203,6 +204,7 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                 {/* Full-width background */}
                 <div className="w-full bg-gray-100 scaling-section relative">
                     <div className="relative bg-gray-100 overViewSection px-10 w-[1920px] mx-auto">
+                    <BreadcrumbSection breadcrumbLinks={breadcrumbLinks} />
                         {/* Breadcrum menubar */}
                         <nav>
                             <ol className="breadcrumb breadCrumbAbout">
