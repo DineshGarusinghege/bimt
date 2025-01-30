@@ -253,7 +253,7 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                                     }}
                                 ></div>
                                 <div
-                                    className="absolute top-12 left-[90] w-[450px] h-[450px] visionBoxSecondLine"
+                                    className="absolute top-[50px] left-[89px] w-[450px] h-[450px] visionBoxSecondLine"
                                 >
                                     <div style={{ display: 'flow', justifyContent: 'center', alignItems: 'center' }}>
                                         <h1 className='VisionHeader'>
