@@ -44,6 +44,7 @@ const config: Config = {
       fontFamily: {
         avenir: ["Avenir LT STD", "sans-serif"],
         workSans: ["Work Sans"],
+        Playfair: ["Playfair"]
       },
     },
   },

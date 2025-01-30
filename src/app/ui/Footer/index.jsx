@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
 
@@ -12,9 +13,11 @@ export default function Footer() {
         <div
           className="relative w-full h-[425px] flex items-center justify-center text-center bg-cover bg-center"
           style={{
-            background: "url('/images/bgimgqa.jpg') lightgray 50% / cover no-repeat",
+            background: "url('/images/Footer-blue-vector-background-01_page-0001-1-scaled.jpg') #272A5D 100% / cover no-repeat",
           }}
         >
+          {/* Blue Overlay */}
+          {/* <div className="absolute inset-0 bg-[#1230AE] opacity-100"></div> */}
           {/* Content Container */}
           <div
             className="relative z-10 container mx-auto max-w-[1920px] px-6 lg:px-16 py-10 flex flex-col items-center text-center"
@@ -28,12 +31,11 @@ export default function Footer() {
           >
             {/* Heading */}
             <h2
-              className="text-3xl lg:text-4xl font-bold mb-4"
+              className="text-3xl lg:text-4xl font-bold mb-4 font-avenir"
               style={{
-                fontFamily: 'Playfair',
-                fontSize: '48px',
+                fontSize: '40px',
                 fontWeight: '600',
-                lineHeight: '57.6px',
+                lineHeight: '53px',
                 textAlign: 'center',
                 textUnderlinePosition: 'from-font',
                 textDecorationSkipInk: 'none',
@@ -44,9 +46,9 @@ export default function Footer() {
 
             {/* Paragraph */}
             <p
-              className="text-base lg:text-lg max-w-[800px] mb-6"
+              className="text-base lg:text-lg max-w-[800px] mb-6 font-avenir"
               style={{
-                fontFamily: 'Work Sans',
+
                 fontSize: '16px',
                 fontWeight: '400',
                 lineHeight: '23px',
@@ -63,36 +65,40 @@ export default function Footer() {
 
             {/* Button */}
             <div className="flex justify-center pt-4 px-6">
-              <button
-                className="flex items-end border-2 border-[#fff] rounded-lg px-4 py-2 font-semibold text-[#fff] text-lg relative"
-                style={{
-                  fontFamily: 'Playfair',
-                  fontSize: '20px',
-                  fontWeight: '700',
-                  lineHeight: '24px',
-                  textAlign: 'left',
-                  textUnderlinePosition: 'from-font',
-                  textDecorationSkipInk: 'none',
-                }}
-              >
-                {/* Icon with Rotation */}
-                <div className="absolute -top-3 -left-6 transform -rotate-10">
-                  <Image
-                    src="/images/graduate 1 (2).png"
-                    width={61.25}
-                    height={43.04}
-                    alt="stories"
-                    style={{ transform: 'translate(-20%, -45%) rotate(-10.795deg)' }}
-                  />
-                </div>
-                {/* Button Text */}
-                REGISTER NOW
-              </button>
+              <Link href={'/Register'}>
+                <button
+                  className="flex items-end border-2 border-[#fff] rounded-lg px-4 py-4 font-semibold text-[#fff] text-lg relative"
+                  style={{
+                    fontFamily: 'Playfair',
+                    fontSize: '20px',
+                    fontWeight: '700',
+                    lineHeight: '24px',
+                    textAlign: 'left',
+                    textUnderlinePosition: 'from-font',
+                    textDecorationSkipInk: 'none',
+                  }}
+                >
+                  {/* Icon with Rotation */}
+                  <div className="absolute -top-3 -left-6 transform -rotate-10">
+                    <Image
+                      src="/images/graduate 1 (2).png"
+                      width={61.25}
+                      height={43.04}
+                      alt="stories"
+                      style={{ transform: 'translate(-20%, -45%) rotate(-10.795deg)' }}
+                    />
+                  </div>
+                  {/* Button Text */}
+                  <span>
+                    REGISTER NOW
+                  </span>
+                </button>
+              </Link>
             </div>
           </div>
 
           {/* Optional Overlay */}
-          <div className="absolute inset-0 bg-white bg-opacity-20"></div>
+          {/* <div className="absolute inset-0 bg-white bg-opacity-20"></div> */}
         </div>
 
 
@@ -107,7 +113,7 @@ export default function Footer() {
         <div
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: "url('/images/4f02ab140ac87bb714dbb492350a9169.jpeg')",
+            backgroundImage: "url('/images/Footer-red-vector-background-01_page-0001-scaled.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             zIndex: -1,
@@ -183,9 +189,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div className="flex flex-col w-full md:w-[22%] lg:w-[15%]" style={{ gap: "10px" }}>
-            <h2 className="text-white text-[20px] md:text-[26px] font-semibold"
-              style={{ fontFamily: "Playfair" }}
-
+            <h2 className="text-white text-[20px] md:text-[26px] font-semibold font-Playfair"
             >
               Quick Links
             </h2>
@@ -200,9 +204,7 @@ export default function Footer() {
 
           {/* Column 3: Another Quick Links */}
           <div className="flex flex-col w-full md:w-[22%] lg:w-[15%]" style={{ gap: "10px" }}>
-            <h2 className="text-white text-[20px] md:text-[26px] font-semibold"
-              style={{ fontFamily: "Playfair" }}
-            >
+            <h2 className="text-white text-[20px] md:text-[26px] font-semibold font-Playfair">
               Quick Links
             </h2>
             <hr className="w-[30%] md:w-[23%] my-2" style={{ border: '1px solid white' }} />
@@ -217,9 +219,7 @@ export default function Footer() {
 
           {/* Column 4: Contact Information */}
           <div className="flex flex-col w-full md:w-[45%] lg:w-[30%]" style={{ gap: "10px" }}>
-            <h2 className="text-white text-[20px] md:text-[26px] font-semibold"
-              style={{ fontFamily: "Playfair" }}
-            >
+            <h2 className="text-white text-[20px] md:text-[26px] font-semibold font-Playfair">
               Contact us
             </h2>
             <hr className="w-[100%] md:w-[28%] my-2" style={{ border: '1px solid white' }} />
