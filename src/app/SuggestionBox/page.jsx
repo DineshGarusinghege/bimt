@@ -79,10 +79,10 @@ const SuggestionBox = () => {
         <>
 
             <head>
-                <title>SuggestionBox | BIMT Campus</title>
+                <title>SuggestionBox - BIMT Campus</title>
                 <meta
                     name="description"
-                    content="BIMT Campus values your feedback! Our Suggestion Box provides students and stakeholders an opportunity to share ideas, concerns, and suggestions to help us continuously improve and create a better learning environment."
+                    content="Share your feedback at BIMT Campus! Help improve our learning environment with your ideas and suggestions."
                 />
             </head>
             <ToastContainer />
