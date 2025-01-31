@@ -87,7 +87,7 @@ const SuggestionBox = () => {
 
 
             <div className="relative w-full mt-[110px] py-12 bg-[#F8F9FA]">
-                <div className="relative mx-auto max-w-[1300px] h-[684px] bg-white rounded-lg shadow-lg flex flex-col justify-center items-center overflow-hidden">
+                <div className="relative mx-auto max-w-[1450px] h-[684px] bg-white rounded-lg shadow-lg flex flex-col justify-center items-center overflow-hidden">
                     {/* Background Image */}
                     <div
                         className="absolute inset-0 bg-cover bg-center opacity-50 z-0"
@@ -98,9 +98,13 @@ const SuggestionBox = () => {
 
                     {/* Form Content */}
                     <div className="relative z-10 w-full max-w-[900px] px-6">
-                        <h2 className="text-center text-2xl md:text-3xl font-bold text-[#272A5D] mb-8">
+                        <h2 className="text-[61px] font-semibold leading-[53px] text-[#272A5D] text-center font-avenir p-[10px]">
                             Suggestion Box
                         </h2>
+                        <h2 className="text-[24px] leading-[28px] text-center text-[#272A5D] text-[work-sans] p-[10px]">
+                            Your voice matters—together, we can do better
+                        </h2>
+
 
                         <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {/* First Name */}
