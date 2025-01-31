@@ -5,7 +5,7 @@ export default function BoardofGovernors() {
     const [selectedMember, setSelectedMember] = useState({
         name: "Mr. Sagara Fernando",
         position: " Chairman - Board of Governors",
-        image: "/images/7 1 (5).png",
+        image: "/images/Screenshot-2024-12-21-105355.png",
         description: [
             "Mr. Sagara Fernando is a highly accomplished professional with extensive experience in the field of accounting and lecturing. He holds the prestigious qualifications of Chartered Management Accountant (ACMA-UK) and Chartered Global Management Accountant (CGMA–UK). Furthermore, he is an associate member of the Chartered Institute of Marketing (ACIM – UK). Mr. Fernando's academic background includes an MBA from the University of Sunderland, where he received a comprehensive education in business and management. His knowledge and expertise in finance and accounting have been honed over a remarkable career spanning over 15 years.",
             "Throughout his career, Mr. Fernando has held various significant positions, contributing to his comprehensive understanding of the financial landscape. He has taken on roles such as controller, chief financial officer, and treasurer. These positions have equipped him with a deep understanding of financial modelling, analysis, and other key aspects of finance.",
@@ -19,7 +19,7 @@ export default function BoardofGovernors() {
         {
             name: "Mr. Sagara Fernando",
             position: " Chairman - Board of Governors",
-            image: "/images/7 1 (5).png",
+            image: "/images/Screenshot-2024-12-21-105355.png",
             description: ["Mr. Sagara Fernando is a highly accomplished professional with extensive experience in the field of accounting and lecturing. He holds the prestigious qualifications of Chartered Management Accountant (ACMA-UK) and Chartered Global Management Accountant (CGMA–UK). Furthermore, he is an associate member of the Chartered Institute of Marketing (ACIM – UK). Mr. Fernando's academic background includes an MBA from the University of Sunderland, where he received a comprehensive education in business and management. His knowledge and expertise in finance and accounting have been honed over a remarkable career spanning over 15 years.",
                 "Throughout his career, Mr. Fernando has held various significant positions, contributing to his comprehensive understanding of the financial landscape. He has taken on roles such as controller, chief financial officer, and treasurer. These positions have equipped him with a deep understanding of financial modelling, analysis, and other key aspects of finance.",
                 "Additionally, he has leveraged his expertise to conduct internal audits for local companies, ensuring compliance and improving financial efficiency. Mr. Fernando's passion for sharing knowledge and educating others has led him to a lecturing career. He is currently a lecturer of Management Accounting at the University of Sunderland, where he imparts his wealth of knowledge to aspiring professionals in the field. Through his lectures, he strives to equip his students with the necessary skills to excel in the diverse and challenging world of accounting.",
@@ -52,136 +52,123 @@ export default function BoardofGovernors() {
     };
 
     return (
-
-
         <>
+            <section className="flex flex-col items-center mt-20">
+                {/* Container */}
+                <div className="flex flex-col lg:flex-row w-[1450px] mx-auto gap-[100px]">
 
-            <div className="relative mx-auto w-[1300px]  flex flex-col lg:flex-row gap-[179px] mt-[110px] mb-[100px]">
-                {/* Left Section */}
-                <div className="flex flex-col gap-6">
+                    {/* Left Section - Text */}
+                    <div className="w-full lg:w-[45%] flex flex-col">
+                        <h2 className="text-white text-[24px] leading-[28px] py-2 px-4 bg-[#272A5D] w-[53%]">
+                            BOARD OF GOVERNORS
+                        </h2>
 
-                    {/* Board of Advisory Title */}
-                    <h2 className="text-[#272A5D] font-normal text-[24px] font-['Work Sans']"
-                    >
-                        BOARD OF GOVERNORS
-                    </h2>
-                    <p className="text-[#5A5A5A] text-justify font-['Work Sans'] text-[20px] font-normal leading-[26px]"
-                        style={{
-                            color: '#5A5A5A',
-                            textAlign: 'justify',
-                            fontFamily: "Work Sans",
-                            fontSize: '20px',
-                            fontStyle: 'normal',
-                            fontWeight: '400',
-                            lineHeight: '26px'
+                        <p className="text-[#272A5D] text-justify text-[16px] leading-relaxed pt-2 px-4" style={{
+                            borderTop:'2px solid #272A5D', borderLeft:'2px solid #272A5D'
+                        }}>
+                            The Board of Governors at BIMT Campus is responsible for overseeing the institution’s long-term strategic direction and ensuring its overall governance. Composed of prominent leaders from various industries and sectors, the Board of Governors provides high-level advice and support, contributing to the development of policies that align with BIMT’s mission and vision. Their leadership helps guide the campus toward academic excellence and operational success.
+                        </p>
 
-                        }}
-                    >
-                        The Board of Governors at BIMT Campus is responsible for setting the strategic direction and ensuring that BIMT remains committed to excellence in education. This distinguished board is composed of leaders with expertise across various fields, each contributing unique insights and governance to advance BIMT&#39;s mission.
-                    </p>
-                    {/* Image Box */}
-                    <div className="flex flex-col gap-[30px]">
-                        {/* First Row */}
-                        <div className="flex items-center gap-[30px]">
-                            {Governorsembers.slice(0, 1).map((member, index) => (
-                                <img
-                                    key={index}
-                                    src={member.image}
-                                    alt={member.name}
-                                    className={`w-[150px] h-[150px] rounded-md cursor-pointer ${currentMember1 === member.name ? 'image-pulse' : ''}`}
-                                    onClick={() => handleMemberClick(member)}
-                                    style={{ objectFit: 'cover' }}
+                        {/* Image Box */}
+                        <div className="flex flex-col gap-[30px] mt-5">
+                            {/* First Row */}
+                            <div className="flex items-center gap-[30px]">
+                                {Governorsembers.slice(0, 1).map((member, index) => (
+                                    <img
+                                        key={index}
+                                        src={member.image}
+                                        alt={member.name}
+                                        className={`w-[150px] h-[150px] rounded-md cursor-pointer ${currentMember1 === member.name ? 'image-pulse' : ''}`}
+                                        onClick={() => handleMemberClick(member)}
+                                        style={{ objectFit: 'cover' }}
 
-                                />
-                            ))}
-                        </div>
-                        {/* Second Row */}
-                        <div className="flex items-center gap-[30px]">
-                            {Governorsembers.slice(1).map((member, index) => (
-                                <img
-                                    key={index}
-                                    src={member.image}
-                                    alt={member.name}
-                                    className={`w-[150px] h-[150px] rounded-md cursor-pointer ${currentMember1 === member.name ? 'image-pulse' : ''}`}
-                                    onClick={() => handleMemberClick(member)}
-                                    style={{ objectFit: 'cover' }}
+                                    />
+                                ))}
+                            </div>
+                            {/* Second Row */}
+                            <div className="flex items-center gap-[30px]">
+                                {Governorsembers.slice(1).map((member, index) => (
+                                    <img
+                                        key={index}
+                                        src={member.image}
+                                        alt={member.name}
+                                        className={`w-[150px] h-[150px] rounded-md cursor-pointer ${currentMember1 === member.name ? 'image-pulse' : ''}`}
+                                        onClick={() => handleMemberClick(member)}
+                                        style={{ objectFit: 'cover' }}
 
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
-                {/* Right Section */}
-                <div className="relative flex flex-col gap-6">
-                    <div className="relative flex flex-col gap-6">
-                        {/* Image with Name and Position */}
-                        <div className="relative flex justify-start items-end gap-[18px]">
-                            <img
-                                src={selectedMember.image}
-                                alt={selectedMember.name}
-                                className="w-[300px] h-[340.761px] rounded-md bg-lightgray"
-                                style={{ objectFit: 'cover' }}
-
-                            />
-                            <div className="relative">
-                                {/* Name with absolute positioning */}
-                                <h3
-                                    className="absolute top-[-100px] text-[#272A5D] font-bold text-[30px] leading-[53px] font-['Avenir LT Std'] whitespace-nowrap"
-                                    style={{
-                                        left: 0,
-                                        color: '272A5D',
-                                        fontFamily: "Avenir LT Std",
-                                        fontSize: '30px',
-                                        fontStyle: 'normal',
-                                        fontWeight: '700',
-                                        lineHeight: '53px',/* 176.667% */
-                                    }}
-                                >
-                                    {selectedMember.name}
-                                </h3>
-                                {/* Position below the name, displayed in one line */}
-                                <p
-                                    className="absolute top-[-60px] left-0 text-[#272A5D] font-semibold text-[20px] leading-[53px] font-['Avenir LT Std'] whitespace-nowrap"
-
-                                    style={{
-                                        color: '#272A5D',
-                                        fontFamily: "Avenir LT Std",
-                                        fontSize: '20px',
-                                        fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        lineHeight: '53px'
-                                    }}
-                                >
-                                    {selectedMember.position}
-                                </p>
+                                    />
+                                ))}
                             </div>
                         </div>
                     </div>
 
-                    {/* Paragraph */}
-                    <p className="text-[#5A5A5A] text-justify text-[16px] font-normal font-['Work Sans'] w-[573px]" style={{
-                        color: '#5A5A5A',
-                        textAlign: 'justify',
-                        fontFamily: "Work Sans",
-                        fontSize: '16px',
-                        fontStyle: 'normal',
-                        fontWeight: '400',
-                        lineHeight: 'normal',
-                    }}>
-                        {selectedMember.description.map((paragraph, index) => (
-                            <span key={index}>
-                                {paragraph}
-                                <br />
-                                <br />
-                            </span>
-                        ))}
-                    </p>
-                </div >
-            </div >
+                    {/* Right Section - Image or Content */}
+                    <div className="w-full lg:w-[55%] flex flex-col items-start">
+                        <div className="relative flex flex-col gap-6">
+                            {/* Image with Name and Position */}
+                            <div className="relative flex justify-start items-end gap-[18px]">
+                                <img
+                                    src={selectedMember.image}
+                                    alt={selectedMember.name}
+                                    className="h-[340.761px] rounded-md bg-lightgray"
+                                    style={{ objectFit: 'cover', borderTop:'2px solid pink', borderBottom:'2px solid pink',
+                                        padding:'10px', borderRadius:"50px"
+                                    }}
 
+                                />
+                                <div className="relative">
+                                    {/* Name with absolute positioning */}
+                                    <h3
+                                        className="absolute top-[-100px] text-[#272A5D] font-bold text-[30px] leading-[53px] font-avenir whitespace-nowrap"
+                                        style={{
+                                            left: 0,
+                                            color: '272A5D',
+                                            fontSize: '28px',
+                                            fontStyle: 'normal',
+                                            fontWeight: '700',
+                                            lineHeight: '53px',/* 176.667% */
+                                        }}
+                                    >
+                                        {selectedMember.name}
+                                    </h3>
+                                    {/* Position below the name, displayed in one line */}
+                                    <p
+                                        className="absolute top-[-60px] left-0 text-[#272A5D] font-semibold text-[20px] leading-[53px] font-avenir whitespace-nowrap"
 
+                                        style={{
+                                            color: '#272A5D',                
+                                            fontSize: '16px',
+                                            fontStyle: 'normal',
+                                            fontWeight: '600',
+                                            lineHeight: '53px'
+                                        }}
+                                    >
+                                        {selectedMember.position}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
+                        {/* Paragraph */}
+                        <p className="text-[#5A5A5A] text-justify text-[16px] font-normal mt-10 font-avenir" style={{
+                            color: '#5A5A5A',
+                            textAlign: 'justify',
+                            fontSize: '16px',
+                            fontStyle: 'normal',
+                            fontWeight: '400',
+                        }}>
+                            {selectedMember.description.map((paragraph, index) => (
+                                <span key={index}>
+                                    {paragraph}
+                                    <br />
+                                    <br />
+                                </span>
+                            ))}
+                        </p>
+                    </div>
+
+                </div>
+            </section>
 
         </>
     );

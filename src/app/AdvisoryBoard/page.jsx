@@ -5,7 +5,7 @@ export default function AdvisoryBoard() {
     const [selectedMember, setSelectedMember] = useState({
         name: "Mr. Jonathan Barber",
         position: "President - Advisory Board",
-        image: "/images/7dbc192ec89b37e1bb8a3b979aee7b77.png",
+        image: "/images/146b0df3e91fa3b022dbf154fabf1887 (1).jpeg",
         description: `
             Business Development & Membership at the Institute of Financial Accountants (IFA - UK),
             where he is dedicated to supporting small and medium-sized enterprises (SMEs) and small and medium-sized practices (SMPs).
@@ -13,14 +13,14 @@ export default function AdvisoryBoard() {
         `,
     });
 
-    
-    const [currentMember, setCurrentMember] = useState("Mr. Jonathan Barber"); 
+
+    const [currentMember, setCurrentMember] = useState("Mr. Jonathan Barber");
     // Array of advisory members
     const advisoryMembers = [
         {
             name: "Mr. Jonathan Barber",
             position: "President - Advisory Board",
-            image: "/images/7dbc192ec89b37e1bb8a3b979aee7b77.png",
+            image: "/images/146b0df3e91fa3b022dbf154fabf1887 (1).jpeg",
             description: [`
                 Business Development & Membership at the Institute of Financial Accountants (IFA - UK),
                 where he is dedicated to supporting small and medium-sized enterprises (SMEs) and small and medium-sized practices (SMPs).
@@ -62,137 +62,127 @@ export default function AdvisoryBoard() {
 
 
         <>
-            <div className="relative mx-auto w-[1300px]  flex flex-col lg:flex-row gap-[179px] mt-[110px] mb-[100px]">
-                {/* Left Section */}
-                <div className="flex flex-col gap-6">
-                    {/* About Us Title */}
-                    <h2 className="text-[#272A5D] font-semibold text-[40px] leading-[53px] font-['Avenir LT Std']"
-                        style={{
-                            color: '#272A5D',
-                            fontFamily: "Avenir LT Std",
-                            fontSize: '40px',
-                            fontStyle: 'normal',
-                            fontWeight: '600',
-                            lineHeight: '53px'
-                        }}
-                    >
-                        Our Team
-                    </h2>
-                    {/* Board of Advisory Title */}
-                    <p className="text-[#272A5D] font-normal text-[24px] font-['Work Sans']"
-                    >
-                        Advisory Board
-                    </p>
-                    <p className="text-[#5A5A5A] text-justify font-['Work Sans'] text-[20px] font-normal leading-[26px]"
-                        style={{
-                            color: '#5A5A5A',
-                            textAlign: 'justify',
-                            fontFamily: "Work Sans",
-                            fontSize: '20px',
-                            fontStyle: 'normal',
-                            fontWeight: '400',
-                            lineHeight: '26px'
 
-                        }}
-                    >
-                        The Advisory Board at BIMT Campus plays a vital role in shaping the institution&#39;s strategic vision and ensuring its alignment with global standards in education and industry practices. Composed of esteemed professionals and academics, the Advisory Board provides guidance, insights, and expertise that enhance BIMT&#39;s educational offerings and foster innovation.
-                    </p>
-                    {/* Image Box */}
-                    <div className="flex flex-col gap-[30px]">
-                        {/* First Row */}
-                        <div className="flex items-center gap-[30px]">
-                            {advisoryMembers.slice(0, 1).map((member, index) => (
-                                <img
-                                    key={index}
-                                    src={member.image}
-                                    alt={member.name}
-                                    className={`w-[150px] h-[150px] rounded-md cursor-pointer ${currentMember === member.name ? 'image-pulse' : ''}`}
-                                    onClick={() => handleMemberClick(member)}
-                                    style={{ objectFit: 'cover' }}
-                                />
-                            ))}
-                        </div>
-                        {/* Second Row */}
-                        <div className="flex items-center gap-[30px]">
-                            {advisoryMembers.slice(1).map((member, index) => (
-                                <img
-                                    key={index}
-                                    src={member.image}
-                                    alt={member.name}
-                                    className={`w-[150px] h-[150px] rounded-md cursor-pointer ${currentMember === member.name ? 'image-pulse' : ''}`}
-                                    onClick={() => handleMemberClick(member)}
-                                    style={{ objectFit: 'cover' }}
+            <section className="flex flex-col items-center mt-20">
+                {/* Container */}
+                <div className="flex flex-col lg:flex-row w-[1450px] mx-auto gap-[100px]">
 
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                    {/* Left Section - Text */}
+                    <div className="w-full lg:w-[45%] flex flex-col">
+                        <h2 className="text-white text-[24px] leading-[28px] py-2 px-4 bg-[#272A5D] w-[41%]">
+                            ADVISORY BOARD
+                        </h2>
 
-                {/* Right Section */}
-                <div className="relative flex flex-col gap-6">
-                    <div className="relative flex flex-col gap-6">
-                        {/* Image with Name and Position */}
-                        <div className="relative flex justify-start items-end gap-[18px]">
-                            <img
-                                src={selectedMember.image}
-                                alt={selectedMember.name}
-                                className="w-[300px] h-[340.761px] rounded-md bg-lightgray"
-                                style={{ objectFit: 'cover' }}
+                        <p className="text-[#272A5D] text-justify text-[16px] leading-relaxed pt-2 px-4" style={{
+                            borderTop: '2px solid #272A5D', borderLeft: '2px solid #272A5D'
+                        }}>
+                            The Advisory Board at BIMT Campus plays a vital role in shaping the institution&#39;s strategic vision and ensuring its alignment with global standards in education and industry practices. Composed of esteemed professionals and academics, the Advisory Board provides guidance, insights, and expertise that enhance BIMT&#39;s educational offerings and foster innovation.
 
-                            />
-                            <div className="relative">
-                                {/* Name with absolute positioning */}
-                                <h3
-                                    className="absolute top-[-100px] text-[#272A5D] font-bold text-[30px] leading-[53px] font-['Avenir LT Std'] whitespace-nowrap"
-                                    style={{
-                                        left: 0,
-                                        color: '272A5D',
-                                        fontFamily: "Avenir LT Std",
-                                        fontSize: '30px',
-                                        fontStyle: 'normal',
-                                        fontWeight: '700',
-                                        lineHeight: '53px',/* 176.667% */
-                                    }}
-                                >
-                                    {selectedMember.name}
-                                </h3>
-                                {/* Position below the name, displayed in one line */}
-                                <p
-                                    className="absolute top-[-60px] left-0 text-[#272A5D] font-semibold text-[20px] leading-[53px] font-['Avenir LT Std'] whitespace-nowrap"
+                        </p>
 
-                                    style={{
-                                        color: '#272A5D',
-                                        fontFamily: "Avenir LT Std",
-                                        fontSize: '20px',
-                                        fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        lineHeight: '53px'
-                                    }}
-                                >
-                                    {selectedMember.position}
-                                </p>
+                        {/* Image Box */}
+                        <div className="flex flex-col gap-[30px] mt-5">
+                            {/* First Row */}
+                            <div className="flex items-center gap-[30px]">
+                                {advisoryMembers.slice(0, 1).map((member, index) => (
+                                    <img
+                                        key={index}
+                                        src={member.image}
+                                        alt={member.name}
+                                        className={`w-[150px] h-[150px] rounded-md cursor-pointer ${currentMember === member.name ? 'image-pulse' : ''}`}
+                                        onClick={() => handleMemberClick(member)}
+                                        style={{ objectFit: 'cover' }}
+
+                                    />
+                                ))}
+                            </div>
+                            {/* Second Row */}
+                            <div className="flex items-center gap-[30px]">
+                                {advisoryMembers.slice(1).map((member, index) => (
+                                    <img
+                                        key={index}
+                                        src={member.image}
+                                        alt={member.name}
+                                        className={`w-[150px] h-[150px] rounded-md cursor-pointer ${currentMember === member.name ? 'image-pulse' : ''}`}
+                                        onClick={() => handleMemberClick(member)}
+                                        style={{ objectFit: 'cover' }}
+
+                                    />
+                                ))}
                             </div>
                         </div>
                     </div>
 
-                    {/* Paragraph */}
-                    <p className="text-[#5A5A5A] text-justify text-[16px] font-normal font-['Work Sans'] w-[573px]" style={{
-                        color: '#5A5A5A',
-                        textAlign: 'justify',
-                        fontFamily: "Work Sans",
-                        fontSize: '16px',
-                        fontStyle: 'normal',
-                        fontWeight: '400',
-                        lineHeight: 'normal',
-                    }}>
-                        {Array.isArray(selectedMember.description) &&
-                            selectedMember.description.map((paragraph, index) => (
-                                <p key={index} className="mb-4">{paragraph}</p>
-                            ))}
-                    </p>
-                </div >
-            </div >
+                    {/* Right Section - Image or Content */}
+                    <div className="w-full lg:w-[55%] flex flex-col items-start">
+                        <div className="relative flex flex-col gap-6">
+                            {/* Image with Name and Position */}
+                            <div className="relative flex justify-start items-end gap-[18px]">
+                                <img
+                                    src={selectedMember.image}
+                                    alt={selectedMember.name}
+                                    className="h-[340.761px] rounded-md bg-lightgray"
+                                    style={{
+                                        objectFit: 'cover', borderTop: '2px solid pink', borderBottom: '2px solid pink',
+                                        padding: '10px', borderRadius: "50px"
+                                    }}
+
+                                />
+                                <div className="relative">
+                                    {/* Name with absolute positioning */}
+                                    <h3
+                                        className="absolute top-[-100px] text-[#272A5D] font-bold text-[30px] leading-[53px] font-avenir whitespace-nowrap"
+                                        style={{
+                                            left: 0,
+                                            color: '272A5D',
+                                            fontSize: '28px',
+                                            fontStyle: 'normal',
+                                            fontWeight: '700',
+                                            lineHeight: '53px',/* 176.667% */
+                                        }}
+                                    >
+                                        {selectedMember.name}
+                                    </h3>
+                                    {/* Position below the name, displayed in one line */}
+                                    <p
+                                        className="absolute top-[-60px] left-0 text-[#272A5D] font-semibold text-[20px] leading-[53px] font-avenir whitespace-nowrap"
+
+                                        style={{
+                                            color: '#272A5D',
+                                            fontSize: '16px',
+                                            fontStyle: 'normal',
+                                            fontWeight: '600',
+                                            lineHeight: '53px'
+                                        }}
+                                    >
+                                        {selectedMember.position}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Paragraph */}
+                        <p className="text-[#5A5A5A] text-justify text-[16px] font-normal mt-10 font-avenir" style={{
+                            color: '#5A5A5A',
+                            textAlign: 'justify',
+                            fontSize: '16px',
+                            fontStyle: 'normal',
+                            fontWeight: '400',
+                        }}>
+                            {Array.isArray(selectedMember.description) &&
+                                selectedMember.description.map((paragraph, index) => (
+                                    <p key={index} className="mb-4">{paragraph}</p>
+                                ))}
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
+
 
 
 
