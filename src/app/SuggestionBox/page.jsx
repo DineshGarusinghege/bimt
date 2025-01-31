@@ -4,7 +4,76 @@
 import MainHeader from '../ui/MainHeader';
 // import AnnounsmentBar from '../ui/AnnounsmentBar';
 import Link from 'next/link';
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "../styles/SuggestionBox.scss"
+
+
 const SuggestionBox = () => {
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        comment: "",
+    });
+
+    const [message, setMessage] = useState("");
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    // Function to validate email format
+    const isValidEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Validation checks
+        if (!formData.firstName || !formData.lastName || !formData.phone || !formData.email || !formData.comment) {
+            toast.error("⚠️ All fields are required!", { position: "top-right", autoClose: 3000 });
+            return;
+        }
+
+        if (!isValidEmail(formData.email)) {
+            toast.error("❌ Invalid email format!", { position: "top-right", autoClose: 3000 });
+            return;
+        }
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                toast.success("✅ Your message has been sent successfully!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                });
+
+                // Reset the form after successful submission
+                setFormData({ firstName: "", lastName: "", phone: "", email: "", comment: "" });
+            } else {
+                toast.error(data.message || "❌ Something went wrong. Please try again.", {
+                    position: "top-right",
+                    autoClose: 3000,
+                });
+            }
+        } catch (error) {
+            toast.error("⚠️ Network error. Please try again later.", {
+                position: "top-right",
+                autoClose: 3000,
+            });
+        }
+    };
 
     return (
         <>
@@ -16,20 +85,12 @@ const SuggestionBox = () => {
                     content="BIMT Campus values your feedback! Our Suggestion Box provides students and stakeholders an opportunity to share ideas, concerns, and suggestions to help us continuously improve and create a better learning environment."
                 />
             </head>
-
+            <ToastContainer />
             <MainHeader />
-            {/* <AnnounsmentBar /> */}
-            <div className="relative inset-0 bg-black bg-opacity-40">
 
-                {/* Breadcrumb Section */}
-                <div className="absolute container mx-auto px-6 lg:px-16 flex items-center h-full"
-                    style={{
-                        top: '50px',
-                        left: '300px'
-                    }}
-
-                >
-                    <nav className="bg-gray-200 bg-opacity-80 py-2 px-4 rounded-lg text-sm text-gray-700"
+            <div className="flex flex-col w-[1450px] gap-5 mt-10 mb-10 mx-auto">
+                <div className="self-start text-black text-[16px] leading-[25px] pr-[30px] pb-[5px] pl-[30px] pt-[5px]">
+                    <nav className="bg-gray-200 bg-opacity-80 py-2 px-4 text-sm text-gray-700"
                         style={{ display: 'inline-flex', padding: '5px 25px', justifyContent: 'center', alignItems: 'center', gap: '10px', background: "#ffffff45" }}
                     >
                         <ol className="flex space-x-2">
@@ -81,85 +142,87 @@ const SuggestionBox = () => {
                             </li>
                         </ol>
                     </nav>
-
                 </div>
             </div>
 
 
-            <div className="relative w-full mt-[110px] py-12 bg-[#F8F9FA]">
-                <div className="relative mx-auto max-w-[1450px] h-[684px] bg-white rounded-lg shadow-lg flex flex-col justify-center items-center overflow-hidden">
+
+
+
+            <div className="relative w-full mb-[110px]">
+                <div className="relative mx-auto max-w-[1450px] bg-white shadow-lg flex flex-col justify-center items-center overflow-hidden">
                     {/* Background Image */}
                     <div
                         className="absolute inset-0 bg-cover bg-center opacity-50 z-0"
                         style={{
-                            backgroundImage: "url('/images/bgimgqa.jpg')",
+                            backgroundImage: "url('/images/background-pattern-scaled.jpeg')",
                         }}
                     ></div>
 
                     {/* Form Content */}
-                    <div className="relative z-10 w-full max-w-[900px] px-6">
-                        <h2 className="text-[61px] font-semibold leading-[53px] text-[#272A5D] text-center font-avenir p-[10px]">
+                    <div className="relative z-10 w-full max-w-[900px] px-[10px] py-[80px]">
+                        <h2 className="text-[61px] font-semibold leading-[70px] text-[#272A5D] text-center font-avenir p-[10px]">
                             Suggestion Box
                         </h2>
-                        <h2 className="text-[24px] leading-[28px] text-center text-[#272A5D] text-[work-sans] p-[10px]">
-                            Your voice matters—together, we can do better
+                        <h2 className="text-[24px] leading-[28px] text-center text-[#272A5D] text-[work-sans] py-[20px]">
+                            Your voice matters—together, we can do better 
                         </h2>
 
 
-                        <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-[20px]">
                             {/* First Name */}
                             <input
+                                name="firstName"
+                                value={formData.firstName} onChange={handleChange}
                                 type="text"
                                 placeholder="First Name"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-md text-sm"
+                                className="w-full px-4 py-3 border border-gray-300 text-sm font-bold"
                             />
 
                             {/* Last Name */}
                             <input
+                                name="lastName"
+                                value={formData.lastName} onChange={handleChange}
                                 type="text"
                                 placeholder="Last Name"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-md text-sm"
+                                className="w-full px-4 py-3 border border-gray-300 text-sm font-bold"
                             />
 
                             {/* Phone */}
                             <input
+                                name="phone"
+                                value={formData.phone} onChange={handleChange}
                                 type="text"
                                 placeholder="Phone"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-md text-sm"
+                                className="w-full px-4 py-3 border border-gray-300 text-sm font-bold"
                             />
 
                             {/* Email */}
-                            <input
+                            <input value={formData.email} onChange={handleChange}
+                                name="email"
                                 type="email"
                                 placeholder="Email"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-md text-sm"
+                                className="w-full px-4 py-3 border border-gray-300 text-sm font-bold"
                             />
 
                             {/* Comment */}
                             <textarea
+                                name="comment"
+                                value={formData.comment} onChange={handleChange}
                                 placeholder="Comment here"
-                                className="w-full md:col-span-2 px-4 py-3 border border-gray-300 rounded-md text-sm resize-none h-[100px]"
+                                className="w-full md:col-span-2 px-4 py-3 border border-gray-300 text-sm resize-none h-[100px] font-bold"
                             ></textarea>
 
                             {/* Submit Button */}
                             <div className="flex justify-center md:col-span-2">
-                                <button className="px-6 py-3 bg-[#272A5D] text-white rounded-md text-sm font-semibold hover:bg-[#1F214A]">
-                                    SUBMIT
+                                <button  className="btnBlue bg-[#272A5D] text-white px-4 py-2 rounded-lg font-semibold transition duration-150 text-sm md:text-lg">
+                                    <span>SUBMIT</span>
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
         </>
     );
 };
