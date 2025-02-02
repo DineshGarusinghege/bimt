@@ -31,15 +31,8 @@ export default function Footer() {
           >
             {/* Heading */}
             <h2
-              className="text-3xl lg:text-4xl font-bold mb-4 font-avenir"
-              style={{
-                fontSize: '40px',
-                fontWeight: '600',
-                lineHeight: '53px',
-                textAlign: 'center',
-                textUnderlinePosition: 'from-font',
-                textDecorationSkipInk: 'none',
-              }}
+              className="text-3xl lg:text-4xl font-bold mb-4 font-avenir footerHeadingContinue"
+             
             >
               Continue Your Studies at Our University
             </h2>
@@ -117,7 +110,6 @@ export default function Footer() {
             backgroundSize: "cover",
             backgroundPosition: "center",
             zIndex: -1,
-            filter: "brightness(0.5)", // Overlay for better contrast
           }}
         ></div>
 
@@ -298,12 +290,20 @@ export default function Footer() {
           </div>
         </div>
         {/* Footer Bottom */}
-        <div className="w-[1450px] text-center mt-[20px] mx-auto flex flex-col items-center justify-center">
+        <div className="w-[1450px] w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-6 flex flex-col items-center justify-center">
           <hr className="w-full h-[2px] bg-gray-300 border-0" />
           <h2
             className="text-white py-10 font-normal leading-[12.9px] font-['Work_Sans'] decoration-skip-ink-none"
           >
-            Copyright © BIMT {new Date().getFullYear()} . All rights reserved. | Designed by Olutek Digital Solutions
+            Copyright © BIMT {new Date().getFullYear()} . All rights reserved. | Designed by
+            <a
+              href="https://olutek.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold transition duration-300 ml-1"
+            >
+              Olutek Digital Solutions
+            </a>
           </h2>
         </div>
       </div>

@@ -5,25 +5,12 @@ import React, { useState } from 'react';
 import MainHeader from '../ui/MainHeader';
 // import AnnounsmentBar from '../ui/AnnounsmentBar';
 import '../styles/ContactUs.scss'
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 // import ContactForm from '../componets/ContactForm';
 import '../styles/Global.scss'
-export default function ContactUs() {
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        toast.success("Form submitted successfully!", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
-    };
+export default function ContactUs() {
 
     const faqData = [
         {
@@ -78,13 +65,78 @@ export default function ContactUs() {
         setActiveIndex(index === activeIndex ? null : index);
     };
 
+
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        comment: "",
+    });
+
+    const [message, setMessage] = useState("");
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    // Function to validate email format
+    const isValidEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Validation checks
+        if (!formData.firstName || !formData.lastName || !formData.phone || !formData.email || !formData.comment) {
+            toast.error("All fields are required!", { position: "top-right", autoClose: 3000 });
+            return;
+        }
+
+        if (!isValidEmail(formData.email)) {
+            toast.error("Invalid email format!", { position: "top-right", autoClose: 3000 });
+            return;
+        }
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                toast.success("Your message has been sent successfully!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                });
+
+                // Reset the form after successful submission
+                setFormData({ firstName: "", lastName: "", phone: "", email: "", comment: "" });
+            } else {
+                toast.error(data.message || "Something went wrong. Please try again.", {
+                    position: "top-right",
+                    autoClose: 3000,
+                });
+            }
+        } catch (error) {
+            toast.error("⚠️ Network error. Please try again later.", {
+                position: "top-right",
+                autoClose: 3000,
+            });
+        }
+    };
+
     return (
         <>
             <head>
-                <title>Contact Us | BIMT Campus</title>
+                <title>Contact Us - BIMT Campus</title>
                 <meta
                     name="description"
-                    content="Have questions or need assistance? Contact BIMT Campus today! Our dedicated team is ready to provide you with the information and support you need to take the next step in your educational journey. Reach out to us and let's connect!"
+                    content="Get expert support at BIMT Campus. Contact us today!"
                 />
             </head>
 
@@ -96,16 +148,16 @@ export default function ContactUs() {
             <div>
                 {/* Contact Us hero section */}
                 <div
-                    className="relative w-full h-[70vh] bg-cover bg-center"
+                    className="relative w-full bg-cover bg-center heroSectionHeight"
                     style={{
                         backgroundImage: "url('/images/Contact-Us-banner_page-0001-1-scaled.jpg')",
                         objectPosition: 'center center'
                     }}
                 >
 
-                    <div className='relative max-w-[1450px] mx-auto top-[55px] px-10 py-50'>
+                    <div className='relative max-w-[1450px] mx-auto top-[55px] px-10 py-50 bredcrumbSectionMain'>
                         {/* Breadcrumb Section */}
-                        <div className="relative flex w-full max-w-[1450px] gap-5 px-2 py-12">
+                        <div className="relative flex w-full max-w-[1450px] gap-5 px-2 py-12 breadCrumbSubSection">
                             <nav
                                 className="bg-gray-200 bg-opacity-80 py-2 px-4 rounded-lg text-sm text-gray-700"
                                 style={{
@@ -121,24 +173,15 @@ export default function ContactUs() {
                                     <li>
                                         <Link
                                             href="/"
-                                            className="hover:underline hover:text-blue-500"
-                                            style={{
-                                                color: "#000",
-                                                fontFamily: "Avenir LT Std",
-                                                fontSize: "16px",
-                                                fontStyle: "normal",
-                                                fontWeight: "600",
-                                                lineHeight: "normal",
-                                            }}
+                                            className="hover:underline hover:text-blue-500 breadcrumbFont font-avenir"
                                         >
                                             Home
                                         </Link>
                                     </li>
-                                    <span className="text-gray-400 pt-[4px]">
+                                    <span className="text-gray-400 arroSvgCrumPadding">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            width="15"
-                                            height="15"
+                                            className="w-[12px] h-[12px] svgRightArrowBreadCrumb"
                                             viewBox="0 0 15 15"
                                             fill="none"
                                         >
@@ -148,27 +191,19 @@ export default function ContactUs() {
                                             />
                                         </svg>
                                     </span>
+
                                     <li>
                                         <Link
                                             href="/life-at-bimt"
-                                            className="hover:underline hover:text-blue-500"
-                                            style={{
-                                                color: "#000",
-                                                fontFamily: "Avenir LT Std",
-                                                fontSize: "16px",
-                                                fontStyle: "normal",
-                                                fontWeight: "600",
-                                                lineHeight: "normal",
-                                            }}
+                                            className="hover:underline hover:text-blue-500 breadcrumbFont font-avenir"
                                         >
                                             Connect with us
                                         </Link>
                                     </li>
-                                    <span className="text-gray-400 pt-[4px]">
+                                    <span className="text-gray-400 arroSvgCrumPadding">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            width="15"
-                                            height="15"
+                                            className="w-[12px] h-[12px] svgRightArrowBreadCrumb"
                                             viewBox="0 0 15 15"
                                             fill="none"
                                         >
@@ -180,15 +215,7 @@ export default function ContactUs() {
                                     </span>
                                     <li>
                                         <span
-                                            className="text-gray-600"
-                                            style={{
-                                                color: "#000",
-                                                fontFamily: "Avenir LT Std",
-                                                fontSize: "16px",
-                                                fontStyle: "normal",
-                                                fontWeight: "600",
-                                                lineHeight: "normal",
-                                            }}
+                                            className="text-gray-600 breadcrumbFont font-avenir"
                                         >
                                             Contact Us
                                         </span>
@@ -222,23 +249,28 @@ export default function ContactUs() {
                         <form className="flex flex-col gap-6 sm:gap-6" onSubmit={handleSubmit}>
                             {/* Row 1 - First Name & Last Name */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <input type="text" placeholder="First Name" className="h-12 w-full px-4 py-2 border border-gray-300 text-gray-600 text-sm font-semibold" />
-                                <input type="text" placeholder="Last Name" className="h-12 w-full px-4 py-2 border border-gray-300 text-gray-600 text-sm font-semibold" />
+                                <input name="firstName"
+                                    value={formData.firstName} onChange={handleChange} type="text" placeholder="First Name" className="h-12 w-full px-4 py-2 border border-gray-300 text-gray-600 text-sm font-semibold" />
+                                <input name="lastName"
+                                    value={formData.lastName} onChange={handleChange} type="text" placeholder="Last Name" className="h-12 w-full px-4 py-2 border border-gray-300 text-gray-600 text-sm font-semibold" />
                             </div>
 
                             {/* Row 2 - Phone & Email */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <input type="text" placeholder="Phone" className="h-12 w-full px-4 py-2 border border-gray-300 text-gray-600 text-sm font-semibold" />
-                                <input type="email" placeholder="Email" className="h-12 w-full px-4 py-2 border border-gray-300 text-gray-600 text-sm font-semibold" />
+                                <input name="phone"
+                                    value={formData.phone} onChange={handleChange} type="text" placeholder="Phone" className="h-12 w-full px-4 py-2 border border-gray-300 text-gray-600 text-sm font-semibold" />
+                                <input value={formData.email} onChange={handleChange}
+                                    name="email" type="email" placeholder="Email" className="h-12 w-full px-4 py-2 border border-gray-300 text-gray-600 text-sm font-semibold" />
                             </div>
 
                             {/* Message */}
-                            <textarea placeholder="Message" className="h-28 w-full px-4 py-2 border border-gray-300 text-gray-600 text-sm font-semibold resize-none"></textarea>
+                            <textarea name="comment"
+                                value={formData.comment} onChange={handleChange} placeholder="Message" className="h-28 w-full px-4 py-2 border border-gray-300 text-gray-600 text-sm font-semibold resize-none"></textarea>
 
-                            {/* Submit Button */}                
+                            {/* Submit Button */}
                             <button className="FeelFreeSubmit px-6 py-3 border border-blue-900 text-white rounded-lg font-semibold hover:text-white transition"
                                 style={{
-                                    display: 'flex',                    
+                                    display: 'flex',
                                     justifyContent: 'center',
                                     alignItems: 'center',
                                     gap: '10px',
@@ -253,7 +285,7 @@ export default function ContactUs() {
                     </div>
 
                     {/* Right Side - Contact Info */}
-                    <div className="flex flex-col gap-10 pl-12">
+                    <div className="flex flex-col gap-10 pl-12 contactFormSecondSection">
                         <h2 className="text-white font-['Avenir LT STD'] text-[40px] font-bold capitalize">
                             Get In Touch With Us
                         </h2>
@@ -264,48 +296,87 @@ export default function ContactUs() {
                             experienced team is ready to assist with professionalism and care.
                         </p>
                         <div className="flex flex-col gap-6 mt-4">
-                            {/* Contact Details */}
+
                             <div className="flex items-center gap-4">
-                                <div className="w-[65px] h-[65px] iconBg flex items-center justify-center text-white">
-                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-phone-alt" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
-                                        width="34"
-                                        height="34"
-                                        fill="#ffffff"
-                                    ><path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path></svg>
+                                {/* Animated Phone Icon */}
+                                <div className="w-[65px] iconBg h-[65px] bg-white bg-opacity-20 flex items-center justify-center text-white transition duration-300 ease-in-out hover:scale-110">
+                                    <svg
+                                        aria-hidden="true"
+                                        className="w-[34px] h-[34px] fill-white transition-transform duration-300 ease-in-out hover:animate-bounce"
+                                        viewBox="0 0 512 512"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z" />
+                                    </svg>
                                 </div>
-                                <p className="text-[#ffffff] font-normal text-[16px] font-['Work Sans']">
+
+                                {/* Clickable Phone Number */}
+                                <p className="text-white text-[16px] font-work-sans">
                                     Have any question? <br />
-                                    <span className="font-semibold">+94 115 33 22 22</span>
+                                    <a
+                                        href="tel:+94115332222"
+                                        className="font-semibold text-white hover:text-[#272A5D] transition duration-300 ease-in-out"
+                                    >
+                                        +94 115 33 22 22
+                                    </a>
                                 </p>
                             </div>
+
+                            {/* Email Section */}
                             <div className="flex items-center gap-4">
-                                <div className="w-[65px] h-[65px] iconBg flex items-center justify-center text-white">
-                                    <svg aria-hidden="true" class="e-font-icon-svg e-far-envelope" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
-                                        width="34"
-                                        height="34"
-                                        fill="#ffffff"
-                                    ><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg>
+                                {/* Animated Email Icon */}
+                                <div className="w-[65px] h-[65px] iconBg bg-white bg-opacity-20 flex items-center justify-center text-white  transition duration-300 ease-in-out hover:scale-110">
+                                    <svg
+                                        aria-hidden="true"
+                                        className="w-[34px] h-[34px] fill-white transition-transform duration-300 ease-in-out hover:animate-bounce"
+                                        viewBox="0 0 512 512"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z" />
+                                    </svg>
                                 </div>
-                                <p className="text-[#ffffff] font-normal text-[16px] font-['Work Sans']">
+
+                                {/* Clickable Email */}
+                                <p className="text-white text-[16px] font-work-sans">
                                     Write Email <br />
-                                    <span className="font-semibold">info@bimt.lk</span>
+                                    <a
+                                        href="mailto:info@bimt.lk"
+                                        className="font-semibold text-white hover:text-[#272A5D] transition duration-300 ease-in-out"
+                                    >
+                                        info@bimt.lk
+                                    </a>
                                 </p>
                             </div>
+
+
+                            {/* Address Section */}
                             <div className="flex items-center gap-4">
-                                <div className="w-[65px] h-[65px] iconBg flex items-center justify-center text-white">
-                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-location-arrow" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
-                                        width="34"
-                                        height="34"
-                                        fill="#ffffff"
-                                    ><path d="M444.52 3.52L28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"></path></svg>
+                                {/* Animated Location Icon */}
+                                <div className="w-[65px] h-[65px] iconBg bg-white bg-opacity-20 flex items-center justify-center text-white transition duration-300 ease-in-out hover:scale-110">
+                                    <svg
+                                        aria-hidden="true"
+                                        className="w-[34px] h-[34px] fill-white transition-transform duration-300 ease-in-out hover:animate-bounce"
+                                        viewBox="0 0 512 512"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path d="M444.52 3.52L28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z" />
+                                    </svg>
                                 </div>
-                                <p className="text-[#ffffff] font-normal text-[16px] font-['Work Sans']">
+
+                                {/* Clickable Google Maps Address */}
+                                <p className="text-white text-[16px] font-work-sans">
                                     Visit anytime <br />
-                                    <span className="font-semibold">
-                                        654 Colombo - Galle Main Rd, Colombo 00300
-                                    </span>
+                                    <a
+                                        href="https://maps.app.goo.gl/WoGs5C6Dm2cpW13R7"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="font-semibold text-white hover:text-[#272A5D] transition duration-300 ease-in-out"
+                                    >
+                                        654, Galle Road, - 03, Sri Lana.
+                                    </a>
                                 </p>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -328,7 +399,7 @@ export default function ContactUs() {
 
 
             {/* FAQS */}
-            <section id="FAQ" className="max-w-[1450px] mx-auto section-about mt-[110px] mb-[110px]">
+            <section id="FAQ" className="max-w-[1450px] mx-auto section-about mt-[110px] mb-[110px] FAQSection">
                 <h2 className="text-[#272A5D] font-work-sans text-[24px] sm:text-[28px] font-normal leading-normal mb-4 heading">
                     FAQs
                 </h2>

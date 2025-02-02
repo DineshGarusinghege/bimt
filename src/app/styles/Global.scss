@@ -221,3 +221,125 @@
     /* Keep animation consistent */
   }
 }
+
+
+.heroSectionHeight {
+  height: 70vh;
+
+  @media(max-width: 768px) {
+    height: 50vh;
+  }
+
+  @media(max-width:576px){
+    height:60vh;
+  }
+  @media(max-width:481px){
+    height: 40vh;
+  }
+  @media(max-width:460px) {
+    height: 33vh;
+  }
+
+  @media(max-width:425px) {
+    height: 30vh;
+  }
+
+  @media(max-width:440px){
+    height:28vh;
+  }
+  @media(max-width: 375px) {
+    height: 20vh;
+  }
+}
+
+.bredcrumbSectionMain {
+  @media(max-width:1280px){
+    top:0px;
+  }
+  @media(max-width:768px) {
+    top: -40px
+  }
+
+  @media(max-width:640px){
+    top:-50px
+  }
+
+  @media(max-width:440px){
+    top:-18px;
+  }
+
+  @media(max-width:425px) {
+    top: -20px;
+  }
+
+  @media(max-width:375px) {
+    top: -35px;
+  }
+
+}
+
+.breadCrumbSubSection {
+  @media(max-width:425px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.breadcrumbFont {
+  color: #000000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  @media(max-width:460px) {
+    font-size: 15px;
+  }
+  @media(max-width:440px){
+    font-size: 14px;
+  }
+  @media(max-width:375px){
+    font-size: 10px;
+  }
+  @media(max-width:320px){
+    font-size: 8px;
+  }
+}
+
+.svgRightArrowBreadCrumb{
+  height: 15px;
+  width: 15px;
+  @media(max-width:375px){
+    height: 11px;
+    width: 11px;
+  }
+  @media(max-width:320px){
+    height: 10px;
+    width: 10px;
+  }
+}
+
+.arroSvgCrumPadding{
+  padding-top: 2px;
+  @media(max-width:375px){
+    padding-top: 5px;
+  }
+  @media(max-width:320px){
+    padding-top: 7px;
+  }
+}
+
+.contactFormSecondSection{
+  @media(max-width:768px){
+    padding-left: 0px;
+  }
+}
+
+.FAQSection{
+  padding-left: 0px;
+  padding-right: 0px;
+  @media(max-width:1280px){
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
