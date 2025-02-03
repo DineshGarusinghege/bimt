@@ -5,6 +5,7 @@ import Image from 'next/image';
 import MainHeader from '../ui/MainHeader';
 // import AnnounsmentBar from '../ui/AnnounsmentBar';
 import { useState } from "react";
+import '../styles/Global.scss'
 
 export default function Event() {
 
@@ -67,36 +68,34 @@ export default function Event() {
     };
 
     const images = [
-        "/images/335f50a14164115a615eff36fab39a55.jpg",
-        "/images/0d7a8687bef5ae67abd5a4da3cd691bc.jpg",
-        "/images/97a21b5d16f4349c1c2b2dfd7c9b3834.jpg",
-        "/images/0d7a8687bef5ae67abd5a4da3cd691bc (1).jpg",
-        "/images/0d7a8687bef5ae67abd5a4da3cd691bc.jpg",
-        "/images/c9b51d5481c92846019e0b8d61ee777b.jpg",
-        "/images/d1d97bf7f92545d7b7c772e92788fcff.jpg",
-        "/images/1a2918c214f5400cbbe037ddb5282735.jpg",
-        "/images/c9b51d5481c92846019e0b8d61ee777b.jpg",
-        "/images/fb95912304647c1643d140056a4b84cc.jpg",
-        "/images/1a2918c214f5400cbbe037ddb5282735 (1).jpg",
-        "/images/d1d97bf7f92545d7b7c772e92788fcff (1).jpg",
-        "/images/1a2918c214f5400cbbe037ddb5282735 (1).jpg",
-        "/images/e7412e2c3115fca9257b37efc0379a97.jpg",
-        "/images/c9b51d5481c92846019e0b8d61ee777b.jpg",
-        "/images/fb95912304647c1643d140056a4b84cc.jpg",
-        "/images/1a2918c214f5400cbbe037ddb5282735 (1).jpg",
-        "/images/f4e3aeb690b3e3b280b4bd4812461176.jpg",
-        "/images/244b96edfe7e4a05fbf6e68e7342f45b.jpg",
-        "/images/715669089374fbf48d14fe67d24a9be4.jpg",
-        "/images/a5a13fc619c57873f5cc0416910b5e27.jpg",
-        "/images/af6acbfc09bee4e3bdf7263f21452a6f.jpg",
-        "/images/15a96873157bdf7f05b85b7b1577b71c.jpg",
-        "/images/1b158a974332ab52f5eb3d115a65c203.jpg",
+        "/images/201.jpg",
+        "/images/202.jpg",
+        "/images/203.jpg",
+        "/images/204.jpg",
+        "/images/205.jpg",
+        "/images/206.jpg",
+        "/images/207.jpg",
+        "/images/208.jpg",
+        "/images/209.jpg",
+        "/images/210.jpg",
+        "/images/211.jpg",
+        "/images/212.jpg",
+        "/images/213.jpg",
+        "/images/214.jpg",
+        "/images/215.jpg",
+        "/images/216.jpg",
+        "/images/217.jpg",
+        "/images/218.jpg",
+        "/images/219.jpg",
+        "/images/220.jpg",
+        "/images/221.jpg",
+
     ];
 
     return (
         <>
             <head>
-                <title>Event - BIMT Campus</title>
+                <title>News & Event - BIMT Campus</title>
                 <meta
                     name="description"
                     content="Join BIMT Campus events for learning, collaboration, and growth. Explore workshops, seminars, and cultural celebrations!"
@@ -105,47 +104,37 @@ export default function Event() {
             <MainHeader />
             {/* <AnnounsmentBar /> */}
 
-            {/* Here section */}
-            <div className="relative bg-cover bg-center h-[480px] z-0" style={{ backgroundImage: "url('/images/Rectangle 1.png')" }}>
-                {/* Overlay for better text visibility */}
-                {/* <div className="absolute inset-0 bg-[#272A5DB2] opacity-[70%] z-10"></div> */}
 
-                <div className='relative max-w-[1430px] mx-auto top-[55px]'>
+            {/* Hero Section */}
+            <div className="relative w-full bg-cover bg-center heroSectionHeight before:absolute before:inset-0 before:bg-white before:bg-opacity-50"
+                style={{ backgroundImage: "url('/images/SEK_5536-scaled.webp')" }}
+
+            >
+                {/* Breadcrumb Section Wrapper */}
+                <div className="relative max-w-[1450px] mx-auto top-[55px] px-10 py-50 bredcrumbSectionMain">
                     {/* Breadcrumb Section */}
-                    <div className="absolute container mx-auto px-6 lg:px-16 flex items-center h-full z-20">
+                    <div className="relative flex w-full max-w-[1450px] gap-5 px-2 py-12 breadCrumbSubSection">
                         <nav
                             className="bg-gray-200 bg-opacity-80 py-2 px-4 rounded-lg text-sm text-gray-700"
                             style={{
-                                display: 'inline-flex',
-                                padding: '5px 25px',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                gap: '10px',
-                                background: '#ffffff45',
+                                display: "inline-flex",
+                                padding: "5px 25px",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                gap: "10px",
+                                background: "#ffffff45",
                             }}
                         >
                             <ol className="flex space-x-2">
                                 <li>
-                                    <Link
-                                        href="/"
-                                        className="hover:underline hover:text-blue-500"
-                                        style={{
-                                            color: '#fff',
-                                            fontFamily: 'Avenir LT Std',
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: 'normal',
-                                        }}
-                                    >
+                                    <Link href="/" className="hover:underline hover:text-blue-500 breadcrumbFontWhite font-avenir">
                                         Home
                                     </Link>
                                 </li>
-                                <span className="text-gray-400">
+                                <span className="text-gray-400 arroSvgCrumPadding">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        width="15"
-                                        height="15"
+                                        className="w-[12px] h-[12px] svgRightArrowBreadCrumb"
                                         viewBox="0 0 15 15"
                                         fill="none"
                                     >
@@ -155,28 +144,16 @@ export default function Event() {
                                         />
                                     </svg>
                                 </span>
+
                                 <li>
-                                    <Link
-                                        href="/Event"
-                                        className="hover:underline hover:text-blue-500"
-                                        style={{
-                                            color: '#fff',
-                                            fontFamily: 'Avenir LT Std',
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: 'normal',
-                                        }}
-                                    >
-                                        Events
+                                    <Link href="/life-at-bimt" className="hover:underline hover:text-blue-500 breadcrumbFontWhite font-avenir">
+                                        Life at BIMT
                                     </Link>
                                 </li>
-
-                                <span className="text-gray-400">
+                                <span className="text-gray-400 arroSvgCrumPadding">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        width="15"
-                                        height="15"
+                                        className="w-[12px] h-[12px] svgRightArrowBreadCrumb"
                                         viewBox="0 0 15 15"
                                         fill="none"
                                     >
@@ -187,34 +164,156 @@ export default function Event() {
                                     </svg>
                                 </span>
                                 <li>
-                                    <span
-                                        className="text-gray-600"
-                                        style={{
-                                            color: '#fff',
-                                            fontFamily: 'Avenir LT Std',
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: 'normal',
-                                        }}
-                                    >
-                                        Events
-                                    </span>
+                                    <span className="hover:underline hover:text-blue-500 breadcrumbFontWhite font-avenir">Campus Life</span>
                                 </li>
                             </ol>
                         </nav>
                     </div>
                 </div>
-
             </div>
 
 
 
-            <div className="mb-[110px] mt-[110px] px-4 max-w-[1450px] w-full mx-auto">
+            <div className="mb-[80px] mt-[80px] px-4 max-w-[1450px] w-full mx-auto">
                 <div>
                     {/* Banner Section 01 */}
                     <div
-                        className="mx-auto max-w-[1450px] w-full h-auto bg-gradient-to-r from-[#D39243] to-[rgba(211,194,154,0.80)] flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-10 px-4 md:px-6 lg:px-5 py-6 md:py-5"
+                        className="mx-auto max-w-[1450px] w-full h-auto bg-gradient-to-r from-[#D39243] to-[rgba(211,194,154,0.80)] flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-10 px-4 md:px-6 lg:px-5 py-6 md:py-5 mb-[80px]"
+                    >
+                        {/* Left Side Image */}
+                        <div className="w-full md:w-[300px] h-auto">
+                            <Image
+                                src="/images/DSC_0615.jpg"
+                                alt="Workshop"
+                                width={300}
+                                height={200}
+                                className="w-full h-auto object-cover"
+                            />
+                        </div>
+
+                        {/* Right Side Text */}
+                        <div className="flex flex-col gap-4 flex-grow w-full md:w-[800px]">
+                            <h2 className="text-black font-bold leading-tight text-black font-avenir EventNewsHeader">
+                                The Management Skills Development Programme
+                            </h2>
+                            <p className="text-black leading-relaxed text-justify font-work-sans eventNewsPara">
+                                The Management Skills Development Programme” launched by BIMT Campus in collaboration with the Chartered Management Institute, UK. In today’s fast-paced world, effective management is more critical than ever. We know that the business world is looking for talented corporate leaders to address the challenges. As we embark on a journey that is designed to empower our managers and leaders to be a talented corporate leader where we believe that we can contribute for nation’s human capital development.
+                            </p>
+                        </div>
+
+                        {/* Toggle Arrow */}
+                        <div
+                            className="w-10 h-10 flex items-center justify-center cursor-pointer"
+                            onClick={toggleSection1}
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                <path
+                                    d={
+                                        isExpanded1
+                                            ? "M25.879 5.42976L15 16.3087L4.12102 5.42976L0 9.55076L15 24.5508L30 9.55076L25.879 5.42976Z"
+                                            : "M25.879 24.5508L15 13.6718L4.12102 24.5508L0 20.4298L15 5.42976L30 20.4298L25.879 24.5508Z"
+                                    }
+                                    fill="#5A5A5A"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+
+                    {/* Expanded Section */}
+                    {isExpanded1 && (
+                        <div
+                            className="relative max-w-[1450px] w-full mx-auto py-8 px-4 expandedEventGallary"
+                            style={{
+                                backgroundImage: 'url("/images/17-1.jpg")',
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                            }}
+                        >
+                            {/* White Overlay with Opacity */}
+                            <div className="absolute inset-0 bg-white opacity-50"></div>
+
+                            <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 z-10" style={{
+
+                            }}>
+                                {images.map((src, index) => (
+                                    <div
+                                        key={index}
+                                        className="w-full md:w-[300px] h-auto overflow-hidden cursor-pointer"
+                                        onClick={() => setSelectedImage(src)}
+                                    >
+                                        <Image
+                                            src={src}
+                                            alt={`Gallery ${index + 1}`}
+                                            width={300}
+                                            height={200}
+                                            className="w-full h-auto object-cover eventImages"
+                                        
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Gallery Navigation */}
+                    {selectedImage && (
+                        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4">
+                            <div className="relative flex items-center">
+                                {/* Left Arrow */}
+                                <button
+                                    className="text-white bg-gray-700 p-3 rounded-full hover:bg-gray-500 mr-4"
+                                    onClick={() => {
+                                        const currentIndex = images.indexOf(selectedImage);
+                                        setSelectedImage(images[(currentIndex - 1 + images.length) % images.length]);
+                                    }}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                        <path d="M20 5 L10 15 L20 25" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+
+                                </button>
+
+                                <Image
+                                    src={selectedImage}
+                                    alt="Selected Image"
+                                    width={1000}
+                                    height={700}
+                                    className="rounded-lg w-full max-w-[90vw] h-auto"
+                                />
+
+                                {/* Right Arrow */}
+                                <button
+                                    className="text-white bg-gray-700 p-3 rounded-full hover:bg-gray-500 ml-4"
+                                    onClick={() => {
+                                        const currentIndex = images.indexOf(selectedImage);
+                                        setSelectedImage(images[(currentIndex + 1) % images.length]);
+                                    }}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                        <path d="M10 5 L20 15 L10 25" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+
+                                </button>
+
+                                {/* Close Button */}
+                                <button
+                                    className="absolute top-4 right-4  text-black p-2 rounded-full"
+                                    onClick={() => setSelectedImage(null)}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                        <path d="M7 7 L23 23" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                        <path d="M23 7 L7 23" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                    </svg>
+
+                                </button>
+                            </div>
+                        </div>
+                    )}
+
+
+                    {/* Banner Section 02*/}
+                    <div
+                        className="mx-auto max-w-[1450px] w-full h-auto bg-gradient-to-r from-[#D39243] to-[rgba(211,194,154,0.80)] flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-10 px-4 md:px-6 lg:px-5 py-6 md:py-5 mb-[80px]"
                     >
                         {/* Left Side Image */}
                         <div className="w-full md:w-[300px] h-auto">
@@ -235,7 +334,7 @@ export default function Event() {
                                 The Management Skills Development Programme
                             </h2>
                             <p className="text-black leading-relaxed text-justify font-work-sans" style={{
-                                fontSize:'16px'
+                                fontSize: '16px'
                             }}>
                                 The Management Skills Development Programme” launched by BIMT Campus in collaboration with the Chartered Management Institute, UK. In today’s fast-paced world, effective management is more critical than ever. We know that the business world is looking for talented corporate leaders to address the challenges. As we embark on a journey that is designed to empower our managers and leaders to be a talented corporate leader where we believe that we can contribute for nation’s human capital development.
                             </p>
@@ -294,10 +393,24 @@ export default function Event() {
                         </div>
                     )}
 
-                    {/* Modal for Full-Screen Image */}
+                    {/* Gallery Navigation */}
                     {selectedImage && (
                         <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4">
-                            <div className="relative">
+                            <div className="relative flex items-center">
+                                {/* Left Arrow */}
+                                <button
+                                    className="text-white bg-gray-700 p-3 rounded-full hover:bg-gray-500 mr-4"
+                                    onClick={() => {
+                                        const currentIndex = images.indexOf(selectedImage);
+                                        setSelectedImage(images[(currentIndex - 1 + images.length) % images.length]);
+                                    }}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                        <path d="M20 5 L10 15 L20 25" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+
+                                </button>
+
                                 <Image
                                     src={selectedImage}
                                     alt="Selected Image"
@@ -305,12 +418,31 @@ export default function Event() {
                                     height={700}
                                     className="rounded-lg w-full max-w-[90vw] h-auto"
                                 />
+
+                                {/* Right Arrow */}
+                                <button
+                                    className="text-white bg-gray-700 p-3 rounded-full hover:bg-gray-500 ml-4"
+                                    onClick={() => {
+                                        const currentIndex = images.indexOf(selectedImage);
+                                        setSelectedImage(images[(currentIndex + 1) % images.length]);
+                                    }}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                        <path d="M10 5 L20 15 L10 25" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+
+                                </button>
+
                                 {/* Close Button */}
                                 <button
-                                    className="absolute top-4 right-4 bg-white text-black p-2 rounded-full"
+                                    className="absolute top-4 right-4  text-black p-2 rounded-full"
                                     onClick={() => setSelectedImage(null)}
                                 >
-                                    ✕
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                        <path d="M7 7 L23 23" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                        <path d="M23 7 L7 23" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                    </svg>
+
                                 </button>
                             </div>
                         </div>
