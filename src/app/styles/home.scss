@@ -180,6 +180,58 @@ $border-color: #272A5D; // Border color
   rotate: (-10.795deg)
 }
 
+.searchbarProgrammsSearchBtn {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #272A5D;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  /* Initial text color */
+  background: #272A5D;
+  cursor: pointer;
+
+  /* Text color transition */
+  span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+  }
+
+  /* Background animation */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #ffffff;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1;
+    /* Ensure it's behind the text */
+  }
+
+  /* Hover state */
+  &:hover {
+    span {
+      color: #000000;
+      /* Change text color on hover */
+    }
+
+    &::before {
+      transform: scaleY(1);
+      /* Fill bottom-to-top */
+    }
+  }
+
+  /* Mouse leave state */
+  &:not(:hover)::before {
+    transform: scaleY(0);
+    /* Remove bottom-to-top */
+    transform-origin: top;
+    /* Keep animation consistent */
+  }
+}
 
 .btnBlue {
   position: relative;
@@ -490,8 +542,24 @@ $border-color: #272A5D; // Border color
 }
 
 .searchBarBox {
+  @media(max-width:500px){
+    width: 80%;
+  }
   @media(max-width: 480px) {
     padding: 6px 10px 6px 15px;
+  }
+  @media(max-width:460px){
+    width:90%;
+  }
+  @media(max-width:440px){
+    width:95%;
+  }
+  @media(max-width:425px){
+    width:95%;
+  }
+
+  @media(max-width:375px){
+    width: 95%;
   }
 }
 
@@ -510,5 +578,15 @@ $border-color: #272A5D; // Border color
 .textContentBox {
   @media(max-width: 480px) {
     padding: 0px;
+  }
+}
+
+.SearchButtton{
+  @media(max-width:400px){
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @media(max-width:320px){
+    display: none;
   }
 }

@@ -395,9 +395,10 @@
     width: 230px;
   }
 
-  @media(max-width:640px){
-    width:300px;
+  @media(max-width:640px) {
+    width: 300px;
   }
+
   @media(max-width:576px) {
     width: 510px;
     height: auto;
@@ -410,13 +411,16 @@
   @media(max-width:1280px) {
     padding-right: 30px;
   }
-  @media(max-width:640px){
+
+  @media(max-width:640px) {
     padding-right: 20px;
   }
-  @media(max-width:576px){
+
+  @media(max-width:576px) {
     padding-right: 0px;
   }
-  @media(max-width: 560px){
+
+  @media(max-width: 560px) {
     padding-right: 20px;
   }
 }
@@ -425,10 +429,12 @@
 // fontSize: "40px"
 .EventNewsHeader {
   font-size: 40px;
-  @media(max-width:1280px){
+
+  @media(max-width:1280px) {
     font-size: 30px;
   }
-  @media(max-width:1080px){
+
+  @media(max-width:1080px) {
     font-size: 24px;
   }
 
@@ -436,21 +442,169 @@
 
 .eventNewsPara {
   font-size: 16px;
-  @media(max-width:1280px){
+
+  @media(max-width:1280px) {
     font-size: 14px;
   }
-  @media(max-width:1080px){
+
+  @media(max-width:1080px) {
     font-size: 12px;
   }
 }
 
-.gallaryPreview{
+.gallaryPreview {
   justify-content: center;
   width: 80%;
-  @media(max-width:576px){
+
+  @media(max-width:576px) {
     width: 70%;
   }
-  @media(max-width:425px){
-    width:60%;
+
+  @media(max-width:425px) {
+    width: 60%;
+  }
+}
+
+
+.ExpertSectionMain {
+  @media(max-width:1280px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.clearBtn {
+  @media(max-width:600px) {
+    display: none;
+  }
+}
+
+.cardWidth {
+  width: 96.7%;
+
+  @media(max-width:1280px) {
+    width: 96%;
+  }
+
+  @media(max-width:1110px) {
+    width: 95.4%;
+  }
+
+  @media(max-width:1024px) {
+    width: 96.5%;
+  }
+
+  @media(max-width:768px) {
+    width: 95.5%
+  }
+
+  @media(max-width:600px) {
+    width: 97.1%;
+  }
+}
+
+.CardExert {
+  width: 80%;
+
+  @media(max-width:1024px) {
+    width: 70%;
+
+  }
+}
+
+.ThirdCard {
+  @media(max-width: 1024px) {
+    margin-top: 50px;
+  }
+}
+
+.cardTwo {
+  @media(max-width:600px) {
+    margin-top: 50px;
+  }
+}
+
+
+.SecondSectionExpert {
+  padding-left: 240px;
+  padding-right: 240px;
+
+  @media(max-width:1280px) {
+    padding-left: 210px;
+    padding-right: 210px;
+  }
+
+  @media(max-width:1110px) {
+    padding-left: 136px;
+    padding-right: 136px;
+  }
+
+  @media(max-width:1024px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  @media(max-width:768px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+
+.campusLifeEventSection {
+  @media(max-width:1280px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.CampingEvent{
+  @media(max-width:576px){
+    margin-top:100px
+  }
+  @media(max-width:400px){
+    margin-top: 140px;
+  }
+  @media(max-width:375px){
+    margin-top: 220px;
+  }
+  @media(max-width:320px){
+    margin-top: 270px;
+  }
+}
+
+.eventCricket {
+  @media(max-width:1024px) {
+    margin-top: 100px;
+  }
+  @media(max-width:768px){
+    margin-top: 200px;
+  }
+  @media(max-width:640px){
+    margin-top: 30px;
+  }
+  @media(max-width:400px){
+    margin-top: 60px;
+  }
+  @media(max-width:375px){
+    margin-top: 100px;
+  }
+  @media(max-width:320px){
+    margin-top: 130px;
+  }
+}
+
+.eventDescriptionContainer {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  top: 200px;
+  @media(max-width:1110px){
+    top:150px;
+  }
+  @media(max-width:768px){
+    top:100px;
   }
 }
