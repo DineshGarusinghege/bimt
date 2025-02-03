@@ -1063,114 +1063,76 @@ const HomePage: React.FC = () => {
                 {/* About Us */}
 
                 <div
-                    className="relative w-full px-6 pt-[110px] md:px-12 lg:px-24 mt-[100px] mb-[-40px]"
+                    className="relative w-full px-4 sm:px-6 md:px-12 lg:px-24 pt-[110px] pb-[120px] mt-[100px] mb-[110px]"
                     style={{
                         backgroundImage: "url('/images/bgimgqa.jpg')",
-                        backgroundSize: 'cover', // Ensure the background covers the full width and height
-                        backgroundPosition: 'center', // Center the background image
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
                     }}
                 >
-                    <div className="max-w-[1300px] mx-auto relative">
-                        <div className="grid grid-cols-2 gap-4 lg:gap-6 w-full lg:w-1/2 relative">
+                    <div className="max-w-[1450px] mx-auto relative flex flex-col lg:flex-row items-center ScalingAboutSection">
+                        {/* Left Section - Images */}
+                        <div className="relative w-full lg:w-1/2 flex justify-center">
                             {/* First Image */}
-                            <div
-                                className="col-span-1 relative"
-                                style={{
-                                    width: '250px',
-                                    zIndex: '20',
-                                    position: 'absolute',
-                                    left: '25px',
-                                    top: '35px',
-                                }}
-                            >
+                            <div className="absolute top-8 left-2 sm:left-6 w-[120px] sm:w-[180px] md:w-[220px] lg:w-[250px] transition-transform duration-500 hover:scale-110 gStudent">
                                 <Image
-                                    src="/images/medium-shot-graduate-student_23-2148950577 1.png"
+                                    src="/images/SEK_5541-scaled.webp"
                                     alt="Graduate student"
-                                    width={240}
+                                    width={250}
                                     height={159}
-                                    objectFit='cover'
-                                    className="w-full h-auto rounded-lg shadow-lg"
+                                    className="w-full h-auto shadow-lg"
                                 />
                             </div>
 
-                            {/* Second Image */}
-                            <div
-                                className="col-span-1 row-span-2 relative"
-                                style={{
-                                    marginLeft: '10px',
-                                    left: '280px',
-                                    height: '600px',
-                                    top: '0px',
-                                }}
-                            >
+                            {/* Second Image - Main (Largest) */}
+                            <div className="relative w-[220px] sm:w-[280px] md:w-[340px] lg:w-[400px] z-20 transition-transform duration-500 hover:scale-110 CBoodGirl">
                                 <Image
-                                    src="/images/college-student-holding-books-walking-campus-going-class-smiling-young-smiling-multiracial-asian-wom 1.png"
+                                    src="/images/SEK_5536-scaled (1).jpg"
                                     alt="Student walking on campus"
                                     width={368}
                                     height={545}
-                                    className="w-full h-auto rounded-lg shadow-lg"
-                                    objectFit='cover'
+                                    className="w-full h-auto shadow-lg"
                                 />
                             </div>
 
                             {/* Third Image */}
-                            <div
-                                className="col-span-1 absolute"
-                                style={{
-                                    top: '215px',
-                                    left: '0px',
-                                }}
-                            >
+                            <div className="absolute top-28 left-[-10px] sm:left-0 w-[160px] sm:w-[220px] md:w-[270px] lg:w-[335px] transition-transform duration-500 hover:scale-110 maleStudent">
                                 <Image
-                                    src="/images/front-view-male-student-wearing-black-backpack-holding-copybooks-files-smiling-blue-wall_140725-4264 1.png"
+                                    src="/images/SEK_4742-scaled.webp"
                                     alt="Student with files"
                                     width={335}
                                     height={223}
-                                    objectFit='cover'
-                                    className="w-full h-auto rounded-lg shadow-lg"
+                                    className="w-full h-auto shadow-lg"
                                 />
                             </div>
                         </div>
 
-                        {/* Text Content */}
+                        {/* Right Section - Text Content */}
                         <div
-                            className="absolute bg-white lg:p-12 rounded-lg shadow-md lg:w-1/2"
-                            style={{
-                                right: '0',
-                                top: '25px',
-                                paddingTop: '25px',
-                                paddingLeft: '50px',
-                                paddingBottom: '25px',
-                                paddingRight: '50px',
-                                color: '#5A5A5A',
-                                textAlign: 'justify',
-                                fontFamily: 'Work Sans',
-                                fontSize: '16px',
-                                fontStyle: 'normal',
-                                fontWeight: '400',
-                                lineHeight: '25px',
-                                width: '763px', // Fixed width for the text 
-                            }}
+                            className="bg-white p-6 sm:p-8 md:p-10 lg:p-12 shadow-md w-full lg:w-1/2 mt-16 lg:mt-0 transition-transform duration-500 hover:scale-105"
+                            style={{ color: '#5A5A5A', textAlign: 'justify' }}
                         >
-                            <h2 className="text-lg font-semibold text-[#272A5D] mb-2">About us</h2>
-                            <h3 className="text-3xl md:text-4xl font-bold text-[#272A5D] mb-4">
+                            <h2 className="mb-2 aboutusHeading">ABOUT US</h2>
+                            <h3 className="text-left text-[#272A5D] mb-4" style={{
+                                fontSize:'24px', lineHeight:'28px'
+                            }}>
                                 DISCOVER WHO WE ARE?
                             </h3>
-                            <p className="text-gray-700 mb-6 leading-relaxed">
+                            <p className="text-gray-700 mb-6 leading-relaxed text-sm md:text-base font-left font-[16px]">
                                 At BIMT Campus, we are dedicated to providing high-quality, accessible education in management and technology.
                                 In collaboration with a leading international organization, we offer a unique learning environment where students
                                 gain both theoretical knowledge and practical skills to excel in their careers. With an ISO 9001:2015 certification,
                                 a highly qualified faculty, and internationally recognized programs, BIMT Campus empowers students to achieve
                                 their goals and make a lasting impact in their chosen fields.
                             </p>
-                            <div className="flex space-x-4">
+                            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                                 <Link href={'/AboutUs'}>
-                                    <button className="bluBorderWhitebgTextblack font-semibold transition">
+                                    <button className="bluBorderWhitebgTextblack font-semibold transition px-6 py-2 border border-blue-900 text-blue-900 rounded-lg hover:bg-blue-900 hover:text-white">
                                         <span> View more</span>
                                     </button>
                                 </Link>
-                                <Link href={'./ContactUs'}>
-                                    <button className="bluBorderWhitebgTextblack rounded-lg font-semibold">
+                                <Link href={'/ContactUs'}>
+                                    <button className="bluBorderWhitebgTextblack font-semibold px-6 py-2 border border-blue-900 text-blue-900 rounded-lg hover:bg-blue-900 hover:text-white">
                                         <span>Contact us</span>
                                     </button>
                                 </Link>
@@ -1725,7 +1687,7 @@ const HomePage: React.FC = () => {
 
 
 
-              
+
 
 
                 {/* activity cards */}
@@ -1759,7 +1721,7 @@ const HomePage: React.FC = () => {
                         {/* Event 1 */}
                         <div className="relative flex flex-col items-center w-full">
                             <img src="/images/actitivity1.png" alt="Graduation" className="w-full h-auto object-cover" />
-                            <div  className="absolute bg-white p-4 shadow eventDescriptionContainer">
+                            <div className="absolute bg-white p-4 shadow eventDescriptionContainer">
                                 <h3 className="text-2xl font-bold text-[#272A5D] text-center md:text-left">Graduation</h3>
                                 <p className="text-gray-600 text-sm text-justify">
                                     Our BIMT Campus annual graduation ceremony is a day devoted to celebrate an important point in our students’ lives. Examinations are finally over, scruffiness is replaced with fancy clothes and parents admire their children for reaching the finishing line of a long marathon. The future of BIMT past pupil always seems more promising than the present, and the present on graduation day is pretty good even if it is not quite the reality.
@@ -1782,7 +1744,7 @@ const HomePage: React.FC = () => {
                         <div className="relative flex flex-col items-center w-full eventCricket">
                             <img src="/images/activitiy3.png" alt="Cricket Tournament" className="w-full h-auto object-cover" />
                             <div className="absolute bg-white p-4 shadow eventDescriptionContainer"
-                               >
+                            >
                                 <h3 className="text-2xl font-bold text-[#272A5D] text-center md:text-left">Cricket Tournament</h3>
                                 <p className="text-gray-600 text-sm text-justify">
                                     BIMT cricket tournament was well-organized by Alumni Association of BIMT Campus. This game proved a true leadership and team sprit throughout the whole day of the matches. Main theme of the cricket tournament was to build a Positive behavior that make cricket an exciting game that encourages leadership, friendship, and teamwork.
