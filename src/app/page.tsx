@@ -1114,7 +1114,7 @@ const HomePage: React.FC = () => {
                         >
                             <h2 className="mb-2 aboutusHeading">ABOUT US</h2>
                             <h3 className="text-left text-[#272A5D] mb-4" style={{
-                                fontSize:'24px', lineHeight:'28px'
+                                fontSize: '24px', lineHeight: '28px'
                             }}>
                                 DISCOVER WHO WE ARE?
                             </h3>
@@ -1142,6 +1142,59 @@ const HomePage: React.FC = () => {
                 </div>
 
 
+                <div className="eventSectionContainer relative flex flex-col md:flex-row items-center bg-white text-white p-6">
+                    {/* Events List */}
+                    <div className="eventLargeContent bg-[#272A5D] max-w-[1450px] mx-auto p-6 md:p-10 w-full md:w-2/3 rounded-lg shadow-lg">
+                        <div className="flex flex-col w-full md:max-w-[743px] gap-6">
+                            <div>
+                                <h2 className="text-lg md:text-xl font-semibold text-white">Events</h2>
+                                <h1 className="text-2xl md:text-4xl font-bold mt-2 upCommingEvntTxt">UPCOMING EVENTS</h1>
+                            </div>
+
+                            {/* Events Loop */}
+                            {[1, 2, 3].map((event, index) => (
+                                <div key={index} className="flex flex-col md:flex-row py-4 md:py-6 border border-white p-4 md:p-5 items-start gap-4 md:gap-[67px] hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out">
+                                    <div className="flex flex-col items-center justify-center w-16 md:w-20 text-center">
+                                        <span className="text-lg md:text-xl font-light text-white">Dec</span>
+                                        <span className="text-2xl md:text-3xl font-bold text-white">10th</span>
+                                    </div>
+                                    <div className="ml-0 md:ml-6 flex-1">
+                                        <h3 className="text-lg md:text-xl font-semibold text-white">Leadership Summit</h3>
+                                        <p className="text-sm md:text-base font-light text-white leading-relaxed">
+                                            Join us for an inspiring Leadership Summit to empower leaders of tomorrow.
+                                        </p>
+                                        <div className="flex flex-wrap justify-between items-center mt-4 text-sm md:text-base font-semibold text-white">
+                                            <span>10.00 - 16.00</span>
+                                            <span>Hilton Colombo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Countdown Section */}
+                    <div className="countDownimageWithSection relative w-full md:w-1/3 flex flex-col items-center mt-6 md:mt-0 absolute right-[100px]">
+                        <Image src="/images/3 1.png" alt="Event Image" width={600} height={400} className="rounded-lg w-full h-auto" />
+                        <div className="countDownBoxs bg-white p-6 rounded-lg shadow-lg mt-4 md:mt-0 w-11/12 md:w-3/4 text-center absolute top-[320px]">
+                            <h4 className="text-lg md:text-xl font-semibold text-black">Next Event</h4>
+                            {/* Countdown Timer */}
+                            <CountdownComponent eventDate={nextEventDate} />
+                            <div className="flex flex-wrap justify-center gap-4 mt-4">
+                                <Link href={'/Event'}>
+                                    <button className="px-4 py-2 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition">
+                                        View all events
+                                    </button>
+                                </Link>
+                                <Link href={'/ContactUs'}>
+                                    <button className="px-4 py-2 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition">
+                                        Contact us
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 {/*Start Event section */}
                 <div
