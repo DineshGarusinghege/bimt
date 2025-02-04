@@ -1069,7 +1069,7 @@ const HomePage: React.FC = () => {
 
                         </button>
                         {/* Icon with Rotation */}
-                        <div className="absolute -top-3 -left-6 transform -rotate-10">
+                        <div className="absolute -top-1 -left-9 transform -rotate-10">
                             <Image src="/images/graduate 1.png"
                                 width={61.25}
                                 height={43.04}
