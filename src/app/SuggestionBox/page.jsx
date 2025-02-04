@@ -68,10 +68,11 @@ const SuggestionBox = () => {
                 });
             }
         } catch (error) {
-            toast.error("⚠️ Network error. Please try again later.", {
+            toast.error("Network error. Please try again later.", {
                 position: "top-right",
                 autoClose: 3000,
             });
+            console.log(error)
         }
     };
 

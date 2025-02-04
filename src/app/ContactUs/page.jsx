@@ -127,6 +127,7 @@ export default function ContactUs() {
                 position: "top-right",
                 autoClose: 3000,
             });
+            console.log(error)
         }
     };
 
