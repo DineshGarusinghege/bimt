@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import '../../styles/ui/MainHeader.scss';
 import Link from "next/link";
+import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 
 const MainHeader = () => {
     const [menuOpen, setMenuOpen] = useState(false); // State for toggle menu
@@ -216,8 +217,6 @@ const MainHeader = () => {
                             <a href="tel:+94115332222" className="menuContactNumber1">+94 115 33 22 22</a>
                             <a href="tel:+94115332222" className="menuContactTitle contactSecondNumber">+94 777 92 59 92</a>
                         </div>
-
-
                     </nav>
 
                     {/* Buttons (Desktop Only) */}
@@ -237,7 +236,10 @@ const MainHeader = () => {
                             className="p-2 border rounded-md"
                         >
                             {menuOpen ? (
-                                <span className="text-lg">✖</span> // Close icon
+                                <span className="text-lg" style={{
+                                    paddingLeft:'10px',
+                                    paddingRight:'10px'
+                                }}>✖</span> 
                             ) : (
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -255,40 +257,48 @@ const MainHeader = () => {
                                 </svg>
                             )}
                         </button>
+
                     </div>
                 </div>
 
                 {/* Mobile Navigation */}
                 {menuOpen && (
                     <div className="md:hidden bg-white shadow p-4">
-                        <ul className="space-y-4">
-                            <li>
-                                <Link href="/" className="block text-gray-800 menuTitle" style={{ fontSize: '18px' }}>Home</Link>
+                        <ul className="mobileHeaderMainContent">
+                            <li className="mobileHeaderPage2">
+                                <Link href="/" className="block text-white menuTitle" style={{ fontSize: '18px' }}>Home</Link>
                             </li>
                             {/* About Us */}
-                            <li>
+                            <li className="mobileHeaderPage">
                                 <button
                                     className="flex items-center justify-between w-full text-left text-gray-800 hover:text-blue-500 focus:outline-none menuTitle"
                                     style={{ fontSize: '18px' }}
                                     onClick={() => toggleSubMenu('about')}
                                 >
-                                    <span>About Us</span>
-                                    <span className="text-xl">{activeSubMenu === 'about' ? '-' : '+'}</span>
+                                    <span className="text-white flex flex-row gap-2">About Us <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                    >
+                                        <path d="M12 16l-6-6h12l-6 6z" />
+                                    </svg></span>
                                 </button>
                                 {activeSubMenu === 'about' && (
                                     <ul className="mt-2 pl-4 space-y-2 border-l-2 border-gray-300">
                                         <li>
-                                            <Link href="/AboutUs" className="block text-gray-800 hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/AboutUs" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Overview
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/OurJourney" className="block text-gray-800 hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/OurJourney" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Our Journey
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/ChairmansMessage" className="block text-gray-800 hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/ChairmansMessage" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Chairman&#39;s Message
                                             </Link>
                                         </li>
@@ -297,32 +307,39 @@ const MainHeader = () => {
                             </li>
 
                             {/* Programmes */}
-                            <li>
+                            <li className="mobileHeaderPage">
                                 {/* Toggle Button */}
                                 <button
                                     className="flex items-center justify-between w-full text-left text-gray-800 hover:text-blue-500 focus:outline-none menuTitle"
                                     style={{ fontSize: '18px' }}
                                     onClick={() => toggleSubMenu('programmes')} // Pass the unique menu key
                                 >
-                                    <span>Programmes</span>
-                                    <span className="text-xl">{activeSubMenu === 'programmes' ? '-' : '+'}</span>
+                                    <span className="text-white flex flex-row gap-2">Programmes <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                    >
+                                        <path d="M12 16l-6-6h12l-6 6z" />
+                                    </svg></span>
                                 </button>
 
                                 {/* Submenu - Render only if activeSubMenu is 'programmes' */}
                                 {activeSubMenu === 'programmes' && (
                                     <ul className="mt-2 pl-4 space-y-2 border-l-2 border-gray-300">
                                         <li>
-                                            <Link href="/CertificateProgrammes" className="block text-gray-800 hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/CertificateProgrammes" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Certificate Programmes
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/Diploma" className="block text-gray-800 hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/Diploma" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Diploma
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/BachelorsDegree" className="block text-gray-800 hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/BachelorsDegree" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Bachelors Degree
                                             </Link>
                                         </li>
@@ -331,40 +348,54 @@ const MainHeader = () => {
                             </li>
 
                             {/* Life at BIMT */}
-                            <li>
+                            <li className="mobileHeaderPage">
                                 <Link href={'/CampusLife'}>
                                     <button
                                         className="flex items-center justify-between w-full text-left text-gray-800 hover:text-blue-500 focus:outline-none menuTitle" style={{ fontSize: '18px' }}
                                         onClick={() => toggleSubMenu('CampusLife')}
                                     >
-                                        <span>Life at BIMT</span>
-                                        <span className="text-xl">{activeSubMenu === 'CampusLife' ? '-' : '+'}</span>
+                                        <span className="text-white flex flex-row gap-2">Life at BIMT <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                        >
+                                            <path d="M12 16l-6-6h12l-6 6z" />
+                                        </svg></span>
                                     </button>
                                 </Link>
                                 {/* Submenu */}
                                 {activeSubMenu === 'CampusLife' && (
                                     <ul className="mt-2 pl-4 space-y-2 border-l-2 border-gray-300">
                                         <li>
-                                            <Link href="/CampusLife" className="block text-gray-800 hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/CampusLife" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Campus Life
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/Event" className="block text-gray-800 hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/Event" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Events
                                             </Link>
                                         </li>
                                     </ul>
                                 )}
                             </li>
-                            <li>
+                            <li className="mobileHeaderPage1">
                                 <Link href={'/ContactUs'}>
                                     <button
                                         className="flex items-center justify-between w-full text-left text-gray-800 hover:text-blue-500 focus:outline-none menuTitle" style={{ fontSize: '18px' }}
                                         onClick={() => toggleSubMenu('ContactUs')}
                                     >
-                                        <span>Connect with Us</span>
-                                        <span className="text-xl">{activeSubMenu === 'ContactUs' ? '-' : '+'}</span>
+                                        <span className="text-white flex flex-row gap-2"> Connect with Us  <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                        >
+                                            <path d="M12 16l-6-6h12l-6 6z" />
+                                        </svg></span>
 
                                     </button>
                                 </Link>
@@ -372,22 +403,22 @@ const MainHeader = () => {
                                 {activeSubMenu === 'ContactUs' && (
                                     <ul className="mt-2 pl-4 space-y-2 border-l-2 border-gray-300">
                                         <li>
-                                            <Link href="/ContactUs" className="block text-gray-800 hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/ContactUs" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Contact Us
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/CareeratBIMT" className="block text-gray-800 hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/CareeratBIMT" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Career at BIMT
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/Testimonials" className="block text-gray-800 hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/Testimonials" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Testimonials
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/SuggestionBox" className="block text-gray-800 hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/SuggestionBox" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Suggestion Box
                                             </Link>
                                         </li>
@@ -395,27 +426,18 @@ const MainHeader = () => {
                                 )}
                             </li>
                         </ul>
-
-                        {/* Buttons for Mobile */}
-                        <div className="mt-4 space-y-2">
-                            <div className="w-full">
-                                <Link href={'/ContactUs'}>
-                                    <button className="w-full px-4 py-2 bg-blue-900 text-white font-semibold mobileMainMenuContactBtn">
-                                        <span>Contact Us</span>
-                                    </button>
-                                </Link>
-                            </div>
-                            <div className="w-full">
-                                <Link href={'https://lms.bimt.lk/'} target="_blank">
-                                    <button className="w-full px-4 py-2 bg-blue-900 text-white font-semibold mobileMainMenuContactBtn">
-                                        <span>  Student Portal  </span>
-                                    </button>
-                                </Link>
-                            </div>
-                        </div>
                     </div>
-
                 )}
+                <div className="mb-2 ml-[10px] mr-[20px] sm:block md:hidden">
+                    <div className="w-full">
+                        <Link href={'https://lms.bimt.lk/'} target="_blank">
+                            <button className="w-full px-4 py-2 bg-blue-900 text-white font-semibold mobileMainMenuContactBtn">
+                                <span>Student Portal</span>
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+
             </header>
 
 

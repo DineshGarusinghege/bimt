@@ -397,7 +397,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    color: #000;
     font-family: Work Sans;
     font-size: 18px;
     font-style: normal;
@@ -708,4 +707,56 @@
     .headerHome {
         display: none;
     }
+}
+
+
+.mobileHeaderMainContent{
+    border-bottom: 2px solid red;
+    border-radius: 20px;
+}
+
+.mobileHeaderPage{
+    background-color: #272A5D;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid white;
+
+}
+.mobileHeaderPage:hover {
+    background-color: #A83585;
+}
+
+.mobileHeaderPage1{
+    background-color: #272A5D;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.mobileHeaderPage1:hover {
+    background-color: #A83585;
+}
+
+.mobileHeaderPage2{
+    background-color: #272A5D;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 2px solid white;
+}
+
+.mobileHeaderPage2:hover {
+    background-color: #A83585;
+}
+
+.toggleCOlor{
+    color:white
 }
