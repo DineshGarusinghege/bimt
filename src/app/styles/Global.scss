@@ -794,3 +794,82 @@
     width: 100%;
   }
 }
+
+
+
+.eventLeftSide {
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+
+  @media(max-width:1280px) {
+    padding-left: 20px;
+  }
+
+  @media(max-width: 768px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  @media(max-width:640px){
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.eventSectionMain {
+  // padding-left: 40px;
+  right: -40px;
+  transform: scale(1);
+
+  @media(max-width:768px) {
+    right: -15px;
+  }
+  @media(max-width: 640px){
+    right: 0px;
+  }
+}
+
+
+.EventSectionLeftSideMain {
+  width: 80%;
+  @media(max-width:640px){
+    width: 100%;
+  }
+}
+
+.coundDOwnnextEvent {
+  width: 80%;
+
+  @media(max-width:1280px) {
+    top: 200px;
+  }
+
+  @media(max-width:1024px) {
+    top: 150px
+  }
+  @media(max-width:640px){
+    width: 150%;
+  }
+}
+
+.countDownMainSection {
+  width: 40%;
+
+  @media(max-width:768px) {
+    left: -30px;
+  }
+  @media(max-width:640px){
+    margin-bottom: 200px;
+    width: 60%;
+    left: 0px;
+  }
+}
+
+
+.eventViewAllBtn {
+  @media(max-width:1280px) {
+    font-size: 12px;
+    padding: 10px
+  }
+}

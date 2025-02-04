@@ -1141,11 +1141,11 @@ const HomePage: React.FC = () => {
                     </div>
                 </div>
 
-
-                <div className="eventSectionContainer relative flex flex-col md:flex-row items-center bg-white text-white p-6">
+                {/* Event Section */}
+                <div className="eventSectionContainer relative flex flex-col md:flex-row items-center bg-white text-white p-6 eventSectionMain">
                     {/* Events List */}
-                    <div className="eventLargeContent bg-[#272A5D] max-w-[1450px] mx-auto p-6 md:p-10 w-full md:w-2/3 rounded-lg shadow-lg">
-                        <div className="flex flex-col w-full md:max-w-[743px] gap-6">
+                    <div className="eventLargeContent bg-[#272A5D] mx-auto p-8.5 md:p-10 w-full md:w-2/3 shadow-lg EventSectionLeftSideMain">
+                        <div className="flex flex-col w-full  gap-6 eventLeftSide">
                             <div>
                                 <h2 className="text-lg md:text-xl font-semibold text-white">Events</h2>
                                 <h1 className="text-2xl md:text-4xl font-bold mt-2 upCommingEvntTxt">UPCOMING EVENTS</h1>
@@ -1174,287 +1174,20 @@ const HomePage: React.FC = () => {
                     </div>
 
                     {/* Countdown Section */}
-                    <div className="countDownimageWithSection relative w-full md:w-1/3 flex flex-col items-center mt-6 md:mt-0 absolute right-[100px]">
-                        <Image src="/images/3 1.png" alt="Event Image" width={600} height={400} className="rounded-lg w-full h-auto" />
-                        <div className="countDownBoxs bg-white p-6 rounded-lg shadow-lg mt-4 md:mt-0 w-11/12 md:w-3/4 text-center absolute top-[320px]">
+                    <div className="countDownimageWithSection relative w-full md:w-1/3 flex flex-col items-center mt-6 md:mt-0 absolute right-[90px] countDownMainSection">
+                        <Image src="/images/DSC_0126-1024x682.jpg" alt="Event Image" width={600} height={400} className="w-full h-auto" />
+                        <div className="countDownBoxs bg-white p-6 shadow-lg mt-4 md:mt-0 w-11/12 md:w-3/4 text-center absolute top-[320px] coundDOwnnextEvent">
                             <h4 className="text-lg md:text-xl font-semibold text-black">Next Event</h4>
                             {/* Countdown Timer */}
                             <CountdownComponent eventDate={nextEventDate} />
-                            <div className="flex flex-wrap justify-center gap-4 mt-4">
+                            <div className="flex justify-center gap-4 mt-4">
                                 <Link href={'/Event'}>
-                                    <button className="px-4 py-2 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition">
-                                        View all events
+                                    <button className="viewEvents px-6 py-3 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:text-white transition eventViewAllBtn">
+                                        <span className='EventViewAll'>View all events</span>
                                     </button>
                                 </Link>
                                 <Link href={'/ContactUs'}>
-                                    <button className="px-4 py-2 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition">
-                                        Contact us
-                                    </button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/*Start Event section */}
-                <div
-                    className="eventSectionContainer relative flex flex-col md:flex-row  items-center bg-white text-white p-6"
-                >
-                    {/* Events List */}
-                    <div className="eventLargeContent bg-[#272A5D] p-10 w-full md:w-2/3 rounded-lg shadow-lg">
-
-                        <div style={{
-                            display: 'flex',
-                            width: '743px',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                            gap: '30px'
-                        }}>
-                            <div className="mb-6">
-                                <h2 className="text-xl font-semibold"
-                                    style={{ color: '#fff', fontFamily: 'Work Sans', fontSize: "24px", fontStyle: 'normal', fontWeight: '400', lineHeight: 'normal' }}
-                                >Events</h2>
-                                <h1 className="text-4xl font-bold mt-2 upCommingEvntTxt"
-                                >UPCOMING EVENTS</h1>
-                            </div>
-
-                            {/* Event Item */}
-                            <div>
-                                {/* First Event */}
-                                <div
-                                    className="upCommingEventSection flex py-6 border border-white mb-5 p-5 items-start gap-[67px] hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out"
-                                >
-                                    <div className="flex flex-col items-center justify-center w-20 text-center eventDateandMonth">
-                                        <span
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontWeight: '400',
-                                            }}
-                                        >
-                                            Dec
-                                        </span>
-                                        <span
-                                            className='eventDate'
-                                        >
-                                            10th
-                                        </span>
-                                    </div>
-                                    <div className="ml-6 flex-1 eventParagraph">
-                                        <h3
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontWeight: '600',
-                                            }}
-                                        >
-                                            Leadership Summit
-                                        </h3>
-                                        <p
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '16px',
-                                                fontWeight: '400',
-                                                lineHeight: '25px',
-                                            }}
-                                        >
-                                            Join us for an inspiring Leadership Summit to empower leaders of tomorrow.
-                                        </p>
-                                        <div className="flex justify-between items-center mt-4">
-                                            <span
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontWeight: '600',
-                                                }}
-                                            >
-                                                10.00 - 16.00
-                                            </span>
-                                            <span
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontWeight: '600',
-                                                }}
-                                            >
-                                                Hilton Colombo
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* Second Event */}
-
-                                <div
-                                    className="upCommingEventSection flex py-6 border border-white mb-5 p-5 items-start gap-[67px] hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out"
-                                >
-                                    <div className="flex flex-col items-center justify-center w-20 text-center eventDateandMonth">
-                                        <span
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontWeight: '400',
-                                            }}
-                                        >
-                                            Dec
-                                        </span>
-                                        <span
-                                            className='eventDate'
-                                        >
-                                            10th
-                                        </span>
-                                    </div>
-                                    <div className="ml-6 flex-1 eventParagraph">
-                                        <h3
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontWeight: '600',
-                                            }}
-                                        >
-                                            Leadership Summit
-                                        </h3>
-                                        <p
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '16px',
-                                                fontWeight: '400',
-                                                lineHeight: '25px',
-                                            }}
-                                        >
-                                            Join us for an inspiring Leadership Summit to empower leaders of tomorrow.
-                                        </p>
-                                        <div className="flex justify-between items-center mt-4">
-                                            <span
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontWeight: '600',
-                                                }}
-                                            >
-                                                10.00 - 16.00
-                                            </span>
-                                            <span
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontWeight: '600',
-                                                }}
-                                            >
-                                                Hilton Colombo
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Third Event */}
-
-                                <div
-                                    className="upCommingEventSection flex py-6 border border-white mb-5 p-5 items-start gap-[67px] hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out"
-                                >
-                                    <div className="flex flex-col items-center justify-center w-20 text-center eventDateandMonth">
-                                        <span
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontWeight: '400',
-                                            }}
-                                        >
-                                            Dec
-                                        </span>
-                                        <span
-                                            className='eventDate'
-                                        >
-                                            10th
-                                        </span>
-                                    </div>
-                                    <div className="ml-6 flex-1 eventParagraph">
-                                        <h3
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontWeight: '600',
-                                            }}
-                                        >
-                                            Leadership Summit
-                                        </h3>
-                                        <p
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '16px',
-                                                fontWeight: '400',
-                                                lineHeight: '25px',
-                                            }}
-                                        >
-                                            Join us for an inspiring Leadership Summit to empower leaders of tomorrow.
-                                        </p>
-                                        <div className="flex justify-between items-center mt-4">
-                                            <span
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontWeight: '600',
-                                                }}
-                                            >
-                                                10.00 - 16.00
-                                            </span>
-                                            <span
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontWeight: '600',
-                                                }}
-                                            >
-                                                Hilton Colombo
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-                    {/* Countdown Section */}
-                    <div className="countDownimageWithSection absolute right-[50px] w-full md:w-1/3 upcomingEventsImage">
-                        <Image
-                            src="/images/3 1.png"
-                            alt="Event Image"
-                            width={600}
-                            height={400}
-                            className="rounded-lg eventImage"
-                        />
-                        <div className="countDownBoxs bg-white p-6 rounded-lg shadow-lg absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-3/4">
-                            <h4 className="text-xl font-semibold" style={{ color: '#000' }}>
-                                Next Event
-                            </h4>
-                            {/* Countdown Timer */}
-                            <CountdownComponent eventDate={nextEventDate} />
-                            <div className="flex space-x-4 mt-6">
-                                <Link href={'/Event'}>
-                                    <button className="viewEvents px-6 py-3 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:text-white transition">
-                                        <span>View all events</span>
-                                    </button>
-                                </Link>
-                                <Link href={'/ContactUs'}>
-                                    <button className="viewEvents px-6 py-3 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:text-white transition">
+                                    <button className="viewEvents px-6 py-3 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:text-white transition eventViewAllBtn">
                                         <span>Contact us</span>
                                     </button>
                                 </Link>
@@ -1462,7 +1195,6 @@ const HomePage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-
                 {/*End Event section */}
 
 
