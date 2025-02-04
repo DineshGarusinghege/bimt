@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import '../../styles/ui/MainHeader.scss';
 import Link from "next/link";
-import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 
 const MainHeader = () => {
     const [menuOpen, setMenuOpen] = useState(false); // State for toggle menu
