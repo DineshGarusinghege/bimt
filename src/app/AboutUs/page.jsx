@@ -996,7 +996,7 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                 paddingBlock: '100px',
                 paddingLeft: '10px',
                 paddingRight: "10px"
-            }}>
+              }}>
                 {/* Outer Container */}
                 <div className="w-[90%] max-w-[1450px] mx-auto flex flex-col lg:flex-row items-center lg:items-start">
                     {/* Image Section */}

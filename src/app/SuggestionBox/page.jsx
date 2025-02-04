@@ -35,12 +35,12 @@ const SuggestionBox = () => {
 
         // Validation checks
         if (!formData.firstName || !formData.lastName || !formData.phone || !formData.email || !formData.comment) {
-            toast.error("⚠️ All fields are required!", { position: "top-right", autoClose: 3000 });
+            toast.error("All fields are required!", { position: "top-right", autoClose: 3000 });
             return;
         }
 
         if (!isValidEmail(formData.email)) {
-            toast.error("❌ Invalid email format!", { position: "top-right", autoClose: 3000 });
+            toast.error("Invalid email format!", { position: "top-right", autoClose: 3000 });
             return;
         }
 
@@ -54,7 +54,7 @@ const SuggestionBox = () => {
             const data = await response.json();
 
             if (response.ok) {
-                toast.success("✅ Your message has been sent successfully!", {
+                toast.success("Your message has been sent successfully!", {
                     position: "top-right",
                     autoClose: 3000,
                 });
@@ -62,7 +62,7 @@ const SuggestionBox = () => {
                 // Reset the form after successful submission
                 setFormData({ firstName: "", lastName: "", phone: "", email: "", comment: "" });
             } else {
-                toast.error(data.message || "❌ Something went wrong. Please try again.", {
+                toast.error(data.message || "Something went wrong. Please try again.", {
                     position: "top-right",
                     autoClose: 3000,
                 });

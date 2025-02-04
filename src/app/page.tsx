@@ -234,8 +234,8 @@ const HomePage: React.FC = () => {
             <div
                 className="min-h-screen bg-fixed bg-cover bg-no-repeat"
                 style={{
-                    backgroundImage: "url('/images/bg1.jpg')", 
-                    backgroundPosition: "bottom", 
+                    backgroundImage: "url('/images/bg1.jpg')",
+                    backgroundPosition: "bottom",
                 }}
             >
                 <head>
@@ -455,31 +455,27 @@ const HomePage: React.FC = () => {
                 </div>
 
 
-                <div className="relative">
-                    {/* Search Section */}
-                    <div className="absolute top-[-37px] z-50 left-1/2 transform -translate-x-1/2 flex justify-center w-full searchProgram searchBarForProgrammes">
+                {/* Search Section */}
+                {/* <div className="relative" >
+                    <div className="absolute top-[-37px] z-50 left-1/2 transform -translate-x-1/2 flex justify-center w-full searchProgram searchBarForProgrammes"
+                        style={{ width: '67%' }}
+                    >
                         <div
                             className="inline-flex items-center gap-4 p-4 rounded-lg bg-white shadow-lg searchBarBox searchBarAreabox"
 
                         >
-                            {/* Search Icon */}
-                            <img
-                                src="/images/Group.svg"
-                                alt="icon"
-                                className="w-10 h-10 md:w-12 md:h-12 searchIcon prgorammeSearchIcon"
-                            />
 
-                            {/* Search Input and Suggestions */}
-                            <div className="relative flex items-center w-full pr-4 searchprgramplaceHolder">
+                            <div className="relative flex items-center w-full pr-4 searchprgramplaceHolder" style={{
+                                border: '2px solid', padding: '12px',
+                            }}>
                                 <input
                                     type="text"
                                     value={query}
                                     onChange={handleInputChange}
-                                    placeholder="Search your programmes..."
+                                    placeholder="Type to Start searching..."
                                     className="flex-1 bg-transparent outline-none text-base md:text-lg px-2 md:px-4 text-gray-600"
 
                                 />
-                                {/* Suggestions Dropdown */}
                                 {suggestions.length > 0 ? (
                                     <ul className="absolute top-full left-0 w-full bg-white shadow-lg rounded-lg mt-2 max-h-40 overflow-y-auto z-50">
                                         {suggestions.map((suggestion) => (
@@ -495,7 +491,7 @@ const HomePage: React.FC = () => {
                                 ) : (
                                     query.trim() && (
                                         <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded-lg mt-2 p-4 text-gray-600">
-                                            Sorry, no related subjects found. Please try another search.
+                                            waiting....
                                         </div>
                                     )
                                 )}
@@ -503,10 +499,9 @@ const HomePage: React.FC = () => {
 
                             <button
                                 onClick={() => setQuery('')} // Clears the input field
-                                className="absolute ml-2 p-2 rounded-full hover:bg-gray-300 transition duration-150 clearBtninSearch"
+                                className="absolute ml-2 p-2 hover:bg-gray-300 transition duration-150 clearBtninSearch"
                                 aria-label="Clear input"
                             >
-                                {/* SVG for Close Icon */}
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="h-6 w-6 text-gray-600"
@@ -523,11 +518,10 @@ const HomePage: React.FC = () => {
                                 </svg>
                             </button>
 
-                            {/* Search Button */}
                             <div>
                                 <button
                                     onClick={handleSearch}
-                                    className="btnBlue bg-[#272A5D] text-white px-4 py-2 rounded-lg font-semibold transition duration-150 text-sm md:text-lg searchBtn searchbarProgrammsSearchBtn"
+                                    className="bg-[#272A5D] text-white px-4 py-2 font-semibold transition duration-150 text-sm md:text-lg searchBtn searchbarProgrammsSearchBtn"
 
                                 >
                                     <span>Search</span>
@@ -536,8 +530,73 @@ const HomePage: React.FC = () => {
                         </div>
 
                     </div>
-                </div>
+                </div> */}
 
+                <div className="relative w-full w-[1450px] mx-auto flex flex-col items-center justify-center">
+                    {/* Search Section */}
+                    <div className="absolute top-[-37px] z-50 w-full flex justify-center">
+                        <div
+                            className="w-[67%] mx-auto flex items-center gap-4 p-4 rounded-lg bg-white shadow-lg searchBarBox"
+                        >
+                            {/* Search Input and Suggestions */}
+                            <div className="relative flex items-center w-full pr-4 border-2 p-3 ">
+                                <input
+                                    type="text"
+                                    value={query}
+                                    onChange={handleInputChange}
+                                    placeholder="Type to Start searching..."
+                                    className="flex-1 bg-transparent outline-none text-base md:text-lg px-2 md:px-4 text-gray-600"
+                                />
+                                {/* Suggestions Dropdown */}
+                                {suggestions.length > 0 ? (
+                                    <ul className="absolute top-full left-0 w-full bg-white shadow-lg mt-2 max-h-40 overflow-y-auto z-50">
+                                        {suggestions.map((suggestion) => (
+                                            <li
+                                                key={suggestion._id}
+                                                className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                                                onClick={() => handleSuggestionClick(suggestion)}
+                                            >
+                                                {suggestion.courseName}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                ) : (
+                                    query.trim() && (
+                                        <div className="absolute top-full left-0 w-full bg-white shadow-lg mt-2 p-4 text-gray-600">
+                                            waiting....
+                                        </div>
+                                    )
+                                )}
+                            </div>
+
+                            {/* Clear Button */}
+                            <button
+                                onClick={() => setQuery('')}
+                                className="hover:bg-gray-300 transition duration-150 clearBtn"
+                                aria-label="Clear input"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-6 w-6 text-gray-600"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+
+                            {/* Search Button */}
+                            <button
+                                onClick={handleSearch}
+                                className="bg-[#272A5D] text-white px-10 py-4 font-semibold transition duration-150 text-sm md:text-lg SearchButtton"
+                            >
+                                <span>Search</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
 
 
@@ -546,7 +605,7 @@ const HomePage: React.FC = () => {
                 {/* Expert Learning Section End */}
 
 
-                <div className="flex flex-col items-center max-w-[1300px] mt-[110px] w-full md:w-4/5 mx-auto">
+                <div className="flex flex-col items-center max-w-[1450px] mt-[110px] w-full md:w-4/5 mx-auto DiplomaMainSection">
 
                     <motion.div
                         initial={{ opacity: 0, x: -50 }} // Starts off-screen to the left
@@ -572,17 +631,7 @@ const HomePage: React.FC = () => {
 
                             {/* Content */}
                             <div className="w-full md:w-1/2 flex flex-col space-y-4">
-                                <h2 className="text-gray-700 font-semibold text-xl"
-                                    style={{
-                                        color: '#272A5D',
-                                        fontFamily: 'Work Sans',
-                                        fontSize: '24px',
-                                        fontStyle: "normal",
-                                        fontWeight: "400",
-                                        lineHeight: 'normal'
-                                    }}
-                                >Program</h2>
-                                <h1 className="text-4xl font-bold text-[#272A5D]">DIPLOMA</h1>
+                                <h1 className="text-4xl font-bold text-[#FFFFFF] bg-[#272A5D] DiplomaHeding">DIPLOMA</h1>
                                 <p className="text-gray-600 text-lg"
                                     style={{
                                         color: '#5A5A5A',
@@ -598,52 +647,69 @@ const HomePage: React.FC = () => {
                                 </p>
 
                                 {/* Sub-categories */}
+                                <div className="flex flex-wrap gap-4 text-lg">
+                                    {/* First Row */}
+                                    <div className="flex w-full fistRowDiploma">
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
+                                            }}
+                                        >
+                                            Management ➔
+                                        </span>
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
 
-                                <div className="grid grid-cols-2 gap-4 text-lg">
-                                    <span className="underline-hover"
-                                        style={{
-                                            color: '#000',
-                                            textAlign: 'justify',
-                                            fontFamily: "Work Sans",
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '500',
-                                            lineHeight: '25px'
-                                        }}
-                                    >Management ➔</span>
-                                    <span className="underline-hover"
-                                        style={{
-                                            color: '#000',
-                                            textAlign: 'justify',
-                                            fontFamily: "Work Sans",
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '500',
-                                            lineHeight: '25px'
-                                        }}
-                                    >Language ➔</span>
-                                    <span className="underline-hover"
-                                        style={{
-                                            color: '#000',
-                                            textAlign: 'justify',
-                                            fontFamily: "Work Sans",
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '500',
-                                            lineHeight: '25px'
-                                        }}
-                                    >Humanity & Education ➔</span>
-                                    <span className="underline-hover"
-                                        style={{
-                                            color: '#000',
-                                            textAlign: 'justify',
-                                            fontFamily: "Work Sans",
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '500',
-                                            lineHeight: '25px'
-                                        }}
-                                    >Computing ➔</span>
+                                            }}
+                                        >
+                                            Language ➔
+                                        </span>
+                                    </div>
+
+                                    {/* Second Row */}
+                                    <div className="flex w-full SecondRowDiploma">
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                textAlign: "justify",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
+                                            }}
+                                        >
+                                            Humanity & Education ➔
+                                        </span>
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                textAlign: "justify",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
+                                            }}
+                                        >
+                                            Computing ➔
+                                        </span>
+                                    </div>
                                 </div>
 
 
@@ -715,7 +781,7 @@ const HomePage: React.FC = () => {
 
                             {/* Content */}
                             <div className="w-full md:w-1/2 flex flex-col space-y-4">
-                                <h2 className="text-gray-700 font-semibold text-xl"
+                                {/* <h2 className="text-gray-700 font-semibold text-xl"
                                     style={{
                                         color: '#272A5D',
                                         fontFamily: 'Work Sans',
@@ -724,8 +790,8 @@ const HomePage: React.FC = () => {
                                         fontWeight: "400",
                                         lineHeight: 'normal'
                                     }}
-                                >Program</h2>
-                                <h1 className="text-4xl font-bold text-[#272A5D]">HIGHER DIPLOMA</h1>
+                                >Program</h2> */}
+                                <h1 className="text-4xl font-bold text-[#FFFFFF] bg-[#272A5D]  HigherDiplomaHeading">HIGHER DIPLOMA</h1>
                                 <p className="text-gray-600 text-lg"
                                     style={{
                                         color: '#5A5A5A',
@@ -743,7 +809,7 @@ const HomePage: React.FC = () => {
                                 {/* Sub-categories */}
                                 <div className="flex flex-wrap gap-4 text-lg">
                                     {/* First Row */}
-                                    <div className="flex w-full gap-4">
+                                    <div className="flex w-full higherDiplomaSub">
                                         <span
                                             className="underline-hover"
                                             style={{
@@ -842,137 +908,149 @@ const HomePage: React.FC = () => {
                             </div>
                         </div>
                     </motion.div>
+
                     {/* Third Section */}
-                    <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0 mt-[110px]">
-                        {/* Image */}
-                        <div className="w-full md:w-1/2">
-                            <Image src="/images/degree.png"
-                                objectFit='cover'
-                                width={712}
-                                height={422}
-                                alt="Degree Program"
-                                className="w-full h-auto" />
-                        </div>
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }} // Starts off-screen to the left
+                        whileInView={{ opacity: 1, x: 0 }} // Moves to the center
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: false, amount: 0.5 }} // Animates every time it enters the viewport
+                        className="my-section"
+                    >
+                        {/* First Section */}
+                        <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0 mt-[110px]">
+                            {/* Image */}
+                            <div className="w-full md:w-1/2">
+                                {/* <Image src="/images/course1.jpg" */}
+                                <Image src="/images/degree.png"
 
-                        {/* Content */}
-                        <div className="w-full md:w-1/2 flex flex-col space-y-4">
-                            <h2 className="text-gray-700 font-semibold text-xl"
-                                style={{
-                                    color: '#272A5D',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '24px',
-                                    fontStyle: "normal",
-                                    fontWeight: "400",
-                                    lineHeight: 'normal'
-                                }}
-                            >Program</h2>
-                            <h1 className="text-4xl font-bold text-[#272A5D]">BACHELOR’S DEGREE</h1>
-                            <p className="text-gray-600 text-lg"
-                                style={{
-                                    color: '#5A5A5A',
-                                    textAlign: 'justify',
-                                    fontFamily: "Work Sans",
-                                    fontSize: '16px',
-                                    fontStyle: "normal",
-                                    fontWeight: '400',
-                                    lineHeight: '25px'
-                                }}
-                            >
-                                Gain in-depth knowledge and real-world skills with our Bachelor’s Degree programms. Through internships and case studies, you’ll be prepared to enter the workforce or pursue advanced studies with confidence.
-                            </p>
 
-                            {/* Sub-categories */}
-                            <div className="flex flex-col gap-4 text-lg">
-                                <span
-                                    className="underline-hover"
-                                    style={{
-                                        color: "#000",
-                                        textAlign: "justify",
-                                        fontFamily: "Work Sans",
-                                        fontSize: "16px",
-                                        fontStyle: "normal",
-                                        fontWeight: "500",
-                                        lineHeight: "25px",
-                                    }}
-                                >
-                                    BBA in Accounting ➔
-                                </span>
-                                <span
-                                    className="underline-hover"
-                                    style={{
-                                        color: "#000",
-                                        textAlign: "justify",
-                                        fontFamily: "Work Sans",
-                                        fontSize: "16px",
-                                        fontStyle: "normal",
-                                        fontWeight: "500",
-                                        lineHeight: "25px",
-                                    }}
-                                >
-                                    BSc (Hons) in Computing ➔
-                                </span>
-                                <span
-                                    className="underline-hover"
-                                    style={{
-                                        color: "#000",
-                                        textAlign: "justify",
-                                        fontFamily: "Work Sans",
-                                        fontSize: "16px",
-                                        fontStyle: "normal",
-                                        fontWeight: "500",
-                                        lineHeight: "25px",
-                                    }}
-                                >
-                                    BBA in Business Management ➔
-                                </span>
+                                    width={712}
+                                    height={422}
+                                    objectFit='cover'
+                                    alt="Diploma Program"
+                                    className="w-full h-auto" />
                             </div>
 
-
-                            {/* Buttons */}
-                            <div className="flex space-x-4 mt-4">
-                                <button className="button"
-                                    onClick={() => router.push("/BachelorsDegree")}
+                            {/* Content */}
+                            <div className="w-full md:w-1/2 flex flex-col space-y-4">
+                                <h1 className="text-4xl font-bold text-[#FFFFFF] bg-[#272A5D] BatchDegree">BACHELOR’S DEGREE</h1>
+                                <p className="text-gray-600 text-lg"
                                     style={{
-                                        display: "flex",
-                                        width: '200px',
-                                        height: '56px',
-                                        padding: '0px 10px',
-                                        justifyContent: 'center',
-                                        alignItems: 'center'
-                                    }}>
-                                    <span
-                                        style={{
-                                            fontSize: "20px",
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: 'normal'
-                                        }}
-                                    >View more</span>
-                                </button>
-
-                                <button className="button"
-                                    onClick={() => router.push("/ContactUs")}
-                                    style={{
-                                        display: "flex",
-                                        width: '200px',
-                                        height: '56px',
-                                        padding: '0px 10px',
-                                        justifyContent: 'center',
-                                        alignItems: 'center'
+                                        color: '#5A5A5A',
+                                        textAlign: 'justify',
+                                        fontFamily: "Work Sans",
+                                        fontSize: '16px',
+                                        fontStyle: "normal",
+                                        fontWeight: '400',
+                                        lineHeight: '25px'
                                     }}
                                 >
-                                    <span
+                                      Gain in-depth knowledge and real-world skills with our Bachelor’s Degree programms. Through internships and case studies, you’ll be prepared to enter the workforce or pursue advanced studies with confidence.
+                                </p>
+
+                                {/* Sub-categories */}
+                                <div className="flex flex-wrap gap-4 text-lg">
+                                    {/* First Row */}
+                                    <div className="flex w-full fistRowDiploma">
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
+                                            }}
+                                        >
+                                            BBA in Accounting ➔
+                                        </span>                
+                                    </div>
+
+                                    {/* Second Row */}
+                                    <div className="flex w-full SecondRowDiploma">
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                textAlign: "justify",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
+                                            }}
+                                        >
+                                             BSc (Hons) in Computing ➔
+                                        </span>
+                                    </div>
+
+                                    <div className="flex w-full SecondRowDiploma">
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                textAlign: "justify",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
+                                            }}
+                                        >
+                                             BBA in Business Management ➔
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                                {/* Buttons */}
+                                <div className="flex space-x-4 mt-4 gap-10">
+                                    <button className="button"
+                                        onClick={() => router.push("/Diploma")}
                                         style={{
-                                            fontSize: "20px",
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: 'normal'
+                                            display: "flex",
+                                            width: '200px',
+                                            height: '56px',
+                                            padding: '0px 10px',
+                                            justifyContent: 'center',
+                                            alignItems: 'center'
+                                        }}>
+                                        <span
+                                            style={{
+                                                fontSize: "20px",
+                                                fontStyle: 'normal',
+                                                fontWeight: '600',
+                                                lineHeight: 'normal'
+                                            }}
+                                        >View more</span>
+                                    </button>
+
+                                    <button className="button"
+                                        onClick={() => router.push("/ContactUs")}
+                                        style={{
+                                            display: "flex",
+                                            width: '200px',
+                                            height: '56px',
+                                            padding: '0px 10px',
+                                            justifyContent: 'center',
+                                            alignItems: 'center'
                                         }}
-                                    >Contact us</span>
-                                </button>
+                                    >
+                                        <span
+                                            style={{
+                                                fontSize: "20px",
+                                                fontStyle: 'normal',
+                                                fontWeight: '600',
+                                                lineHeight: 'normal'
+                                            }}
+                                        >Contact us</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* View All Courses */}
@@ -1004,114 +1082,76 @@ const HomePage: React.FC = () => {
                 {/* About Us */}
 
                 <div
-                    className="relative w-full px-6 pt-[110px] md:px-12 lg:px-24 mt-[100px] mb-[-40px]"
+                    className="relative w-full px-4 sm:px-6 md:px-12 lg:px-24 pt-[110px] pb-[120px] mt-[100px] mb-[110px]"
                     style={{
                         backgroundImage: "url('/images/bgimgqa.jpg')",
-                        backgroundSize: 'cover', // Ensure the background covers the full width and height
-                        backgroundPosition: 'center', // Center the background image
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
                     }}
                 >
-                    <div className="max-w-[1300px] mx-auto relative">
-                        <div className="grid grid-cols-2 gap-4 lg:gap-6 w-full lg:w-1/2 relative">
+                    <div className="max-w-[1450px] mx-auto relative flex flex-col lg:flex-row items-center ScalingAboutSection">
+                        {/* Left Section - Images */}
+                        <div className="relative w-full lg:w-1/2 flex justify-center">
                             {/* First Image */}
-                            <div
-                                className="col-span-1 relative"
-                                style={{
-                                    width: '250px',
-                                    zIndex: '20',
-                                    position: 'absolute',
-                                    left: '25px',
-                                    top: '35px',
-                                }}
-                            >
+                            <div className="absolute top-8 left-2 sm:left-6 w-[120px] sm:w-[180px] md:w-[220px] lg:w-[250px] transition-transform duration-500 hover:scale-110 gStudent">
                                 <Image
-                                    src="/images/medium-shot-graduate-student_23-2148950577 1.png"
+                                    src="/images/SEK_5541-scaled.webp"
                                     alt="Graduate student"
-                                    width={240}
+                                    width={250}
                                     height={159}
-                                    objectFit='cover'
-                                    className="w-full h-auto rounded-lg shadow-lg"
+                                    className="w-full h-auto shadow-lg"
                                 />
                             </div>
 
-                            {/* Second Image */}
-                            <div
-                                className="col-span-1 row-span-2 relative"
-                                style={{
-                                    marginLeft: '10px',
-                                    left: '280px',
-                                    height: '600px',
-                                    top: '0px',
-                                }}
-                            >
+                            {/* Second Image - Main (Largest) */}
+                            <div className="relative w-[220px] sm:w-[280px] md:w-[340px] lg:w-[400px] z-20 transition-transform duration-500 hover:scale-110 CBoodGirl">
                                 <Image
-                                    src="/images/college-student-holding-books-walking-campus-going-class-smiling-young-smiling-multiracial-asian-wom 1.png"
+                                    src="/images/SEK_5536-scaled (1).jpg"
                                     alt="Student walking on campus"
                                     width={368}
                                     height={545}
-                                    className="w-full h-auto rounded-lg shadow-lg"
-                                    objectFit='cover'
+                                    className="w-full h-auto shadow-lg"
                                 />
                             </div>
 
                             {/* Third Image */}
-                            <div
-                                className="col-span-1 absolute"
-                                style={{
-                                    top: '215px',
-                                    left: '0px',
-                                }}
-                            >
+                            <div className="absolute top-28 left-[-10px] sm:left-0 w-[160px] sm:w-[220px] md:w-[270px] lg:w-[335px] transition-transform duration-500 hover:scale-110 maleStudent">
                                 <Image
-                                    src="/images/front-view-male-student-wearing-black-backpack-holding-copybooks-files-smiling-blue-wall_140725-4264 1.png"
+                                    src="/images/SEK_4742-scaled.webp"
                                     alt="Student with files"
                                     width={335}
                                     height={223}
-                                    objectFit='cover'
-                                    className="w-full h-auto rounded-lg shadow-lg"
+                                    className="w-full h-auto shadow-lg"
                                 />
                             </div>
                         </div>
 
-                        {/* Text Content */}
+                        {/* Right Section - Text Content */}
                         <div
-                            className="absolute bg-white lg:p-12 rounded-lg shadow-md lg:w-1/2"
-                            style={{
-                                right: '0',
-                                top: '25px',
-                                paddingTop: '25px',
-                                paddingLeft: '50px',
-                                paddingBottom: '25px',
-                                paddingRight: '50px',
-                                color: '#5A5A5A',
-                                textAlign: 'justify',
-                                fontFamily: 'Work Sans',
-                                fontSize: '16px',
-                                fontStyle: 'normal',
-                                fontWeight: '400',
-                                lineHeight: '25px',
-                                width: '763px', // Fixed width for the text 
-                            }}
+                            className="bg-white p-6 sm:p-8 md:p-10 lg:p-12 shadow-md w-full lg:w-1/2 mt-16 lg:mt-0 transition-transform duration-500 hover:scale-105"
+                            style={{ color: '#5A5A5A', textAlign: 'justify' }}
                         >
-                            <h2 className="text-lg font-semibold text-[#272A5D] mb-2">About us</h2>
-                            <h3 className="text-3xl md:text-4xl font-bold text-[#272A5D] mb-4">
+                            <h2 className="mb-2 aboutusHeading">ABOUT US</h2>
+                            <h3 className="text-left text-[#272A5D] mb-4" style={{
+                                fontSize: '24px', lineHeight: '28px'
+                            }}>
                                 DISCOVER WHO WE ARE?
                             </h3>
-                            <p className="text-gray-700 mb-6 leading-relaxed">
+                            <p className="text-gray-700 mb-6 leading-relaxed text-sm md:text-base font-left font-[16px]">
                                 At BIMT Campus, we are dedicated to providing high-quality, accessible education in management and technology.
                                 In collaboration with a leading international organization, we offer a unique learning environment where students
                                 gain both theoretical knowledge and practical skills to excel in their careers. With an ISO 9001:2015 certification,
                                 a highly qualified faculty, and internationally recognized programs, BIMT Campus empowers students to achieve
                                 their goals and make a lasting impact in their chosen fields.
                             </p>
-                            <div className="flex space-x-4">
+                            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                                 <Link href={'/AboutUs'}>
-                                    <button className="bluBorderWhitebgTextblack font-semibold transition">
+                                    <button className="bluBorderWhitebgTextblack font-semibold transition px-6 py-2 border border-blue-900 text-blue-900 rounded-lg hover:bg-blue-900 hover:text-white">
                                         <span> View more</span>
                                     </button>
                                 </Link>
-                                <Link href={'./ContactUs'}>
-                                    <button className="bluBorderWhitebgTextblack rounded-lg font-semibold">
+                                <Link href={'/ContactUs'}>
+                                    <button className="bluBorderWhitebgTextblack font-semibold px-6 py-2 border border-blue-900 text-blue-900 rounded-lg hover:bg-blue-900 hover:text-white">
                                         <span>Contact us</span>
                                     </button>
                                 </Link>
@@ -1120,267 +1160,53 @@ const HomePage: React.FC = () => {
                     </div>
                 </div>
 
-
-
-                {/*Start Event section */}
-                <div
-                    className="eventSectionContainer relative flex flex-col md:flex-row  items-center bg-white text-white p-6"
-                >
+                {/* Event Section */}
+                <div className="eventSectionContainer relative flex flex-col md:flex-row items-center bg-white text-white p-6 eventSectionMain">
                     {/* Events List */}
-                    <div className="eventLargeContent bg-[#272A5D] p-10 w-full md:w-2/3 rounded-lg shadow-lg">
-
-                        <div style={{
-                            display: 'flex',
-                            width: '743px',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                            gap: '30px'
-                        }}>
-                            <div className="mb-6">
-                                <h2 className="text-xl font-semibold"
-                                    style={{ color: '#fff', fontFamily: 'Work Sans', fontSize: "24px", fontStyle: 'normal', fontWeight: '400', lineHeight: 'normal' }}
-                                >Events</h2>
-                                <h1 className="text-4xl font-bold mt-2 upCommingEvntTxt"
-                                >UPCOMING EVENTS</h1>
-                            </div>
-
-                            {/* Event Item */}
+                    <div className="eventLargeContent bg-[#272A5D] mx-auto p-8.5 md:p-10 w-full md:w-2/3 shadow-lg EventSectionLeftSideMain">
+                        <div className="flex flex-col w-full  gap-6 eventLeftSide">
                             <div>
-                                {/* First Event */}
-                                <div
-                                    className="upCommingEventSection flex py-6 border border-white mb-5 p-5 items-start gap-[67px] hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out"
-                                >
-                                    <div className="flex flex-col items-center justify-center w-20 text-center eventDateandMonth">
-                                        <span
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontWeight: '400',
-                                            }}
-                                        >
-                                            Dec
-                                        </span>
-                                        <span
-                                            className='eventDate'
-                                        >
-                                            10th
-                                        </span>
-                                    </div>
-                                    <div className="ml-6 flex-1 eventParagraph">
-                                        <h3
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontWeight: '600',
-                                            }}
-                                        >
-                                            Leadership Summit
-                                        </h3>
-                                        <p
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '16px',
-                                                fontWeight: '400',
-                                                lineHeight: '25px',
-                                            }}
-                                        >
-                                            Join us for an inspiring Leadership Summit to empower leaders of tomorrow.
-                                        </p>
-                                        <div className="flex justify-between items-center mt-4">
-                                            <span
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontWeight: '600',
-                                                }}
-                                            >
-                                                10.00 - 16.00
-                                            </span>
-                                            <span
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontWeight: '600',
-                                                }}
-                                            >
-                                                Hilton Colombo
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* Second Event */}
-
-                                <div
-                                    className="upCommingEventSection flex py-6 border border-white mb-5 p-5 items-start gap-[67px] hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out"
-                                >
-                                    <div className="flex flex-col items-center justify-center w-20 text-center eventDateandMonth">
-                                        <span
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontWeight: '400',
-                                            }}
-                                        >
-                                            Dec
-                                        </span>
-                                        <span
-                                            className='eventDate'
-                                        >
-                                            10th
-                                        </span>
-                                    </div>
-                                    <div className="ml-6 flex-1 eventParagraph">
-                                        <h3
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontWeight: '600',
-                                            }}
-                                        >
-                                            Leadership Summit
-                                        </h3>
-                                        <p
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '16px',
-                                                fontWeight: '400',
-                                                lineHeight: '25px',
-                                            }}
-                                        >
-                                            Join us for an inspiring Leadership Summit to empower leaders of tomorrow.
-                                        </p>
-                                        <div className="flex justify-between items-center mt-4">
-                                            <span
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontWeight: '600',
-                                                }}
-                                            >
-                                                10.00 - 16.00
-                                            </span>
-                                            <span
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontWeight: '600',
-                                                }}
-                                            >
-                                                Hilton Colombo
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Third Event */}
-
-                                <div
-                                    className="upCommingEventSection flex py-6 border border-white mb-5 p-5 items-start gap-[67px] hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out"
-                                >
-                                    <div className="flex flex-col items-center justify-center w-20 text-center eventDateandMonth">
-                                        <span
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontWeight: '400',
-                                            }}
-                                        >
-                                            Dec
-                                        </span>
-                                        <span
-                                            className='eventDate'
-                                        >
-                                            10th
-                                        </span>
-                                    </div>
-                                    <div className="ml-6 flex-1 eventParagraph">
-                                        <h3
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontWeight: '600',
-                                            }}
-                                        >
-                                            Leadership Summit
-                                        </h3>
-                                        <p
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '16px',
-                                                fontWeight: '400',
-                                                lineHeight: '25px',
-                                            }}
-                                        >
-                                            Join us for an inspiring Leadership Summit to empower leaders of tomorrow.
-                                        </p>
-                                        <div className="flex justify-between items-center mt-4">
-                                            <span
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontWeight: '600',
-                                                }}
-                                            >
-                                                10.00 - 16.00
-                                            </span>
-                                            <span
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontWeight: '600',
-                                                }}
-                                            >
-                                                Hilton Colombo
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <h2 className="text-lg md:text-xl font-semibold text-white">Events</h2>
+                                <h1 className="text-2xl md:text-4xl font-bold mt-2 upCommingEvntTxt">UPCOMING EVENTS</h1>
                             </div>
 
-
+                            {/* Events Loop */}
+                            {[1, 2, 3].map((event, index) => (
+                                <div key={index} className="flex flex-col md:flex-row py-4 md:py-6 border border-white p-4 md:p-5 items-start gap-4 md:gap-[67px] hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out">
+                                    <div className="flex flex-col items-center justify-center w-16 md:w-20 text-center">
+                                        <span className="text-lg md:text-xl font-light text-white">Dec</span>
+                                        <span className="text-2xl md:text-3xl font-bold text-white">10th</span>
+                                    </div>
+                                    <div className="ml-0 md:ml-6 flex-1">
+                                        <h3 className="text-lg md:text-xl font-semibold text-white">Leadership Summit</h3>
+                                        <p className="text-sm md:text-base font-light text-white leading-relaxed">
+                                            Join us for an inspiring Leadership Summit to empower leaders of tomorrow.
+                                        </p>
+                                        <div className="flex flex-wrap justify-between items-center mt-4 text-sm md:text-base font-semibold text-white">
+                                            <span>10.00 - 16.00</span>
+                                            <span>Hilton Colombo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-
                     </div>
 
                     {/* Countdown Section */}
-                    <div className="countDownimageWithSection absolute right-[50px] w-full md:w-1/3 upcomingEventsImage">
-                        <Image
-                            src="/images/3 1.png"
-                            alt="Event Image"
-                            width={600}
-                            height={400}
-                            className="rounded-lg eventImage"
-                        />
-                        <div className="countDownBoxs bg-white p-6 rounded-lg shadow-lg absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-3/4">
-                            <h4 className="text-xl font-semibold" style={{ color: '#000' }}>
-                                Next Event
-                            </h4>
+                    <div className="countDownimageWithSection relative w-full md:w-1/3 flex flex-col items-center mt-6 md:mt-0 absolute right-[90px] countDownMainSection">
+                        <Image src="/images/DSC_0126-1024x682.jpg" alt="Event Image" width={600} height={400} className="w-full h-auto" />
+                        <div className="countDownBoxs bg-white p-6 shadow-lg mt-4 md:mt-0 w-11/12 md:w-3/4 text-center absolute top-[320px] coundDOwnnextEvent">
+                            <h4 className="text-lg md:text-xl font-semibold text-black">Next Event</h4>
                             {/* Countdown Timer */}
                             <CountdownComponent eventDate={nextEventDate} />
-                            <div className="flex space-x-4 mt-6">
+                            <div className="flex justify-center gap-4 mt-4">
                                 <Link href={'/Event'}>
-                                    <button className="viewEvents px-6 py-3 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:text-white transition">
-                                        <span>View all events</span>
+                                    <button className="viewEvents px-6 py-3 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:text-white transition eventViewAllBtn">
+                                        <span className='EventViewAll'>View all events</span>
                                     </button>
                                 </Link>
                                 <Link href={'/ContactUs'}>
-                                    <button className="viewEvents px-6 py-3 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:text-white transition">
+                                    <button className="viewEvents px-6 py-3 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:text-white transition eventViewAllBtn">
                                         <span>Contact us</span>
                                     </button>
                                 </Link>
@@ -1388,104 +1214,111 @@ const HomePage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-
                 {/*End Event section */}
 
 
 
 
-                <section
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1300px] mx-auto mt-[110px] mb-[0px]"
-                >
-                    {/* <!-- Card 1 --> */}
-                    <div className="relative flex flex-col items-center p-6 border border-gray-300 border-b-4 border-red-800">
-                        <div className="absolute -top-6 flex items-center gap-2 bg-[#fff]" style={{ width: '260px' }}>
-                            <img
-                                src="/images/network 1.png"
-                                alt="Learning Icon"
-                                width={51}
-                                height={50}
-                            />
-                            <h2 className="font-semibold text-2xl text-[#272A5D]">Broader Network</h2>
+                <div className="max-w-[1450px] mx-auto section-about ExpertSectionMain mt-[110px]">
+                    <section
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[1450px] mx-auto"
+                    >
+
+                        {/* <!-- Card 1 --> */}
+                        <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
+                            <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#FFFFFF] cardWidth">
+                                <img src="/images/network 1.png" alt="Learning Icon" width={51} height={50} />
+                                <h2 className="font-semibold text-lg text-white bg-[#9F3181] px-4 py-6 CardExert">Broader Network</h2>
+                            </div>
+                            <p className="text-gray-500 text-base mt-10">
+                                BIMT Campus gives you the opportunity to meet a wide variety of people through clubs and other college activities, allowing you to expand your network.
+                            </p>
                         </div>
-                        <p className="text-gray-500 text-base mt-10">
-                            BIMT Campus gives you the opportunity to meet a wide variety of people through clubs and other college activities, allowing you to expand your network.
-                        </p>
-                    </div>
 
-                    {/* <!-- Card 2 --> */}
-                    <div className="relative flex flex-col items-center p-6 border border-gray-300 border-b-4 border-red-800">
-                        <div className="absolute -top-6 flex items-center gap-2 bg-[#fff]" style={{ width: '270px' }}>
-                            <img
-                                src="/images/Group (1).png"
-                                alt="Community Icon"
-                                width={51}
-                                height={50}
-                            />
-                            <h2 className="font-semibold text-2xl text-[#272A5D]">Competitive Edge</h2>
+                        {/* <!-- Card 2 --> */}
+                        <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800 cardTwo">
+                            <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#FFFFFF] cardWidth">
+                                <img
+                                    src="/images/Group (1).png"
+                                    alt="Community Icon"
+                                    width={51}
+                                    height={50}
+                                />
+                                <h2 className="font-semibold text-lg text-[#fff] text-white bg-[#5DB7E0] px-4 py-6 CardExert">Competitive Edge</h2>
+                            </div>
+                            <p className="text-gray-500 text-base mt-10">
+                                BIMT gives you the opportunity to work on your unique qualifications in order to help you overcome any competition you may face in the job applicant pool.
+                            </p>
                         </div>
-                        <p className="text-gray-500 text-base mt-10">
-                            BIMT gives you the opportunity to work on your unique qualifications in order to help you overcome any competition you may face in the job applicant pool.
-                        </p>
-                    </div>
 
-                    {/* <!-- Card 3 --> */}
-                    <div className="relative flex flex-col items-center p-6 border border-gray-300 border-b-4 border-red-800">
-                        <div className="absolute -top-6 flex items-center gap-2 bg-[#fff]" style={{ width: '180px' }}>
-                            <img
-                                src="/images/provision 1.png"
-                                alt="Integrity Icon"
-                                width={51}
-                                height={50}
-                            />
-                            <h2 className="font-semibold text-2xl text-[#272A5D]">Flexibility</h2>
+                        {/* <!-- Card 3 --> */}
+                        <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800 ThirdCard">
+                            <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#FFFFFF] px-3 py-2 cardWidth">
+                                <img
+                                    src="/images/provision 1.png"
+                                    alt="Integrity Icon"
+                                    width={51}
+                                    height={50}
+                                />
+                                <h2 className="font-semibold text-lg text-white bg-[#D86027] px-4 py-6 CardExert">Flexibility</h2>
+                            </div>
+                            <p className="text-gray-500 text-base mt-10">
+                                BIMT provides you with a great amount of flexibility. This makes it easier for you to balance your professional life with your personal obligations and responsibilities.
+                            </p>
                         </div>
-                        <p className="text-gray-500 text-base mt-10">
-                            BIMT provides you with a great amount of flexibility. This makes it easier for you to balance your professional life with your personal obligations and responsibilities.
-                        </p>
-                    </div>
-                </section>
-                <section
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-[1300px] mx-auto mt-[70px] mb-[0px]"
-                    style={{ paddingLeft: '207px', paddingRight: '207px' }}
-                >
-                    {/* <!-- Card 1 --> */}
-                    <div className="relative flex flex-col items-center p-6 border border-gray-300 border-b-4 border-red-800">
-                        <div className="absolute -top-6 flex items-center gap-2 bg-[#fff]" style={{ width: '270px' }}>
-                            <img
-                                src="/images/united 1.png"
-                                alt="expert"
-                                width={51}
-                                height={50}
-                            />
-                            <h2 className="font-semibold text-2xl text-[#272A5D]">Exposure to Different Cultures</h2>
+
+                    </section>
+                    <section
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1300px] mx-auto"
+                        style={{ marginTop: '60px' }}
+                    >
+                    </section>
+                </div>
+
+
+                <div className="max-w-[1450px] mx-auto section-about ExpertSectionMain">
+                    <section
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 max-w-[1450px] mx-auto pl-[210px] pr-[210px] SecondSectionExpert"
+                    >
+
+                        {/* <!-- Card 1 --> */}
+                        <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
+                            <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#FFFFFF] cardWidth">
+                                <img src="/images/united 1.png" alt="Learning Icon" width={51} height={50} />
+                                <h2 className="font-semibold text-lg text-white bg-[#9F3181] px-4 py-6 CardExert">Exposure to Different Cultures</h2>
+                            </div>
+                            <p className="text-gray-500 text-base mt-10">
+                                BIMT allows you to immerse yourself in these diverse groups of people, helping you appreciate the other cultures the world offers.
+                            </p>
                         </div>
-                        <p className="text-gray-500 text-base mt-10">
-                            BIMT allows you to immerse yourself in these diverse groups of people, helping you appreciate the other cultures the world offers.
-                        </p>
-                    </div>
 
-                    {/* <!-- Card 2 --> */}
-                    <div className="relative flex flex-col items-center p-6 border border-gray-300 border-b-4 border-red-800">
-                        <div className="absolute -top-6 flex items-center gap-2 bg-[#fff]" style={{ width: '270px' }}>
-                            <img
-                                src="/images/Group (2).png"
-                                alt="Community Icon"
-                                width={51}
-                                height={50}
-                            />
-                            <h2 className="font-semibold text-2xl text-[#272A5D]">Sports and Events</h2>
+                        {/* <!-- Card 2 --> */}
+                        <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800 cardTwo">
+                            <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#FFFFFF] cardWidth">
+                                <img
+                                    src="/images/Group (2).png"
+                                    alt="Community Icon"
+                                    width={51}
+                                    height={50}
+                                />
+                                <h2 className="font-semibold text-lg text-[#fff] text-white bg-[#5DB7E0] px-4 py-6 CardExert">Sports and Events</h2>
+                            </div>
+                            <p className="text-gray-500 text-base mt-10">
+                                BIMT has a variety of sports and events you can attend, which can help you build connections. It also provides you an opportunity to make lasting memories from the events that you attend.
+                            </p>
                         </div>
-                        <p className="text-gray-500 text-base mt-10">
-                            BIMT has a variety of sports and events you can attend, which can help you build connections. It also provides you an opportunity to make lasting memories from the events that you attend.
-                        </p>
-                    </div>
-                </section>
+                    </section>
+                    <section
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1300px] mx-auto"
+                        style={{ marginTop: '60px' }}
+                    >
+                    </section>
+                </div>
 
 
 
 
-
+                {/* 
                 <div className="mx-auto w-[1300px] flex flex-col md:flex-row items-stretch bg-white"
                     style={{
                         width: '1300px',
@@ -1493,8 +1326,7 @@ const HomePage: React.FC = () => {
                         paddingTop: '179px',
                     }}
 
-                >
-                    {/* Left Side */}
+                    >
                     <div className="w-full md:w-1/2 bg-blue-900 text-white p-10 flex flex-col justify-center"
                         style={{
                             paddingTop: '63px',
@@ -1573,11 +1405,10 @@ const HomePage: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Right Side */}
+
                     <div className="relative w-full md:w-1/2"
                         style={{ height: '496px' }}
                     >
-                        {/* Top Half (Blue Background) */}
                         <div className="h-1/2 bg-blue-900"
                             style={{
                                 background: '#272A5D'
@@ -1585,7 +1416,6 @@ const HomePage: React.FC = () => {
                             }}
                         ></div>
 
-                        {/* Bottom Half (Content Section) */}
                         <div className="flex flex-col items-center justify-center h-1/2 bg-white px-6"
                             style={{
                                 display: 'inline-flex',
@@ -1646,7 +1476,6 @@ const HomePage: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Absolute Positioned Image */}
                         <div className="absolute top-1/4 right-1/4 transform translate-x-[-80px] -translate-y-1/4"
                             style={{
                                 top: '5px',
@@ -1658,167 +1487,26 @@ const HomePage: React.FC = () => {
                             />
                         </div>
                     </div>
-                </div >
+                </div > */}
 
-
-
-                {/* Testimonials */}
-
-                <div
-                    className="bg-[#272A5D] flex flex-col items-center py-16"
-                    style={{ marginTop: '202px', marginBottom: '100px' }}
-                >
-                    {/* Outer Container for Content with Fixed Width */}
-                    <div
-                        className="w-[1349px] mx-auto flex flex-col lg:flex-row items-center lg:items-start"
-                    >
-                        {/* Image Section */}
-                        <div className="relative lg:mr-16 mb-8 lg:mb-0">
-                            <Image
-                                src={image}
-                                alt="Alumni"
-                                width={438}
-                                height={498}
-                                className="rounded-lg"
-                            />
-                            <div className="flex justify-center mt-4 space-x-4">
-                                <button
-                                    onClick={handlePrev}
-                                    className="w-12 h-12 flex items-center justify-center rounded-full bg-transparent border-2 border-white text-white"
-                                >
-                                    {/* Left Arrow SVG */}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
-                                        <g clip-path="url(#clip0_327_4530)">
-                                            <path d="M25 0C38.8068 0 50 11.1932 50 25C50 38.8068 38.8068 50 25 50C11.1932 50 0 38.8068 0 25C0 11.1932 11.1932 0 25 0ZM25 45.8333C36.5057 45.8333 45.8333 36.5057 45.8333 25C45.8333 13.4943 36.5057 4.1667 25 4.1667C13.4943 4.1667 4.1667 13.4943 4.1667 25C4.1667 36.5057 13.4943 45.8333 25 45.8333Z" fill="white" />
-                                            <path d="M27.6936 13.1102C28.5071 12.2966 29.8263 12.2966 30.6398 13.1102C31.4534 13.9238 31.4534 15.2429 30.6398 16.0565L21.6963 25L30.6398 33.9436C31.4534 34.7572 31.4534 36.0763 30.6398 36.8899C29.8263 37.7034 28.5071 37.7034 27.6936 36.8899L17.2769 26.4732C16.4633 25.6596 16.4633 24.3405 17.2769 23.5269L27.6936 13.1102Z" fill="white" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_327_4530">
-                                                <rect width="50" height="50" fill="white" transform="matrix(-1 0 0 1 50 0)" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                                <button
-                                    onClick={handleNext}
-                                    className="w-12 h-12 flex items-center justify-center rounded-full bg-transparent border-2 border-white text-white"
-                                >
-                                    {/* Right Arrow SVG */}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
-                                        <g clip-path="url(#clip0_327_4536)">
-                                            <path d="M25 0C11.1932 0 0 11.1932 0 25C0 38.8068 11.1932 50 25 50C38.8068 50 50 38.8068 50 25C50 11.1932 38.8068 0 25 0ZM25 45.8333C13.4943 45.8333 4.1667 36.5057 4.1667 25C4.1667 13.4943 13.4943 4.1667 25 4.1667C36.5057 4.1667 45.8333 13.4943 45.8333 25C45.8333 36.5057 36.5057 45.8333 25 45.8333Z" fill="white" />
-                                            <path d="M22.3064 13.1102C21.4929 12.2966 20.1737 12.2966 19.3602 13.1102C18.5466 13.9238 18.5466 15.2429 19.3602 16.0565L28.3037 25L19.3602 33.9436C18.5466 34.7572 18.5466 36.0763 19.3602 36.8899C20.1737 37.7034 21.4929 37.7034 22.3064 36.8899L32.7231 26.4732C33.5367 25.6596 33.5367 24.3405 32.7231 23.5269L22.3064 13.1102Z" fill="white" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_327_4536">
-                                                <rect width="50" height="50" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-
-
-                        {/* Text Section */}
-                        <div className="flex flex-col">
-                            <h4 className="text-white text-2xl font-light"
-                                style={{
-                                    color: '#fff',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '24px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    lineHeight: 'normal'
-                                }}
-                            >Testimonials</h4>
-                            <h2 className="text-white text-4xl font-semibold mb-6 max-w-[550px]"
-                                style={{
-                                    color: '#fff',
-                                    fontFamily: 'Avenir LT Std',
-                                    fontSize: '40px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '600',
-                                    lineHeight: '53px',
-                                    maxWidth: '550px',
-
-                                }}
-                            >
-                                HEAR WHAT OUR ALUMNI SAY ABOUT BIMT
-                            </h2>
-                            <p
-                                className="text-white text-xl leading-relaxed mb-8 max-w-[600px]"
-                                style={{
-                                    overflow: 'hidden',
-                                    color: '#fff',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '36px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    lineHeight: '35px',
-                                    maxWidth: '600px',
-                                    whiteSpace: 'normal',
-                                    wordBreak: 'keep-all',
-                                }}
-                            >
-                                {text}
-                            </p>
-                            <button className="border-2 border-white text-white text-lg font-semibold py-2 px-6 rounded-lg hover:bg-white hover:text-blue-900 transition duration-300" style={{
-                                width: '234px',
-                                display: 'inline-flex',
-                                height: '56px',
-                                padding: '0px 20px',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                gap: '10px',
-                                flexShrink: '0'
-
-                            }}>
-                                {buttonLabel}
-                            </button>
-                        </div>
-
-                        <div style={{ paddingTop: '550px' }}>
-                            <Link href={'/Testimonials'}>
-
-                                <button className="flex items-end border-2 border-[#fff] rounded-lg px-4 py-2 font-semibold text-[#fff] text-lg relative"
-                                    style={{ fontFamily: 'Playfair', fontSize: '20px', fontWeight: '700', lineHeight: '24px', textAlign: 'left', textUnderlinePosition: 'from-font', textDecorationSkipInk: 'none' }}
-                                >{/* Icon with Rotation */}
-                                    <div className="absolute -top-3 -left-6 transform -rotate-10">
-                                        <Image src="/images/graduate 1 (2).png"
-                                            width={61.25}
-                                            height={43.04}
-                                            alt='storeis'
-                                            style={{ transform: 'translate(-20%, -45%) rotate(-10.795deg)' }} />
-                                    </div>
-
-                                    {/* Button Text */}
-                                    <span> View all stories</span>
-
-                                </button>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
 
 
 
 
 
                 {/* activity cards */}
-                <div className="flex flex-col bg-white mb-[0px] mt-[110px]" style={{ maxWidth: "1300px", margin: "0 auto" }}>
+                <div className="flex flex-col mt-[110px] w-full max-w-[1450px] mx-auto campusLifeEventSection mb-[110px]" >
                     {/* Header */}
                     <div className="mb-12 text-left">
-                        <h2 className="text-2xl font-semibold text-blue-900"
+                        <h2 className="text-2xl font-semibold text-blue-900 font-avenir"
                             style={{
                                 color: '#272A5D',
-                                fontFamily: 'Sans',
                                 fontSize: '24px',
                                 fontStyle: 'normal',
                                 fontWeight: "400",
                                 lineHeight: 'normal'
                             }}
-                        >Campus Life</h2>
+                        >Events</h2>
                         <h1 className="text-4xl font-bold text-blue-900 leading-tight"
                             style={{
                                 color: '#272A5D',
@@ -1828,154 +1516,42 @@ const HomePage: React.FC = () => {
                                 lineHeight: '53px'
                             }}
                         >
-                            STAY CONNECTED WITH <br /> CAMPUS LIFE
+                            CAMPUS LIFE
                         </h1>
                     </div>
 
                     {/* Events Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" style={{ marginBottom: "200px" }}>
                         {/* Event 1 */}
-                        <div className="relative" style={{ width: "400px", flexShrink: 0 }}>
-                            <img
-                                src="/images/actitivity1.png"
-                                alt="Graduation"
-                                style={{ width: "400px", height: "266.667px", flexShrink: 0 }}
-                                className="rounded-t-lg object-cover"
-                            />
-                            <div
-                                className="absolute bg-white p-4"
-                                style={{
-                                    display: "flex",
-                                    width: "370px",
-                                    flexDirection: "column",
-                                    alignItems: "flex-start",
-                                    gap: "10px",
-                                    top: "200px",
-                                    left: "15px",
-                                }}
-                            >
-                                <h3 className="text-xl font-bold text-blue-900"
-                                    style={{
-                                        color: '#272A5D',
-                                        textAlign: 'center',
-                                        fontFamily: 'Avenir LT Std',
-                                        fontSize: '30px',
-                                        fontStyle: "normal",
-                                        fontWeight: '600',
-                                        lineHeight: 'normal'
-                                    }}
-                                >Graduation</h3>
-                                <p className="text-gray-600"
-                                    style={{
-                                        color: '#5A5A5A',
-                                        fontFamily: 'Work Sans',
-                                        fontSize: '16px',
-                                        fontStyle: 'normal',
-                                        fontWeight: '400',
-                                        lineHeight: 'normal'
-                                    }}
-                                >
-                                    Our BIMT Campus annual graduation ceremony is a day devoted to
-                                    celebrating an important point in our student&#39;s  lives. Examinations
-                                    are finally over, scruffiness is replaced with fancy clothes, and
-                                    parents admire their children for reaching the finishing line of a
-                                    long marathon.
+                        <div className="relative flex flex-col items-center w-full">
+                            <img src="/images/actitivity1.png" alt="Graduation" className="w-full h-auto object-cover" />
+                            <div className="absolute bg-white p-4 shadow eventDescriptionContainer">
+                                <h3 className="text-2xl font-bold text-[#272A5D] text-center md:text-left">Graduation</h3>
+                                <p className="text-gray-600 text-sm text-justify">
+                                    Our BIMT Campus annual graduation ceremony is a day devoted to celebrate an important point in our students’ lives. Examinations are finally over, scruffiness is replaced with fancy clothes and parents admire their children for reaching the finishing line of a long marathon. The future of BIMT past pupil always seems more promising than the present, and the present on graduation day is pretty good even if it is not quite the reality.
                                 </p>
                             </div>
                         </div>
 
                         {/* Event 2 */}
-                        <div className="relative" style={{ width: "400px", flexShrink: 0 }}>
-                            <img
-                                src="/images/activitiy2.png"
-                                alt="Camping Night - Kabaragala"
-                                style={{ width: "400px", height: "266.667px", flexShrink: 0 }}
-                                className="rounded-t-lg object-cover"
-                            />
-                            <div
-                                className="absolute bg-white p-4"
-                                style={{
-                                    display: "flex",
-                                    width: "370px",
-                                    flexDirection: "column",
-                                    alignItems: "flex-start",
-                                    gap: "10px",
-                                    top: "200px",
-                                    left: "15px",
-                                }}
-                            >
-                                <h3 className="text-xl font-bold text-blue-900"
-                                    style={{
-                                        color: '#272A5D',
-                                        textAlign: 'center',
-                                        fontFamily: 'Avenir LT Std',
-                                        fontSize: '30px',
-                                        fontStyle: "normal",
-                                        fontWeight: '600',
-                                        lineHeight: 'normal'
-                                    }}
-                                >Camping Night - Kabaragala</h3>
-                                <p className="text-gray-600"
-                                    style={{
-                                        color: '#5A5A5A',
-                                        fontFamily: 'Work Sans',
-                                        fontSize: '16px',
-                                        fontStyle: 'normal',
-                                        fontWeight: '400',
-                                        lineHeight: 'normal'
-                                    }}
-                                >
-                                    This Camping Night was organized to build the confidence of our
-                                    students to dream big and to make them such people who are driven to
-                                    achieve their dreams.
+                        <div className="relative flex flex-col items-center w-full CampingEvent">
+                            <img src="/images/activitiy2.png" alt="Camping Night - Kabaragala" className="w-full h-auto object-cover" />
+                            <div className="absolute bg-white p-4 shadow eventDescriptionContainer">
+                                <h3 className="text-2xl font-bold text-[#272A5D] text-center md:text-left">Camping Night - Kabaragala</h3>
+                                <p className="text-gray-600 text-sm text-justify">
+                                    This Camping Night was organized to build the confidence of our students to dream big and to make them such people who are driver, to achieve their dreams.
                                 </p>
                             </div>
                         </div>
 
                         {/* Event 3 */}
-                        <div className="relative" style={{ width: "400px", flexShrink: 0 }}>
-                            <img
-                                src="/images/activitiy3.png"
-                                alt="Cricket Tournament"
-                                style={{ width: "400px", height: "266.667px", flexShrink: 0 }}
-                                className="rounded-t-lg object-cover"
-                            />
-                            <div
-                                className="absolute bg-white p-4"
-                                style={{
-                                    display: "flex",
-                                    width: "370px",
-                                    flexDirection: "column",
-                                    alignItems: "flex-start",
-                                    gap: "10px",
-                                    top: "200px",
-                                    left: "15px",
-                                }}
+                        <div className="relative flex flex-col items-center w-full eventCricket">
+                            <img src="/images/activitiy3.png" alt="Cricket Tournament" className="w-full h-auto object-cover" />
+                            <div className="absolute bg-white p-4 shadow eventDescriptionContainer"
                             >
-                                <h3 className="text-xl font-bold text-blue-900"
-                                    style={{
-                                        color: '#272A5D',
-                                        textAlign: 'center',
-                                        fontFamily: 'Avenir LT Std',
-                                        fontSize: '30px',
-                                        fontStyle: "normal",
-                                        fontWeight: '600',
-                                        lineHeight: 'normal'
-                                    }}
-                                >Cricket Tournament</h3>
-                                <p className="text-gray-600"
-                                    style={{
-                                        color: '#5A5A5A',
-                                        fontFamily: 'Work Sans',
-                                        fontSize: '16px',
-                                        fontStyle: 'normal',
-                                        fontWeight: '400',
-                                        lineHeight: 'normal'
-                                    }}
-                                >
-                                    BIMT cricket tournament was well-organized by the Alumni Association
-                                    of BIMT Campus. This game proved true leadership and team spirit
-                                    throughout the matches.
+                                <h3 className="text-2xl font-bold text-[#272A5D] text-center md:text-left">Cricket Tournament</h3>
+                                <p className="text-gray-600 text-sm text-justify">
+                                    BIMT cricket tournament was well-organized by Alumni Association of BIMT Campus. This game proved a true leadership and team sprit throughout the whole day of the matches. Main theme of the cricket tournament was to build a Positive behavior that make cricket an exciting game that encourages leadership, friendship, and teamwork.
                                 </p>
                             </div>
                         </div>
