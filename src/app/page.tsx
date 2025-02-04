@@ -605,7 +605,7 @@ const HomePage: React.FC = () => {
                 {/* Expert Learning Section End */}
 
 
-                <div className="flex flex-col items-center max-w-[1300px] mt-[110px] w-full md:w-4/5 mx-auto">
+                <div className="flex flex-col items-center max-w-[1450px] mt-[110px] w-full md:w-4/5 mx-auto DiplomaMainSection">
 
                     <motion.div
                         initial={{ opacity: 0, x: -50 }} // Starts off-screen to the left
@@ -631,17 +631,7 @@ const HomePage: React.FC = () => {
 
                             {/* Content */}
                             <div className="w-full md:w-1/2 flex flex-col space-y-4">
-                                <h2 className="text-gray-700 font-semibold text-xl"
-                                    style={{
-                                        color: '#272A5D',
-                                        fontFamily: 'Work Sans',
-                                        fontSize: '24px',
-                                        fontStyle: "normal",
-                                        fontWeight: "400",
-                                        lineHeight: 'normal'
-                                    }}
-                                >Program</h2>
-                                <h1 className="text-4xl font-bold text-[#272A5D]">DIPLOMA</h1>
+                                <h1 className="text-4xl font-bold text-[#FFFFFF] bg-[#272A5D] DiplomaHeding">DIPLOMA</h1>
                                 <p className="text-gray-600 text-lg"
                                     style={{
                                         color: '#5A5A5A',
@@ -657,52 +647,69 @@ const HomePage: React.FC = () => {
                                 </p>
 
                                 {/* Sub-categories */}
+                                <div className="flex flex-wrap gap-4 text-lg">
+                                    {/* First Row */}
+                                    <div className="flex w-full fistRowDiploma">
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
+                                            }}
+                                        >
+                                            Management ➔
+                                        </span>
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
 
-                                <div className="grid grid-cols-2 gap-4 text-lg">
-                                    <span className="underline-hover"
-                                        style={{
-                                            color: '#000',
-                                            textAlign: 'justify',
-                                            fontFamily: "Work Sans",
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '500',
-                                            lineHeight: '25px'
-                                        }}
-                                    >Management ➔</span>
-                                    <span className="underline-hover"
-                                        style={{
-                                            color: '#000',
-                                            textAlign: 'justify',
-                                            fontFamily: "Work Sans",
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '500',
-                                            lineHeight: '25px'
-                                        }}
-                                    >Language ➔</span>
-                                    <span className="underline-hover"
-                                        style={{
-                                            color: '#000',
-                                            textAlign: 'justify',
-                                            fontFamily: "Work Sans",
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '500',
-                                            lineHeight: '25px'
-                                        }}
-                                    >Humanity & Education ➔</span>
-                                    <span className="underline-hover"
-                                        style={{
-                                            color: '#000',
-                                            textAlign: 'justify',
-                                            fontFamily: "Work Sans",
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '500',
-                                            lineHeight: '25px'
-                                        }}
-                                    >Computing ➔</span>
+                                            }}
+                                        >
+                                            Language ➔
+                                        </span>
+                                    </div>
+
+                                    {/* Second Row */}
+                                    <div className="flex w-full SecondRowDiploma">
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                textAlign: "justify",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
+                                            }}
+                                        >
+                                            Humanity & Education ➔
+                                        </span>
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                textAlign: "justify",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
+                                            }}
+                                        >
+                                            Computing ➔
+                                        </span>
+                                    </div>
                                 </div>
 
 
@@ -774,7 +781,7 @@ const HomePage: React.FC = () => {
 
                             {/* Content */}
                             <div className="w-full md:w-1/2 flex flex-col space-y-4">
-                                <h2 className="text-gray-700 font-semibold text-xl"
+                                {/* <h2 className="text-gray-700 font-semibold text-xl"
                                     style={{
                                         color: '#272A5D',
                                         fontFamily: 'Work Sans',
@@ -783,8 +790,8 @@ const HomePage: React.FC = () => {
                                         fontWeight: "400",
                                         lineHeight: 'normal'
                                     }}
-                                >Program</h2>
-                                <h1 className="text-4xl font-bold text-[#272A5D]">HIGHER DIPLOMA</h1>
+                                >Program</h2> */}
+                                <h1 className="text-4xl font-bold text-[#FFFFFF] bg-[#272A5D]  HigherDiplomaHeading">HIGHER DIPLOMA</h1>
                                 <p className="text-gray-600 text-lg"
                                     style={{
                                         color: '#5A5A5A',
@@ -802,7 +809,7 @@ const HomePage: React.FC = () => {
                                 {/* Sub-categories */}
                                 <div className="flex flex-wrap gap-4 text-lg">
                                     {/* First Row */}
-                                    <div className="flex w-full gap-4">
+                                    <div className="flex w-full higherDiplomaSub">
                                         <span
                                             className="underline-hover"
                                             style={{
@@ -901,137 +908,149 @@ const HomePage: React.FC = () => {
                             </div>
                         </div>
                     </motion.div>
+
                     {/* Third Section */}
-                    <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0 mt-[110px]">
-                        {/* Image */}
-                        <div className="w-full md:w-1/2">
-                            <Image src="/images/degree.png"
-                                objectFit='cover'
-                                width={712}
-                                height={422}
-                                alt="Degree Program"
-                                className="w-full h-auto" />
-                        </div>
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }} // Starts off-screen to the left
+                        whileInView={{ opacity: 1, x: 0 }} // Moves to the center
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: false, amount: 0.5 }} // Animates every time it enters the viewport
+                        className="my-section"
+                    >
+                        {/* First Section */}
+                        <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0 mt-[110px]">
+                            {/* Image */}
+                            <div className="w-full md:w-1/2">
+                                {/* <Image src="/images/course1.jpg" */}
+                                <Image src="/images/degree.png"
 
-                        {/* Content */}
-                        <div className="w-full md:w-1/2 flex flex-col space-y-4">
-                            <h2 className="text-gray-700 font-semibold text-xl"
-                                style={{
-                                    color: '#272A5D',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '24px',
-                                    fontStyle: "normal",
-                                    fontWeight: "400",
-                                    lineHeight: 'normal'
-                                }}
-                            >Program</h2>
-                            <h1 className="text-4xl font-bold text-[#272A5D]">BACHELOR’S DEGREE</h1>
-                            <p className="text-gray-600 text-lg"
-                                style={{
-                                    color: '#5A5A5A',
-                                    textAlign: 'justify',
-                                    fontFamily: "Work Sans",
-                                    fontSize: '16px',
-                                    fontStyle: "normal",
-                                    fontWeight: '400',
-                                    lineHeight: '25px'
-                                }}
-                            >
-                                Gain in-depth knowledge and real-world skills with our Bachelor’s Degree programms. Through internships and case studies, you’ll be prepared to enter the workforce or pursue advanced studies with confidence.
-                            </p>
 
-                            {/* Sub-categories */}
-                            <div className="flex flex-col gap-4 text-lg">
-                                <span
-                                    className="underline-hover"
-                                    style={{
-                                        color: "#000",
-                                        textAlign: "justify",
-                                        fontFamily: "Work Sans",
-                                        fontSize: "16px",
-                                        fontStyle: "normal",
-                                        fontWeight: "500",
-                                        lineHeight: "25px",
-                                    }}
-                                >
-                                    BBA in Accounting ➔
-                                </span>
-                                <span
-                                    className="underline-hover"
-                                    style={{
-                                        color: "#000",
-                                        textAlign: "justify",
-                                        fontFamily: "Work Sans",
-                                        fontSize: "16px",
-                                        fontStyle: "normal",
-                                        fontWeight: "500",
-                                        lineHeight: "25px",
-                                    }}
-                                >
-                                    BSc (Hons) in Computing ➔
-                                </span>
-                                <span
-                                    className="underline-hover"
-                                    style={{
-                                        color: "#000",
-                                        textAlign: "justify",
-                                        fontFamily: "Work Sans",
-                                        fontSize: "16px",
-                                        fontStyle: "normal",
-                                        fontWeight: "500",
-                                        lineHeight: "25px",
-                                    }}
-                                >
-                                    BBA in Business Management ➔
-                                </span>
+                                    width={712}
+                                    height={422}
+                                    objectFit='cover'
+                                    alt="Diploma Program"
+                                    className="w-full h-auto" />
                             </div>
 
-
-                            {/* Buttons */}
-                            <div className="flex space-x-4 mt-4">
-                                <button className="button"
-                                    onClick={() => router.push("/BachelorsDegree")}
+                            {/* Content */}
+                            <div className="w-full md:w-1/2 flex flex-col space-y-4">
+                                <h1 className="text-4xl font-bold text-[#FFFFFF] bg-[#272A5D] BatchDegree">BACHELOR’S DEGREE</h1>
+                                <p className="text-gray-600 text-lg"
                                     style={{
-                                        display: "flex",
-                                        width: '200px',
-                                        height: '56px',
-                                        padding: '0px 10px',
-                                        justifyContent: 'center',
-                                        alignItems: 'center'
-                                    }}>
-                                    <span
-                                        style={{
-                                            fontSize: "20px",
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: 'normal'
-                                        }}
-                                    >View more</span>
-                                </button>
-
-                                <button className="button"
-                                    onClick={() => router.push("/ContactUs")}
-                                    style={{
-                                        display: "flex",
-                                        width: '200px',
-                                        height: '56px',
-                                        padding: '0px 10px',
-                                        justifyContent: 'center',
-                                        alignItems: 'center'
+                                        color: '#5A5A5A',
+                                        textAlign: 'justify',
+                                        fontFamily: "Work Sans",
+                                        fontSize: '16px',
+                                        fontStyle: "normal",
+                                        fontWeight: '400',
+                                        lineHeight: '25px'
                                     }}
                                 >
-                                    <span
+                                      Gain in-depth knowledge and real-world skills with our Bachelor’s Degree programms. Through internships and case studies, you’ll be prepared to enter the workforce or pursue advanced studies with confidence.
+                                </p>
+
+                                {/* Sub-categories */}
+                                <div className="flex flex-wrap gap-4 text-lg">
+                                    {/* First Row */}
+                                    <div className="flex w-full fistRowDiploma">
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
+                                            }}
+                                        >
+                                            BBA in Accounting ➔
+                                        </span>                
+                                    </div>
+
+                                    {/* Second Row */}
+                                    <div className="flex w-full SecondRowDiploma">
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                textAlign: "justify",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
+                                            }}
+                                        >
+                                             BSc (Hons) in Computing ➔
+                                        </span>
+                                    </div>
+
+                                    <div className="flex w-full SecondRowDiploma">
+                                        <span
+                                            className="underline-hover"
+                                            style={{
+                                                color: "#000",
+                                                textAlign: "justify",
+                                                fontFamily: "Work Sans",
+                                                fontSize: "16px",
+                                                fontStyle: "normal",
+                                                fontWeight: "500",
+                                                lineHeight: "25px",
+                                            }}
+                                        >
+                                             BBA in Business Management ➔
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                                {/* Buttons */}
+                                <div className="flex space-x-4 mt-4 gap-10">
+                                    <button className="button"
+                                        onClick={() => router.push("/Diploma")}
                                         style={{
-                                            fontSize: "20px",
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: 'normal'
+                                            display: "flex",
+                                            width: '200px',
+                                            height: '56px',
+                                            padding: '0px 10px',
+                                            justifyContent: 'center',
+                                            alignItems: 'center'
+                                        }}>
+                                        <span
+                                            style={{
+                                                fontSize: "20px",
+                                                fontStyle: 'normal',
+                                                fontWeight: '600',
+                                                lineHeight: 'normal'
+                                            }}
+                                        >View more</span>
+                                    </button>
+
+                                    <button className="button"
+                                        onClick={() => router.push("/ContactUs")}
+                                        style={{
+                                            display: "flex",
+                                            width: '200px',
+                                            height: '56px',
+                                            padding: '0px 10px',
+                                            justifyContent: 'center',
+                                            alignItems: 'center'
                                         }}
-                                    >Contact us</span>
-                                </button>
+                                    >
+                                        <span
+                                            style={{
+                                                fontSize: "20px",
+                                                fontStyle: 'normal',
+                                                fontWeight: '600',
+                                                lineHeight: 'normal'
+                                            }}
+                                        >Contact us</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* View All Courses */}
