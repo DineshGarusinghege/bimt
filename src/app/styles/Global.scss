@@ -627,7 +627,7 @@
 
   @media(max-width:1536px) {
     transform: scale(0.9);
-    left:60px
+    left: 60px
   }
 
   @media(max-width:1280px) {
@@ -635,64 +635,80 @@
     left: 70px;
 
   }
+
   @media(max-width:1110px) {
     transform: scale(0.8);
     left: 100px;
   }
-  @media(max-width:1024px){
+
+  @media(max-width:1024px) {
     transform: scale(1);
     left: 0px;
   }
 }
 
 .gStudent {
-  @media(max-width: 1536px){
+  @media(max-width: 1536px) {
     left: -40px;
   }
-  @media(max-width:1280px){
+
+  @media(max-width:1280px) {
     left: -180px;
   }
-  @media(max-width:1110px){
+
+  @media(max-width:1110px) {
     left: -245px;
   }
-  @media(max-width:1024px){
-    left:110px;
+
+  @media(max-width:1024px) {
+    left: 110px;
   }
-  @media(max-width:768px){
-    left:30px
+
+  @media(max-width:768px) {
+    left: 30px
   }
-  @media(max-width:640px){
-    left:60px
+
+  @media(max-width:640px) {
+    left: 60px
   }
-  @media(max-width:576px){
+
+  @media(max-width:576px) {
     left: 50px
   }
-  @media(max-width:481px){
+
+  @media(max-width:481px) {
     left: 10px
   }
 }
 
 .CBoodGirl {
   right: -130px;
-  @media(max-width:1536px){
+
+  @media(max-width:1536px) {
     right: -100px;
   }
-  @media(max-width:1280px){
+
+  @media(max-width:1280px) {
     right: -20px;
   }
-  @media(max-width:1110px){
+
+  @media(max-width:1110px) {
     right: 0px;
   }
-  @media(max-width:1024px){
+
+  @media(max-width:1024px) {
     right: -100px
   }
-  @media(max-width:768px){
-    right:-120px;
+
+  @media(max-width:768px) {
+    right: -120px;
   }
-  @media(max-width:576px){
+
+  @media(max-width:576px) {
     right: -70px;
   }
-  @media(max-width:481px){
+
+  @media(max-width:481px) {
     right: -50px
   }
 }
@@ -700,35 +716,43 @@
 .maleStudent {
   top: 218px;
   z-index: 100;
- @media(max-width:1536px){
-  left:-60px;
- }
- @media(max-width:1280px){
-  left:-190px;
- }
- @media(max-width:1110px){
-  left:-270px;
- }
- @media(max-width:1024px){
-  left: 120px;
- }
- @media(max-width:768px){
-  left: 0px
- }
- @media(max-width:640px){
-  left: 30px
- }
- @media(max-width:576px){
-  left: 40px;
-  top: 130px;  
- }
- @media(max-width:481px){
-  left: 10px;
- }
+
+  @media(max-width:1536px) {
+    left: -60px;
+  }
+
+  @media(max-width:1280px) {
+    left: -190px;
+  }
+
+  @media(max-width:1110px) {
+    left: -270px;
+  }
+
+  @media(max-width:1024px) {
+    left: 120px;
+  }
+
+  @media(max-width:768px) {
+    left: 0px
+  }
+
+  @media(max-width:640px) {
+    left: 30px
+  }
+
+  @media(max-width:576px) {
+    left: 40px;
+    top: 130px;
+  }
+
+  @media(max-width:481px) {
+    left: 10px;
+  }
 }
 
-.aboutusHeading{
-  background-color:#272A5D;
+.aboutusHeading {
+  background-color: #272A5D;
   width: 46%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -737,28 +761,36 @@
   color: white;
   font-size: 40px;
   line-height: 53px;
-  @media(max-width:1536px){
+
+  @media(max-width:1536px) {
     width: 50%;
   }
-  @media(max-width:1280px){
-    width:65%
+
+  @media(max-width:1280px) {
+    width: 65%
   }
-  @media(max-width:1110px){
+
+  @media(max-width:1110px) {
     width: 82%;
   }
-  @media(max-width:1024px){
+
+  @media(max-width:1024px) {
     width: 37%;
   }
-  @media(max-width:768px){
+
+  @media(max-width:768px) {
     width: 50%;
   }
-  @media(max-width:640px){
+
+  @media(max-width:640px) {
     width: 56%
   }
-  @media(max-width:576px){
+
+  @media(max-width:576px) {
     width: 75%
   }
-  @media(max-width:481px){
-    width: 100%
+
+  @media(max-width:481px) {
+    width: 100%;
   }
 }
