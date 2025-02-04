@@ -74,7 +74,7 @@ export default function ContactUs() {
         comment: "",
     });
 
-    const [message, setMessage] = useState("");
+    // const [message, setMessage] = useState("");
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -123,7 +123,7 @@ export default function ContactUs() {
                 });
             }
         } catch (error) {
-            toast.error("⚠️ Network error. Please try again later.", {
+            toast.error("Network error. Please try again later.", {
                 position: "top-right",
                 autoClose: 3000,
             });

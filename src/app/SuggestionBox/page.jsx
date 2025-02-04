@@ -19,7 +19,7 @@ const SuggestionBox = () => {
         comment: "",
     });
 
-    const [message, setMessage] = useState("");
+    // const [message, setMessage] = useState("");
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });

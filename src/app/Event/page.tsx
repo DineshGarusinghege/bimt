@@ -17,55 +17,55 @@ export default function Event() {
     };
 
 
-    const [isExpanded2, setIsExpanded2] = useState(false);
-    const [selectedImage2, setSelectedImage2] = useState<string | null>(null);
+    // const [isExpanded2, setIsExpanded2] = useState(false);
+    // const [selectedImage2, setSelectedImage2] = useState<string | null>(null);
 
-    const toggleSection2 = () => {
-        setIsExpanded2(!isExpanded2);
-    };
+    // const toggleSection2 = () => {
+    //     setIsExpanded2(!isExpanded2);
+    // };
 
 
-    const [isExpanded3, setIsExpanded3] = useState(false);
-    const [selectedImage3, setSelectedImage3] = useState<string | null>(null);
+    // const [isExpanded3, setIsExpanded3] = useState(false);
+    // const [selectedImage3, setSelectedImage3] = useState<string | null>(null);
 
-    const toggleSection3 = () => {
-        setIsExpanded3(!isExpanded3);
-    };
+    // const toggleSection3 = () => {
+    //     setIsExpanded3(!isExpanded3);
+    // };
 
-    const [isExpanded4, setIsExpanded4] = useState(false);
-    const [selectedImage4, setSelectedImage4] = useState<string | null>(null);
+    // const [isExpanded4, setIsExpanded4] = useState(false);
+    // const [selectedImage4, setSelectedImage4] = useState<string | null>(null);
 
-    const toggleSection4 = () => {
-        setIsExpanded4(!isExpanded4);
-    };
+    // const toggleSection4 = () => {
+    //     setIsExpanded4(!isExpanded4);
+    // };
 
-    const [isExpanded5, setIsExpanded5] = useState(false);
-    const [selectedImage5, setSelectedImage5] = useState<string | null>(null);
+    // const [isExpanded5, setIsExpanded5] = useState(false);
+    // const [selectedImage5, setSelectedImage5] = useState<string | null>(null);
 
-    const toggleSection5 = () => {
-        setIsExpanded5(!isExpanded5);
-    };
+    // const toggleSection5 = () => {
+    //     setIsExpanded5(!isExpanded5);
+    // };
 
-    const [isExpanded6, setIsExpanded6] = useState(false);
-    const [selectedImage6, setSelectedImage6] = useState<string | null>(null);
+    // const [isExpanded6, setIsExpanded6] = useState(false);
+    // const [selectedImage6, setSelectedImage6] = useState<string | null>(null);
 
-    const toggleSection6 = () => {
-        setIsExpanded6(!isExpanded6);
-    };
+    // const toggleSection6 = () => {
+    //     setIsExpanded6(!isExpanded6);
+    // };
 
-    const [isExpanded7, setIsExpanded7] = useState(false);
-    const [selectedImage7, setSelectedImage7] = useState<string | null>(null);
+    // const [isExpanded7, setIsExpanded7] = useState(false);
+    // const [selectedImage7, setSelectedImage7] = useState<string | null>(null);
 
-    const toggleSection7 = () => {
-        setIsExpanded7(!isExpanded7);
-    };
+    // const toggleSection7 = () => {
+    //     setIsExpanded7(!isExpanded7);
+    // };
 
-    const [isExpanded8, setIsExpanded8] = useState(false);
-    const [selectedImage8, setSelectedImage8] = useState<string | null>(null);
+    // const [isExpanded8, setIsExpanded8] = useState(false);
+    // const [selectedImage8, setSelectedImage8] = useState<string | null>(null);
 
-    const toggleSection8 = () => {
-        setIsExpanded8(!isExpanded8);
-    };
+    // const toggleSection8 = () => {
+    //     setIsExpanded8(!isExpanded8);
+    // };
 
     const images = [
         "/images/201.jpg",
