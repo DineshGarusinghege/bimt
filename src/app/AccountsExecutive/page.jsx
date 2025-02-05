@@ -51,7 +51,7 @@ const AcademicCoordinator = () => {
         }
 
         try {
-            const res = await fetch("/api/contacts", {
+            const res = await fetch("/api/accountsexecutive", {
                 method: "POST",
                 body: formData,
             });
@@ -81,7 +81,7 @@ const AcademicCoordinator = () => {
         <>
 
             <head>
-                <title>Academic Coordinator - BIMT Campus</title>
+                <title>Accounts Ececutive (Female) - BIMT Campus</title>
                 <meta
                     name="description"
                     content="A career at BIMT Campus means being part of a dynamic and innovative educational institution committed to excellence. We offer a supportive environment, professional growth opportunities, and the chance to shape the future of education while working with a team of dedicated professionals."
@@ -92,7 +92,7 @@ const AcademicCoordinator = () => {
             {/* <AnnounsmentBar /> */}
             {/* Hero Section */}
             <div className="relative w-full bg-cover bg-top heroSectionHeight"
-                style={{ backgroundImage: "url('/images/GettyImages-1199434187.avif')" }}
+                style={{ backgroundImage: "url('/images/resources-subindex.jpg')" }}
 
             >
                 {/* Breadcrumb Section Wrapper */}
@@ -150,7 +150,7 @@ const AcademicCoordinator = () => {
                                 </span>
                                 <li>
                                     <Link href="/Career" className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">
-                                        Connect at BIMT
+                                        Career at BIMT
                                     </Link>
                                 </li>
                                 <span className="text-gray-400 arroSvgCrumPadding">
@@ -167,7 +167,7 @@ const AcademicCoordinator = () => {
                                     </svg>
                                 </span>
                                 <li>
-                                    <span className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">Academic Coordinator</span>
+                                    <span className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">Accounts Executive (Female) </span>
                                 </li>
                             </ol>
                         </nav>
@@ -192,7 +192,7 @@ const AcademicCoordinator = () => {
                                     fontWeight: '400',
                                     lineHeight: 'normal'
                                 }}
-                            >Overview</h4>
+                            >Accounts Executive (Female) </h4>
                             <h2 className="text-2xl font-bold mt-2 text-avenir"
                                 style={{
                                     color: '#272A5D',
@@ -212,11 +212,14 @@ const AcademicCoordinator = () => {
                                     fontWeight: '400',
                                 }}
                             >
-                                <li className="mb-1">Bachelor’s degree in Science, Business Management, or a related field.</li>
-                                <li className="mb-1">Minimum of 1 year of experience in an academic or related field.</li>
-                                <li className="mb-1">Comprehensive understanding of academic policies, curriculum development, and educational systems.</li>
-                                <li className="mb-1">Strong organizational and multitasking skills, with keen attention to detail.</li>
-                                <li>Exceptional interpersonal and communication abilities.</li>
+                                <li className="mb-1">Following a degree in Accounting, Finance, Management, or Commerce from a recognized university or Following AAT / CA Professional Qualifications.</li>
+                                <li className="mb-1">Strong numerical and analytical skills.</li>
+                                <li className="mb-1">Basic understanding of accounting principles and software (e.g., QuickBooks, Excel).</li>
+                                <li className="mb-1">Excellent attention to detail and organizational skills.</li>
+                                <li className="mb-1">Good communication and teamwork abilities.</li>
+                                <li className="mb-1">Must have excellent knowledge of Accounting Double Entries.</li>
+                                <li className="mb-1">Excellent attention to detail and organizational skills.</li>
+                                <li>Age below 30</li>
                             </ul>
 
                             {/* Overview 2 */}
@@ -239,15 +242,13 @@ const AcademicCoordinator = () => {
                                     fontWeight: '400',
                                 }}
                             >
-                                <li className="mb-1">Assist teaching staff with diverse instructional strategies and effective classroom management techniques to cater to various learning styles.</li>
-                                <li className="mb-1">Provide academic guidance and support to students.</li>
-                                <li className="mb-1">Maintain accurate academic records and deliver timely reports on educational programs.</li>
-                                <li className="mb-1">Develop and implement intervention strategies in collaboration with teaching and learning teams.</li>
-                                <li className="mb-1">Train and mentor new teachers in line with institutional policies and procedures.</li>
-                                <li className="mb-1">Collaborate with faculty to uphold high academic standards and ensure adherence to academic policies.</li>
-                                <li className="mb-1">Oversee student document collection, registration, and record maintenance.</li>
-                                <li className="mb-1">Support academic staff with their daily operational tasks.</li>
-                                <li>Participate in the performance reviews of lecturers in partnership with curriculum coordinators.</li>
+                                <li className="mb-1">Assist in preparing and maintaining financial records, including ledgers and journals.</li>
+                                <li className="mb-1">Support the accounts team with accounts payable and receivable functions.</li>
+                                <li className="mb-1">Perform reconciliations of bank statements and accounts.</li>
+                                <li className="mb-1">Assist in preparing financial reports and summaries.</li>
+                                <li className="mb-1">Support tax filing and compliance processes under supervision.</li>
+                                <li className="mb-1">Ensure accurate data entry and maintain organized financial records.</li>
+                                <li>Collaborate with the team to improve accounting procedures and systems.</li>
                             </ul>
 
                         </div>
@@ -256,7 +257,7 @@ const AcademicCoordinator = () => {
                         <div className="w-full lg:w-1/2 flex justify-center">
                             {/* Large Image */}
                             <img
-                                src="/images/affaires-2-1-2048x1366.jpg"
+                                src="/images/small-business-accountant-2-1024x683-1.jpg"
                                 alt="Large"
                                 className="w-full h-auto object-cover"
                             />

@@ -48,7 +48,7 @@ export default function HigherDiploma() {
             courseName: 'Type: Full-Time',
             courseImg: '/images/affaires.jpg',
             courseID: 'business-management',
-            courseLink: '/business-management',
+            courseLink: '/AssistantMarketingManager',
             deadline: 'Deadline: January 30, 2025'
 
         },
@@ -58,7 +58,7 @@ export default function HigherDiploma() {
             courseName: 'Type: Full-Time',
             courseImg: '/images/GettyImages-668440484.webp',
             courseID: 'computing',
-            courseLink: '/computing',
+            courseLink: '/StudentCounselor',
             deadline: 'Deadline: January 30, 2025'
 
         },
@@ -68,7 +68,7 @@ export default function HigherDiploma() {
             courseName: 'Type: Full-Time',
             courseImg: '/images/The-job-of-chief-office-or-administrative-manager.jpg',
             courseID: 'computing',
-            courseLink: '/computing',
+            courseLink: '/AccountsExecutive',
             deadline: 'Deadline: January 30, 2025'
 
         },

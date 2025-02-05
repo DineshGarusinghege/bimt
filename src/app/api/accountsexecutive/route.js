@@ -39,7 +39,7 @@ export async function POST(req) {
     const mailOptions = {
       from: process.env.EMAIL_USER, // Use environment variables for security
       to: "ictdinesh.se@gmail.com",
-      subject: "Academic Coordinator",
+      subject: "Accounts Executive (Female)",
       html: `
         <p><strong>First Name:</strong> ${firstName}</p>
         <p><strong>Email:</strong> ${email}</p>

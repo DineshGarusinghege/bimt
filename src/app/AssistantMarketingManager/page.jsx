@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 
-const AcademicCoordinator = () => {
+const AssistantMarketingManager = () => {
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -51,7 +51,7 @@ const AcademicCoordinator = () => {
         }
 
         try {
-            const res = await fetch("/api/contacts", {
+            const res = await fetch("/api/assistantmarketing", {
                 method: "POST",
                 body: formData,
             });
@@ -81,7 +81,7 @@ const AcademicCoordinator = () => {
         <>
 
             <head>
-                <title>Academic Coordinator - BIMT Campus</title>
+                <title>Assistant Marketing Manager - BIMT Campus</title>
                 <meta
                     name="description"
                     content="A career at BIMT Campus means being part of a dynamic and innovative educational institution committed to excellence. We offer a supportive environment, professional growth opportunities, and the chance to shape the future of education while working with a team of dedicated professionals."
@@ -92,7 +92,7 @@ const AcademicCoordinator = () => {
             {/* <AnnounsmentBar /> */}
             {/* Hero Section */}
             <div className="relative w-full bg-cover bg-top heroSectionHeight"
-                style={{ backgroundImage: "url('/images/GettyImages-1199434187.avif')" }}
+                style={{ backgroundImage: "url('/images/partnership-agreements-joint-ventures.jpg')" }}
 
             >
                 {/* Breadcrumb Section Wrapper */}
@@ -150,7 +150,7 @@ const AcademicCoordinator = () => {
                                 </span>
                                 <li>
                                     <Link href="/Career" className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">
-                                        Connect at BIMT
+                                        Career at BIMT
                                     </Link>
                                 </li>
                                 <span className="text-gray-400 arroSvgCrumPadding">
@@ -167,7 +167,7 @@ const AcademicCoordinator = () => {
                                     </svg>
                                 </span>
                                 <li>
-                                    <span className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">Academic Coordinator</span>
+                                    <span className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">Assistant Marketing Manager</span>
                                 </li>
                             </ol>
                         </nav>
@@ -192,7 +192,7 @@ const AcademicCoordinator = () => {
                                     fontWeight: '400',
                                     lineHeight: 'normal'
                                 }}
-                            >Overview</h4>
+                            >Assistant Marketing Manager</h4>
                             <h2 className="text-2xl font-bold mt-2 text-avenir"
                                 style={{
                                     color: '#272A5D',
@@ -212,11 +212,12 @@ const AcademicCoordinator = () => {
                                     fontWeight: '400',
                                 }}
                             >
-                                <li className="mb-1">Bachelor’s degree in Science, Business Management, or a related field.</li>
-                                <li className="mb-1">Minimum of 1 year of experience in an academic or related field.</li>
-                                <li className="mb-1">Comprehensive understanding of academic policies, curriculum development, and educational systems.</li>
-                                <li className="mb-1">Strong organizational and multitasking skills, with keen attention to detail.</li>
-                                <li>Exceptional interpersonal and communication abilities.</li>
+                                <li className="mb-1">Bachelor’s degree in Marketing, Business, or a related field.</li>
+                                <li className="mb-1">3+ years of professional experience in marketing or a related area.</li>
+                                <li className="mb-1">Familiarity with digital marketing tools, including SEO, PPC, and email marketing.</li>
+                                <li className="mb-1">Excellent communication and interpersonal skills.</li>
+                                <li className="mb-1">Strong project management skills with the ability to multitask and meet deadlines.</li>
+                                <li>Analytical mindset with creative problem-solving abilities.</li>
                             </ul>
 
                             {/* Overview 2 */}
@@ -239,15 +240,15 @@ const AcademicCoordinator = () => {
                                     fontWeight: '400',
                                 }}
                             >
-                                <li className="mb-1">Assist teaching staff with diverse instructional strategies and effective classroom management techniques to cater to various learning styles.</li>
-                                <li className="mb-1">Provide academic guidance and support to students.</li>
-                                <li className="mb-1">Maintain accurate academic records and deliver timely reports on educational programs.</li>
-                                <li className="mb-1">Develop and implement intervention strategies in collaboration with teaching and learning teams.</li>
-                                <li className="mb-1">Train and mentor new teachers in line with institutional policies and procedures.</li>
-                                <li className="mb-1">Collaborate with faculty to uphold high academic standards and ensure adherence to academic policies.</li>
-                                <li className="mb-1">Oversee student document collection, registration, and record maintenance.</li>
-                                <li className="mb-1">Support academic staff with their daily operational tasks.</li>
-                                <li>Participate in the performance reviews of lecturers in partnership with curriculum coordinators.</li>
+                                <li className="mb-1">Assist in creating and implementing marketing plans that align with organizational goals.</li>
+                                <li className="mb-1">Support the development and execution of digital marketing campaigns, including social media, email marketing, and content management.</li>
+                                <li className="mb-1">Collaborate with the Academic Department to promote programs and initiatives effectively.</li>
+                                <li className="mb-1">Help organize and promote campus events, workshops, and seminars to engage students and stakeholders.</li>
+                                <li className="mb-1">Develop creative content for blogs, newsletters, and promotional materials.</li>
+                                <li className="mb-1">Conduct market research to analyze trends, target audiences, and the competitive landscape, providing actionable insights.</li>
+                                <li className="mb-1">Represent the organization at recruitment events, job fairs, and conferences.</li>
+                                <li className="mb-1">Manage marketing-related administrative tasks, including budget tracking and reporting.</li>
+                                <li>Monitor campaign performance and suggest data-driven improvements.</li>
                             </ul>
 
                         </div>
@@ -256,7 +257,7 @@ const AcademicCoordinator = () => {
                         <div className="w-full lg:w-1/2 flex justify-center">
                             {/* Large Image */}
                             <img
-                                src="/images/affaires-2-1-2048x1366.jpg"
+                                src="/images/Assistant-Manager-Job-Description-Template-1024x683.jpg"
                                 alt="Large"
                                 className="w-full h-auto object-cover"
                             />
@@ -346,4 +347,4 @@ const AcademicCoordinator = () => {
     );
 };
 
-export default AcademicCoordinator;
+export default AssistantMarketingManager;
