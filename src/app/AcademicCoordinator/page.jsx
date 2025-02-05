@@ -4,26 +4,14 @@
 import MainHeader from '../ui/MainHeader';
 // import AnnounsmentBar from '../ui/AnnounsmentBar';
 import Link from 'next/link';
-import React, {useEffect } from "react";
+import React, { useEffect } from "react";
 import '../styles/Global.scss'
-import {toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+
 
 const AcademicCoordinator = () => {
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        toast.success("Form submitted successfully!", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
-    };
 
 
     // Auto-slide functionality
@@ -38,7 +26,56 @@ const AcademicCoordinator = () => {
     }, []);
 
 
+
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+        file: null,
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleFileChange = (e) => {
+        setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        console.log("Submitting Form Data:", formData); // Debugging Line
     
+        const data = new FormData();
+        data.append("name", formData.name);
+        data.append("email", formData.email);
+        data.append("message", formData.message);
+        if (formData.file) data.append("file", formData.file);
+    
+        try {
+            const response = await fetch("/api/contacts", {
+                method: "POST",
+                body: data,
+            });
+    
+            const result = await response.json();
+            console.log("API Response:", result); // Debugging Line
+    
+            if (response.ok) {
+                toast.success("Email sent successfully!");
+                setFormData({ name: "", email: "", message: "", file: null });
+            } else {
+                toast.error("Failed to send email.");
+            }
+        } catch (error) {
+            console.error("Submission Error:", error);
+            toast.error("An error occurred.");
+        }
+    };
+    
+
     return (
         <>
 
@@ -240,55 +277,46 @@ const AcademicCoordinator = () => {
                     </h2>
 
                     {/* Form */}
-                    <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleSubmit}>
+                    <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleSubmit} encType="multipart/form-data">
                         {/* Name */}
                         <div className="relative w-full">
                             <input
                                 type="text"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
                                 placeholder="Name"
-                                className="w-full px-10 py-3 border border-gray-300 rounded-md text-sm"
+                                className="w-full px-5 py-3 border border-gray-300 rounded-md text-sm"
+                                required
                             />
-                            <svg
-                                className="absolute left-3 top-3.5 w-5 h-5 text-gray-400"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M5.121 17.804A10.965 10.965 0 0112 15c2.658 0 5.077.93 6.879 2.482M15 7a3 3 0 11-6 0 3 3 0 016 0z"
-                                />
-                            </svg>
                         </div>
 
                         {/* Email */}
                         <div className="relative w-full">
                             <input
                                 type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 placeholder="Email"
-                                className="w-full px-10 py-3 border border-gray-300 rounded-md text-sm"
+                                className="w-full px-5 py-3 border border-gray-300 rounded-md text-sm"
+                                required
                             />
-                            <svg
-                                className="absolute left-3 top-3.5 w-5 h-5 text-gray-400"
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="email">
-                                <path fill="#222" d="M53.42 52.82H10.58a8 8 0 0 1-8-8V19.18a8 8 0 0 1 8-8h42.84a8 8 0 0 1 8 8v25.64a8 8 0 0 1-8 8ZM10.58 13.18a6 6 0 0 0-6 6v25.64a6 6 0 0 0 6 6h42.84a6 6 0 0 0 6-6V19.18a6 6 0 0 0-6-6Z"></path>
-                                <path fill="#222" d="M32 37.58A8 8 0 0 1 27.18 36L3.82 18.31A1 1 0 1 1 5 16.72l23.38 17.65a6 6 0 0 0 7.24 0L59 16.72a1 1 0 1 1 1.21 1.59L36.82 36A8 8 0 0 1 32 37.58Z"></path>
-                                <path fill="#222" d="M4.17 48.64a1 1 0 0 1-.66-1.74L21.9 30.49A1 1 0 0 1 23.23 32L4.84 48.39a1 1 0 0 1-.67.25zm55.66 0a1 1 0 0 1-.67-.25L40.77 32a1 1 0 1 1 1.33-1.49L60.49 46.9a1 1 0 0 1 .08 1.41 1 1 0 0 1-.74.33z"></path>
-                            </svg>
                         </div>
 
-                        {/* Few Words */}
+                        {/* Message */}
                         <div className="relative w-full md:col-span-2">
                             <textarea
-                                placeholder="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                placeholder="Message"
                                 className="w-full px-5 py-3 border border-gray-300 rounded-md text-sm resize-none h-[100px]"
+                                required
                             ></textarea>
                         </div>
 
-                        {/* Upload Your CV */}
+                        {/* File Upload */}
                         <div className="md:col-span-2">
                             <label className="block mb-2 text-sm font-medium text-gray-600">
                                 Upload Your CV
@@ -296,22 +324,23 @@ const AcademicCoordinator = () => {
                             <input
                                 type="file"
                                 accept=".pdf,.doc,.docx"
+                                onChange={handleFileChange}
                                 className="w-full px-4 py-3 border border-gray-300 rounded-md text-sm cursor-pointer"
                             />
                         </div>
 
-                        {/* Buttons */}
+                        {/* Submit Button */}
                         <div className="flex md:col-span-2 gap-4 mt-4">
                             <button
                                 type="submit"
-                                className="CourseDetailsBtn px-6 py-3 bg-[#272A5D] text-white rounded-md text-sm font-semibold hover:bg-[#1F214A]"
+                                className="px-6 py-3 bg-[#272A5D] text-white rounded-md text-sm font-semibold hover:bg-[#1F214A]"
                             >
-                                <span>SUBMIT</span>
+                                SUBMIT
                             </button>
                         </div>
                     </form>
                 </div>
-              
+
             </div>
         </>
     );
