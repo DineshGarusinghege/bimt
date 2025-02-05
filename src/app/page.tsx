@@ -231,7 +231,7 @@ const HomePage: React.FC = () => {
 
     return (
         <>
-        <PopupMoel/>
+            <PopupMoel />
             <div
                 className="min-h-screen bg-fixed bg-cover bg-no-repeat"
                 style={{
@@ -266,7 +266,7 @@ const HomePage: React.FC = () => {
                     <div className="absolute inset-0 bg-black bg-opacity-40 -z-10"></div>
 
                     {/* Content Section */}
-                    <div className="flex flex-col md:flex-row w-full h-full max-w-[1532px] mx-auto">
+                    <div className="flex flex-col md:flex-row w-full h-full max-w-[1450px] mx-auto">
                         {/* Left Section (Text at Bottom Center) */}
                         <div className="flex flex-col justify-end items-center md:items-start w-full md:w-12/12 p-4 text-center md:text-left">
                             <h1 className="text-[64px] font-bold leading-[53px] text-white mb-2">
@@ -947,7 +947,7 @@ const HomePage: React.FC = () => {
                                         lineHeight: '25px'
                                     }}
                                 >
-                                      Gain in-depth knowledge and real-world skills with our Bachelor’s Degree programms. Through internships and case studies, you’ll be prepared to enter the workforce or pursue advanced studies with confidence.
+                                    Gain in-depth knowledge and real-world skills with our Bachelor’s Degree programms. Through internships and case studies, you’ll be prepared to enter the workforce or pursue advanced studies with confidence.
                                 </p>
 
                                 {/* Sub-categories */}
@@ -966,7 +966,7 @@ const HomePage: React.FC = () => {
                                             }}
                                         >
                                             BBA in Accounting ➔
-                                        </span>                
+                                        </span>
                                     </div>
 
                                     {/* Second Row */}
@@ -983,7 +983,7 @@ const HomePage: React.FC = () => {
                                                 lineHeight: "25px",
                                             }}
                                         >
-                                             BSc (Hons) in Computing ➔
+                                            BSc (Hons) in Computing ➔
                                         </span>
                                     </div>
 
@@ -1000,7 +1000,7 @@ const HomePage: React.FC = () => {
                                                 lineHeight: "25px",
                                             }}
                                         >
-                                             BBA in Business Management ➔
+                                            BBA in Business Management ➔
                                         </span>
                                     </div>
                                 </div>
@@ -1060,15 +1060,18 @@ const HomePage: React.FC = () => {
                     <div className='relative w-[1300px]'
                         style={{ display: 'flex', justifyContent: 'center', alignContent: 'center' }}
                     >
-                        <button className="allProgramViewBtn flex items-end border-2 border-[#272A5D] rounded-lg px-4 py-2 font-semibold text-[#272A5D] text-lg relative"
-                            style={{ fontFamily: 'Playfair', fontSize: '20px', fontWeight: '700', lineHeight: '24px', textAlign: 'left', textUnderlinePosition: 'from-font', textDecorationSkipInk: 'none' }}
+                        <Link href={"/Search"}>
+                            <button className="allProgramViewBtn flex items-end border-2 border-[#272A5D] rounded-lg px-4 py-2 font-semibold text-[#272A5D] text-lg relative"
+                                style={{ fontFamily: 'Playfair', fontSize: '20px', fontWeight: '700', lineHeight: '24px', textAlign: 'left', textUnderlinePosition: 'from-font', textDecorationSkipInk: 'none' }}
 
-                            onClick={() => router.push("/Search")}
-                        >
-                            {/* Button Text */}
-                            <span>View all Programms</span>
+                                onClick={() => router.push("/Search")}
+                            >
+                                {/* Button Text */}
+                                <span>View all Programms</span>
 
-                        </button>
+                            </button>
+                        </Link>
+
                         {/* Icon with Rotation */}
                         <div className="absolute -top-1 -left-9 transform -rotate-10">
                             <Image src="/images/graduate 1.png"
