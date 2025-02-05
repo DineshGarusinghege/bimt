@@ -184,7 +184,7 @@ const MainHeader = () => {
                                     <hr className="border-gray-300" />
                                     {/* <li className="menuTitleList"><Link href="/ConnectwithUs" className="hover:text-[#A02629] menuTitle">Connect with Us</Link></li> */}
                                     <hr className="border-gray-300" />
-                                    <li className="menuTitleList"><Link href="/CareeratBIMT" className="block px-7 py-4 text-white hover:bg-pink-500 hover:text-white">Career at BIMT</Link></li>
+                                    <li className="menuTitleList"><Link href="/Career" className="block px-7 py-4 text-white hover:bg-pink-500 hover:text-white">Career at BIMT</Link></li>
                                     {/* <hr className="border-gray-300" />
                                 <li className="menuTitleList"><Link href="/Blog" className="hover:text-[#A02629] menuTitle">Students Blogs</Link></li> */}
                                     <hr className="border-gray-300" />
@@ -407,7 +407,7 @@ const MainHeader = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/CareeratBIMT" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
+                                            <Link href="/Career" className="block text-white hover:text-blue-500 menuTitle" style={{ fontSize: '18px' }}>
                                                 Career at BIMT
                                             </Link>
                                         </li>

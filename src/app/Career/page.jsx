@@ -39,7 +39,7 @@ export default function HigherDiploma() {
             courseName: 'Type: Full-Time',
             courseImg: '/images/affaires-2-1.jpg',
             courseID: 'accounting-finance',
-            courseLink: '/accounting',
+            courseLink: '/AcademicCoordinator',
             deadline: 'Deadline: January 30, 2025'
         },
         {
