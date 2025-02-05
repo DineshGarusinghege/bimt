@@ -236,9 +236,9 @@ const MainHeader = () => {
                         >
                             {menuOpen ? (
                                 <span className="text-lg" style={{
-                                    paddingLeft:'10px',
-                                    paddingRight:'10px'
-                                }}>✖</span> 
+                                    paddingLeft: '10px',
+                                    paddingRight: '10px'
+                                }}>✖</span>
                             ) : (
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"

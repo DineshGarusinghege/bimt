@@ -190,7 +190,7 @@ const AboutUs = () => {
         <>
 
             <head>
-                <title>About Us | BIMT Campus</title>
+                <title>About Us - BIMT Campus</title>
                 <meta
                     name="description"
                     content="BIMT Campus is a leading educational institution dedicated to empowering students with high-quality education and innovative learning experiences. We take pride in nurturing future leaders by offering a diverse range of academic programs designed to meet global standards.
@@ -201,9 +201,6 @@ Join us on a journey of knowledge and transformation, where your aspirations bec
                 />
             </head>
             <MainHeader />
-
-
-
 
             <section className="w-full flex justify-center items-center relative bg-gray-100">
                 {/* Full-width background */}
