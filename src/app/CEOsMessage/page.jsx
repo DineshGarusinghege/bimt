@@ -21,10 +21,9 @@ export default function CEOsMessage() {
             {/* <AnnounsmentBar /> */}
 
 
-
-            <div className="w-full h-screen flex justify-center items-center">
+            <div className="hidden sm:flex max-w-[1450px] mx-auto w-full h-screen justify-center items-center messagespeachhide">
                 <img
-                    src="/images/ceos-message_page-0001-2048x944.jpg"
+                     src="/images/ceos-message_page-0001-2048x944.jpg"
                     alt="Descriptive Text"
                     className="object-cover"
                 />

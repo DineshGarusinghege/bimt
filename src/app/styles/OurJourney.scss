@@ -109,3 +109,8 @@
   background: #5DB7E0;
 }
 
+.messagespeachhide{
+  @media(max-width:640px){
+    display: none;
+  }
+}

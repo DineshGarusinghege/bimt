@@ -21,13 +21,14 @@ export default function ChairmansMessage() {
             {/* <AnnounsmentBar /> */}
 
 
-            <div className="w-full h-screen flex justify-center items-center">
+            <div className="hidden sm:flex max-w-[1450px] mx-auto w-full h-screen justify-center items-center messagespeachhide">
                 <img
                     src="/images/chairmans-message-copy_page-0001-1536x708.jpg"
                     alt="Descriptive Text"
-                    className="object-cove r"
+                    className="object-cover"
                 />
             </div>
+
 
             <div className="block md:hidden">
                 {/* Wrapper div visible only on mobile (md and above hidden) */}
@@ -40,7 +41,7 @@ export default function ChairmansMessage() {
                     />
                 </div>
 
-                <div style={{borderRadius:'30px', backgroundColor:'#F2F2F2', margin:'20px'}}>
+                <div style={{ borderRadius: '30px', backgroundColor: '#F2F2F2', margin: '20px' }}>
                     <p
                         className="text-[#5A5A5A] font-['WorkSans'] text-[14px] font-normal p-5 text-justify"
                     >
