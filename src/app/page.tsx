@@ -231,6 +231,7 @@ const HomePage: React.FC = () => {
 
     return (
         <>
+        <PopupMoel/>
             <div
                 className="min-h-screen bg-fixed bg-cover bg-no-repeat"
                 style={{
@@ -534,7 +535,7 @@ const HomePage: React.FC = () => {
 
                 <div className="relative w-full w-[1450px] mx-auto flex flex-col items-center justify-center">
                     {/* Search Section */}
-                    <div className="absolute top-[-37px] z-50 w-full flex justify-center">
+                    <div className="absolute top-[-37px] z-30 w-full flex justify-center">
                         <div
                             className="w-[67%] mx-auto flex items-center gap-4 p-4 rounded-lg bg-white shadow-lg searchBarBox"
                         >
