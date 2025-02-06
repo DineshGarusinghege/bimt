@@ -67,6 +67,11 @@ export default function Event() {
         setIsExpanded8(!isExpanded8);
     };
 
+    const [isExpanded9, setIsExpanded9] = useState(false);
+    const toggleSection9 = () => {
+        setIsExpanded9(!isExpanded9);
+    };
+
     const images = [
         "/images/201.jpg",
         "/images/202.jpg",
@@ -243,6 +248,34 @@ export default function Event() {
         "/images/2024_12_19_16_40_IMG_7830-scaled.WEBP",
         "/images/2024_12_19_15_38_IMG_5329-scaled.WEBP",
     ]
+
+    const images9 = [
+        "/images/2024_12_22_11_25_IMG_5608-scaled.WEBP",
+        "/images/2024_12_22_09_45_IMG_5522-scaled.WEBP",
+        "/images/2024_12_22_10_34_IMG_5555-scaled.WEBP",
+        "/images/2024_12_22_10_41_IMG_5561-scaled.WEBP",
+        "/images/2024_12_22_12_02_IMG_5625-scaled.WEBP",
+        "/images/2024_12_22_11_08_IMG_5605-scaled.WEBP",
+        "/images/2024_12_22_11_58_IMG_5616-scaled.WEBP",
+        "/images/2024_12_22_09_25_IMG_5508-scaled.WEBP",
+        "/images/2024_12_22_10_49_IMG_5587-scaled.WEBP",
+        "/images/2024_12_22_11_02_IMG_5599-scaled.WEBP",
+        "/images/2024_12_22_10_42_IMG_5570-scaled.WEBP",
+        "/images/2024_12_22_11_59_IMG_5618-scaled.WEBP",
+        "/images/2024_12_22_15_07_IMG_5645-scaled.WEBP",
+        "/images/2024_12_22_10_48_IMG_5582-scaled.WEBP",
+        "/images/2024_12_22_11_59_IMG_5620-scaled.WEBP",
+        "/images/2024_12_22_15_07_IMG_5647-scaled.WEBP",
+        "/images/2024_12_22_10_46_IMG_5575-scaled.WEBP",
+        "/images/2024_12_22_11_28_IMG_5613-scaled.WEBP",
+        "/images/2024_12_22_12_38_IMG_5629-scaled.WEBP",
+        "/images/2024_12_22_10_49_IMG_5586-scaled.WEBP",
+        "/images/2024_12_22_09_24_IMG_5506-scaled.WEBP",
+        "/images/2024_12_22_11_08_IMG_5607-scaled.WEBP",
+        "/images/2024_12_22_11_03_IMG_5601-scaled.WEBP",
+        "/images/2024_12_22_10_48_IMG_5578-scaled.WEBP",
+    ]
+
     return (
         <>
             <head>
@@ -1416,6 +1449,139 @@ export default function Event() {
 
                     )}
 
+
+                    {/* Banner 09 */}
+                    <div
+                        className="mx-auto max-w-[1450px] w-full h-auto bg-gradient-to-r from-[#E6E6E6] to-[rgba(200,200,200,0.80)]  flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-10 px-4 md:px-6 lg:px-5 py-6 md:py-5 mb-[80px] mt-[80px]"
+                    >
+                        {/* Left Side Image */}
+                        <div className="w-full md:w-[300px] h-auto">
+                            <Image
+                                src="/images/2024_12_22_11_58_IMG_5616-scaled.WEBP"
+                                alt="Workshop"
+                                width={300}
+                                height={200}
+                                className="w-full h-auto object-cover"
+                            />
+                        </div>
+
+                        {/* Right Side Text */}
+                        <div className="flex flex-col gap-4 flex-grow w-full md:w-[800px]">
+                            <h2 className="text-black font-bold leading-tight text-black font-avenir EventNewsHeader">
+                                Blood Donation Programme
+                            </h2>
+                            <p className="text-black leading-relaxed text-justify font-work-sans eventNewsPara">
+                                Highlights from the BIMT Blood Donation Programme 2024.
+                            </p>
+                        </div>
+
+                        {/* Toggle Arrow */}
+                        <div
+                            className="w-10 h-10 flex items-center justify-center cursor-pointer"
+                            onClick={toggleSection9}
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                <path
+                                    d={
+                                        isExpanded9
+                                            ? "M25.879 5.42976L15 16.3087L4.12102 5.42976L0 9.55076L15 24.5508L30 9.55076L25.879 5.42976Z"
+                                            : "M25.879 24.5508L15 13.6718L4.12102 24.5508L0 20.4298L15 5.42976L30 20.4298L25.879 24.5508Z"
+                                    }
+                                    fill="#5A5A5A"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+
+                    {/* Expanded Section */}
+                    {isExpanded9 && (
+                        <div
+                            className="relative max-w-[1450px] w-full mx-auto py-8 px-4 expandedEventGallary"
+                            style={{
+                                backgroundImage: 'url("/images/2024_12_22_12_38_IMG_5629-scaled.WEBP")',
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                            }}
+                        >
+                            {/* White Overlay with Opacity */}
+                            <div className="absolute inset-0 bg-white opacity-50"></div>
+
+                            <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 z-10" style={{
+
+                            }}>
+                                {images9.map((src, index) => (
+                                    <div
+                                        key={index}
+                                        className="w-full md:w-[300px] h-auto overflow-hidden cursor-pointer"
+                                        onClick={() => setSelectedImage(src)}
+                                    >
+                                        <Image
+                                            src={src}
+                                            alt={`Gallery ${index + 1}`}
+                                            width={300}
+                                            height={200}
+                                            className="w-full h-auto object-cover eventImages"
+
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Gallery Navigation */}
+                    {selectedImage && (
+                        <div className="fixed inset-0 bg-black bg-opacity-100 flex justify-center items-center z-50 p-4">
+                            <div className="relative flex items-center w-full max-w-[1000px] mx-auto ">
+                                {/* Left Arrow */}
+                                <button
+                                    className="text-white bg-gray-700 p-2 sm:p-3 rounded-full hover:bg-gray-500 mr-2 sm:mr-4"
+                                    onClick={() => {
+                                        const currentIndex = images.indexOf(selectedImage);
+                                        setSelectedImage(images[(currentIndex - 1 + images.length) % images.length]);
+                                    }}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 30" fill="none">
+                                        <path d="M20 5 L10 15 L20 25" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </button>
+
+                                {/* Preview Image */}
+                                <Image
+                                    src={selectedImage}
+                                    alt="Selected Image"
+                                    width={1000}
+                                    height={700}
+                                    className="w-full max-w-[90vw] h-auto max-h-[80vh] object-contain"
+                                />
+
+                                {/* Right Arrow */}
+                                <button
+                                    className="text-white bg-gray-700 p-2 sm:p-3 rounded-full hover:bg-gray-500 ml-2 sm:ml-4"
+                                    onClick={() => {
+                                        const currentIndex = images.indexOf(selectedImage);
+                                        setSelectedImage(images[(currentIndex + 1) % images.length]);
+                                    }}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 30" fill="none">
+                                        <path d="M10 5 L20 15 L10 25" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </button>
+
+                                {/* Close Button */}
+                                <button
+                                    className="absolute top-2 sm:top-4 right-2 sm:right-4 text-white p-1 sm:p-2 bg-gray-700 rounded-full hover:bg-gray-500"
+                                    onClick={() => setSelectedImage(null)}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 30" fill="none">
+                                        <path d="M7 7 L23 23" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                        <path d="M23 7 L7 23" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                    )}
                 </div>
             </div>
         </>
