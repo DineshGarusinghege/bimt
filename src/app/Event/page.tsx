@@ -541,7 +541,7 @@ export default function Event() {
                                 Early Literacy Development Workshop
                             </h2>
                             <p className="text-black leading-relaxed text-justify font-work-sans eventNewsPara">
-                                Highlights of the "Ealry Literacy Development Worshop Series - 02" Held on 27<sup>th</sup> Octomber 2024
+                                Highlights of the &quot;Ealry Literacy Development Worshop Series - 02&quot; Held on 27<sup>th</sup> Octomber 2024
                             </p>
                         </div>
 
@@ -807,7 +807,7 @@ export default function Event() {
                         {/* Right Side Text */}
                         <div className="flex flex-col gap-4 flex-grow w-full md:w-[800px]">
                             <h2 className="text-black font-bold leading-tight text-black font-avenir EventNewsHeader">
-                                'Train The Trainer' Program!
+                            &apos;Train The Trainer&apos; Program!
                             </h2>
                             <p className="text-black leading-relaxed text-justify font-work-sans eventNewsPara">
                                 Exciting times at BIMT as we wrap up our ‘Train the Trainer’ program! Our dedicated lecturers are now equipped with the latest strategies to inspire and empower our students.
