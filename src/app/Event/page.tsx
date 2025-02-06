@@ -9,7 +9,7 @@ import '../styles/Global.scss'
 
 export default function Event() {
 
-    const [isExpanded1, setIsExpanded1] = useState(false);
+    const [isExpanded1, setIsExpanded1] = useState(true);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const toggleSection1 = () => {
@@ -258,7 +258,7 @@ export default function Event() {
                     {/* Gallery Navigation */}
                     {selectedImage && (
                         <div className="fixed inset-0 bg-black bg-opacity-100 flex justify-center items-center z-50 p-4">
-                            <div className="relative flex items-center w-full max-w-[95vw]">
+                            <div className="relative flex items-center w-full max-w-[1000px] mx-auto ">
                                 {/* Left Arrow */}
                                 <button
                                     className="text-white bg-gray-700 p-2 sm:p-3 rounded-full hover:bg-gray-500 mr-2 sm:mr-4"
@@ -278,7 +278,7 @@ export default function Event() {
                                     alt="Selected Image"
                                     width={1000}
                                     height={700}
-                                    className="rounded-lg w-full max-w-[90vw] h-auto max-h-[80vh] object-contain"
+                                    className="w-full max-w-[90vw] h-auto max-h-[80vh] object-contain"
                                 />
 
                                 {/* Right Arrow */}
