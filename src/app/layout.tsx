@@ -60,12 +60,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+
         <LoadingProvider>
-          <LayoutWithLoader>
-            {/* Main Content */}
-            {children}
-          </LayoutWithLoader>
-          <WhatsAppButton/>
+          <div
+            className="min-h-screen bg-fixed bg-cover bg-no-repeat"
+            style={{
+              backgroundImage: "url('/images/bg1.jpg')",
+              backgroundPosition: "bottom",
+            }}
+          >
+            <LayoutWithLoader>
+              {/* Main Content */}
+              {children}
+            </LayoutWithLoader>
+            <WhatsAppButton />
+          </div>
           <Footer />
         </LoadingProvider>
       </body>

@@ -8,6 +8,17 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from 'react';
 
 
+// Array of background images
+const backgroundImages = [
+    '/images/coloured-pattern_page-0002.jpg',
+    '/images/coloured-pattern_page-0004.jpg',
+    '/images/coloured-pattern_page-0001.jpg',
+    '/images/coloured-pattern_page-0003.jpg',
+    '/images/coloured-pattern_page-0005.jpg',
+    '/images/coloured-pattern_page-0006.jpg',
+];
+
+
 
 export default function HigherDiploma() {
 
@@ -393,103 +404,72 @@ export default function HigherDiploma() {
                 </div>
 
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[1590px] mx-auto">
-                    {courses.map((course) => (
-                        <div
-                            key={course._id}
-                            className="flex bg-white shadow-lg overflow-hidden"
-                            style={{
-                                borderLeft: '4px solid #A02629',
-                            }}
-                        >
-                            {/* Left: Text Section */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-[1450px] mx-auto">
+                    {courses.map((course) => {
+                        // Select a random background image
+                        const randomBg = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+
+                        return (
                             <div
-                                className="flex flex-col justify-between p-4 w-2/3"
+                                key={course._id}
+                                className="flex shadow-lg overflow-hidden relative"
                                 style={{
-                                    display: 'flex',
-                                    padding: '15px 20px',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    gap: '35px',
+                                    borderLeft: '4px solid #A02629',
+                                    backgroundImage: `url(${randomBg})`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'bottom',
+                                    backgroundRepeat: 'no-repeat',
                                 }}
                             >
-                                <div>
-                                    <p className="text-sm text-gray-500">{course.courseTitle}</p>
-                                    <div
-                                        style={{
-                                            color: '#000',
-                                            fontFamily: 'Avenir LT Std',
-                                            fontSize: '24px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: '40px',
-                                        }}
-                                    >
-                                        <h3 className="text-lg font-semibold text-[#1D267D]">{course.courseName}</h3>
+                                {/* Left: Text Section */}
+                                <div
+                                    className="flex flex-col py-10 px-5 w-2/3 relative"
+                                    style={{
+                                        gap: '35px',
+                                    }}
+                                >
+                                    <div>
+                                        <p className="font-avenir font-bold" style={{
+                                            fontSize: '16px', lineHeight: '25px', fontWeight: '600px', color: '#000000'
+                                        }}>{course.courseTitle}</p>
+                                        <h3 className="text-avenir" style={{
+                                            fontSize: '24px', fontWeight: '400px', lineHeight: '36px', color: '#000000'
+                                        }}>
+                                            {course.courseName}
+                                        </h3>
+                                    </div>
+
+                                    <div className="flex space-x-4 mt-4">
+                                        <Link href={`/CourseContent/${course.courseID}`}>
+                                            <button
+                                                className="bg-white text-[#000000] border border-[#000000] py-3 px-5 rounded-md hover:bg-[#272A5D] hover:text-white transition"
+                                                aria-label={`View details of ${course.courseName}`} style={{ border: '2px solid black', fontWeight:'600', fontSize: '14px' }}
+                                            >
+                                                View more
+                                            </button>
+                                        </Link>
+                                        <button
+                                            className="bg-white border border-[#000000] text-[#000000] py-3 px-5 rounded-md hover:bg-[#272A5D] hover:text-white transition"
+                                            style={{ border: '2px solid black', fontWeight:'600', fontSize: '14px' }}
+                                        >
+                                            Contact us
+                                        </button>
                                     </div>
                                 </div>
-                                <div className="flex space-x-4 mt-4">
-                                    <Link href={`/CourseContent/${course.courseID}`}>
-                                        <button
-                                            className="bg-white text-[#1D267D] border border-[#1D267D] py-2 px-4 rounded-md hover:bg-[#1D267D] hover:text-white transition"
-                                            aria-label={`View details of ${course.courseName}`}
-                                            style={{
-                                                display: 'flex',
-                                                width: '125px',
-                                                height: '40px',
-                                                padding: '11px 0px',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                gap: '10px',
-                                                color: '#000',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '16px',
-                                                fontStyle: 'normal',
-                                                fontWeight: '600',
-                                                lineHeight: 'normal',
-                                            }}
-                                        >
-                                            View more
-                                        </button>
-                                    </Link>
-                                    <button
-                                        className="bg-white border border-[#1D267D] text-white py-2 px-4 rounded-md hover:bg-[#151B54] transition"
-                                        style={{
-                                            display: 'flex',
-                                            width: '125px',
-                                            height: '40px',
-                                            padding: '11px 0px',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                            gap: '10px',
-                                            color: '#000',
-                                            fontFamily: 'Work Sans',
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: 'normal',
-                                        }}
-                                    >
-                                        Contact Us
-                                    </button>
+
+                                {/* Right: Course Image */}
+                                <div className="w-1/3 relative z-10">
+                                    <Image
+                                        src={course.courseImg}
+                                        alt={course.courseName}
+                                        width={200}
+                                        height={200}
+                                        className="w-full h-full object-cover p-5"
+                                    />
                                 </div>
                             </div>
-
-                            {/* Right: Image */}
-                            <div className="w-1/3">
-                                <Image
-                                    src={course.courseImg}
-                                    alt={course.courseName}
-                                    width={200}
-                                    height={200}
-                                    className="w-full h-full object-cover"
-                                    style={{
-                                        padding: '20px',
-                                    }}
-                                />
-                            </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
 

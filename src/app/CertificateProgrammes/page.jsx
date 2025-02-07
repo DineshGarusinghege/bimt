@@ -342,7 +342,7 @@ export default function CertificateProgrammes() {
                 </div>
 
                 {/* Grid Section */}
-                <div className="gap-6 max-w-[1590px] mx-auto h-full justify-items-center items-center content-center">
+                <div className="gap-6 max-w-[1450px] mx-auto h-full justify-items-center items-center content-center">
                     {/* {courses.map((course) => ( */}
                     <div
                         // key={course._id}
