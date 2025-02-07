@@ -5,6 +5,8 @@ import Image from 'next/image';
 import MainHeader from '../ui/MainHeader';
 // import AnnounsmentBar from '../ui/AnnounsmentBar';
 import { useState } from "react";
+import '../styles/Global.scss'
+
 export default function CampusLife() {
 
 
@@ -55,47 +57,36 @@ export default function CampusLife() {
       {/* <AnnounsmentBar /> */}
 
 
-      {/* Here section */}
-      <div className="relative bg-cover bg-center h-[480px] z-0" style={{ backgroundImage: "url('/images/Rectangle 1.png')" }}>
-        {/* Overlay for better text visibility */}
-        {/* <div className="absolute inset-0 bg-[#272A5DB2] opacity-[70%] z-10"></div> */}
+      {/* Hero Section */}
+      <div className="relative w-full bg-cover bg-center heroSectionHeight before:absolute before:inset-0 before:bg-white before:bg-opacity-50"
+        style={{ backgroundImage: "url('/images/SEK_5536-scaled.webp')" }}
 
-        <div className='relative max-w-[1430px] mx-auto top-[55px]'>
+      >
+        {/* Breadcrumb Section Wrapper */}
+        <div className="relative max-w-[1450px] mx-auto top-[55px] px-10 py-50 bredcrumbSectionMain">
           {/* Breadcrumb Section */}
-          <div className="absolute container mx-auto px-6 lg:px-16 flex items-center h-full z-20">
+          <div className="relative flex w-full max-w-[1450px] gap-5 px-2 py-12 breadCrumbSubSection">
             <nav
               className="bg-gray-200 bg-opacity-80 py-2 px-4 rounded-lg text-sm text-gray-700"
               style={{
-                display: 'inline-flex',
-                padding: '5px 25px',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '10px',
-                background: '#ffffff45',
+                display: "inline-flex",
+                padding: "5px 25px",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "10px",
+                background: "#ffffff45",
               }}
             >
               <ol className="flex space-x-2">
                 <li>
-                  <Link
-                    href="/"
-                    className="hover:underline hover:text-blue-500"
-                    style={{
-                      color: '#fff',
-                      fontFamily: 'Avenir LT Std',
-                      fontSize: '16px',
-                      fontStyle: 'normal',
-                      fontWeight: '600',
-                      lineHeight: 'normal',
-                    }}
-                  >
+                  <Link href="/" className="hover:underline hover:text-blue-500 breadcrumbFontWhite font-avenir">
                     Home
                   </Link>
                 </li>
-                <span className="text-gray-400">
+                <span className="text-gray-400 arroSvgCrumPadding">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
+                    className="w-[12px] h-[12px] svgRightArrowBreadCrumb"
                     viewBox="0 0 15 15"
                     fill="none"
                   >
@@ -105,28 +96,16 @@ export default function CampusLife() {
                     />
                   </svg>
                 </span>
+
                 <li>
-                  <Link
-                    href="/ContactUs"
-                    className="hover:underline hover:text-blue-500"
-                    style={{
-                      color: '#fff',
-                      fontFamily: 'Avenir LT Std',
-                      fontSize: '16px',
-                      fontStyle: 'normal',
-                      fontWeight: '600',
-                      lineHeight: 'normal',
-                    }}
-                  >
-                    Contact Us
+                  <Link href="/life-at-bimt" className="hover:underline hover:text-blue-500 breadcrumbFontWhite font-avenir">
+                    Life at BIMT
                   </Link>
                 </li>
-
-                <span className="text-gray-400">
+                <span className="text-gray-400 arroSvgCrumPadding">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
+                    className="w-[12px] h-[12px] svgRightArrowBreadCrumb"
                     viewBox="0 0 15 15"
                     fill="none"
                   >
@@ -137,181 +116,83 @@ export default function CampusLife() {
                   </svg>
                 </span>
                 <li>
-                  <span
-                    className="text-gray-600"
-                    style={{
-                      color: '#fff',
-                      fontFamily: 'Avenir LT Std',
-                      fontSize: '16px',
-                      fontStyle: 'normal',
-                      fontWeight: '600',
-                      lineHeight: 'normal',
-                    }}
-                  >
-                    Students Blogs
-                  </span>
+                  <span className="hover:underline hover:text-blue-500 breadcrumbFontWhite font-avenir">Campus Life</span>
                 </li>
               </ol>
             </nav>
           </div>
         </div>
-
       </div>
 
 
-      <div
-        className="mx-auto w-[1300px] h-[240px] bg-gradient-to-r from-[#13218F] to-[rgba(101,90,173,0.8)] flex items-center gap-[40px] px-[30px] py-[20px] p-[20px]"
-        style={{ marginTop: "50px" }}
-      >
-        {/* Left Side Image */}
-        <div className="w-[300px] h-[200px]">
-          <Image
-            src="/images/6-1 1 (7).png"
-            alt="Facilities"
-            width={300}
-            height={200}
-            className="w-full h-full object-cover"
-          />
-        </div>
 
-        {/* Right Side Text */}
-        <div
-          className="flex flex-col gap-[20px] flex-grow"
-          style={{ width: "800px" }}
-        >
-          {/* Facilities Heading */}
-          <h2
-            className="text-white font-bold text-[24px] leading-[53px]"
-            style={{
-              color: "#fff",
-              fontSize: "40px",
-              fontFamily: "Avenir LT Std",
-              fontStyle: "normal",
-              fontWeight: "600",
-              lineHeight: "53px",
-            }}
-          >
-            GRADUATION
-          </h2>
 
-          {/* Paragraph */}
-          <p
-            className="text-white text-[16px] leading-[18.77px] text-justify"
-            style={{
-              fontFamily: "Work Sans",
-              textUnderlinePosition: "from-font",
-              textDecorationSkipInk: "none",
-            }}
-          >
-            Our BIMT Campus annual graduation ceremony is a day devoted to
-            celebrate an important point in our students’ lives. Examinations
-            are finally over, scruffiness is replaced with fancy clothes and
-            parents admire their children for reaching the finishing line of a
-            long marathon. The future of BIMT past pupil always seems more
-            promising than the present, and the present on graduation day is
-            pretty good even if it is not quite the reality.
-          </p>
-        </div>
 
-        {/* Right Side Red Border with SVG */}
-        <div
-          className="w-[40px] h-[240px] flex items-center justify-center cursor-pointer"
-          onClick={toggleSection}
-        >
-          <Image
-            src={isExpanded ? "/images/down-arrow-svgrepo-com (1).svg" : "/images/uparrow.png"}
-            alt="Toggle Arrow"
-            width={30}
-            height={20}
-          />
-        </div>
-      </div>
+      <div className="max-w-[1450px] w-full mx-auto px-4 mb-[110px] mt-[50px]">
+        <div className="w-full h-auto bg-gradient-to-r from-[#13218F] to-[rgba(101,90,173,0.8)] flex flex-col md:flex-row items-center gap-4 md:gap-8 lg:gap-10 px-4 md:px-6 lg:px-8 py-6 md:py-8">
+          {/* Left Side Image */}
+          <div className="w-full max-w-[300px]">
+            <Image
+              src="/images/6-1 1 (7).png"
+              alt="Facilities"
+              width={300}
+              height={200}
+              className="w-full h-auto object-cover"
+            />
+          </div>
 
-      {/* Hidden/Visible Section */}
-      {isExpanded && (
-        <div
-          className="relative w-[1300px] h-[998px] mx-auto bg-opacity-25 bg-center bg-cover"
-          style={{
-            backgroundImage: 'url("/images/1-2 1.png")',
-          }}
-        >
-          <div className="absolute inset-0 bg-white bg-opacity-25"></div>
+          {/* Right Side Text */}
+          <div className="flex flex-col gap-4 flex-grow w-full">
+            <h2 className="text-white font-bold text-[28px] md:text-[36px] lg:text-[40px] leading-tight font-avenir">
+              GRADUATION
+            </h2>
+            <p className="text-white text-[14px] md:text-[16px] leading-relaxed text-justify font-work-sans">
+              Our BIMT Campus annual graduation ceremony is a day devoted to celebrate an important point in our students’ lives. Examinations are finally over, scruffiness is replaced with fancy clothes and parents admire their children for reaching the finishing line of a long marathon. The future of BIMT past pupil always seems more promising than the present, and the present on graduation day is pretty good even if it is not quite the reality.
+            </p>
+          </div>
 
-          {/* Grid Layout */}
-          <div
-            className="absolute top-0 w-full h-full flex flex-col justify-center items-center"
-            style={{ background: "#ffffff8f" }}
-          >
-            <div
-              className="grid grid-cols-2 gap-5"
-              style={{
-                width: "100%",
-                padding: "0",
-              }}
-            >
-              {/* First Row - Two Cards */}
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "0",
-                }}
-              >
-                <Image
-                  src="/images/2-4 2.png"
-                  alt="Graduation Image 1"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "15px",
-                }}
-              >
-                <Image
-                  src="/images/1-2 1.png"
-                  alt="Graduation Image 2"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Second Row - Two Cards */}
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "0",
-                }}
-              >
-                <Image
-                  src="/images/3 2.png"
-                  alt="Graduation Image 3"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "15px",
-                }}
-              >
-                <Image
-                  src="/images/6-1 1 (1).png"
-                  alt="Graduation Image 4"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+          {/* Toggle Arrow */}
+          <div className="w-10 h-10 flex items-center justify-center cursor-pointer" onClick={toggleSection}>
+            <Image
+              src={isExpanded ? "/images/uparrow.png" : "/images/down-arrow-svgrepo-com (1).svg"}
+              alt="Toggle Arrow"
+              width={30}
+              height={20}
+            />
           </div>
         </div>
-      )}
+
+        {/* Expanded Section */}
+        {isExpanded && (
+          <div
+            className="relative max-w-[1450px] w-full mx-auto py-8 px-4 bg-cover bg-center"
+            style={{ backgroundImage: 'url("/images/1-2 1.png")' }}
+          >
+            <div className="absolute inset-0 bg-white bg-opacity-50"></div>
+
+            {/* Grid Layout */}
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 z-10">
+              {[
+                "/images/2-4 2.png",
+                "/images/1-2 1.png",
+                "/images/3 2.png",
+                "/images/6-1 1 (1).png",
+              ].map((src, index) => (
+                <div key={index} className="w-full h-auto bg-white shadow-lg overflow-hidden">
+                  <Image
+                    src={src}
+                    alt={`Graduation Image ${index + 1}`}
+                    width={625}
+                    height={416.67}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
 
 
 
@@ -319,609 +200,233 @@ export default function CampusLife() {
 
       {/* Banner Section 02 */}
       {/* Facilities Banner Section */}
-      <div
-        className="mx-auto w-[1300px] h-[240px] bg-gradient-to-r from-[#7323BF] to-[rgba(150,3,80,0.8)] flex items-center gap-[40px] px-[30px] py-[20px]"
-        style={{ marginTop: "35px" }}
-      >
-        {/* Left Side Image */}
-        <div className="w-[300px] h-[200px]">
-          <Image
-            src="/images/6-1 1.png"
-            alt="Facilities"
-            width={300}
-            height={200}
-            className="w-full h-full object-cover"
-          />
-        </div>
+      <div className="max-w-[1450px] w-full mx-auto px-4 mb-[110px] mt-[35px]">
+        <div className="w-full h-auto bg-gradient-to-r from-[#7323BF] to-[rgba(150,3,80,0.8)] flex flex-col md:flex-row items-center gap-6 md:gap-10 px-6 py-8">
+          {/* Left Side Image */}
+          <div className="w-full md:w-[300px] h-auto">
+            <Image
+              src="/images/4-2.png"
+              alt="Facilities"
+              width={300}
+              height={200}
+              className="w-full h-auto object-cover"
+            />
+          </div>
 
-        {/* Right Side Text */}
-        <div
-          className="flex flex-col gap-[20px] flex-grow"
-          style={{ width: "800px" }}
-        >
-          {/* Facilities Heading */}
-          <h2
-            className="text-white font-bold text-[24px] leading-[53px]"
-            style={{
-              color: "#fff",
-              fontSize: "40px",
-              fontFamily: "Avenir LT Std",
-              fontStyle: "normal",
-              fontWeight: "600",
-              lineHeight: "53px",
-            }}
-          >
-            FACILITIES
-          </h2>
+          {/* Right Side Text */}
+          <div className="flex flex-col gap-4 flex-grow w-full md:w-[800px]">
+            <h2 className="text-white font-bold text-[28px] md:text-[40px] leading-tight font-avenir">
+              FACILITIES
+            </h2>
+            <p className="text-white text-[14px] md:text-[16px] leading-relaxed text-justify font-work-sans">
+              We strive to provide the best possible facilities to enable our students to benefit from a modern learning environment and enjoy their educational experience. We offer adequate facilities suitable for the specific subject areas taught with students’ comfort and welfare in mind. These include the following,
+            </p>
+          </div>
 
-          {/* Paragraph */}
-          <p
-            className="text-white text-[16px] leading-[18.77px] text-justify"
-            style={{
-              fontFamily: "Work Sans",
-              textUnderlinePosition: "from-font",
-              textDecorationSkipInk: "none",
-            }}
-          >
-            We strive to provide the best possible facilities to enable our
-            students to benefit from a modern learning environment and enjoy
-            their educational experience. We offer adequate facilities suitable
-            for the specific subject areas taught with students’ comfort and
-            welfare in mind. These include the following,
-          </p>
-        </div>
-
-        {/* Right Side Red Border with Arrow */}
-        <div
-          className="w-[40px] h-[240px] flex items-center justify-center cursor-pointer"
-          onClick={toggleGallery}
-        >
-          <Image
-            src={
-              isGalleryExpanded ? "/images/down-arrow-svgrepo-com (1).svg" : "/images/uparrow.png"
-            }
-            alt="Toggle Arrow"
-            width={30}
-            height={20}
-          />
-        </div>
-      </div>
-
-      {/* Gallery Section */}
-      {isGalleryExpanded && (
-        <div
-          className="relative w-[1300px] h-[998px] mx-auto bg-opacity-25 bg-center bg-cover"
-          style={{
-            backgroundImage: 'url("/images/1-2 1.png")',
-          }}
-        >
-          <div className="absolute inset-0 bg-white bg-opacity-25"></div>
-
-          {/* Grid Layout */}
-          <div
-            className="absolute top-0 w-full h-full flex flex-col justify-center items-center"
-            style={{ background: "#ffffff8f" }}
-          >
-            <div
-              className="grid grid-cols-2 gap-5"
-              style={{
-                width: "100%",
-                padding: "0",
-              }}
-            >
-              {/* First Row - Two Cards */}
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "0",
-                }}
-              >
-                <Image
-                  src="/images/2-4 2.png"
-                  alt="Graduation Image 1"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "15px",
-                }}
-              >
-                <Image
-                  src="/images/1-2 1.png"
-                  alt="Graduation Image 2"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Second Row - Two Cards */}
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "0",
-                }}
-              >
-                <Image
-                  src="/images/3 2.png"
-                  alt="Graduation Image 3"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "15px",
-                }}
-              >
-                <Image
-                  src="/images/6-1 1 (1).png"
-                  alt="Graduation Image 4"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+          {/* Toggle Arrow */}
+          <div className="w-10 h-10 flex items-center justify-center cursor-pointer" onClick={toggleGallery}>
+            <Image
+              src={isGalleryExpanded ? "/images/uparrow.png" : "/images/down-arrow-svgrepo-com (1).svg"}
+              alt="Toggle Arrow"
+              width={30}
+              height={20}
+            />
           </div>
         </div>
-      )}
+
+        {/* Gallery Section */}
+        {isGalleryExpanded && (
+          <div className="relative max-w-[1450px] w-full mx-auto py-8 px-4 bg-cover bg-center" style={{ backgroundImage: 'url("/images/17-1.jpg")' }}>
+            <div className="absolute inset-0 bg-white bg-opacity-50"></div>
+
+            {/* Grid Layout - Now 3 Images Per Row */}
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-6 z-10">
+              {[
+                "/images/1-4.WEBP",
+                "/images/3-2.WEBP",
+                "/images/2-6.WEBP",
+              ].map((src, index) => (
+                <div key={index} className="w-full md:w-[300px] lg:w-[400px] h-auto bg-white shadow-lg overflow-hidden">
+                  <Image src={src} alt={`Gallery Image ${index + 1}`} width={625} height={416.67} className="w-full h-auto object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
 
 
       {/* Banner Section 03 */}
+      {/* Facilities Banner Section */}
+      <div className="max-w-[1450px] w-full mx-auto px-4 mb-[110px] mt-[35px]">
+        <div className="w-full h-auto  bg-gradient-to-r from-[#20808F] to-[rgba(14,76,166,0.8)] flex flex-col md:flex-row items-center gap-6 md:gap-10 px-6 py-8">
+          {/* Left Side Image */}
+          <div className="w-full md:w-[300px] h-auto">
+            <Image
+              src="/images/1-3.WEBP"
+              alt="Facilities"
+              width={300}
+              height={200}
+              className="w-full h-auto object-cover"
+            />
+          </div>
 
-      <div
-        className="mx-auto w-[1300px] h-[240px] bg-gradient-to-r from-[#20808F] to-[rgba(14,76,166,0.8)] flex items-center gap-[40px] px-[30px] py-[20px] p-[20px]"
-        style={{ marginTop: '35px' }}
-      >
-        {/* Left Side Image */}
-        <div className="w-[300px] h-[200px]">
-          <Image
-            src="/images/6-1 1 (8).png"
-            alt="Facilities"
-            width={300}
-            height={200}
-            className="w-full h-full object-cover"
-          />
-        </div>
+          {/* Right Side Text */}
+          <div className="flex flex-col gap-4 flex-grow w-full md:w-[800px]">
+            <h2 className="text-white font-bold text-[28px] md:text-[40px] leading-tight font-avenir">
+              CRICKET TOURNAMENT
+            </h2>
+            <p className="text-white text-[14px] md:text-[16px] leading-relaxed text-justify font-work-sans">
+              BIMT cricket tournament was well-organized by Alumni Association of BIMT Campus. This game proved a true leadership and team sprit throughout the whole day of the matches. Main theme of the cricket tournament was to build a Positive behavior that make cricket an exciting game that encourages leadership, friendship, and teamwork.
+            </p>
+          </div>
 
-        {/* Right Side Text */}
-        <div className="flex flex-col gap-[20px] flex-grow" style={{ width: '800px' }}>
-          {/* Facilities Heading */}
-          <h2 className="text-white font-bold text-[24px] leading-[53px]"
-            style={{
-              color: '#fff',
-              fontSize: '40px',
-              fontFamily: 'Avenir LT Std',
-              fontStyle: 'normal',
-              fontWeight: '600',
-              lineHeight: "53px"
-            }}
-          >
-            CRICKET TOURNAMENT
-          </h2>
-
-          {/* Paragraph */}
-          <p
-            className="text-white text-[16px] leading-[18.77px] text-justify"
-            style={{
-              fontFamily: 'Work Sans',
-              textUnderlinePosition: 'from-font',
-              textDecorationSkipInk: 'none',
-            }}
-          >
-            BIMT cricket tournament was well-organized by Alumni Association of BIMT Campus. This game proved a true leadership and team sprit throughout the whole day of the matches. Main theme of the cricket tournament was to build a Positive behavior that make cricket an exciting game that encourages leadership, friendship, and teamwork.
-          </p>
-        </div>
-
-        {/* Right Side Red Border with SVG */}
-        <div className="w-[40px] h-[240px] flex items-center justify-center"
-          onClick={toggleGallery1}
-        >
-          <Image
-            src={
-              isGalleryExpanded1 ? "/images/down-arrow-svgrepo-com (1).svg" : "/images/uparrow.png"
-            }
-            alt="Facilities"
-            width={30}
-            height={20}
-          />
-
-        </div>
-      </div>
-
-      {/* Gallery Section */}
-      {isGalleryExpanded1 && (
-        <div
-          className="relative w-[1300px] h-[998px] mx-auto bg-opacity-25 bg-center bg-cover"
-          style={{
-            backgroundImage: 'url("/images/1-2 1.png")',
-          }}
-        >
-          <div className="absolute inset-0 bg-white bg-opacity-25"></div>
-
-          {/* Grid Layout */}
-          <div
-            className="absolute top-0 w-full h-full flex flex-col justify-center items-center"
-            style={{ background: "#ffffff8f" }}
-          >
-            <div
-              className="grid grid-cols-2 gap-5"
-              style={{
-                width: "100%",
-                padding: "0",
-              }}
-            >
-              {/* First Row - Two Cards */}
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "0",
-                }}
-              >
-                <Image
-                  src="/images/2-4 2.png"
-                  alt="Graduation Image 1"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "15px",
-                }}
-              >
-                <Image
-                  src="/images/1-2 1.png"
-                  alt="Graduation Image 2"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Second Row - Two Cards */}
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "0",
-                }}
-              >
-                <Image
-                  src="/images/3 2.png"
-                  alt="Graduation Image 3"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "15px",
-                }}
-              >
-                <Image
-                  src="/images/6-1 1 (1).png"
-                  alt="Graduation Image 4"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+          {/* Toggle Arrow */}
+          <div className="w-10 h-10 flex items-center justify-center cursor-pointer" onClick={toggleGallery1}>
+            <Image
+              src={isGalleryExpanded1 ? "/images/uparrow.png" : "/images/down-arrow-svgrepo-com (1).svg"}
+              alt="Toggle Arrow"
+              width={30}
+              height={20}
+            />
           </div>
         </div>
-      )}
 
+        {/* Gallery Section */}
+        {isGalleryExpanded1 && (
+          <div className="relative max-w-[1450px] w-full mx-auto py-8 px-4 bg-cover bg-center" style={{ backgroundImage: 'url("/images/17-1.jpg")' }}>
+            <div className="absolute inset-0 bg-white bg-opacity-50"></div>
+
+            {/* Grid Layout - Now 3 Images Per Row */}
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-6 z-10">
+              {[
+                "/images/4-1.WEBP",
+                "/images/5-1-1.WEBP",
+                "/images/1-3.WEBP",
+              ].map((src, index) => (
+                <div key={index} className="w-full md:w-[300px] lg:w-[400px] h-auto bg-white shadow-lg overflow-hidden">
+                  <Image src={src} alt={`Gallery Image ${index + 1}`} width={625} height={416.67} className="w-full h-auto object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
 
 
       {/* Banner Section 04 */}
+      <div className="max-w-[1450px] w-full mx-auto px-4 mb-[110px] mt-[35px]">
+        <div className="w-full h-auto  bg-gradient-to-r from-[#A96702] to-[#5A5111] flex flex-col md:flex-row items-center gap-6 md:gap-10 px-6 py-8">
+          {/* Left Side Image */}
+          <div className="w-full md:w-[300px] h-auto">
+            <Image
+              src="/images/10.WEBP"
+              alt="Facilities"
+              width={300}
+              height={200}
+              className="w-full h-auto object-cover"
+            />
+          </div>
 
-      <div
-        className="mx-auto w-[1300px] h-[240px] bg-gradient-to-r from-[#A96702] to-[#5A5111] flex items-center gap-[40px] px-[30px] py-[20px] p-[20px]"
-        style={{ marginTop: '35px' }}
-      >
-        {/* Left Side Image */}
-        <div className="w-[300px] h-[200px]">
-          <Image
-            src="/images/6-1 1 (9).png"
-            alt="Facilities"
-            width={300}
-            height={200}
-            className="w-full h-full object-cover"
-          />
+          {/* Right Side Text */}
+          <div className="flex flex-col gap-4 flex-grow w-full md:w-[800px]">
+            <h2 className="text-white font-bold text-[28px] md:text-[40px] leading-tight font-avenir">
+              ADVENTURE TRIP - KITHULGALA
+            </h2>
+            <p className="text-white text-[14px] md:text-[16px] leading-relaxed text-justify font-work-sans">
+              This Camping Night was organized to build the confidence of our students to dream big and to make them such people who are driver, to achieve their dreams.
+            </p>
+          </div>
+
+          {/* Toggle Arrow */}
+          <div className="w-10 h-10 flex items-center justify-center cursor-pointer" onClick={toggleGallery2}>
+            <Image
+              src={isGalleryExpanded2 ? "/images/uparrow.png" : "/images/down-arrow-svgrepo-com (1).svg"}
+              alt="Toggle Arrow"
+              width={30}
+              height={20}
+            />
+          </div>
         </div>
 
-        {/* Right Side Text */}
-        <div className="flex flex-col gap-[20px] flex-grow" style={{ width: '800px' }}>
-          {/* Facilities Heading */}
-          <h2 className="text-white font-bold text-[24px] leading-[53px]"
-            style={{
-              color: '#fff',
-              fontSize: '40px',
-              fontFamily: 'Avenir LT Std',
-              fontStyle: 'normal',
-              fontWeight: '600',
-              lineHeight: "53px"
-            }}
-          >
-            CAMPING NIGHT - KABARAGALA
-          </h2>
+        {/* Gallery Section */}
+        {isGalleryExpanded2 && (
+          <div className="relative max-w-[1450px] w-full mx-auto py-8 px-4 bg-cover bg-center" style={{ backgroundImage: 'url("/images/17-1.jpg")' }}>
+            <div className="absolute inset-0 bg-white bg-opacity-50"></div>
 
-          {/* Paragraph */}
-          <p
-            className="text-white text-[16px] leading-[18.77px] text-justify"
-            style={{
-              fontFamily: 'Work Sans',
-              textUnderlinePosition: 'from-font',
-              textDecorationSkipInk: 'none',
-            }}
-          >
+            {/* Grid Layout - Now 3 Images Per Row */}
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-6 z-10">
+              {[
+                "/images/3-3-1.webp",
+                "/images/2-7-1.webp",
+                "/images/10.WEBP",
+              ].map((src, index) => (
+                <div key={index} className="w-full md:w-[300px] lg:w-[400px] h-auto bg-white shadow-lg overflow-hidden">
+                  <Image src={src} alt={`Gallery Image ${index + 1}`} width={625} height={416.67} className="w-full h-auto object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+
+      {/* Banner section 05 */}
+      <div className="max-w-[1450px] w-full mx-auto px-4 mb-[110px] mt-[35px]">
+        <div className="w-full h-auto  bg-gradient-to-r from-[#3B8144] to-[rgba(6,56,3,0.8)] flex flex-col md:flex-row items-center gap-6 md:gap-10 px-6 py-8">
+          {/* Left Side Image */}
+          <div className="w-full md:w-[300px] h-auto">
+            <Image
+              src="/images/10.WEBP"
+              alt="Facilities"
+              width={300}
+              height={200}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+
+          {/* Right Side Text */}
+          <div className="flex flex-col gap-4 flex-grow w-full md:w-[800px]">
+            <h2 className="text-white font-bold text-[28px] md:text-[40px] leading-tight font-avenir">
+              CAMPING NIGHT - KABARAGALA
+            </h2>
+            <p className="text-white text-[14px] md:text-[16px] leading-relaxed text-justify font-work-sans">
             This Camping Night was organized to build the confidence of our students to dream big and to make them such people who are driver, to achieve their dreams.
-          </p>
-        </div>
+            </p>
+          </div>
 
-        {/* Right Side Red Border with SVG */}
-        <div className="w-[40px] h-[240px] flex items-center justify-center"
-          onClick={toggleGallery2}
-        >
-          <Image
-            src={
-              isGalleryExpanded2 ? "/images/down-arrow-svgrepo-com (1).svg" : "/images/uparrow.png"
-            }
-            alt="Facilities"
-            width={30}
-            height={20}
-          />
-
-        </div>
-      </div>
-
-      {/* Gallery Section */}
-      {isGalleryExpanded2 && (
-        <div
-          className="relative w-[1300px] h-[998px] mx-auto bg-opacity-25 bg-center bg-cover"
-          style={{
-            backgroundImage: 'url("/images/1-2 1.png")',
-          }}
-        >
-          <div className="absolute inset-0 bg-white bg-opacity-25"></div>
-
-          {/* Grid Layout */}
-          <div
-            className="absolute top-0 w-full h-full flex flex-col justify-center items-center"
-            style={{ background: "#ffffff8f" }}
-          >
-            <div
-              className="grid grid-cols-2 gap-5"
-              style={{
-                width: "100%",
-                padding: "0",
-              }}
-            >
-              {/* First Row - Two Cards */}
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "0",
-                }}
-              >
-                <Image
-                  src="/images/2-4 2.png"
-                  alt="Graduation Image 1"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "15px",
-                }}
-              >
-                <Image
-                  src="/images/1-2 1.png"
-                  alt="Graduation Image 2"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Second Row - Two Cards */}
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "0",
-                }}
-              >
-                <Image
-                  src="/images/3 2.png"
-                  alt="Graduation Image 3"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "15px",
-                }}
-              >
-                <Image
-                  src="/images/6-1 1 (1).png"
-                  alt="Graduation Image 4"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+          {/* Toggle Arrow */}
+          <div className="w-10 h-10 flex items-center justify-center cursor-pointer" onClick={toggleGallery2}>
+            <Image
+              src={isGalleryExpanded2 ? "/images/uparrow.png" : "/images/down-arrow-svgrepo-com (1).svg"}
+              alt="Toggle Arrow"
+              width={30}
+              height={20}
+            />
           </div>
         </div>
-      )}
 
+        {/* Gallery Section */}
+        {isGalleryExpanded2 && (
+          <div className="relative max-w-[1450px] w-full mx-auto py-8 px-4 bg-cover bg-center" style={{ backgroundImage: 'url("/images/17-1.jpg")' }}>
+            <div className="absolute inset-0 bg-white bg-opacity-50"></div>
 
-
-      {/* Banner Section 05 */}
-
-      <div
-        className="mx-auto w-[1300px] h-[240px] bg-gradient-to-r from-[#3B8144] to-[rgba(6,56,3,0.8)] flex items-center gap-[40px] px-[30px] py-[20px] p-[20px]"
-        style={{ marginTop: '35px', marginBottom: '50px' }}
-      >
-        {/* Left Side Image */}
-        <div className="w-[300px] h-[200px]">
-          <Image
-            src="/images/6-1 1 (10).png"
-            alt="Facilities"
-            width={300}
-            height={200}
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        {/* Right Side Text */}
-        <div className="flex flex-col gap-[20px] flex-grow" style={{ width: '800px' }}>
-          {/* Facilities Heading */}
-          <h2 className="text-white font-bold text-[24px] leading-[53px]"
-            style={{
-              color: '#fff',
-              fontSize: '40px',
-              fontFamily: 'Avenir LT Std',
-              fontStyle: 'normal',
-              fontWeight: '600',
-              lineHeight: "53px"
-            }}
-          >
-            ADVENTURE TRIP - KITHULGALA
-          </h2>
-
-          {/* Paragraph */}
-          <p
-            className="text-white text-[16px] leading-[18.77px] text-justify"
-            style={{
-              fontFamily: 'Work Sans',
-              textUnderlinePosition: 'from-font',
-              textDecorationSkipInk: 'none',
-            }}
-          >
-            This “Adventure Trip 2022” was organized to enhance the confident level of our students to dream big and to make them such people who are driven to achieve their dream.
-          </p>
-        </div>
-
-        {/* Right Side Red Border with SVG */}
-        <div className="w-[40px] h-[240px] flex items-center justify-center"
-          onClick={toggleGallery3}
-        >
-
-          <Image
-            src={
-              isGalleryExpanded3 ? "/images/down-arrow-svgrepo-com (1).svg" : "/images/uparrow.png"
-            }
-            alt="Facilities"
-            width={30}
-            height={20}
-          />
-
-        </div>
-      </div>
-
-      {/* Gallery Section */}
-      {isGalleryExpanded3 && (
-        <div
-          className="relative w-[1300px] h-[998px] mx-auto bg-opacity-25 bg-center bg-cover"
-          style={{
-            backgroundImage: 'url("/images/1-2 1.png")',
-          }}
-        >
-          <div className="absolute inset-0 bg-white bg-opacity-25"></div>
-
-          {/* Grid Layout */}
-          <div
-            className="absolute top-0 w-full h-full flex flex-col justify-center items-center"
-            style={{ background: "#ffffff8f" }}
-          >
-            <div
-              className="grid grid-cols-2 gap-5"
-              style={{
-                width: "100%",
-                padding: "0",
-              }}
-            >
-              {/* First Row - Two Cards */}
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "0",
-                }}
-              >
-                <Image
-                  src="/images/2-4 2.png"
-                  alt="Graduation Image 1"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "15px",
-                }}
-              >
-                <Image
-                  src="/images/1-2 1.png"
-                  alt="Graduation Image 2"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Second Row - Two Cards */}
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "0",
-                }}
-              >
-                <Image
-                  src="/images/3 2.png"
-                  alt="Graduation Image 3"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div
-                className="w-[625px] h-[416.67px] bg-white shadow-lg overflow-hidden"
-                style={{
-                  marginLeft: "15px",
-                }}
-              >
-                <Image
-                  src="/images/6-1 1 (1).png"
-                  alt="Graduation Image 4"
-                  width={625}
-                  height={416.67}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            {/* Grid Layout - Now 3 Images Per Row */}
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-6 z-10">
+              {[
+                "/images/1-6.webp",
+                "/images/2-8.webp",
+                "/images/3-4.WEBP",
+                "/images/4-4.WEBP",
+              ].map((src, index) => (
+                <div key={index} className="w-full md:w-[300px] lg:w-[400px] h-auto bg-white shadow-lg overflow-hidden">
+                  <Image src={src} alt={`Gallery Image ${index + 1}`} width={625} height={416.67} className="w-full h-auto object-cover" />
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 }
