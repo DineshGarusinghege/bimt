@@ -41,9 +41,19 @@ const config: Config = {
           "66.66%, 76.66%": { transform: "translateX(-66.66%)" }, // Move to third image
           "100%": { transform: "translateX(-100%)" }, // Back to the first image
         },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
-        moveImages: "moveImages 6s ease-in-out infinite", // Total duration is 6s (2s per image)
+        moveImages: "moveImages 6s ease-in-out infinite", 
+        marquee: 'marquee 8s linear infinite',
+        scroll: 'scroll 5s linear infinite',
       },
       fontFamily: {
         avenir: ["Avenir LT STD", "sans-serif"],
