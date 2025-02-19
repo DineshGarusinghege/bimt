@@ -12,7 +12,7 @@ import '../styles/AboutUs.scss'
 export default function CertificateProgrammes() {
 
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+    // const [currentIndex, setCurrentIndex] = useState(0);
 
 
 

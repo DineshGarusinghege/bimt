@@ -37,9 +37,9 @@ export default function CampusLife() {
 
   const [isGalleryExpanded3, setIsGalleryExpanded3] = useState(false);
 
-  const toggleGallery3 = () => {
-    setIsGalleryExpanded3(!isGalleryExpanded3);
-  };
+  // const toggleGallery3 = () => {
+  //   setIsGalleryExpanded3(!isGalleryExpanded3);
+  // };
 
 
   return (

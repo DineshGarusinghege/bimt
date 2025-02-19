@@ -66,17 +66,17 @@ export default function CAIDAP() {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    };
+    // const handleNext = () => {
+    //     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    // };
 
-    const handlePrev = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-        );
-    };
+    // const handlePrev = () => {
+    //     setCurrentIndex((prevIndex) =>
+    //         prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    //     );
+    // };
 
-    const { image, text, buttonLabel } = testimonials[currentIndex];
+    // const { image, text, buttonLabel } = testimonials[currentIndex];
 
     const studyPrograms = [
         {
