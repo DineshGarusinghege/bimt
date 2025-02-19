@@ -1,78 +1,61 @@
 
 const Overview = () => (
-    <div className="bg-white py-10 px-6 lg:px-16">
-        <div className="max-w-[1498px] mx-auto py-10">
+    <div className="width-full">
+        <div className="max-w-[1420px] mx-auto">
             {/* First Section */}
             <div className="flex flex-col lg:flex-row gap-6">
                 {/* Left Side */}
                 <div className="w-[917px]">
                     {/* Overview 1 */}
-                    <h4 className="text-lg font-bold text-gray-600"
+                    <h2 className="text-2xl font-bold mt-2 font-avenir mb-5"
                         style={{
-                            color: '#272A5D',
-                            fontFamily: 'Work Sans',
-                            fontSize: '24px',
-                            fontStyle: 'normal',
-                            fontWeight: '400',
-                            lineHeight: 'normal'
-                        }}
-                    >Overview</h4>
-                    <h2 className="text-2xl font-bold mt-2"
-                        style={{
-                            color: '#272A5D',
-                            fontFamily: 'Avenir LT Std',
+                            color: '#FFFFFF',
                             fontSize: '40px',
                             fontStyle: 'normal',
                             fontWeight: '600',
-                            lineHeight: '53px'
+                            lineHeight: '53px',
+                            background: '#272A5D',
+                            width: '56%',
+                            paddingLeft: "20px",
+                            paddingTop: '10px',
+                            paddingBottom: "10px",
+                            paddingRight: '20px'
                         }}
-                    >What Will I Learn</h2>
-                    <ul className="list-disc list-inside mt-4 text-gray-700 leading-relaxed"
-                        style={{
-                            color: '#5A5A5A',
-                            textAlign: "justify",
-                            fontFamily: 'Work Sans',
-                            fontSize: '16px',
-                            fontStyle: 'normal',
-                            fontWeight: '400',
-                            lineHeight: 'normal'
-                        }}
-                    >
-                        <li>Gain a clear understanding of your job role in a business organization.</li>
-                        <li>Learn how to motivate your employees to ensure they perform to the highest standard.</li>
-                        <li>Learn how to plan and organize meetings.</li>
-                        <li>Learn how to supervise a team, motivate them, and encourage them to reach maximum potential.</li>
-                        <li>Learn how to apply administrative best practices to increase growth and success within a business environment.</li>
-                        <li>Gain an understanding of finance functions and how to apply your knowledge in real-world scenarios.</li>
-                    </ul>
-                    {/* Overview 2 */}
-                    <h4 className="text-lg font-bold text-gray-600 mt-8"
-                        style={{
-                            color: '#272A5D',
-                            fontFamily: 'Work Sans',
-                            fontSize: '24px',
-                            fontStyle: 'normal',
-                            fontWeight: '400',
-                            lineHeight: 'normal'
-                        }}
-                    >Overview</h4>
-                    <h2 className="text-2xl font-bold mt-2"
+                    >About Programme</h2>
+
+
+                    <p className="font-avenir" style={{
+                        color: '#5A5A5A',
+                        textAlign: 'justify',
+                        fontSize: '14px',
+                        fontWeight: "400px",
+                        lineHeight: '20px'
+                    }}>
+                        The Certificate in AI-Driven Accounting Practices is designed to equip accounting professionals with the skills to leverage artificial intelligence in modern financial management. The program focuses on integrating AI tools and technologies into accounting processes to enhance efficiency, accuracy, and decision-making. It provides practical knowledge on automating tasks, improving financial analysis, and streamlining operations using AI. This certificate is ideal for accountants seeking to stay ahead of industry trends, enabling them to navigate the evolving landscape of digital finance and adopt AI-driven solutions that optimize financial operations, ultimately driving smarter and more efficient accounting practices.
+                    </p>
+
+                    <h2 className="mt-2 font-avenir"
                         style={{
                             color: '#272A5D',
-                            fontFamily: 'Avenir LT Std',
-                            fontSize: '40px',
+                            fontSize: '20px',
                             fontStyle: 'normal',
-                            fontWeight: '600',
+                            fontWeight: '400',
                             lineHeight: '53px'
                         }}
                     >Awarding Body - IFA UK</h2>
                     <img
-                        width={'490px'}
-
-                        height={'0px'}
                         className="text-gray-700 "
-                        src='/images/b-logo3 (1) 3.png'
+                        src='/images/diploma-LOGO-e1734280277541-300x143.jpg'
                     />
+                    <h2 className="mt-2 font-avenir"
+                        style={{
+                            color: '#272A5D',
+                            fontSize: '20px',
+                            fontStyle: 'normal',
+                            fontWeight: '400',
+                            lineHeight: '53px'
+                        }}
+                    >Duration - 4 months</h2>
 
                 </div>
 

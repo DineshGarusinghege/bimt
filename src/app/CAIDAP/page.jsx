@@ -132,7 +132,7 @@ export default function CAIDAP() {
                             </svg>
                         </span>
                         <li>
-                            <Link href="/CertificateProgrammes" className="hover:underline hover:text-blue-500 navigationMenu">
+                            <Link href="/CertificateProgrammes" className="hover:underline hover:text-blue-500 navigationMenu text-avenir">
                                 Programmes
                             </Link>
                         </li>
@@ -145,8 +145,8 @@ export default function CAIDAP() {
                             </svg>
                         </span>
                         <li>
-                            <Link href="/life-at-bimt" className="hover:underline hover:text-blue-500 navigationMenu">
-                                Certificate Programmes
+                            <Link href="/CertificateProgrammes" className="hover:underline hover:text-blue-500 navigationMenu">
+                                Diploma
                             </Link>
                         </li>
                         <span className="text-gray-400 pt-1">
@@ -159,7 +159,7 @@ export default function CAIDAP() {
                         </span>
 
                         <li>
-                            <span className="text-gray-600 navigationMenu">Certificate Programmes</span>
+                            <span className="text-gray-600 navigationMenu">Certificate in AI Driven Accounting Practices</span>
                         </li>
                     </ol>
                 </nav>
@@ -194,95 +194,95 @@ export default function CAIDAP() {
             </section>
 
 
-            <div className="w-full">
+            <div className="w-full overflow-hidden px-5 md:px-20">
                 {/* Navigation and Buttons */}
                 <div className="w-full">
                     <div className="max-w-[1300px] mx-auto py-6 flex flex-col md:flex-row justify-between items-center">
 
                         {/* Links Section - Responsive Two Row Layout */}
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:gap-2 w-full">
+                        <div className="w-full flex flex-wrap justify-center gap-4">
                             <button
-                                className={`px-4 py-2 transition font-medium ${activeSection === "overview"
+                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "overview"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
                                 onClick={() => setActiveSection("overview")}
-                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
+                                style={{ fontSize: "20px", fontWeight: "500" }}
                             >
                                 Overview
                             </button>
 
                             <button
-                                className={`px-4 py-2 transition font-medium ${activeSection === "why-bimt"
+                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "why-bimt"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
                                 onClick={() => setActiveSection("why-bimt")}
-                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
+                                style={{ fontSize: "20px", fontWeight: "500" }}
                             >
                                 Why BIMT?
                             </button>
 
                             <button
-                                className={`px-4 py-2 transition font-medium ${activeSection === "programme-aim"
+                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "programme-aim"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
                                 onClick={() => setActiveSection("programme-aim")}
-                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
+                                style={{fontSize: "20px", fontWeight: "500" }}
                             >
                                 Programme Aim
                             </button>
 
                             <button
-                                className={`px-4 py-2 transition font-medium ${activeSection === "modules"
+                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "modules"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
                                 onClick={() => setActiveSection("modules")}
-                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
+                                style={{ fontSize: "20px", fontWeight: "500" }}
                             >
                                 Modules
                             </button>
 
                             <button
-                                className={`px-4 py-2 transition font-medium ${activeSection === "requirements"
+                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "requirements"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
                                 onClick={() => setActiveSection("requirements")}
-                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
+                                style={{ fontSize: "20px", fontWeight: "500" }}
                             >
                                 Requirements
                             </button>
 
                             <button
-                                className={`px-4 py-2 transition font-medium ${activeSection === "admission"
+                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "admission"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
                                 onClick={() => setActiveSection("admission")}
-                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
+                                style={{fontSize: "20px", fontWeight: "500" }}
                             >
                                 Admission
                             </button>
 
                             <button
-                                className={`px-4 py-2 transition font-medium ${activeSection === "payment"
+                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "payment"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
                                 onClick={() => setActiveSection("payment")}
-                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
+                                style={{ fontSize: "20px", fontWeight: "500" }}
                             >
                                 Payment
                             </button>
                         </div>
 
                         {/* Contact Us Button */}
-                        <div className="w-full md:w-auto flex justify-center md:justify-end">
+                        <div className="w-full md:w-auto flex justify-center md:justify-end mt-4 md:mt-0">
                             <button
-                                className="bg-[#1D267D] text-white py-2 px-6 rounded-md hover:bg-[#151B54] transition"
+                                className="bg-[#1D267D] text-white py-2 px-6 rounded-md hover:bg-[#151B54] transition font-avenir"
                                 style={{
                                     width: "200px",
                                     height: "56px",
@@ -292,8 +292,7 @@ export default function CAIDAP() {
                                     gap: "10px",
                                     border: "2px solid #272A5D",
                                     background: "#272A5D",
-                                    color: "#fff",
-                                    fontFamily: "Work Sans",
+                                    color: "#fff",                                    
                                     fontSize: "20px",
                                     fontWeight: "600",
                                 }}
@@ -305,7 +304,7 @@ export default function CAIDAP() {
                 </div>
 
                 {/* Rendered Section Below */}
-                <div className="max-w-[1300px] mx-auto py-6 px-4">
+                <div className="max-w-[1300px] mx-auto py-6 px-5 md:px-20">
                     {sections[activeSection] || <div>Section not found</div>}
                 </div>
             </div>
