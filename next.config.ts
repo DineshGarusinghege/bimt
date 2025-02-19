@@ -1,26 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true, 
+  reactStrictMode: true,
   images: {
-    domains: ["bimt.lk"], 
+    domains: ["bimt.lk"],
   },
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.scss$/,
-      use: [
-        "style-loader",
-        "css-loader",
-        {
-          loader: "sass-loader",
-          options: {
-            implementation: require("sass"),
-          },
-        },
-      ],
-    });
-
-    return config;
+  experimental: {
+    turbo: {}, // ✅ Correct way to configure Turbopack
   },
 };
 
