@@ -5,8 +5,21 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["bimt.lk"],
   },
-  experimental: {
-    turbo: {}, // ✅ Correct way to configure Turbopack
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: [
+        "style-loader",
+        "css-loader",
+        {
+          loader: "sass-loader",
+          options: {
+            implementation: require("sass"), // Ensures it uses the correct Dart Sass version
+          },
+        },
+      ],
+    });
+    return config;
   },
 };
 
