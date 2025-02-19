@@ -12,6 +12,8 @@ import { useState, useEffect, ChangeEvent } from 'react';
 import '../app/styles/globals.css';
 import { motion } from 'framer-motion';
 import ExpertSection from './componets/ExpertSection';
+import 'react-toastify/dist/ReactToastify.css'; // Ensure this is imported
+
 
 interface Course {
     _id: string;

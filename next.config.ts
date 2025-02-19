@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true, // Enable React Strict Mode
+  reactStrictMode: true, 
   images: {
     domains: ["bimt.lk"], 
   },
@@ -9,17 +9,17 @@ const nextConfig: NextConfig = {
     config.module.rules.push({
       test: /\.scss$/,
       use: [
+        "style-loader",
+        "css-loader",
         {
           loader: "sass-loader",
           options: {
-            implementation: require("sass"), // Use Dart Sass
-            sassOptions: {
-              fiber: false, // Prevents the legacy API warning
-            },
+            implementation: require("sass"),
           },
         },
       ],
     });
+
     return config;
   },
 };

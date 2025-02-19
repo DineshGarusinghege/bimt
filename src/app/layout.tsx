@@ -6,6 +6,7 @@ import "./globals.css";
 import Footer from "@/app/ui/Footer";
 import '../app/styles/globals.css';
 import WhatsAppButton from '../app/componets/WhatsAppButton';
+import 'react-toastify/dist/ReactToastify.css'; // Ensure this is imported
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
