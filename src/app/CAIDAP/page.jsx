@@ -13,6 +13,8 @@ import CareerProgression from '../componets/CareerProgression';
 import Requirements from '../componets/Requirements';
 import Admission from '../componets/Admission';
 import Payment from '../componets/Payment';
+import Overview from '../componets/Overview';
+
 
 
 export default function CAIDAP() {
@@ -29,6 +31,7 @@ export default function CAIDAP() {
         'requirements': <Requirements />,
         'admission': <Admission />,
         'payment': <Payment />,
+        'overview': <Overview />
     };
 
 
@@ -60,7 +63,7 @@ export default function CAIDAP() {
 
     ];
 
-    
+
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleNext = () => {
@@ -163,197 +166,127 @@ export default function CAIDAP() {
             </div>
 
 
-            <div className="bg-white py-10 px-6 lg:px-16">
-                <div className="max-w-[1498px] mx-auto py-10">
-                    {/* First Section */}
-                    <div className="flex flex-col lg:flex-row gap-6">
-                        {/* Left Side */}
-                        <div className="w-[917px]">
-                            {/* Overview 1 */}
-                            <h4 className="text-lg font-bold text-gray-600"
-                                style={{
-                                    color: '#272A5D',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '24px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    lineHeight: 'normal'
-                                }}
-                            >Overview</h4>
-                            <h2 className="text-2xl font-bold mt-2"
-                                style={{
-                                    color: '#272A5D',
-                                    fontFamily: 'Avenir LT Std',
-                                    fontSize: '40px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '600',
-                                    lineHeight: '53px'
-                                }}
-                            >What Will I Learn</h2>
-                            <ul className="list-disc list-inside mt-4 text-gray-700 leading-relaxed"
-                                style={{
-                                    color: '#5A5A5A',
-                                    textAlign: "justify",
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '16px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    lineHeight: 'normal'
-                                }}
-                            >
-                                <li>Gain a clear understanding of your job role in a business organization.</li>
-                                <li>Learn how to motivate your employees to ensure they perform to the highest standard.</li>
-                                <li>Learn how to plan and organize meetings.</li>
-                                <li>Learn how to supervise a team, motivate them, and encourage them to reach maximum potential.</li>
-                                <li>Learn how to apply administrative best practices to increase growth and success within a business environment.</li>
-                                <li>Gain an understanding of finance functions and how to apply your knowledge in real-world scenarios.</li>
-                            </ul>
-                            {/* Overview 2 */}
-                            <h4 className="text-lg font-bold text-gray-600 mt-8"
-                                style={{
-                                    color: '#272A5D',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '24px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    lineHeight: 'normal'
-                                }}
-                            >Overview</h4>
-                            <h2 className="text-2xl font-bold mt-2"
-                                style={{
-                                    color: '#272A5D',
-                                    fontFamily: 'Avenir LT Std',
-                                    fontSize: '40px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '600',
-                                    lineHeight: '53px'
-                                }}
-                            >Awarding Body - IFA UK</h2>
-                            <img
-                                width={'490px'}
+            <section className="max-w-[1420px] mx-auto p-6 lg:p-12">
+                <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] items-center">
+                    {/* Left Side: Video (30%) */}
+                    <div className="flex justify-center items-center w-full h-full">
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            controls
+                            className="w-full h-auto"
+                        >
+                            <source src="/0124.webm" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
 
-                                height={'0px'}
-                                className="text-gray-700 "
-                                src='/images/b-logo3 (1) 3.png'
-                            />
-
-                        </div>
-
-                        {/* Right Side */}
-                        <div className="relative w-[554px]">
-                            {/* Large Image */}
-                            <img
-                                src="/images/3 (2) 1.png"
-                                alt="Large"
-                                className="absolute w-[462px] h-[308px] rounded-lg object-cover shadow-lg top-[57px] left-[40px] w-[259px]"
-                            />
-                            {/* Small Image */}
-                            <img
-                                src="/images/1 (1) 3.png"
-
-                                alt="Small"
-                                className="absolute top-[-20px] left-[-20px] w-[259px] h-[171px] rounded-lg object-cover shadow-lg"
-                            />
-                        </div>
+                    {/* Right Side: Image (70%) */}
+                    <div className="rounded-lg shadow-lg overflow-hidden">
+                        <img
+                            src="/images/Screenshot-2024-12-20-104154-e1734671699662.png"
+                            alt="Certificate Programme"
+                            className="w-full object-cover rounded-lg"
+                        />
                     </div>
                 </div>
-            </div>
+            </section>
 
 
-
-            {/* Second Section */}
-            <div>
-                {/* Top Border */}
-                <div className="w-full border-t border-gray-300"></div>
-
+            <div className="w-full">
                 {/* Navigation and Buttons */}
-                <div>
-                    <div className="max-w-[1300px] mx-auto py-6 flex justify-between items-center">
-                        {/* Links Section */}
-                        <div className="flex gap-8">
+                <div className="w-full">
+                    <div className="max-w-[1300px] mx-auto py-6 flex flex-col md:flex-row justify-between items-center">
+
+                        {/* Links Section - Responsive Two Row Layout */}
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:gap-2 w-full">
                             <button
-                                className={`text-gray-600 hover:text-red-600 transition font-medium ${activeSection === "why-bimt" ? "text-red-600" : ""}`}
+                                className={`px-4 py-2 transition font-medium ${activeSection === "overview"
+                                        ? "bg-[#23255D] text-white"
+                                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                                    }`}
+                                onClick={() => setActiveSection("overview")}
+                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
+                            >
+                                Overview
+                            </button>
+
+                            <button
+                                className={`px-4 py-2 transition font-medium ${activeSection === "why-bimt"
+                                        ? "bg-[#23255D] text-white"
+                                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                                    }`}
                                 onClick={() => setActiveSection("why-bimt")}
-                                style={{
-                                    color: activeSection === "why-bimt" ? "#A02629" : "#000",
-                                    fontFamily: "Work Sans",
-                                    fontSize: "20px",
-                                    fontWeight: "500",
-                                }}
+                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
                             >
                                 Why BIMT?
                             </button>
+
                             <button
-                                className={`text-gray-600 hover:text-blue-600 transition font-medium ${activeSection === "programme-aim" ? "text-blue-600" : ""}`}
+                                className={`px-4 py-2 transition font-medium ${activeSection === "programme-aim"
+                                        ? "bg-[#23255D] text-white"
+                                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                                    }`}
                                 onClick={() => setActiveSection("programme-aim")}
-                                style={{
-                                    color: activeSection === "programme-aim" ? "#0000FF" : "#000",
-                                    fontFamily: "Work Sans",
-                                    fontSize: "20px",
-                                    fontWeight: "500",
-                                }}
+                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
                             >
                                 Programme Aim
                             </button>
+
                             <button
-                                className={`text-gray-600 hover:text-blue-600 transition font-medium ${activeSection === "modules" ? "text-blue-600" : ""}`}
+                                className={`px-4 py-2 transition font-medium ${activeSection === "modules"
+                                        ? "bg-[#23255D] text-white"
+                                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                                    }`}
                                 onClick={() => setActiveSection("modules")}
-                                style={{
-                                    color: activeSection === "modules" ? "#0000FF" : "#000",
-                                    fontFamily: "Work Sans",
-                                    fontSize: "20px",
-                                    fontWeight: "500",
-                                }}
+                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
                             >
                                 Modules
                             </button>
+
                             <button
-                                className={`text-gray-600 hover:text-blue-600 transition font-medium ${activeSection === "requirements" ? "text-blue-600" : ""}`}
+                                className={`px-4 py-2 transition font-medium ${activeSection === "requirements"
+                                        ? "bg-[#23255D] text-white"
+                                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                                    }`}
                                 onClick={() => setActiveSection("requirements")}
-                                style={{
-                                    color: activeSection === "requirements" ? "#0000FF" : "#000",
-                                    fontFamily: "Work Sans",
-                                    fontSize: "20px",
-                                    fontWeight: "500",
-                                }}
+                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
                             >
                                 Requirements
                             </button>
+
                             <button
-                                className={`text-gray-600 hover:text-blue-600 transition font-medium ${activeSection === "admission" ? "text-blue-600" : ""}`}
+                                className={`px-4 py-2 transition font-medium ${activeSection === "admission"
+                                        ? "bg-[#23255D] text-white"
+                                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                                    }`}
                                 onClick={() => setActiveSection("admission")}
-                                style={{
-                                    color: activeSection === "admission" ? "#0000FF" : "#000",
-                                    fontFamily: "Work Sans",
-                                    fontSize: "20px",
-                                    fontWeight: "500",
-                                }}
+                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
                             >
                                 Admission
                             </button>
+
                             <button
-                                className={`text-gray-600 hover:text-blue-600 transition font-medium ${activeSection === "payment" ? "text-blue-600" : ""}`}
+                                className={`px-4 py-2 transition font-medium ${activeSection === "payment"
+                                        ? "bg-[#23255D] text-white"
+                                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                                    }`}
                                 onClick={() => setActiveSection("payment")}
-                                style={{
-                                    color: activeSection === "payment" ? "#0000FF" : "#000",
-                                    fontFamily: "Work Sans",
-                                    fontSize: "20px",
-                                    fontWeight: "500",
-                                }}
+                                style={{ fontFamily: "Work Sans", fontSize: "20px", fontWeight: "500" }}
                             >
                                 Payment
                             </button>
                         </div>
 
                         {/* Contact Us Button */}
-                        <div>
+                        <div className="w-full md:w-auto flex justify-center md:justify-end">
                             <button
                                 className="bg-[#1D267D] text-white py-2 px-6 rounded-md hover:bg-[#151B54] transition"
                                 style={{
-                                    display: "flex",
                                     width: "200px",
                                     height: "56px",
-                                    padding: "0px 10px",
+                                    display: "flex",
                                     justifyContent: "center",
                                     alignItems: "center",
                                     gap: "10px",
@@ -362,9 +295,7 @@ export default function CAIDAP() {
                                     color: "#fff",
                                     fontFamily: "Work Sans",
                                     fontSize: "20px",
-                                    fontStyle: "normal",
                                     fontWeight: "600",
-                                    lineHeight: "normal",
                                 }}
                             >
                                 Contact Us
@@ -373,10 +304,8 @@ export default function CAIDAP() {
                     </div>
                 </div>
 
-                {/* Bottom Border */}
-                <div className="w-full border-t border-gray-300"></div>
                 {/* Rendered Section Below */}
-                <div className="max-w-[1300px] mx-auto py-6">
+                <div className="max-w-[1300px] mx-auto py-6 px-4">
                     {sections[activeSection] || <div>Section not found</div>}
                 </div>
             </div>
@@ -384,568 +313,69 @@ export default function CAIDAP() {
 
 
 
-
-            <div className="bg-[#F0F4F7]"
-                style={{
-                    paddingTop: '80px',
-                    paddingBottom: '110px'
-
-                }}>
-
-                {/*Start Event section */}
-                <div
-                    className="relative flex flex-col md:flex-row  items-center text-white p-6"
-                    style={{ width: "1502px", paddingTop: '70px', paddingBottom: '0px', margin: "0 auto" }}
-                >
-                    {/* Events List */}
-                    <div className="bg-[#006987] p-10 w-full md:w-2/3 rounded-lg shadow-lg"
-
-                        style={{
-                            width: '1035px',
-                            height: 'fit-content',
-                            flexShrink: '0',
-                            paddingLeft: '100px',
-                            paddingTop: '60px',
-                            paddingBottom: '60px'
-                        }}
-
-                    >
-
-                        <div style={{
-                            display: 'flex',
-                            width: '743px',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                            gap: '30px'
-                        }}>
-                            <div className="mb-6">
-                                <h2 className="text-xl font-semibold"
-                                    style={{ color: '#fff', fontFamily: 'Work Sans', fontSize: "24px", fontStyle: 'normal', fontWeight: '400', lineHeight: 'normal' }}
-                                >Events</h2>
-                                <h1 className="text-4xl font-bold mt-2"
-                                    style={{ color: '#fff', fontFamily: 'Avenir LT Std', fontSize: '40px', fontStyle: 'normal', fontWeight: '600', lineHeight: '53px' }}
-                                >UPCOMING EVENTS</h1>
-                            </div>
-
-                            {/* Event Item */}
-                            {[...Array(3)].map((_, index) => (
-                                <div
-                                    key={index}
-                                    className="flex py-6"
-                                    style={{
-                                        border: "0.25px solid white",
-                                        marginBottom: "20px",
-                                        padding: "20px",
-                                        display: 'flex',
-                                        alignItems: 'flex-start',
-                                        gap: '67px'
-                                    }}
-                                >
-                                    <div className="flex flex-col items-center justify-center w-20 text-center">
-                                        <span className="text-lg font-light"
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontStyle: 'normal',
-                                                fontWeight: '400',
-                                                lineHeight: 'normal'
-                                            }}
-                                        >nov</span>
-                                        <span className="text-4xl font-bold"
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Avenir LT Std',
-                                                fontSize: '32px',
-                                                fontStyle: 'normal',
-                                                fontWeight: '600',
-                                                lineHeight: '53px'
-                                            }}
-                                        >6th</span>
-                                    </div>
-                                    <div className="ml-6 flex-1">
-                                        <h3 className="text-xl font-semibold"
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
-                                                fontSize: '20px',
-                                                fontStyle: 'normal',
-                                                fontWeight: '600',
-                                                lineHeight: 'normal'
-                                            }}
-                                        >Workshop on Capital Market</h3>
-                                        <p className="text-sm text-gray-300 mt-2"
-                                            style={{ overflow: 'hidden', color: '#fff', textOverflow: 'ellipsis', fontFamily: 'Work Sans', fontSize: '16px', fontStyle: 'normal', fontWeight: '400', lineHeight: '25px' }}
-                                        >
-                                            A workshop on Capital Market was organized for our BIMT Campus
-                                            Students on the 23rd of November.
-                                        </p>
-                                        <div className="flex justify-between items-center mt-4">
-                                            <span className="text-sm font-semibold"
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    lineHeight: 'normal'
-                                                }}
-                                            >9.00 - 17.00</span>
-                                            <span className="text-sm font-semibold"
-                                                style={{
-                                                    color: '#fff',
-                                                    fontFamily: 'Work Sans',
-                                                    fontSize: '16px',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    lineHeight: 'normal'
-                                                }}
-                                            >Kingsbury Hotel</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                    </div>
-
-                    {/* Countdown Section */}
-                    <div className="absolute right-[50px] w-full md:w-1/3">
-                        <Image
-                            src="/images/3 1.png"
-                            alt="Event Image"
-                            width={600}
-                            height={400}
-                            className="rounded-lg"
-                        />
-                        <div className="bg-white p-6 rounded-lg shadow-lg absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-3/4">
-                            <h4 className="text-xl font-semibold" style={{ color: "#000" }}>
-                                Next Event
-                            </h4>
-                            <p className="text-2xl font-bold mt-2" style={{ color: "#000" }}>
-                                8d 00h 00m
-                            </p>
-                            <div className="flex space-x-4 mt-6">
-                                <button className="px-6 py-3 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition">
-                                    View all events
-                                </button>
-                                <button className="px-6 py-3 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition">
-                                    Contact us
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/*End Event section */}
-
-
-                {/* career progression */}
-
-
-
-
-
-
-
-                {/* Build your career section */}
-                <div className="mx-auto w-[1300px] flex flex-col md:flex-row items-stretch"
-                    style={{
-                        width: '1300px',
-                        height: '575px',
-                        paddingTop: '179px',
-                        marginBottom: '0px'
-                    }}
-
-                >
-                    {/* Left Side */}
-                    <div className="w-full md:w-1/2 bg-blue-900 text-white p-10 flex flex-col justify-center"
-                        style={{
-                            paddingTop: '63px',
-                            paddingLeft: '60px',
-                            paddingRight: '150px',
-                            background: '#272A5D',
-                            height: '496px',
-                            paddingBottom: '63px'
-
-                        }}
-                    >
-                        <h3 className="text-lg font-medium"
-                            style={{
-                                color: '#fff',
-                                fontFamily: 'Work Sans',
-                                fontSize: '24px',
-                                fontStyle: 'normal',
-                                fontWeight: '400',
-                                lineHeight: 'normal'
-                            }}
-                        >Career at BIMT</h3>
-                        <h2 className="text-4xl font-bold mt-2 mb-6 leading-snug"
-                            style={{
-                                color: '#fff',
-                                fontFamily: 'Avenir LT Std',
-                                fontSize: '40px',
-                                fontStyle: 'normal',
-                                fontWeight: '600',
-                                lineHeight: '53px'
-                            }}
-                        >
-                            BUILD YOUR CAREER WITH BIMT
-                        </h2>
-                        <p className="text-sm leading-relaxed mb-8"
-                            style={{
-                                color: '#fff',
-                                textAlign: 'justify',
-                                fontFamily: 'Work Sans',
-                                fontSize: '16px',
-                                fontStyle: 'normal',
-                                fontWeight: '400',
-                                lineHeight: '25px'
-                            }}
-                        >
-                            Join a team dedicated to shaping future leaders in education. At BIMT, we value
-                            innovation, growth, and collaboration. Discover rewarding career opportunities
-                            where you can make a lasting impact on students&#39;  lives and your own.
-                        </p>
-                        <div className="space-y-4">
-                            <a href="#" className="text-sm font-medium hover:underline block"
-                                style={{
-                                    color: '#fff',
-                                    textAlign: 'justify',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '16px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '600',
-                                    lineHeight: '25px'
-                                }}
-                            >
-                                Student Counsellor →
-                            </a>
-                            <a href="#" className="text-sm font-medium hover:underline block"
-                                style={{
-                                    color: '#fff',
-                                    textAlign: 'justify',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '16px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '600',
-                                    lineHeight: '25px'
-                                }}
-                            >
-                                Marketing Executive →
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Right Side */}
-                    <div className="relative w-full md:w-1/2"
-                        style={{ height: '496px' }}
-                    >
-                        {/* Top Half (Blue Background) */}
-                        <div className="h-1/2 bg-blue-900"
-                            style={{
-                                background: '#272A5D'
-
-                            }}
-                        ></div>
-
-                        {/* Bottom Half (Content Section) */}
-                        <div className="flex flex-col items-center justify-center h-1/2 bg-white px-6"
-                            style={{
-                                display: 'inline-flex',
-                                padding: '40px 100px',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                gap: '30px',
-                                width: '100%'
-                            }}
-                        >
-                            <h2 className="text-xl font-semibold mb-4 text-center"
-                                style={{
-                                    color: '#000',
-                                    fontFamily: 'Work Sans',
-                                    fontSize: '32px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '600',
-                                    lineHeight: 'normal'
-                                }}
-                            >
-                                Find a career that suits you
-                            </h2>
-                            <div className="flex gap-4">
-                                <button className="px-6 py-2 border border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white transition rounded-lg"
-                                    style={{
-                                        display: 'flex',
-                                        width: '200px',
-                                        height: '56px',
-                                        padding: '0px 10px',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        gap: '10px',
-                                        borderRadius: '10px',
-                                        border: '2px solid #272A5D',
-                                        color: '#272A5D',
-                                        fontFamily: 'Work Sans',
-                                        fontSize: '20px',
-                                        fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        lineHeight: 'normal'
-                                    }}
-                                >
-                                    View all careers
-                                </button>
-                                <button className="px-6 py-2 border border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white transition rounded-lg"
-                                    style={{
-                                        display: 'flex',
-                                        width: '200px',
-                                        height: '56px',
-                                        padding: '0px 10px',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        gap: '10px',
-                                        borderRadius: '10px',
-                                        border: '2px solid #272A5D',
-                                        color: '#272A5D',
-                                        fontFamily: 'Work Sans',
-                                        fontSize: '20px',
-                                        fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        lineHeight: 'normal'
-                                    }}
-                                >
-                                    Contact us
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Absolute Positioned Image */}
-                        <div className="absolute top-1/4 right-1/4 transform translate-x-[-80px] -translate-y-1/4"
-                            style={{
-                                top: '5px',
-                            }}>
-                            <img
-                                src="/images/young-designer_1098-13734 1.png"
-                                alt="Career Image"
-                                className="rounded-lg shadow-lg"
-                            />
-                        </div>
-                    </div>
-                </div >
-
-                {/* build your career section end */}
-            </div>
-
-
-
-
-
             {/* study card start section */}
-            <div className="bg-[#fff] py-10 px-4 lg:px-16">
+            <div className="relative py-10 overflow-hidden">
                 {/* Header Section */}
                 <div className="text-center mb-8">
-                    <h3 className="text-lg font-medium text-gray-500"
-                        style={{
-                            paddingTop: '70px',
-                            color: '#272A5D',
-                            fontFamily: 'Work Sans',
-                            fontSize: '24px',
-                            fontStyle: 'normal',
-                            fontWeight: '400',
-                            lineHeight: 'normal',
-                            marginBottom: '0px'
-                        }}
-                    >Study</h3>
-                    <h2 className="text-3xl font-bold text-[#1D267D]"
-                        style={{
-                            color: '#272A5D',
-                            fontFamily: 'Avenir LT Std',
-                            fontSize: '40px',
-                            fontStyle: 'normal',
-                            fontWeight: '600',
-                            lineHeight: '53px'
-                        }}
-                    >WE OFFER TO YOU</h2>
+                    <h3 className="text-lg font-medium text-[#272A5D] pt-10" style={{ fontFamily: 'Work Sans' }}>
+                        Study
+                    </h3>
+                    <h2 className="text-3xl font-bold text-[#272A5D] font-avenir" style={{ fontSize: '40px' }}>
+                        WE OFFER TO YOU
+                    </h2>
                 </div>
 
-                {/* Grid Section */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-[1850px] mx-auto"
-                    style={{
-                        paddingBottom: '100px'
-                    }}
+                {/* Left Arrow Button */}
+                <button
+                    onClick={() => handleScroll('left')}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white border border-gray-300 shadow-md rounded-full p-3 hover:bg-gray-200 transition z-10"
                 >
-                    {studyPrograms.map((studyPrograms) => (
-                        <div
-                            key={studyPrograms.id}
-                            className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                    <svg className="w-6 h-6 text-[#1D267D]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
 
-                            style={{
-                                display: 'flex',
-                                width: '350px',
-                                paddingBottom: '20px',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                gap: '7px'
-                            }}
-                        >
-                            {/* Card Image */}
-                            <div className="relative w-full h-[200px]">
-                                <Image
-                                    src={studyPrograms.img}
-                                    alt={studyPrograms.title}
-                                    layout="fill"
-                                    objectFit="cover"
-                                />
-                            </div>
-
-                            {/* Card Text */}
-                            <div className="p-4 text-center">
-                                <h3 className="text-lg font-semibold text-[#1D267D]">{studyPrograms.title}</h3>
-                                <button className="mt-4 bg-white text-[#1D267D] border border-[#1D267D] py-2 px-4 rounded-md hover:bg-[#1D267D] hover:text-white transition">
-                                    View more
-                                </button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            {/* Study cards end section */}
-
-            {/* Testimonials */}
-
-            <div
-                className="bg-[#006987] flex flex-col items-center py-16"
-                style={{ marginTop: '110px', marginBottom: '100px' }}
-            >
-                {/* Outer Container for Content with Fixed Width */}
-                <div
-                    className="w-[1349px] mx-auto flex flex-col lg:flex-row items-center lg:items-start"
+                {/* Right Arrow Button */}
+                <button
+                    onClick={() => handleScroll('right')}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white border border-gray-300 shadow-md rounded-full p-3 hover:bg-gray-200 transition z-10"
                 >
-                    {/* Image Section */}
-                    <div className="relative lg:mr-16 mb-8 lg:mb-0">
-                        <Image
-                            src={image}
-                            alt="Alumni"
-                            width={438}
-                            height={498}
-                            className="rounded-lg"
-                        />
-                        <div className="flex justify-center mt-4 space-x-4">
-                            <button
-                                onClick={handlePrev}
-                                className="w-12 h-12 flex items-center justify-center rounded-full bg-transparent border-2 border-white text-white"
+                    <svg className="w-6 h-6 text-[#1D267D]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                {/* Marquee Section */}
+                <div className="relative flex overflow-hidden">
+                    <div
+                        className="flex animate-marquee space-x-6"
+                        onMouseEnter={(e) => (e.currentTarget.style.animationPlayState = 'paused')}
+                        onMouseLeave={(e) => (e.currentTarget.style.animationPlayState = 'running')}
+                    >
+                        {/* Duplicate items for smooth infinite loop */}
+                        {[...studyPrograms, ...studyPrograms].map((program, index) => (
+                            <div
+                                key={index}
+                                className="min-w-[250px] sm:min-w-[300px] lg:min-w-[350px] bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden hover:shadow-lg hover:scale-105 transition-transform"
                             >
-                                {/* Left Arrow SVG */}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
-                                    <g clip-path="url(#clip0_327_4530)">
-                                        <path d="M25 0C38.8068 0 50 11.1932 50 25C50 38.8068 38.8068 50 25 50C11.1932 50 0 38.8068 0 25C0 11.1932 11.1932 0 25 0ZM25 45.8333C36.5057 45.8333 45.8333 36.5057 45.8333 25C45.8333 13.4943 36.5057 4.1667 25 4.1667C13.4943 4.1667 4.1667 13.4943 4.1667 25C4.1667 36.5057 13.4943 45.8333 25 45.8333Z" fill="white" />
-                                        <path d="M27.6936 13.1102C28.5071 12.2966 29.8263 12.2966 30.6398 13.1102C31.4534 13.9238 31.4534 15.2429 30.6398 16.0565L21.6963 25L30.6398 33.9436C31.4534 34.7572 31.4534 36.0763 30.6398 36.8899C29.8263 37.7034 28.5071 37.7034 27.6936 36.8899L17.2769 26.4732C16.4633 25.6596 16.4633 24.3405 17.2769 23.5269L27.6936 13.1102Z" fill="white" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_327_4530">
-                                            <rect width="50" height="50" fill="white" transform="matrix(-1 0 0 1 50 0)" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </button>
-                            <button
-                                onClick={handleNext}
-                                className="w-12 h-12 flex items-center justify-center rounded-full bg-transparent border-2 border-white text-white"
-                            >
-                                {/* Right Arrow SVG */}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
-                                    <g clip-path="url(#clip0_327_4536)">
-                                        <path d="M25 0C11.1932 0 0 11.1932 0 25C0 38.8068 11.1932 50 25 50C38.8068 50 50 38.8068 50 25C50 11.1932 38.8068 0 25 0ZM25 45.8333C13.4943 45.8333 4.1667 36.5057 4.1667 25C4.1667 13.4943 13.4943 4.1667 25 4.1667C36.5057 4.1667 45.8333 13.4943 45.8333 25C45.8333 36.5057 36.5057 45.8333 25 45.8333Z" fill="white" />
-                                        <path d="M22.3064 13.1102C21.4929 12.2966 20.1737 12.2966 19.3602 13.1102C18.5466 13.9238 18.5466 15.2429 19.3602 16.0565L28.3037 25L19.3602 33.9436C18.5466 34.7572 18.5466 36.0763 19.3602 36.8899C20.1737 37.7034 21.4929 37.7034 22.3064 36.8899L32.7231 26.4732C33.5367 25.6596 33.5367 24.3405 32.7231 23.5269L22.3064 13.1102Z" fill="white" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_327_4536">
-                                            <rect width="50" height="50" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+                                {/* Card Image */}
+                                <div className="relative w-full h-[200px]">
+                                    <Image src={program.img} alt={program.title} layout="fill" objectFit="cover" />
+                                </div>
 
-
-                    {/* Text Section */}
-                    <div className="flex flex-col">
-                        <h4 className="text-white text-2xl font-light"
-                            style={{
-                                color: '#fff',
-                                fontFamily: 'Work Sans',
-                                fontSize: '24px',
-                                fontStyle: 'normal',
-                                fontWeight: '400',
-                                lineHeight: 'normal'
-                            }}
-                        >Testimonials</h4>
-                        <h2 className="text-white text-4xl font-semibold mb-6 max-w-[550px]"
-                            style={{
-                                color: '#fff',
-                                fontFamily: 'Avenir LT Std',
-                                fontSize: '40px',
-                                fontStyle: 'normal',
-                                fontWeight: '600',
-                                lineHeight: '53px',
-                                maxWidth: '550px',
-
-                            }}
-                        >
-                            HEAR WHAT OUR ALUMNI SAY ABOUT BIMT
-                        </h2>
-                        <p
-                            className="text-white text-xl leading-relaxed mb-8 max-w-[600px]"
-                            style={{
-                                overflow: 'hidden',
-                                color: '#fff',
-                                fontFamily: 'Work Sans',
-                                fontSize: '36px',
-                                fontStyle: 'normal',
-                                fontWeight: '400',
-                                lineHeight: '35px',
-                                maxWidth: '600px',
-                                whiteSpace: 'normal',
-                                wordBreak: 'keep-all',
-                            }}
-                        >
-                            {text}
-                        </p>
-                        <button className="border-2 border-white text-white text-lg font-semibold py-2 px-6 rounded-lg hover:bg-white hover:text-blue-900 transition duration-300" style={{
-                            width: '234px',
-                            display: 'inline-flex',
-                            height: '56px',
-                            padding: '0px 20px',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            gap: '10px',
-                            flexShrink: '0'
-
-                        }}>
-                            {buttonLabel}
-                        </button>
-                    </div>
-
-                    <div style={{ paddingTop: '550px' }}>
-
-                        <button className="flex items-end border-2 border-[#fff] rounded-lg px-4 py-2 font-semibold text-[#fff] text-lg relative"
-                            style={{ fontFamily: 'Playfair', fontSize: '20px', fontWeight: '700', lineHeight: '24px', textAlign: 'left', textUnderlinePosition: 'from-font', textDecorationSkipInk: 'none' }}
-                        >
-                            {/* Icon with Rotation */}
-                            <div className="absolute -top-3 -left-6 transform -rotate-10">
-                                <Image src="/images/graduate 1 (2).png"
-                                    width={61.25}
-                                    height={43.04}
-                                    alt='storeis'
-                                    style={{ transform: 'translate(-20%, -45%) rotate(-10.795deg)' }} />
+                                {/* Card Text */}
+                                <div className="p-4 text-center">
+                                    <h3 className="text-lg font-semibold text-[#1D267D]">{program.title}</h3>
+                                    <button className="mt-4 bg-white text-[#1D267D] border border-[#1D267D] py-2 px-4 rounded-md hover:bg-[#1D267D] hover:text-white transition">
+                                        View more
+                                    </button>
+                                </div>
                             </div>
-                            {/* Button Text */}
-                            View all stories
-
-                        </button>
+                        ))}
                     </div>
                 </div>
             </div>
+
         </>
     );
 }

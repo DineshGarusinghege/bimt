@@ -6,7 +6,8 @@ import MainHeader from '../ui/MainHeader';
 // import AnnounsmentBar from '../ui/AnnounsmentBar';
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from 'react';
-
+import '../styles/Global.scss'
+import '../styles/AboutUs.scss'
 
 // Array of background images
 const backgroundImages = [
@@ -18,29 +19,26 @@ const backgroundImages = [
     '/images/coloured-pattern_page-0006.jpg',
 ];
 
-
-const scrollLeft = () => {
-    const container = document.getElementById('scroll-container');
-    container.scrollBy({ left: -300, behavior: 'smooth' });
-};
-
-const scrollRight = () => {
-    const container = document.getElementById('scroll-container');
-    container.scrollBy({ left: 300, behavior: 'smooth' });
-};
-
-
-// Scroll handler without useRef
-const handleScroll = (direction) => {
-    const container = document.getElementById('scroll-container');
-    const scrollDistance = 350; // Adjust based on card width
-
-    if (direction === 'left') {
-        container.scrollBy({ left: -scrollDistance, behavior: 'smooth' });
-    } else {
-        container.scrollBy({ left: scrollDistance, behavior: 'smooth' });
-    }
-};
+const images = [
+    "/images/british counsil.jpg",
+    "/images/b-logo1.png",
+    "/images/b-logo2.png",
+    "/images/cminew.jpg",
+    "/images/b-logo4.png",
+    "/images/b-logo3.png",
+    "/images/ACCA.jpg",
+    "/images/athe.jpg",
+    "/images/edupro.jpg",
+    "/images/british counsil.jpg",
+    "/images/b-logo1.png",
+    "/images/b-logo2.png",
+    "/images/cminew.jpg",
+    "/images/b-logo4.png",
+    "/images/b-logo3.png",
+    "/images/ACCA.jpg",
+    "/images/athe.jpg",
+    "/images/edupro.jpg",
+];
 
 
 export default function HigherDiploma() {
@@ -171,179 +169,154 @@ export default function HigherDiploma() {
             </head>
 
             <MainHeader />
-            {/* <AnnounsmentBar /> */}
-            {/* Here section */}
-            <div className="relative bg-cover bg-center h-[480px] z-0" style={{ backgroundImage: "url('/images/Rectangle 1.png')" }}>
-                {/* Overlay for better text visibility */}
-                {/* <div className="absolute inset-0 bg-[#272A5DB2] opacity-[70%] z-10"></div> */}
 
-                <div className='relative max-w-[1430px] mx-auto top-[55px]'>
-                    {/* Breadcrumb Section */}
-                    <div className="absolute container mx-auto px-6 lg:px-16 flex items-center h-full z-20">
-                        <nav
-                            className="bg-gray-200 bg-opacity-80 py-2 px-4 rounded-lg text-sm text-gray-700"
-                            style={{
-                                display: 'inline-flex',
-                                padding: '5px 25px',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                gap: '10px',
-                                background: '#ffffff45',
-                            }}
-                        >
-                            <ol className="flex space-x-2">
-                                <li>
-                                    <Link
-                                        href="/"
-                                        className="hover:underline hover:text-blue-500"
-                                        style={{
-                                            color: '#fff',
-                                            fontFamily: 'Avenir LT Std',
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: 'normal',
-                                        }}
-                                    >
-                                        Home
-                                    </Link>
-                                </li>
-                                <span className="text-gray-400">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="15"
-                                        height="15"
-                                        viewBox="0 0 15 15"
-                                        fill="none"
-                                    >
-                                        <path
-                                            d="M11.667 6.9147L4.99178 0.239632C4.83739 0.0851213 4.6313 0 4.41154 0C4.19179 0 3.98569 0.0851213 3.83131 0.239632L3.33972 0.731092C3.01985 1.05133 3.01985 1.57182 3.33972 1.89157L8.94504 7.49689L3.3335 13.1084C3.17912 13.2629 3.09387 13.4689 3.09387 13.6885C3.09387 13.9084 3.17912 14.1144 3.3335 14.269L3.82509 14.7604C3.9796 14.9149 4.18557 15 4.40533 15C4.62508 15 4.83118 14.9149 4.98556 14.7604L11.667 8.0792C11.8217 7.9242 11.9067 7.71725 11.9062 7.49726C11.9067 7.2764 11.8217 7.06958 11.667 6.9147Z"
-                                            fill="white"
-                                        />
-                                    </svg>
-                                </span>
-                                <li>
-                                    <Link
-                                        href="/HigherDiploma"
-                                        className="hover:underline hover:text-blue-500"
-                                        style={{
-                                            color: '#fff',
-                                            fontFamily: 'Avenir LT Std',
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: 'normal',
-                                        }}
-                                    >
-                                        Programs
-                                    </Link>
-                                </li>
 
-                                <span className="text-gray-400">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="15"
-                                        height="15"
-                                        viewBox="0 0 15 15"
-                                        fill="none"
-                                    >
-                                        <path
-                                            d="M11.667 6.9147L4.99178 0.239632C4.83739 0.0851213 4.6313 0 4.41154 0C4.19179 0 3.98569 0.0851213 3.83131 0.239632L3.33972 0.731092C3.01985 1.05133 3.01985 1.57182 3.33972 1.89157L8.94504 7.49689L3.3335 13.1084C3.17912 13.2629 3.09387 13.4689 3.09387 13.6885C3.09387 13.9084 3.17912 14.1144 3.3335 14.269L3.82509 14.7604C3.9796 14.9149 4.18557 15 4.40533 15C4.62508 15 4.83118 14.9149 4.98556 14.7604L11.667 8.0792C11.8217 7.9242 11.9067 7.71725 11.9062 7.49726C11.9067 7.2764 11.8217 7.06958 11.667 6.9147Z"
-                                            fill="white"
-                                        />
-                                    </svg>
-                                </span>
-                                <li>
-                                    <span
-                                        className="text-gray-600"
-                                        style={{
-                                            color: '#fff',
-                                            fontFamily: 'Avenir LT Std',
-                                            fontSize: '16px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: 'normal',
-                                        }}
-                                    >
-                                        Higher Diploma
+            {/* Hero Section */}
+            <div>
+                {/* Contact Us hero section */}
+                <div
+                    className="relative w-full bg-cover bg-center heroSectionHeight"
+                    style={{
+                        backgroundImage: "url('/images/Programme-banner_page-0001-1-scaled.jpg')",
+                        objectPosition: 'center center'
+                    }}
+                >
+
+                    <div className='relative max-w-[1450px] mx-auto top-[55px] px-10 py-50 bredcrumbSectionMain'>
+                        {/* Breadcrumb Section */}
+                        <div className="relative flex w-full max-w-[1450px] gap-5 px-2 py-12 breadCrumbSubSection">
+                            <nav
+                                className="bg-gray-200 bg-opacity-80 py-2 px-4 rounded-lg text-sm text-gray-700"
+                                style={{
+                                    display: "inline-flex",
+                                    padding: "5px 25px",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    gap: "10px",
+                                    background: "#ffffff45",
+                                }}
+                            >
+                                <ol className="flex space-x-2">
+                                    <li>
+                                        <Link
+                                            href="/"
+                                            className="hover:underline hover:text-blue-500 breadcrumbFont font-avenir"
+                                        >
+                                            Home
+                                        </Link>
+                                    </li>
+                                    <span className="text-gray-400 arroSvgCrumPadding">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-[12px] h-[12px] svgRightArrowBreadCrumb"
+                                            viewBox="0 0 15 15"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M11.667 6.9147L4.99178 0.239632C4.83739 0.0851213 4.6313 0 4.41154 0C4.19179 0 3.98569 0.0851213 3.83131 0.239632L3.33972 0.731092C3.01985 1.05133 3.01985 1.57182 3.33972 1.89157L8.94504 7.49689L3.3335 13.1084C3.17912 13.2629 3.09387 13.4689 3.09387 13.6885C3.09387 13.9084 3.17912 14.1144 3.3335 14.269L3.82509 14.7604C3.9796 14.9149 4.18557 15 4.40533 15C4.62508 15 4.83118 14.9149 4.98556 14.7604L11.667 8.0792C11.8217 7.9242 11.9067 7.71725 11.9062 7.49726C11.9067 7.2764 11.8217 7.06958 11.667 6.9147Z"
+                                                fill="black"
+                                            />
+                                        </svg>
                                     </span>
-                                </li>
-                            </ol>
-                        </nav>
+
+                                    <li>
+                                        <Link
+                                            href="/Search"
+                                            className="hover:underline hover:text-blue-500 breadcrumbFont font-avenir"
+                                        >
+                                            Programs
+                                        </Link>
+                                    </li>
+                                    <span className="text-gray-400 arroSvgCrumPadding">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-[12px] h-[12px] svgRightArrowBreadCrumb"
+                                            viewBox="0 0 15 15"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M11.667 6.9147L4.99178 0.239632C4.83739 0.0851213 4.6313 0 4.41154 0C4.19179 0 3.98569 0.0851213 3.83131 0.239632L3.33972 0.731092C3.01985 1.05133 3.01985 1.57182 3.33972 1.89157L8.94504 7.49689L3.3335 13.1084C3.17912 13.2629 3.09387 13.4689 3.09387 13.6885C3.09387 13.9084 3.17912 14.1144 3.3335 14.269L3.82509 14.7604C3.9796 14.9149 4.18557 15 4.40533 15C4.62508 15 4.83118 14.9149 4.98556 14.7604L11.667 8.0792C11.8217 7.9242 11.9067 7.71725 11.9062 7.49726C11.9067 7.2764 11.8217 7.06958 11.667 6.9147Z"
+                                                fill="black"
+                                            />
+                                        </svg>
+                                    </span>
+                                    <li>
+                                        <span
+                                            className="text-gray-600 breadcrumbFont font-avenir"
+                                        >
+                                            Higher Diploma
+                                        </span>
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
                     </div>
                 </div>
-                {/* Search Bar */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-30 flex justify-center px-4 md:px-0 searchProgram">
-                    <div
-                        className="inline-flex items-center gap-4 p-4 rounded-lg bg-white shadow-lg searchBarBox"
-                        style={{
-                            width: "1000px", // Default fixed width for larger screens
-                            maxWidth: "90%", // Ensures responsiveness on smaller screens
-                            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.25)",
-                        }}
-                    >
-                        {/* Search Icon */}
-                        <img
-                            src="/images/Group.svg"
-                            alt="icon"
-                            className="w-10 h-10 md:w-12 md:h-12 searchIcon"
-                        />
+            </div>
 
+
+            <div className="relative w-full w-[1450px] mx-auto flex flex-col items-center justify-center">
+                {/* Search Section */}
+                <div className="absolute top-[-37px] z-30 w-full flex justify-center">
+                    <div
+                        className="w-[67%] mx-auto flex items-center gap-4 p-4 rounded-lg bg-white shadow-lg searchBarBox"
+                    >
                         {/* Search Input and Suggestions */}
-                        <div className="relative flex items-center w-full pr-4">
+                        <div className="relative flex items-center w-full pr-4 border-2 p-3 ">
                             <input
                                 type="text"
                                 value={query}
                                 onChange={handleInputChange}
-                                placeholder="Search your course here..."
+                                placeholder="Type to Start searching..."
                                 className="flex-1 bg-transparent outline-none text-base md:text-lg px-2 md:px-4 text-gray-600"
-                                style={{
-                                    fontFamily: "Playfair",
-                                    fontSize: "16px",
-                                    fontWeight: "600",
-                                    color: "rgba(0,0,0,0.60)",
-                                }}
                             />
                             {/* Suggestions Dropdown */}
                             {suggestions.length > 0 ? (
-                                <ul className="absolute top-full left-0 w-full bg-white shadow-lg rounded-lg mt-2 max-h-40 overflow-y-auto">
-                                    {suggestions.map((suggestion, index) => (
+                                <ul className="absolute top-full left-0 w-full bg-white shadow-lg mt-2 max-h-40 overflow-y-auto z-50">
+                                    {suggestions.map((suggestion) => (
                                         <li
-                                            key={index}
+                                            key={suggestion._id}
                                             className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                                             onClick={() => handleSuggestionClick(suggestion)}
                                         >
-                                            {suggestion}
+                                            {suggestion.courseName}
                                         </li>
                                     ))}
                                 </ul>
                             ) : (
                                 query.trim() && (
-                                    <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded-lg mt-2 p-4 text-gray-600">
-                                        Sorry, not available at this time. For more information, please contact us.
+                                    <div className="absolute top-full left-0 w-full bg-white shadow-lg mt-2 p-4 text-gray-600">
+                                        waiting....
                                     </div>
                                 )
                             )}
                         </div>
 
-                        {/* Search Button */}
-                        <div>
-                            <button
-                                onClick={handleSearch}
-                                className="btnBlue bg-[#272A5D] text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-900 transition duration-150 text-sm md:text-lg searchBtn"
-                                style={{
-                                    width: "120px", // Smaller button width for mobile
-                                    height: "40px", // Smaller button height for mobile
-                                    fontSize: "16px", // Adjusted font size for mobile
-                                    display: 'flex',
-                                    textAlign: 'center',
-                                    justifyContent: 'center',
-                                    alignItems: 'center'
-                                }}
+                        {/* Clear Button */}
+                        <button
+                            onClick={() => setQuery('')}
+                            className="hover:bg-gray-300 transition duration-150 clearBtn"
+                            aria-label="Clear input"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6 text-gray-600"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
                             >
-                                <span>SEARCH</span>
-                            </button>
-                        </div>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        {/* Search Button */}
+                        <button
+                            onClick={handleSearch}
+                            className="bg-[#272A5D] text-white px-10 py-4 font-semibold transition duration-150 text-sm md:text-lg SearchButtton"
+                        >
+                            <span>Search</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -355,20 +328,18 @@ export default function HigherDiploma() {
             <div className="py-10 px-4 lg:px-16 pt-[150px]">
                 {/* Header Section */}
                 <div className="text-center mb-8">
-                    <h3 className="text-lg font-medium text-gray-500"
+                    <h3 className="text-lg font-medium text-gray-500 text-avenir"
                         style={{
                             color: '#272A5D',
-                            fontFamily: "Work Sans",
                             fontSize: "24px",
                             fontStyle: 'normal',
                             fontWeight: "400",
                             lineHeight: 'normal'
                         }}
                     >Courses</h3>
-                    <h2 className="text-3xl font-bold text-[#1D267D]"
+                    <h2 className="text-3xl font-bold text-[#1D267D] text-avenir"
                         style={{
                             color: '#272A5D',
-                            fontFamily: "Avenir LT Std",
                             fontSize: '40px',
                             fontStyle: 'normal',
                             fontWeight: '600',
@@ -449,6 +420,7 @@ export default function HigherDiploma() {
 
 
 
+
             {/* study card start section */}
             <div className="relative py-10 overflow-hidden bg-gray-50">
                 {/* Header Section */}
@@ -513,8 +485,17 @@ export default function HigherDiploma() {
             </div>
 
 
-
-
+            {/* Banner Section */}
+            <div className="carousel-container overflow-hidden relative bg-white">
+                <div className="carousel-track flex items-center">
+                    {/* Duplicate images for smooth infinite scrolling */}
+                    {[...images, ...images].map((src, index) => (
+                        <div key={index} className="carousel-item">
+                            <img src={src} alt={`Logo ${index}`} layout="intrinsic" className="object-contain w-full h-auto" />
+                        </div>
+                    ))}
+                </div>
+            </div>
         </>
     );
 }
