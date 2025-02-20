@@ -202,7 +202,7 @@ export default function CAIDAP() {
                         {/* Links Section - Responsive Two Row Layout */}
                         <div className="w-full flex flex-wrap justify-center gap-4">
                             <button
-                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "overview"
+                                className={`px-[20px] py-2 transition font-medium font-avenir ${activeSection === "overview"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
@@ -213,18 +213,7 @@ export default function CAIDAP() {
                             </button>
 
                             <button
-                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "why-bimt"
-                                        ? "bg-[#23255D] text-white"
-                                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-                                    }`}
-                                onClick={() => setActiveSection("why-bimt")}
-                                style={{ fontSize: "20px", fontWeight: "500" }}
-                            >
-                                Why BIMT?
-                            </button>
-
-                            <button
-                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "programme-aim"
+                                className={`px-[20px] py-2 transition font-medium font-avenir ${activeSection === "programme-aim"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
@@ -235,7 +224,7 @@ export default function CAIDAP() {
                             </button>
 
                             <button
-                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "modules"
+                                className={`px-[20px] py-2 transition font-medium font-avenir ${activeSection === "modules"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
@@ -246,7 +235,7 @@ export default function CAIDAP() {
                             </button>
 
                             <button
-                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "requirements"
+                                className={`px-[20px] py-2 transition font-medium font-avenir ${activeSection === "requirements"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
@@ -257,7 +246,7 @@ export default function CAIDAP() {
                             </button>
 
                             <button
-                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "admission"
+                                className={`px-[20px] py-2 transition font-medium font-avenir ${activeSection === "admission"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
@@ -268,7 +257,7 @@ export default function CAIDAP() {
                             </button>
 
                             <button
-                                className={`px-4 py-2 transition font-medium font-avenir ${activeSection === "payment"
+                                className={`px-[20px] py-2 transition font-medium font-avenir ${activeSection === "payment"
                                         ? "bg-[#23255D] text-white"
                                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                                     }`}
