@@ -1084,7 +1084,10 @@ export default function LanguageDiplomaCourses() {
             {/* Testimonials Section */}
             <div className="bg-[#006987] py-16 px-6 text-white text-center">
                 <h2 className="text-3xl font-semibold">Hear What Our Alumni Say About BIMT</h2>
-                <p className="text-xl mt-4">"The continuous support, help, and guidance given by the campus management helped me achieve my goals!"</p>
+                <p className="text-xl mt-4">
+  &ldquo;The continuous support, help, and guidance given by the campus management helped me achieve my goals!&rdquo;
+</p>
+
                 <button className="mt-6 border-2 px-6 py-2 text-white hover:bg-white hover:text-[#006987]">Read More</button>
             </div>
         </>
