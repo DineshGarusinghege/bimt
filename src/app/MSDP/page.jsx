@@ -58,7 +58,7 @@ export default function MSDP() {
             buttonLabel: "Read Michael's Story",
         },
 
-    ];
+    ] || [];
 
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -101,7 +101,7 @@ export default function MSDP() {
             title: 'CMI',
             img: '/images/Rectangle 49.png',
         },
-    ];
+    ] || [];
 
 
 

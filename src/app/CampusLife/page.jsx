@@ -6,7 +6,7 @@ import MainHeader from '../ui/MainHeader';
 // import AnnounsmentBar from '../ui/AnnounsmentBar';
 import { useState } from "react";
 import '../styles/Global.scss'
-
+export const dynamic = 'force-dynamic'; // Prevents pre-rendering issues
 export default function CampusLife() {
 
 
@@ -35,7 +35,7 @@ export default function CampusLife() {
     setIsGalleryExpanded2(!isGalleryExpanded2);
   };
 
-  const [isGalleryExpanded3, setIsGalleryExpanded3] = useState(false);
+  // const [isGalleryExpanded3, setIsGalleryExpanded3] = useState(false);
 
   // const toggleGallery3 = () => {
   //   setIsGalleryExpanded3(!isGalleryExpanded3);
@@ -44,15 +44,6 @@ export default function CampusLife() {
 
   return (
     <>
-
-      <head>
-        <title>Campus Life | BIMT Campus</title>
-        <meta
-          name="description"
-          content="Campus life at BIMT is vibrant, inclusive, and enriching, offering students a perfect blend of academics, extracurricular activities, and personal growth opportunities. From state-of-the-art facilities to engaging events and clubs, BIMT provides a dynamic environment where students can learn, connect, and thrive."
-        />
-      </head>
-
       <MainHeader />
       {/* <AnnounsmentBar /> */}
 

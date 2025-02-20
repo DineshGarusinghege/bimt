@@ -1,6 +1,6 @@
 // pages/index.js
 "use client";
-
+import "tailwindcss/tailwind.css";
 import Image from 'next/image';
 import './styles/home.scss';
 import './styles/Global.scss';
@@ -9,7 +9,7 @@ import MainHeader from './ui/MainHeader';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect, ChangeEvent } from 'react';
-import '../app/styles/globals.css';
+import "@/app/globals.css"; 
 import { motion } from 'framer-motion';
 import ExpertSection from './componets/ExpertSection';
 import 'react-toastify/dist/ReactToastify.css'; // Ensure this is imported

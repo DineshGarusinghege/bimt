@@ -189,17 +189,7 @@ const AboutUs = () => {
     return (
         <>
 
-            <head>
-                <title>About Us - BIMT Campus</title>
-                <meta
-                    name="description"
-                    content="BIMT Campus is a leading educational institution dedicated to empowering students with high-quality education and innovative learning experiences. We take pride in nurturing future leaders by offering a diverse range of academic programs designed to meet global standards.
-
-Our mission is to create an inclusive learning environment that inspires academic excellence, personal growth, and professional success. With a team of experienced educators, state-of-the-art facilities, and a focus on holistic development, BIMT Campus is committed to shaping well-rounded individuals who can thrive in a competitive world.
-
-Join us on a journey of knowledge and transformation, where your aspirations become achievements, and your potential is realized to the fullest. At BIMT Campus, we don't just educate; we create opportunities for a brighter future."
-                />
-            </head>
+         
             <MainHeader />
 
             <section className="w-full flex justify-center items-center relative bg-gray-100">

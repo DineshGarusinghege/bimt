@@ -1,29 +1,27 @@
 'use client';
 
-import MainHeader from '../ui/MainHeader/index';
+import MainHeader from '../ui/MainHeader';
 // import AnnounsmentBar from '../ui/AnnounsmentBar';
 import '../styles/OurJourney.scss'
+import Head from 'next/head';
+
+// Force dynamic rendering to prevent prerendering issues
+export const dynamic = 'force-dynamic';
+
 export default function CEOsMessage() {
 
 
     return (
-
-
         <>
-            <head>
-                <title>CEOs Message | BIMT Campus</title>
-                <meta
-                    name="description"
-                    content="Our CEO's message reflects the vision and commitment of BIMT Campus to inspire academic excellence, foster innovation, and empower students to achieve their full potential. It serves as a guiding beacon for our journey toward creating impactful educational experiences and shaping future leaders."
-                />
-            </head>
+            <Head>
+                <title>CEO&#39s Message | BIMT Campus</title>
+                <meta name="description" content="Read the CEO's message about the vision and mission of BIMT Campus." />
+            </Head>
             <MainHeader />
             {/* <AnnounsmentBar /> */}
-
-
             <div className="hidden sm:flex max-w-[1450px] mx-auto w-full h-screen justify-center items-center messagespeachhide">
                 <img
-                     src="/images/ceos-message_page-0001-2048x944.jpg"
+                    src="/images/ceos-message_page-0001-2048x944.jpg"
                     alt="Descriptive Text"
                     className="object-cover"
                 />

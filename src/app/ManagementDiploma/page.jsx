@@ -2,6 +2,9 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+
+
+export const dynamic = 'force-dynamic'; // Prevents pre-rendering issues
 export default function Event() {
 
     const studyPrograms = [
@@ -88,13 +91,7 @@ export default function Event() {
 
 
         <>
-            <head>
-                <title>Management Diploma | BIMT Campus</title>
-                <meta
-                    name="description"
-                    content="BIMT Campus offers a specialized Management Diploma designed to equip students with practical skills and strategic knowledge. This program prepares future leaders to excel in managerial roles across diverse industries."
-                />
-            </head>
+           
             <header className="bg-white shadow relative">
 
                 <div

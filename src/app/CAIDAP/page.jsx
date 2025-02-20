@@ -6,7 +6,7 @@ import { useState } from 'react';
 import MainHeader from '../ui/MainHeader/index';
 // import AnnounsmentBar from '../ui/AnnounsmentBar';
 import '../styles/CourseContent.scss'
-import WhyBIMT from '../componets/WhyBIMT';
+// import WhyBIMT from '../componets/WhyBIMT';
 import ProgrammeAim from '../componets/ProgrammeAim';
 import Modules from '../componets/Modules';
 import CareerProgression from '../componets/CareerProgression';
@@ -15,16 +15,17 @@ import Admission from '../componets/Admission';
 import Payment from '../componets/Payment';
 import Overview from '../componets/Overview';
 
+export const dynamic = "force-dynamic"; // ✅ Stops static pre-rendering errors
 
 
 export default function CAIDAP() {
 
-    const [activeSection, setActiveSection] = useState("why-bimt");
+    const [activeSection, setActiveSection] = useState("overview");
 
 
 
     const sections = {
-        'why-bimt': <WhyBIMT />,
+        // 'why-bimt': <WhyBIMT />,
         'programme-aim': <ProgrammeAim />,
         'modules': <Modules />,
         'career-progression': <CareerProgression />,
@@ -35,36 +36,36 @@ export default function CAIDAP() {
     };
 
 
-    const testimonials = [
-        {
-            image: "/images/young-female-indian-collage-girl-going-college-smiling_437792-127.avif",
-            text: "“The continuous support, help, advice, and guidance given by the management of the campus can never go unnoticed as they fully committed themselves to deliver their promises to accomplish the objective of becoming a recognized graduate...”",
-            name: "Azeem",
-            buttonLabel: "Read Azeem's Story",
-        },
-        {
-            image: "/images/young-indian-college-girl-smiling_54391-7128.avif",
-            text: "“The campus environment and the faculty's dedication made a huge difference in my career path. I am truly grateful to BIMT.”",
-            name: "Michael",
-            buttonLabel: "Read Michael's Story",
-        },
-        {
-            image: "/images/smiling-woman-holding-orange-planners-notebooks-one-arm-her-other-arm-is-holding_878783-7373.avif",
-            text: "“BIMT provided me with the opportunity to grow academically and professionally. The hands-on experiences and resources were phenomenal.”",
-            name: "Sara",
-            buttonLabel: "Read Sara's Story",
-        },
-        {
-            image: "/images/young-asian-indian-student-with-glasses-backpack-holds-book-shows-thumbs-up_928503-91.avif",
-            text: "“The campus environment and the faculty's dedication made a huge difference in my career path. I am truly grateful to BIMT.”",
-            name: "Michael",
-            buttonLabel: "Read Michael's Story",
-        },
+    // const testimonials = [
+    //     {
+    //         image: "/images/young-female-indian-collage-girl-going-college-smiling_437792-127.avif",
+    //         text: "“The continuous support, help, advice, and guidance given by the management of the campus can never go unnoticed as they fully committed themselves to deliver their promises to accomplish the objective of becoming a recognized graduate...”",
+    //         name: "Azeem",
+    //         buttonLabel: "Read Azeem's Story",
+    //     },
+    //     {
+    //         image: "/images/young-indian-college-girl-smiling_54391-7128.avif",
+    //         text: "“The campus environment and the faculty's dedication made a huge difference in my career path. I am truly grateful to BIMT.”",
+    //         name: "Michael",
+    //         buttonLabel: "Read Michael's Story",
+    //     },
+    //     {
+    //         image: "/images/smiling-woman-holding-orange-planners-notebooks-one-arm-her-other-arm-is-holding_878783-7373.avif",
+    //         text: "“BIMT provided me with the opportunity to grow academically and professionally. The hands-on experiences and resources were phenomenal.”",
+    //         name: "Sara",
+    //         buttonLabel: "Read Sara's Story",
+    //     },
+    //     {
+    //         image: "/images/young-asian-indian-student-with-glasses-backpack-holds-book-shows-thumbs-up_928503-91.avif",
+    //         text: "“The campus environment and the faculty's dedication made a huge difference in my career path. I am truly grateful to BIMT.”",
+    //         name: "Michael",
+    //         buttonLabel: "Read Michael's Story",
+    //     },
 
-    ];
+    // ];
 
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+    // const [currentIndex, setCurrentIndex] = useState(0);
 
     // const handleNext = () => {
     //     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);

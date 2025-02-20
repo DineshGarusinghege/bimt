@@ -30,7 +30,7 @@ export default function HumanityandEducationDiploma() {
             title: 'CMI',
             img: '/images/Rectangle 49.png',
         },
-    ];
+    ] || [];
 
     const courses = [
         {
@@ -48,7 +48,7 @@ export default function HumanityandEducationDiploma() {
             img: '/images/3 (1) 1 (10).png',
         },
 
-    ];
+    ] || [];
 
     return (
 

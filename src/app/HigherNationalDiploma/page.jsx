@@ -10,7 +10,8 @@ import React, { useState } from 'react';
 
 export default function HigherNationalDiploma() {
 
-   
+    const courses = ["Higher Diploma", "Bachelor's Degree", "Masters Degree", "Doctorate Degree", "CMI"];
+
 
     const testimonials = [
         {
