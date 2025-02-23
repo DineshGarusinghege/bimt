@@ -4,7 +4,7 @@ import "tailwindcss/tailwind.css";
 import Image from 'next/image';
 import './styles/home.scss';
 import './styles/Global.scss';
-import PopupMoel from './componets/PopupModel/index'
+// import PopupMoel from './componets/PopupModel/index'
 import MainHeader from './ui/MainHeader';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -25,7 +25,6 @@ interface CountdownProps {
     eventDate: string;
 }
 
-console.log(PopupMoel);
 // Countdown Component
 const CountdownComponent: React.FC<CountdownProps> = ({ eventDate }) => {
     const [countdown, setCountdown] = useState<string>('Loading...');
@@ -233,7 +232,7 @@ const HomePage: React.FC = () => {
 
     return (
         <>
-            <PopupMoel />
+            {/* <PopupMoel /> */}
             <div
                 className="min-h-screen bg-fixed bg-cover bg-no-repeat"
                 style={{
