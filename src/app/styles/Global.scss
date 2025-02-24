@@ -171,7 +171,6 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-family: Work Sans;
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
@@ -260,6 +259,11 @@
     top: 0px;
   }
 
+  @media(max-width:390px) {
+    padding-left: 20px;
+    padding-right: 5px;
+  }
+
   @media(max-width:768px) {
     top: -40px
   }
@@ -290,7 +294,7 @@
 }
 
 .breadcrumbFont {
-  color: #000000;
+  color: #272A5D;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -301,7 +305,7 @@
   }
 
   @media(max-width:440px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   @media(max-width:375px) {
@@ -368,7 +372,7 @@
   }
 
   @media(max-width:440px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   @media(max-width:375px) {
@@ -393,7 +397,7 @@
   }
 
   @media(max-width:440px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   @media(max-width:375px) {
@@ -1155,4 +1159,15 @@
   @media(max-width: 425px) {
     width: 100%;
   }
+}
+
+.FormContactUsbtn {
+  background-color: #fff;
+  color:#272A5D;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 2px;
+  margin-left: 20px;
 }

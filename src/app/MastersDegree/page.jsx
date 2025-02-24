@@ -405,7 +405,7 @@ export default function MastersDegree() {
                                 <div className="flex space-x-4 mt-4">
                                     <Link href={`/CourseContent/${course.courseID}`}>
                                         <button
-                                            className="bg-white text-[#1D267D] border border-[#1D267D] py-2 px-4 rounded-md hover:bg-[#1D267D] hover:text-white transition"
+                                            className="bg-white text-avenir text-[#1D267D] border border-[#1D267D] py-2 px-4 rounded-md hover:bg-[#1D267D] hover:text-white transition"
                                             aria-label={`View details of ${course.courseName}`}
                                             style={{
                                                 display: 'flex',
@@ -416,7 +416,7 @@ export default function MastersDegree() {
                                                 alignItems: 'center',
                                                 gap: '10px',
                                                 color: '#000',
-                                                fontFamily: 'Work Sans',
+                                            
                                                 fontSize: '16px',
                                                 fontStyle: 'normal',
                                                 fontWeight: '600',

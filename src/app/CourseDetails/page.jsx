@@ -629,20 +629,18 @@ export default function CourseContent() {
                                     }}
                                 >
                                     <div className="flex flex-col items-center justify-center w-20 text-center">
-                                        <span className="text-lg font-light"
+                                        <span className="text-lg font-light text-avenir"
                                             style={{
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
+                                                color: '#fff',                    
                                                 fontSize: '20px',
                                                 fontStyle: 'normal',
                                                 fontWeight: '400',
                                                 lineHeight: 'normal'
                                             }}
                                         >nov</span>
-                                        <span className="text-4xl font-bold"
+                                        <span className="text-4xl font-bold text-avenir"
                                             style={{
                                                 color: '#fff',
-                                                fontFamily: 'Avenir LT Std',
                                                 fontSize: '32px',
                                                 fontStyle: 'normal',
                                                 fontWeight: '600',
@@ -651,10 +649,10 @@ export default function CourseContent() {
                                         >6th</span>
                                     </div>
                                     <div className="ml-6 flex-1">
-                                        <h3 className="text-xl font-semibold"
+                                        <h3 className="text-xl font-semibold text-avenir"
                                             style={{
                                                 color: '#fff',
-                                                fontFamily: 'Work Sans',
+     
                                                 fontSize: '20px',
                                                 fontStyle: 'normal',
                                                 fontWeight: '600',
@@ -668,20 +666,20 @@ export default function CourseContent() {
                                             Students on the 23rd of November.
                                         </p>
                                         <div className="flex justify-between items-center mt-4">
-                                            <span className="text-sm font-semibold"
+                                            <span className="text-sm font-semibold text-avenir"
                                                 style={{
                                                     color: '#fff',
-                                                    fontFamily: 'Work Sans',
+                                             
                                                     fontSize: '16px',
                                                     fontStyle: 'normal',
                                                     fontWeight: '600',
                                                     lineHeight: 'normal'
                                                 }}
                                             >9.00 - 17.00</span>
-                                            <span className="text-sm font-semibold"
+                                            <span className="text-sm font-semibold text-avenir"
                                                 style={{
                                                     color: '#fff',
-                                                    fontFamily: 'Work Sans',
+                                                  
                                                     fontSize: '16px',
                                                     fontStyle: 'normal',
                                                     fontWeight: '600',

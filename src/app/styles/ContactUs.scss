@@ -48,3 +48,17 @@
     border: 1px solid #272A5D;
     background: #272A5D;
 }
+
+
+.contactUsBreadcrumb{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #FFFFFF85;  
+    padding: "5px 25px";
+    border-radius: 100px;
+    @media(max-width:640px){
+    padding: "0px";
+    }
+}

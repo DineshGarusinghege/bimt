@@ -106,12 +106,12 @@ export default function HigherDiploma() {
                                 justifyContent: "center",
                                 alignItems: "center",
                                 gap: "10px",
-                                background: "#ffffff45",
+                                background: "#FFFFFFDE",
                             }}
                         >
                             <ol className="flex space-x-2">
                                 <li>
-                                    <Link href="/" className="hover:underline hover:text-blue-500 breadcrumbFontWhite font-avenir">
+                                    <Link href="/" className="text-black breadcrumbFontBlack font-avenir">
                                         Home
                                     </Link>
                                 </li>
@@ -124,13 +124,13 @@ export default function HigherDiploma() {
                                     >
                                         <path
                                             d="M11.667 6.9147L4.99178 0.239632C4.83739 0.0851213 4.6313 0 4.41154 0C4.19179 0 3.98569 0.0851213 3.83131 0.239632L3.33972 0.731092C3.01985 1.05133 3.01985 1.57182 3.33972 1.89157L8.94504 7.49689L3.3335 13.1084C3.17912 13.2629 3.09387 13.4689 3.09387 13.6885C3.09387 13.9084 3.17912 14.1144 3.3335 14.269L3.82509 14.7604C3.9796 14.9149 4.18557 15 4.40533 15C4.62508 15 4.83118 14.9149 4.98556 14.7604L11.667 8.0792C11.8217 7.9242 11.9067 7.71725 11.9062 7.49726C11.9067 7.2764 11.8217 7.06958 11.667 6.9147Z"
-                                            fill="white"
+                                            fill="black"
                                         />
                                     </svg>
                                 </span>
 
                                 <li>
-                                    <Link href="/Career" className="hover:underline hover:text-blue-500 breadcrumbFontWhite font-avenir">
+                                    <Link href="/Career" className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">
                                         Connect With Us
                                     </Link>
                                 </li>
@@ -143,12 +143,12 @@ export default function HigherDiploma() {
                                     >
                                         <path
                                             d="M11.667 6.9147L4.99178 0.239632C4.83739 0.0851213 4.6313 0 4.41154 0C4.19179 0 3.98569 0.0851213 3.83131 0.239632L3.33972 0.731092C3.01985 1.05133 3.01985 1.57182 3.33972 1.89157L8.94504 7.49689L3.3335 13.1084C3.17912 13.2629 3.09387 13.4689 3.09387 13.6885C3.09387 13.9084 3.17912 14.1144 3.3335 14.269L3.82509 14.7604C3.9796 14.9149 4.18557 15 4.40533 15C4.62508 15 4.83118 14.9149 4.98556 14.7604L11.667 8.0792C11.8217 7.9242 11.9067 7.71725 11.9062 7.49726C11.9067 7.2764 11.8217 7.06958 11.667 6.9147Z"
-                                            fill="white"
+                                            fill="black"
                                         />
                                     </svg>
                                 </span>
                                 <li>
-                                    <span className="hover:underline hover:text-blue-500 breadcrumbFontWhite font-avenir">Career at BIMT</span>
+                                    <span className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">Career at BIMT</span>
                                 </li>
                             </ol>
                         </nav>
@@ -156,8 +156,11 @@ export default function HigherDiploma() {
                 </div>
             </div>
 
+
+
+
             {/* Higher Diploma Courses Section */}
-            <div className="bg-[#F6F8FB] py-10 px-4 lg:px-16 pt-[150px]">
+            <div className="px-4 lg:px-16 pt-[50px] pb-[50px] hidden lg:block">
                 {/* Header Section */}
                 <div className="text-center mb-8">
                     <h2 className="text-lg font-medium text-gray-500 font-avenir"
@@ -234,9 +237,164 @@ export default function HigherDiploma() {
                 </div>
             </div>
 
-            
+            {/* Mobile */}
+            <div className="px-4 lg:px-16 block sm:block md:hidden lg:hidden" style={{paddingTop:'50px'}}>
+
+                {/* Header Section */}
+                <div className="text-center mb-8">
+                    <h2 className="text-lg font-medium text-gray-500 font-avenir"
+                        style={{
+                            color: '#272A5D',
+                            fontSize: "40px",
+                            fontWeight: "600",
+                            lineHeight: '53px'
+                        }}
+                    >VACANCIES</h2>
+                </div>
+
+                {/* Grid Layout */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-[1450px] mx-auto"
+                    style={{
+                        columnGap: '40px',
+                        rowGap: '30px'
+                    }}
+                >
+
+                    {courses.map((course) => (
+                        <div
+                            key={course.id}
+                            className="relative flex flex-col lg:flex-row bg-cover bg-center shadow-lg overflow-hidden 
+        p-6 border-l-4 border-[#A02629] 
+        md:items-center md:text-center md:justify-center"
+                            style={{ backgroundImage: `url('/images/Untitled design (8).png')` }}
+                        >
+
+                            {/* Mobile & Tablet: Image on Top */}
+                            <div className="w-full md:w-2/3 lg:w-1/3 mb-4 md:mb-0">
+                                <img
+                                    src={course.courseImg}
+                                    alt={course.courseName}
+                                    className="w-full h-auto md:h-full object-cover"
+                                />
+                            </div>
+
+                            {/* Text Section */}
+                            <div className="relative z-10 flex flex-col justify-between 
+        w-full text-left md:text-center md:items-center 
+        md:w-2/3 lg:w-2/3 p-4">
+                                <div>
+                                    <h2 className="text-[#000000] text-2xl md:text-3xl font-semibold leading-tight">
+                                        {course.courseTitle}
+                                    </h2>
+                                    <h3 className="text-[#272A5D] text-lg font-semibold mt-2">
+                                        {course.courseName}
+                                    </h3>
+                                    <h4 className="text-[#A02629] text-sm mt-2">
+                                        {course.deadline}
+                                    </h4>
+                                </div>
+
+                                {/* Apply Button */}
+                                <div className="flex justify-center md:justify-center mt-4">
+                                    <Link href={course.courseLink}>
+                                        <button className="bg-white text-[#000000] border border-[#000000] py-2 px-4 rounded-md hover:bg-[#272A5D] hover:text-white transition-all duration-300">
+                                            <span> Apply Now </span>
+                                        </button>
+                                    </Link>
+                                </div>
+                            </div>
+
+                        </div>
+                    ))}
+
+                </div>
+            </div>
+
+            {/* tabet */}
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 max-w-[1450px] mx-auto hidden md:block lg:hidden"
+                style={{
+                    columnGap: '40px',
+                    rowGap: '30px',
+                    marginLeft: '20px',
+                    marginRight: '20px'
+                }}
+            >
+                  {/* Header Section */}
+                  <div className="text-center mb-8" style={{paddingTop:'50px'}}>
+                    <h2 className="text-lg font-medium text-gray-500 font-avenir"
+                        style={{
+                            color: '#272A5D',
+                            fontSize: "40px",
+                            fontWeight: "600",
+                            lineHeight: '53px'
+                        }}
+                    >VACANCIES</h2>
+                </div>
+
+                {courses.map((course) => (
+                    <div
+                        key={course.id}
+                        className="relative flex bg-cover bg-center shadow-lg overflow-hidden"
+                        style={{
+                            borderLeft: '4px solid #A02629',
+                            padding: '20px',
+                            backgroundImage: `url('/images/Untitled design (8).png')`,
+                            marginBottom:'20px'
+                        }}
+                    >
+                        {/* Overlay for opacity effect */}
+
+                        {/* Left: Text Section */}
+                        <div className="relative z-10 flex flex-col justify-between p-4 w-2/3">
+                            <div>
+                                <h2 className="text-avenir" style={{
+                                    color: '#000000',
+                                    fontSize: '40px',
+                                    fontWeight: '600px',
+                                    lineHeight: '53px'
+                                }}>{course.courseTitle}</h2>
+                                <h2 className="text-avenir" style={{
+                                    color: '#272A5D',
+                                    fontSize: '16px',
+                                    fontWeight: '600px',
+                                    lineHeight: '25px',
+
+                                }}>{course.courseName}</h2>
+                                <h2 className="text-avenir" style={{
+                                    color: '#A02629',
+                                    fontSize: '16px',
+                                    lineHeight: '13px'
+                                }}>{course.deadline}</h2>
+                            </div>
+                            <div className="flex space-x-4 mt-4">
+                                <Link href={course.courseLink}>
+                                    <button className="bg-white text-[#000000] border border-[#000000] py-2 px-4 rounded-md hover:bg-[#272A5D] hover:text-white transition">
+                                        <span>  Apply Now </span>
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Right: Image */}
+                        <div className="relative z-10 w-1/3">
+                            <img
+                                src={course.courseImg}
+                                alt={course.courseName}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+
+                ))}
+
+            </div>
+
+
+
             {/* Banner Section */}
-            <div className="carousel-container overflow-hidden relative">
+            <div className="carousel-container overflow-hidden relative" style={{
+                marginBottom: '50px', marginTop: '50px'
+            }}>
                 <div className="carousel-track flex items-center">
                     {/* Duplicate images for smooth infinite scrolling */}
                     {[...images, ...images].map((src, index) => (

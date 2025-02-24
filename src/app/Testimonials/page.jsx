@@ -228,36 +228,36 @@ const Testimonials = () => {
                                             </div>
                                             {/* Name and Details */}
                                             <div className="text-left testimonialsName">
-                                                <h4 className="text-lg font-semibold"
+                                                <h4 className="text-lg font-semibold text-avenir"
                                                     style={{
                                                         color: '#5A5A5A',
-                                                        fontFamily: 'Work Sans',
+                                                        
                                                         fontSize: '16px',
                                                         fontStyle: 'normal',
                                                         fontWeight: "600"
                                                     }}
                                                 >{testimonial.name}</h4>
-                                                <p className="text-sm text-gray-500"
+                                                <p className="text-sm text-gray-500 text-avenir"
                                                     style={{
                                                         color: '#5A5A5A',
-                                                        fontFamily: 'Work Sans',
+                                                        
                                                         fontSize: '12px',
                                                         fontStyle: 'normal'
                                                     }}
                                                 >{testimonial.qualifications}</p>
-                                                <p className="text-sm font-bold text-gray-700"
+                                                <p className="text-sm font-bold text-gray-700 text-avenir"
                                                     style={{
                                                         color: '#5A5A5A',
-                                                        fontFamily: 'Work Sans',
+                                                        
                                                         fontSize: '16px',
                                                         fontStyle: 'normal',
                                                         fontWeight: "600"
                                                     }}
                                                 >{testimonial.role}</p>
-                                                <p className="text-sm text-gray-400 mb-4"
+                                                <p className="text-sm text-gray-400 mb-4 text-avenir"
                                                     style={{
                                                         color: '#5A5A5A',
-                                                        fontFamily: 'Work Sans',
+                                                        
                                                         fontSize: '12px',
                                                         fontStyle: 'normal'
                                                     }}

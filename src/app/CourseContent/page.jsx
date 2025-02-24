@@ -748,11 +748,10 @@ export default function CourseContent() {
                                             alt="Debit or Credit Card Payment"
                                             className="w-[100px] h-[100px] object-contain"
                                         />
-                                        <p className="text-gray-700 mt-4 text-center"
+                                        <p className="text-gray-700 mt-4 text-center text-avenir"
                                             style={{
                                                 color: '#000',
                                                 textAlign: 'justify',
-                                                fontFamily: 'Work Sans',
                                                 fontSize: '24px',
                                                 fontStyle: 'normal',
                                                 fontWeight: '400',
@@ -767,11 +766,10 @@ export default function CourseContent() {
                                             alt="Bank Transfer"
                                             className="w-[100px] h-[100px] object-contain"
                                         />
-                                        <p className="text-gray-700 mt-4 text-center"
+                                        <p className="text-gray-700 mt-4 text-center text-avenir"
                                             style={{
                                                 color: '#000',
-                                                textAlign: 'justify',
-                                                fontFamily: 'Work Sans',
+                                                textAlign: 'justify',                                                
                                                 fontSize: '24px',
                                                 fontStyle: 'normal',
                                                 fontWeight: '400',
@@ -1390,10 +1388,9 @@ export default function CourseContent() {
                                     }}
                                 >
                                     <div className="flex flex-col items-center justify-center w-20 text-center">
-                                        <span className="text-lg font-light"
+                                        <span className="text-lg font-light text-avenir"
                                             style={{
                                                 color: '#fff',
-                                                fontFamily: 'Work Sans',
                                                 fontSize: '20px',
                                                 fontStyle: 'normal',
                                                 fontWeight: '400',
@@ -1412,10 +1409,9 @@ export default function CourseContent() {
                                         >6th</span>
                                     </div>
                                     <div className="ml-6 flex-1">
-                                        <h3 className="text-xl font-semibold"
+                                        <h3 className="text-xl font-semibold text-avenir"
                                             style={{
                                                 color: '#fff',
-                                                fontFamily: 'Work Sans',
                                                 fontSize: '20px',
                                                 fontStyle: 'normal',
                                                 fontWeight: '600',
@@ -1429,20 +1425,18 @@ export default function CourseContent() {
                                             Students on the 23rd of November.
                                         </p>
                                         <div className="flex justify-between items-center mt-4">
-                                            <span className="text-sm font-semibold"
+                                            <span className="text-sm font-semibold text-avenir"
                                                 style={{
                                                     color: '#fff',
-                                                    fontFamily: 'Work Sans',
                                                     fontSize: '16px',
                                                     fontStyle: 'normal',
                                                     fontWeight: '600',
                                                     lineHeight: 'normal'
                                                 }}
                                             >9.00 - 17.00</span>
-                                            <span className="text-sm font-semibold"
+                                            <span className="text-sm font-semibold text-avenir"
                                                 style={{
                                                     color: '#fff',
-                                                    fontFamily: 'Work Sans',
                                                     fontSize: '16px',
                                                     fontStyle: 'normal',
                                                     fontWeight: '600',

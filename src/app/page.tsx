@@ -9,7 +9,7 @@ import MainHeader from './ui/MainHeader';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect, ChangeEvent } from 'react';
-import "@/app/globals.css"; 
+import "@/app/globals.css";
 import { motion } from 'framer-motion';
 import ExpertSection from './componets/ExpertSection';
 import 'react-toastify/dist/ReactToastify.css'; // Ensure this is imported
@@ -61,6 +61,16 @@ const CountdownComponent: React.FC<CountdownProps> = ({ eventDate }) => {
 
 
 const HomePage: React.FC = () => {
+    const [hoveredMenu, setHoveredMenu] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = (menuName: any) => {
+        if (hoveredMenu === menuName) {
+            setHoveredMenu(null);
+        } else {
+            setHoveredMenu(menuName);
+        }
+    };
     const nextEventDate = '2025-01-25T00:00:00'; // Date for the event (ISO format)
 
     const router = useRouter();
@@ -176,7 +186,7 @@ const HomePage: React.FC = () => {
     // const { image, text, buttonLabel } = testimonials[currentIndex];
 
 
-    const [menuOpen, setMenuOpen] = useState(false); // State to toggle menu visibility
+    // const [menuOpen, setMenuOpen] = useState(false); 
 
     const [showHeader, setShowHeader] = useState(false);
     const [lastScroll, setLastScroll] = useState(0);
@@ -244,7 +254,7 @@ const HomePage: React.FC = () => {
                     <title>BIMT Campus</title>
                     <meta
                         name="description"
-                        content="Welcome to BIMT Campus, where education meets innovation. Explore our diverse programms, vibrant campus life, and opportunities to shape your future with excellence in higher education."
+                        content="BIMT Campus gives you the opportunity to major in a particular field. This means you have the opportunity to gain industry- specific skills and knowledge."
                     />
                 </head>
 
@@ -267,15 +277,15 @@ const HomePage: React.FC = () => {
                     <div className="absolute inset-0 bg-black bg-opacity-40 -z-10"></div>
 
                     {/* Content Section */}
-                    <div className="flex flex-col md:flex-row w-full h-full max-w-[1450px] mx-auto">
+                    <div className="flex flex-col md:flex-row w-full h-full max-w-[1450px] mx-auto heroHomeSection">
                         {/* Left Section (Text at Bottom Center) */}
                         <div className="flex flex-col justify-end items-center md:items-start w-full md:w-12/12 p-4 text-center md:text-left">
-                            <h1 className="text-[64px] font-bold leading-[53px] text-white mb-2">
+                            <h1 className="text-[64px] font-bold leading-[53px] text-white mb-2 ">
                                 WELCOME TO BIMT CAMPUS
                             </h1>
 
 
-                            <p className="text-lg md:text-xl text-white my-5">
+                            <p className="text-lg md:text-xl text-white herosectionSUbsectiontext">
                                 Learn, Lead, and Change the World.
                             </p>
 
@@ -335,7 +345,7 @@ const HomePage: React.FC = () => {
                                     transition: "transform 0.3s ease, opacity 0.3s ease",
                                     pointerEvents: "auto", // Ensure clicks are enabled
                                 }}
-                            >
+                               >
                                 {/* First Section: Logo and Menu */}
                                 <div className="bg-white/15 backdrop-blur-lg text-white p-4 rounded-lg shadow-lg flex flex-col items-center gap-4 mb-4">
                                     {/* Logo */}
@@ -357,9 +367,62 @@ const HomePage: React.FC = () => {
                                         <Link href="/AboutUs" className="hover:underline">
                                             About Us
                                         </Link>
-                                        <Link href="/Search" className="hover:underline">
-                                            Programmes
-                                        </Link>
+                                        
+                                        {/* Programs Menu */}
+                                        <div
+                                            className="relative group"
+                                            onMouseEnter={() => setHoveredMenu("programs")}
+                                            onMouseLeave={() => setHoveredMenu(null)}
+                                            onClick={() => toggleMenu("programs")} // Enables click toggle
+                                           >
+                                            <Link
+                                                href="/Search"
+                                                className="hover:text-[#272A5D] menuTitle flex items-center menuTitleGap cursor-pointer"
+                                            >
+                                                Programmes
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    viewBox="0 0 24 24" 
+                                                    fill="currentColor"
+                                                >
+                                                    <path d="M12 16l-6-6h12l-6 6z" />
+                                                </svg>
+                                            </Link>
+
+                                            {/* Dropdown Menu */}
+                                            {hoveredMenu === "programs" && (
+                                                <ul
+                                                    className="absolute left-[full] top-[full] bg-[#272A5D] shadow-lg rounded-lg text-white w-64 headerSubmenu z-30"
+                                                    style={{
+                                                        borderBottom: "2px solid #A02629",                                    
+                                                    }}
+                                                >
+                                                    {[
+                                                        { href: "/CertificateProgrammes", label: "Certificate Programmes" },
+                                                        { href: "/Diploma", label: "Diploma" },
+                                                        { href: "/HigherNationalDiploma", label: "Higher National Diploma" },
+                                                        { href: "/HigherDiploma", label: "Higher Diploma" },
+                                                        { href: "/BachelorsDegree", label: "Bachelors Degree" },
+                                                        { href: "/PostgraduateDiploma", label: "Postgraduate Diploma" },
+                                                        { href: "/MastersDegree", label: "Masters Degree" },
+                                                        { href: "/DoctorateDegree", label: "Doctorate Degree" },
+                                                        { href: "/CMI", label: "CMI (UK)" },
+                                                    ].map((item, index) => (
+                                                        <li key={index} className="menuTitleList">
+                                                            <Link
+                                                                href={item.href}
+                                                                className="block px-7 py-4 text-white hover:bg-pink-500 hover:text-white"
+                                                            >
+                                                                {item.label}
+                                                            </Link>
+                                                            {index !== 8 && <hr className="border-gray-300" />}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </div>
                                         <Link href="/CampusLife" className="hover:underline">
                                             Life at BIMT
                                         </Link>
@@ -375,7 +438,7 @@ const HomePage: React.FC = () => {
                                         rel="noopener noreferrer"
                                     >
                                         <div
-                                            className="studentPortal flex items-end border-2 border-[#fff] rounded-lg px-4 py-2 font-semibold text-[#fff] text-lg"
+                                            className="studentPortal flex items-end border-2 border-[#fff] rounded-lg px-4 py-2 font-semibold text-[#fff] text-lg "
                                             style={{
                                                 display: 'flex',
                                                 height: '56px',
@@ -384,8 +447,6 @@ const HomePage: React.FC = () => {
                                                 alignContent: 'center',
                                                 gap: '10px',
                                                 flexShrink: '0',
-                                                color: '#fff',
-                                                fontFamily: 'Work Sans',
                                                 fontSize: '16px',
                                                 fontStyle: 'normal',
                                                 fontWeight: '600',
@@ -394,7 +455,10 @@ const HomePage: React.FC = () => {
                                         >
 
                                             {/* Button Text */}
-                                            <span>STUDENT PORTAL</span>
+                                            <span className="text-avenir text-white hover:text-blue-500 transition-all duration-300">
+                                                STUDENT PORTAL
+                                            </span>
+
                                         </div>
                                     </Link>
                                     {/* Icon */}

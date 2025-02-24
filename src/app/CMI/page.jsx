@@ -422,7 +422,7 @@
 //                                                 alignItems: 'center',
 //                                                 gap: '10px',
 //                                                 color: '#000',
-//                                                 fontFamily: 'Work Sans',
+//                                                
 //                                                 fontSize: '16px',
 //                                                 fontStyle: 'normal',
 //                                                 fontWeight: '600',
@@ -444,7 +444,7 @@
 //                                                 alignItems: 'center',
 //                                                 gap: '10px',
 //                                                 color: '#000',
-//                                                 fontFamily: 'Work Sans',
+//                                             -
 //                                                 fontSize: '16px',
 //                                                 fontStyle: 'normal',
 //                                                 fontWeight: '600',

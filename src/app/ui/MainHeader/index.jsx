@@ -54,7 +54,7 @@ const MainHeader = () => {
                     <nav className="hidden md:flex space-x-8 z-48 font-medium text-gray-800 items-center">
                         {/* Home */}
                         <div className="relative">
-                            <Link href="/" className="hover:text-[#272A5D] menuTitle flex items-center headerHome">Home</Link>
+                            <Link href="/" className="hover:text-[#272A5D] menuTitle flex items-center headerHome text-avenir">Home</Link>
                         </div>
                         {/* About Us */}
                         <div
@@ -221,10 +221,10 @@ const MainHeader = () => {
                     {/* Buttons (Desktop Only) */}
                     <div className="hidden md:flex space-x-4 desktopHeaderBotton">
                         <Link href={'/ContactUs'}>
-                            <button className="MainMenuContactBtn1"><span>CONTACT US</span></button>
+                            <button className="MainMenuContactBtn1 text-avenir"><span>CONTACT US</span></button>
                         </Link>
                         <Link href={'https://lms.bimt.lk/'} target="_blank">
-                            <button className="MainMenuContactBtn"><span>STUDENT PORTAL</span></button>
+                            <button className="MainMenuContactBtn text-avenir"><span>STUDENT PORTAL</span></button>
                         </Link>
                     </div>
 

@@ -160,21 +160,13 @@ export default function ContactUs() {
                         {/* Breadcrumb Section */}
                         <div className="relative flex w-full max-w-[1450px] gap-5 px-2 py-12 breadCrumbSubSection">
                             <nav
-                                className="bg-gray-200 bg-opacity-80 py-2 px-4 rounded-lg text-sm text-gray-700"
-                                style={{
-                                    display: "inline-flex",
-                                    padding: "5px 25px",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    gap: "10px",
-                                    background: "#ffffff45",
-                                }}
+                                className="bg-gray-200 contactUsBreadcrumb bg-opacity-80 py-2 px-4 text-sm text-gray-700"
                             >
                                 <ol className="flex space-x-2">
                                     <li>
                                         <Link
                                             href="/"
-                                            className="hover:underline hover:text-blue-500 breadcrumbFont font-avenir"
+                                            className=" text-[#272A5D] hover:text-[#000000] breadcrumbFont font-avenir"
                                         >
                                             Home
                                         </Link>
@@ -188,7 +180,7 @@ export default function ContactUs() {
                                         >
                                             <path
                                                 d="M11.667 6.9147L4.99178 0.239632C4.83739 0.0851213 4.6313 0 4.41154 0C4.19179 0 3.98569 0.0851213 3.83131 0.239632L3.33972 0.731092C3.01985 1.05133 3.01985 1.57182 3.33972 1.89157L8.94504 7.49689L3.3335 13.1084C3.17912 13.2629 3.09387 13.4689 3.09387 13.6885C3.09387 13.9084 3.17912 14.1144 3.3335 14.269L3.82509 14.7604C3.9796 14.9149 4.18557 15 4.40533 15C4.62508 15 4.83118 14.9149 4.98556 14.7604L11.667 8.0792C11.8217 7.9242 11.9067 7.71725 11.9062 7.49726C11.9067 7.2764 11.8217 7.06958 11.667 6.9147Z"
-                                                fill="black"
+                                                fill="#272A5D"
                                             />
                                         </svg>
                                     </span>
@@ -196,7 +188,7 @@ export default function ContactUs() {
                                     <li>
                                         <Link
                                             href="/life-at-bimt"
-                                            className="hover:underline hover:text-blue-500 breadcrumbFont font-avenir"
+                                            className=" hover:text-[#000000] breadcrumbFont font-avenir"
                                         >
                                             Connect with us
                                         </Link>
@@ -210,13 +202,13 @@ export default function ContactUs() {
                                         >
                                             <path
                                                 d="M11.667 6.9147L4.99178 0.239632C4.83739 0.0851213 4.6313 0 4.41154 0C4.19179 0 3.98569 0.0851213 3.83131 0.239632L3.33972 0.731092C3.01985 1.05133 3.01985 1.57182 3.33972 1.89157L8.94504 7.49689L3.3335 13.1084C3.17912 13.2629 3.09387 13.4689 3.09387 13.6885C3.09387 13.9084 3.17912 14.1144 3.3335 14.269L3.82509 14.7604C3.9796 14.9149 4.18557 15 4.40533 15C4.62508 15 4.83118 14.9149 4.98556 14.7604L11.667 8.0792C11.8217 7.9242 11.9067 7.71725 11.9062 7.49726C11.9067 7.2764 11.8217 7.06958 11.667 6.9147Z"
-                                                fill="black"
+                                                fill="#272A5D"
                                             />
                                         </svg>
                                     </span>
                                     <li>
                                         <span
-                                            className="text-gray-600 breadcrumbFont font-avenir"
+                                            className="text-gray-600 breadcrumbFont  font-avenir"
                                         >
                                             Contact Us
                                         </span>
@@ -462,23 +454,33 @@ export default function ContactUs() {
 
                             {/* Answer Section */}
                             {activeIndex === index && (
-                                <div className="relative p-4 text-sm flex justify-between items-center text-white bg-[#272A5D]">
+                                <div className="relative p-4 text-sm flex flex-col md:flex-row justify-between items-center text-white bg-[#272A5D] w-full">
+
                                     {index === 9 ? (
-                                        <div className="relative p-4 text-sm flex justify-left items-left">
-                                            <p>For other queries, please reach out to our team.</p>
-                                            <Link href={'/ContactUs'}>
+                                        <div className="flex flex-col md:flex-row items-center md:items-start gap-4 w-full">
+
+                                            {/* Contact Text */}
+                                            <p className="text-center md:text-left text-sm md:text-base">
+                                                For other queries, please reach out to our team.
+                                            </p>
+
+                                            {/* Contact Us Button */}
+                                            <Link href="/ContactUs">
                                                 <button
-                                                    className="AboutUsBtn1"
+                                                    className="bg-white text-[#272A5D] px-4 md:px-6 py-2 text-sm md:text-base font-semibold rounded-lg shadow-md hover:bg-gray-200 transition-all duration-300 ease-in-out"
                                                     onClick={() => alert("Contacting Support")}
                                                 >
-                                                    <span> Contact Us</span>
+                                                    Contact Us
                                                 </button>
                                             </Link>
+
                                         </div>
                                     ) : (
-                                        <p>{item.answer}</p>
+                                        <p className="text-sm md:text-base">{item.answer}</p>
                                     )}
+
                                 </div>
+
                             )}
                         </div>
                     ))}
