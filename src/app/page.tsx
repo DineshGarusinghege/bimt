@@ -621,7 +621,7 @@ const HomePage: React.FC = () => {
                             {/* Image */}
                             <div className="w-full md:w-1/2">
                                 {/* <Image src="/images/course1.jpg" */}
-                                <Image src="/images/diplomaGirl.png"
+                                <Image src="/images/DSC_0174-2048x1367 (1).jpg"
 
 
                                     width={712}
@@ -773,7 +773,7 @@ const HomePage: React.FC = () => {
                         <div className="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8 space-y-8 md:space-y-0 mt-[110px]">
                             {/* Image */}
                             <div className="w-full md:w-1/2">
-                                <Image src="/images/Hdiplomaboy.png"
+                                <Image src="/images/SEK_4716-768x512.webp"
                                     objectFit='cover'
                                     width={712}
                                     height={422}
