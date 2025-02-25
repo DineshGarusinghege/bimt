@@ -28,7 +28,6 @@ interface CountdownProps {
 // Countdown Component
 const CountdownComponent: React.FC<CountdownProps> = ({ eventDate }) => {
     const [countdown, setCountdown] = useState<string>('Loading...');
-
     const calculateCountdown = () => {
         const eventTime = new Date(eventDate).getTime();
         const currentTime = new Date().getTime();
@@ -61,7 +60,7 @@ const CountdownComponent: React.FC<CountdownProps> = ({ eventDate }) => {
 
 
 const HomePage: React.FC = () => {
-    const [hoveredMenu, setHoveredMenu] = useState(null);
+    const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = (menuName: any) => {
@@ -345,7 +344,7 @@ const HomePage: React.FC = () => {
                                     transition: "transform 0.3s ease, opacity 0.3s ease",
                                     pointerEvents: "auto", // Ensure clicks are enabled
                                 }}
-                               >
+                            >
                                 {/* First Section: Logo and Menu */}
                                 <div className="bg-white/15 backdrop-blur-lg text-white p-4 rounded-lg shadow-lg flex flex-col items-center gap-4 mb-4">
                                     {/* Logo */}
@@ -367,14 +366,16 @@ const HomePage: React.FC = () => {
                                         <Link href="/AboutUs" className="hover:underline">
                                             About Us
                                         </Link>
-                                        
+
                                         {/* Programs Menu */}
+
                                         <div
                                             className="relative group"
                                             onMouseEnter={() => setHoveredMenu("programs")}
                                             onMouseLeave={() => setHoveredMenu(null)}
                                             onClick={() => toggleMenu("programs")} // Enables click toggle
-                                           >
+                                        >
+
                                             <Link
                                                 href="/Search"
                                                 className="hover:text-[#272A5D] menuTitle flex items-center menuTitleGap cursor-pointer"
@@ -384,7 +385,7 @@ const HomePage: React.FC = () => {
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     width="24"
                                                     height="24"
-                                                    viewBox="0 0 24 24" 
+                                                    viewBox="0 0 24 24"
                                                     fill="currentColor"
                                                 >
                                                     <path d="M12 16l-6-6h12l-6 6z" />
@@ -396,7 +397,7 @@ const HomePage: React.FC = () => {
                                                 <ul
                                                     className="absolute left-[full] top-[full] bg-[#272A5D] shadow-lg rounded-lg text-white w-64 headerSubmenu z-30"
                                                     style={{
-                                                        borderBottom: "2px solid #A02629",                                    
+                                                        borderBottom: "2px solid #A02629",
                                                     }}
                                                 >
                                                     {[
