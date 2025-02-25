@@ -63,12 +63,10 @@ const HomePage: React.FC = () => {
     const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const toggleMenu = (menuName: any) => {
-        if (hoveredMenu === menuName) {
-            setHoveredMenu(null);
-        } else {
-            setHoveredMenu(menuName);
-        }
+    type MenuType = "programs" | "services" | "contact" | null;
+
+    const toggleMenu = (menuName: MenuType) => { // ✅ Use specific type instead of "any"
+        setHoveredMenu(hoveredMenu === menuName ? null : menuName);
     };
     const nextEventDate = '2025-01-25T00:00:00'; // Date for the event (ISO format)
 
