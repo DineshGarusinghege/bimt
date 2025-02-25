@@ -254,7 +254,7 @@ export default function CampusLife() {
           {/* Left Side Image */}
           <div className="w-full md:w-[300px] h-auto">
             <Image
-              src="/images/1-3.WEBP"
+              src="/images/1-3.png"
               alt="crickettournament"
               width={300}
               height={200}
