@@ -311,7 +311,7 @@ export default function CampusLife() {
           {/* Left Side Image */}
           <div className="w-full md:w-[300px] h-auto">
             <Image
-              src="/images/10.WEBP"
+              src="/images/10 (1).png"
               alt="trip"
               width={300}
               height={200}
@@ -368,7 +368,7 @@ export default function CampusLife() {
           {/* Left Side Image */}
           <div className="w-full md:w-[300px] h-auto">
             <Image
-              src="/images/10.WEBP"
+              src="/images/10 (1).png"
               alt="campnight"
               width={300}
               height={200}
