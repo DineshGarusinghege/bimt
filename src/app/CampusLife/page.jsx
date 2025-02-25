@@ -255,7 +255,7 @@ export default function CampusLife() {
           <div className="w-full md:w-[300px] h-auto">
             <Image
               src="/images/1-3.WEBP"
-              alt="Facilities"
+              alt="crickettournament"
               width={300}
               height={200}
               className="w-full h-auto object-cover"
@@ -312,7 +312,7 @@ export default function CampusLife() {
           <div className="w-full md:w-[300px] h-auto">
             <Image
               src="/images/10.WEBP"
-              alt="Facilities"
+              alt="trip"
               width={300}
               height={200}
               className="w-full h-auto object-cover"
@@ -369,7 +369,7 @@ export default function CampusLife() {
           <div className="w-full md:w-[300px] h-auto">
             <Image
               src="/images/10.WEBP"
-              alt="Facilities"
+              alt="campnight"
               width={300}
               height={200}
               className="w-full h-auto object-cover"
