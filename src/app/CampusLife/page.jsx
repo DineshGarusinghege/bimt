@@ -49,28 +49,29 @@ export default function CampusLife() {
 
 
       {/* Hero Section */}
-      <div className="relative w-full bg-cover bg-center heroSectionHeight before:absolute before:inset-0 before:bg-white before:bg-opacity-50"
-        style={{ backgroundImage: "url('/images/SEK_5536-scaled.webp')" }}
+      <div className="relative w-full bg-cover bg-center heroSectionHeight before:absolute before:inset-0 before:bg-black before:bg-opacity-20"
+        style={{ backgroundImage: "url('/images/DSC_0181-scaled.jpg')" }}
 
-      >
+         >
         {/* Breadcrumb Section Wrapper */}
-        <div className="relative max-w-[1450px] mx-auto top-[55px] px-10 py-50 bredcrumbSectionMain">
+        <div className="relative max-w-[1450px] mx-auto px-10 py-50 bredcrumbSectionMain">
           {/* Breadcrumb Section */}
           <div className="relative flex w-full max-w-[1450px] gap-5 px-2 py-12 breadCrumbSubSection">
             <nav
-              className="bg-gray-200 bg-opacity-80 py-2 px-4 rounded-lg text-sm text-gray-700"
+              className="bg-gray-200 bg-opacity-80 py-2 px-4 text-sm text-gray-700"
               style={{
                 display: "inline-flex",
                 padding: "5px 25px",
                 justifyContent: "center",
                 alignItems: "center",
                 gap: "10px",
-                background: "#ffffff45",
+                background: "#FFFFFF30",
+                borderRadius: '100px'
               }}
             >
               <ol className="flex space-x-2">
                 <li>
-                  <Link href="/" className="hover:underline hover:text-blue-500 breadcrumbFontWhite font-avenir">
+                  <Link href="/" className="text-black breadcrumbFontWhite font-avenir">
                     Home
                   </Link>
                 </li>
@@ -89,8 +90,8 @@ export default function CampusLife() {
                 </span>
 
                 <li>
-                  <Link href="/life-at-bimt" className="hover:underline hover:text-blue-500 breadcrumbFontWhite font-avenir">
-                    Life at BIMT
+                  <Link href="/CampusLife" className="breadcrumbFontWhite  font-avenir">
+                    Life at BMIT
                   </Link>
                 </li>
                 <span className="text-gray-400 arroSvgCrumPadding">
@@ -107,7 +108,7 @@ export default function CampusLife() {
                   </svg>
                 </span>
                 <li>
-                  <span className="hover:underline hover:text-blue-500 breadcrumbFontWhite font-avenir">Campus Life</span>
+                  <span className="hover:underline hover:text-blue-500 breadcrumbFontWhite  font-avenir">Campus Life</span>
                 </li>
               </ol>
             </nav>
@@ -382,7 +383,7 @@ export default function CampusLife() {
               CAMPING NIGHT - KABARAGALA
             </h2>
             <p className="text-white text-[14px] md:text-[16px] leading-relaxed text-justify font-work-sans">
-            This Camping Night was organized to build the confidence of our students to dream big and to make them such people who are driver, to achieve their dreams.
+              This Camping Night was organized to build the confidence of our students to dream big and to make them such people who are driver, to achieve their dreams.
             </p>
           </div>
 
