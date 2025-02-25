@@ -100,7 +100,7 @@ const AcademicCoordinator = () => {
                     {/* Breadcrumb Section */}
                     <div className="relative flex w-full max-w-[1450px] gap-5 px-2 py-12 breadCrumbSubSection">
                         <nav
-                            className="bg-opacity-80 py-2 px-4 rounded-lg text-sm text-gray-700"
+                            className="bg-opacity-80 py-2 px-4 text-sm text-gray-700 flex flex-wrap justify-center md:justify-start" // flex-wrap added
                             style={{
                                 display: "inline-flex",
                                 padding: "5px 25px",
@@ -108,11 +108,12 @@ const AcademicCoordinator = () => {
                                 alignItems: "center",
                                 gap: "10px",
                                 background: "#FFFFFFDE",
+                                borderRadius: "100px",
                             }}
                         >
-                            <ol className="flex space-x-2">
+                            <ol className="flex flex-wrap space-x-2 justify-center md:justify-start text-center md:text-left">
                                 <li>
-                                    <Link href="/" className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">
+                                    <Link href="/" className="breadcrumbFontBlack font-avenir">
                                         Home
                                     </Link>
                                 </li>
@@ -131,7 +132,7 @@ const AcademicCoordinator = () => {
                                 </span>
 
                                 <li>
-                                    <Link href="/Career" className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">
+                                    <Link href="/Career" className="breadcrumbFontBlack font-avenir">
                                         Connect With Us
                                     </Link>
                                 </li>
@@ -148,8 +149,9 @@ const AcademicCoordinator = () => {
                                         />
                                     </svg>
                                 </span>
+
                                 <li>
-                                    <Link href="/Career" className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">
+                                    <Link href="/Career" className="breadcrumbFontBlack font-avenir">
                                         Connect at BIMT
                                     </Link>
                                 </li>
@@ -166,13 +168,15 @@ const AcademicCoordinator = () => {
                                         />
                                     </svg>
                                 </span>
+
                                 <li>
-                                    <span className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">Academic Coordinator</span>
+                                    <span className="breadcrumbFontBlack font-avenir">Academic Coordinator</span>
                                 </li>
                             </ol>
                         </nav>
                     </div>
                 </div>
+
             </div>
 
 
@@ -333,7 +337,7 @@ const AcademicCoordinator = () => {
                                 className="px-6 py-3 bg-[#272A5D] text-white rounded-md text-sm font-semibold hover:bg-[#1F214A]"
                             >
                                 {loading}
-            
+
                                 {loading ? "Sending..." : "Submit"}
                             </button>
                             {success && <p className="text-center text-green-600">{success}</p>}

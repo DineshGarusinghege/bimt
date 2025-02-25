@@ -384,6 +384,29 @@
   }
 }
 
+.breadcrumbFontBlue {
+  color: #272A5D;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  @media(max-width:460px) {
+    font-size: 15px;
+  }
+
+  @media(max-width:440px) {
+    font-size: 12px;
+  }
+
+  @media(max-width:375px) {
+    font-size: 10px;
+  }
+
+  @media(max-width:320px) {
+    font-size: 8px;
+  }
+}
 
 .breadcrumbFontBlack {
   color: #000000;

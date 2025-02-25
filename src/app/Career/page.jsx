@@ -99,7 +99,7 @@ export default function HigherDiploma() {
                     {/* Breadcrumb Section */}
                     <div className="relative flex w-full max-w-[1450px] gap-5 px-2 py-12 breadCrumbSubSection">
                         <nav
-                            className="bg-gray-200 bg-opacity-80 py-2 px-4 rounded-lg text-sm text-gray-700"
+                            className="bg-gray-200 bg-opacity-80 py-2 px-4 text-sm text-gray-700"
                             style={{
                                 display: "inline-flex",
                                 padding: "5px 25px",
@@ -107,6 +107,7 @@ export default function HigherDiploma() {
                                 alignItems: "center",
                                 gap: "10px",
                                 background: "#FFFFFFDE",
+                                borderRadius:'100px'
                             }}
                         >
                             <ol className="flex space-x-2">
@@ -130,7 +131,7 @@ export default function HigherDiploma() {
                                 </span>
 
                                 <li>
-                                    <Link href="/Career" className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">
+                                    <Link href="/Career" className="breadcrumbFontBlack font-avenir">
                                         Connect With Us
                                     </Link>
                                 </li>

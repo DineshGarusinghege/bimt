@@ -96,11 +96,13 @@ const StudentCounselor = () => {
 
             >
                 {/* Breadcrumb Section Wrapper */}
-                <div className="relative max-w-[1450px] mx-auto top-[55px] px-10 py-50 bredcrumbSectionMain">
+                <div className="relative max-w-[1450px] mx- px-10 py-50 bredcrumbSectionMain">
+                    {/* Breadcrumb Section */}
+                    <div className="relative max-w-[1450px] mx-auto px-10 py-50 bredcrumbSectionMain">
                     {/* Breadcrumb Section */}
                     <div className="relative flex w-full max-w-[1450px] gap-5 px-2 py-12 breadCrumbSubSection">
                         <nav
-                            className="bg-opacity-80 py-2 px-4 rounded-lg text-sm text-gray-700"
+                            className="bg-opacity-80 py-2 px-4 text-sm text-gray-700 flex flex-wrap justify-center md:justify-start" // flex-wrap added
                             style={{
                                 display: "inline-flex",
                                 padding: "5px 25px",
@@ -108,11 +110,12 @@ const StudentCounselor = () => {
                                 alignItems: "center",
                                 gap: "10px",
                                 background: "#FFFFFFDE",
+                                borderRadius: "100px",
                             }}
                         >
-                            <ol className="flex space-x-2">
+                            <ol className="flex flex-wrap space-x-2 justify-center md:justify-start text-center md:text-left">
                                 <li>
-                                    <Link href="/" className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">
+                                    <Link href="/" className="breadcrumbFontBlack font-avenir">
                                         Home
                                     </Link>
                                 </li>
@@ -131,7 +134,7 @@ const StudentCounselor = () => {
                                 </span>
 
                                 <li>
-                                    <Link href="/Career" className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">
+                                    <Link href="/Career" className="breadcrumbFontBlack font-avenir">
                                         Connect With Us
                                     </Link>
                                 </li>
@@ -148,9 +151,10 @@ const StudentCounselor = () => {
                                         />
                                     </svg>
                                 </span>
+
                                 <li>
-                                    <Link href="/Career" className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">
-                                        Career at BIMT
+                                    <Link href="/Career" className="breadcrumbFontBlack font-avenir">
+                                        Connect at BIMT
                                     </Link>
                                 </li>
                                 <span className="text-gray-400 arroSvgCrumPadding">
@@ -166,12 +170,14 @@ const StudentCounselor = () => {
                                         />
                                     </svg>
                                 </span>
+
                                 <li>
-                                    <span className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">Student Counsellor</span>
+                                    <span className="breadcrumbFontBlack font-avenir">Student Counsellor</span>
                                 </li>
                             </ol>
                         </nav>
                     </div>
+                </div>
                 </div>
             </div>
 
