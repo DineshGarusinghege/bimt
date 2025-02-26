@@ -17,26 +17,33 @@ const SearchPage = () => {
         level: '',
         program: '',
     });
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
 
     // Fetch data on query change
-    useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                const response = await fetch(`/api/courses?search=${query}`);
-                const data = await response.json();
+    const fetchCourses = async () => {
+        setLoading(true);
+        try {
+            const response = await fetch(`/api/courses?search=${query}&page=${currentPage}&limit=20`);
+            const data = await response.json();
 
-                if (data.success) {
-                    setCourses(data.data);
-                } else {
-                    console.error('Failed to fetch courses:', data.message);
-                }
-            } catch (error) {
-                console.error('Error fetching courses:', error);
+            if (data.success) {
+                setCourses(data.data);
+                setTotalPages(data.totalPages);
+            } else {
+                console.error('Failed to fetch courses:', data.message);
             }
-        };
+        } catch (error) {
+            console.error('Error fetching courses:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
+    useEffect(() => {
         fetchCourses();
-    }, [query]);
+    }, [query, currentPage]);
 
     // Handle filter updates
     const handleFilterChange = (key, value) => {
@@ -119,145 +126,186 @@ const SearchPage = () => {
 
             {/* Main Section */}
             <div className="container mt-[55px] mx-auto px-4 max-w-[1300px] mb-[110px]">
-                <div className="py-8">
-                    <p className="text-gray-600 mt-4"
-                        style={{
-                            color: '#272A5D',
-                            fontFamily: 'Work Sans',
-                            fontSize: '24px',
-                            fontStyle: 'normal',
-                            fontWeight: '400',
-                            lineHeight: 'normal'
-                        }}
-                    >
-                        Search results for: <span className="font-semibold">{query}</span>
-                    </p>
-                </div>
-
-                <div className="flex gap-8">
-                    {/* Filters Section */}
-                    <div className="w-1/4 bg-white shadow-md p-4 rounded-md">
-                        <h2 className="text-lg font-semibold text-[#1D267D] mb-4"
-                            style={{
-                                color: "#272A5D",
-                                fontFamily: 'Avenir LT Std',
-                                fontSize: '30px',
-                                fontStyle: 'normal',
-                                fontWeight: '600',
-                                lineHeight: '53px'
-                            }}
-                        >Filters</h2>
-                        {/* Programs Filter */}
-                        <div className="mb-4">
-                            <label className="block text-gray-700 font-medium mb-2"
-                                style={{
-                                    color: "#272A5D",
-                                    fontFamily: 'Avenir LT Std',
-                                    fontSize: '20px',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    lineHeight: '53px'
-                                }}
-                            >Programs</label>
-                            <select className="w-full border rounded-md p-2" onChange={(e) => handleFilterChange('program', e.target.value)} value={filters.program}>
-                                <option value="">All</option>
-                                {programOptions.map((program, index) => (
-                                    <option key={index} value={program}>
-                                        {program}
-                                    </option>
-                                ))}
-                            </select>
-                        </div>
-                        {/* Method Filter */}
-                        <div className="mb-4">
-                            <label className="block text-gray-700 font-medium mb-2" style={{
-                                color: "#272A5D",
-                                fontFamily: 'Avenir LT Std',
-                                fontSize: '20px',
-                                fontStyle: 'normal',
-                                fontWeight: '400',
-                                lineHeight: '53px'
-                            }}>Method</label>
-                            <select className="w-full border rounded-md p-2" onChange={(e) => handleFilterChange('method', e.target.value)} value={filters.method}>
-                                <option value="">All</option>
-                                <option value="Online">Online</option>
-                                <option value="Offline">Offline</option>
-                            </select>
-                        </div>
-                        {/* Level Filter */}
-                        <div className="mb-4">
-                            <label className="block text-gray-700 font-medium mb-2" style={{
-                                color: "#272A5D",
-                                fontFamily: 'Avenir LT Std',
-                                fontSize: '20px',
-                                fontStyle: 'normal',
-                                fontWeight: '400',
-                                lineHeight: '53px'
-                            }}>Level</label>
-                            <select className="w-full border rounded-md p-2" onChange={(e) => handleFilterChange('level', e.target.value)} value={filters.level}>
-                                <option value="">All</option>
-                                <option value="Undergraduate">Undergraduate</option>
-                                <option value="Postgraduate">Postgraduate</option>
-                            </select>
-                        </div>
-
+                {loading ? (
+                    <div className="flex justify-center fullscreen-loader">
+                        <div className="loader"></div>
                     </div>
-
-                    {/* Results Section */}
-                    <div className="w-3/4">
-                        <h2
-                            className="text-lg font-semibold text-[#1D267D] mb-4"
+                ) : (<>
+                    <div className="py-8">
+                        <p className="text-gray-600 mt-4"
                             style={{
                                 color: '#272A5D',
                                 fontFamily: 'Work Sans',
                                 fontSize: '24px',
                                 fontStyle: 'normal',
                                 fontWeight: '400',
-                                lineHeight: 'normal',
+                                lineHeight: 'normal'
                             }}
-                        >{`${filteredCourses.length} results for '${query}'`}</h2>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {filteredCourses.map((course) => (
-                                <div
-                                    key={course._id}
-                                    className="bg-white shadow-md p-4 rounded-md transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
-                                    style={{
-                                        transition: "all 0.3s ease",
-                                    }}
-                                    onClick={() => handleViewDetails(course.courseID)}
-                                >
-                                    <img
-                                        src={course.courseImg}
-                                        alt={course.courseName}
-                                        className="w-full h-40 object-cover rounded-md mb-4"
-                                    />
-                                    <h3
-                                        className="text-lg font-semibold text-[#1D267D]"
-                                        style={{
-                                            color: '#272A5D',
-                                            fontFamily: "Avenir LT Std",
-                                            fontSize: '20px',
-                                            fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            lineHeight: '25px',
-                                        }}
-                                    >
-                                        {course.courseName}
-                                    </h3>
-                                    <p className="text-sm text-gray-500">{course.program}</p>
-                                    <button
-                                        className="CourseDetailsBtn mt-4 w-full bg-[#1D267D] text-white py-2 px-4 rounded-md hover:bg-[#151B54] transition duration-300 transform hover:scale-105"
-                                    >
-                                        <span>View Details</span>
-                                    </button>
-                                </div>
-                            ))}
-                        </div>
+                        >
+                            Search results for: <span className="font-semibold">{query}</span>
+                        </p>
                     </div>
 
-                </div >
+                    <div className="flex gap-8">
+                        {/* Filters Section */}
+                        <div className="w-1/4 bg-white shadow-md p-4 rounded-md">
+                            <h2 className="text-lg font-semibold text-[#1D267D] mb-4"
+                                style={{
+                                    color: "#272A5D",
+                                    fontFamily: 'Avenir LT Std',
+                                    fontSize: '30px',
+                                    fontStyle: 'normal',
+                                    fontWeight: '600',
+                                    lineHeight: '53px'
+                                }}
+                            >Filters</h2>
+                            {/* Programs Filter */}
+                            <div className="mb-4">
+                                <label className="block text-gray-700 font-medium mb-2"
+                                    style={{
+                                        color: "#272A5D",
+                                        fontFamily: 'Avenir LT Std',
+                                        fontSize: '20px',
+                                        fontStyle: 'normal',
+                                        fontWeight: '400',
+                                        lineHeight: '53px'
+                                    }}
+                                >Programs</label>
+                                <select className="w-full border rounded-md p-2" onChange={(e) => handleFilterChange('program', e.target.value)} value={filters.program}>
+                                    <option value="">All</option>
+                                    {programOptions.map((program, index) => (
+                                        <option key={index} value={program}>
+                                            {program}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                            {/* Method Filter */}
+                            <div className="mb-4">
+                                <label className="block text-gray-700 font-medium mb-2" style={{
+                                    color: "#272A5D",
+                                    fontFamily: 'Avenir LT Std',
+                                    fontSize: '20px',
+                                    fontStyle: 'normal',
+                                    fontWeight: '400',
+                                    lineHeight: '53px'
+                                }}>Method</label>
+                                <select className="w-full border rounded-md p-2" onChange={(e) => handleFilterChange('method', e.target.value)} value={filters.method}>
+                                    <option value="">All</option>
+                                    <option value="Online">Online</option>
+                                    <option value="Offline">Offline</option>
+                                </select>
+                            </div>
+                            {/* Level Filter */}
+                            <div className="mb-4">
+                                <label className="block text-gray-700 font-medium mb-2" style={{
+                                    color: "#272A5D",
+                                    fontFamily: 'Avenir LT Std',
+                                    fontSize: '20px',
+                                    fontStyle: 'normal',
+                                    fontWeight: '400',
+                                    lineHeight: '53px'
+                                }}>Level</label>
+                                <select className="w-full border rounded-md p-2" onChange={(e) => handleFilterChange('level', e.target.value)} value={filters.level}>
+                                    <option value="">All</option>
+                                    <option value="Undergraduate">Undergraduate</option>
+                                    <option value="Postgraduate">Postgraduate</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        {/* Results Section */}
+                        <div className="w-3/4">
+                            <h2
+                                className="text-lg font-semibold text-[#1D267D] mb-4"
+                                style={{
+                                    color: '#272A5D',
+                                    fontFamily: 'Work Sans',
+                                    fontSize: '24px',
+                                    fontStyle: 'normal',
+                                    fontWeight: '400',
+                                    lineHeight: 'normal',
+                                }}
+                            >{`${filteredCourses.length} results for '${query}'`}</h2>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {filteredCourses.map((course) => (
+                                    <div
+                                        key={course._id}
+                                        className="bg-white shadow-md p-4 rounded-md transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
+                                        style={{
+                                            transition: "all 0.3s ease",
+                                        }}
+                                        onClick={() => handleViewDetails(course.courseID)}
+                                    >
+                                        <img
+                                            src={course.courseImg}
+                                            alt={course.courseName}
+                                            className="w-full h-40 object-cover rounded-md mb-4"
+                                        />
+                                        <h3
+                                            className="text-lg font-semibold text-[#1D267D]"
+                                            style={{
+                                                color: '#272A5D',
+                                                fontFamily: "Avenir LT Std",
+                                                fontSize: '20px',
+                                                fontStyle: 'normal',
+                                                fontWeight: '600',
+                                                lineHeight: '25px',
+                                            }}
+                                        >
+                                            {course.courseName}
+                                        </h3>
+                                        <p className="text-sm text-gray-500">{course.program}</p>
+                                        <button
+                                            className="CourseDetailsBtn mt-4 w-full bg-[#1D267D] text-white py-2 px-4 rounded-md hover:bg-[#151B54] transition duration-300 transform hover:scale-105"
+                                        >
+                                            <span>View Details</span>
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                    </div >
+                    <div className="flex justify-center mt-8">
+                        <button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
+                        <span>{`Page ${currentPage} of ${totalPages}`}</span>
+                        <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
+                    </div>
+                </>
+                )}
             </div >
+
+            <style jsx>{`
+  .fullscreen-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+`}</style>
         </>
     );
 };
