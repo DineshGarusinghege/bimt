@@ -4,7 +4,7 @@ import Link from 'next/link';
 // import Image from 'next/image';
 import MainHeader from '../ui/MainHeader';
 import React from 'react';
-import '../styles/Global.scss'
+import '../styles/Global.scss';
 
 import '../styles/AboutUs.scss'
 export const dynamic = "force-dynamic"; // ✅ Stops static pre-rendering errors
