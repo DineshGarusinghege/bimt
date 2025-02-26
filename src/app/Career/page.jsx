@@ -149,7 +149,7 @@ export default function HigherDiploma() {
                                     </svg>
                                 </span>
                                 <li>
-                                    <span className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">Career at BIMT</span>
+                                    <span className="breadcrumbFontBlack font-avenir">Career at BIMT</span>
                                 </li>
                             </ol>
                         </nav>

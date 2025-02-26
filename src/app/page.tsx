@@ -1593,8 +1593,8 @@ const HomePage: React.FC = () => {
                         {/* Event 1 */}
                         <div className="relative flex flex-col items-center w-full">
                             <img src="/images/actitivity1.png" alt="Graduation" className="w-full h-auto object-cover" />
-                            <div className="absolute bg-white p-4 shadow eventDescriptionContainer">
-                                <h3 className="text-2xl font-bold text-[#272A5D] text-center md:text-left">Graduation</h3>
+                            <div className="absolute bg-white p-4 shadow eventDescriptionContainer" style={{ minHeight: "250px" }}>
+                                <h3 className="text-2xl font-bold text-[#272A5D] text-center md:text-left text-[32px] text-avenir">Graduation</h3>
                                 <p className="text-gray-600 text-sm text-justify">
                                     Our BIMT Campus annual graduation ceremony is a day devoted to celebrate an important point in our students’ lives. Examinations are finally over, scruffiness is replaced with fancy clothes and parents admire their children for reaching the finishing line of a long marathon. The future of BIMT past pupil always seems more promising than the present, and the present on graduation day is pretty good even if it is not quite the reality.
                                 </p>
@@ -1604,8 +1604,8 @@ const HomePage: React.FC = () => {
                         {/* Event 2 */}
                         <div className="relative flex flex-col items-center w-full CampingEvent">
                             <img src="/images/activitiy2.png" alt="Camping Night - Kabaragala" className="w-full h-auto object-cover" />
-                            <div className="absolute bg-white p-4 shadow eventDescriptionContainer">
-                                <h3 className="text-2xl font-bold text-[#272A5D] text-center md:text-left">Camping Night - Kabaragala</h3>
+                            <div className="absolute bg-white p-4 shadow eventDescriptionContainer" style={{ minHeight: "250px" }}>
+                                <h3 className="text-[32px] font-bold text-[#272A5D] text-center md:text-left text-avenir">Camping Night -<br/> Kabaragala</h3>
                                 <p className="text-gray-600 text-sm text-justify">
                                     This Camping Night was organized to build the confidence of our students to dream big and to make them such people who are driver, to achieve their dreams.
                                 </p>
@@ -1615,9 +1615,9 @@ const HomePage: React.FC = () => {
                         {/* Event 3 */}
                         <div className="relative flex flex-col items-center w-full eventCricket">
                             <img src="/images/activitiy3.png" alt="Cricket Tournament" className="w-full h-auto object-cover" />
-                            <div className="absolute bg-white p-4 shadow eventDescriptionContainer"
+                            <div className="absolute bg-white p-4 shadow eventDescriptionContainer" style={{ minHeight: "250px" }}
                             >
-                                <h3 className="text-2xl font-bold text-[#272A5D] text-center md:text-left">Cricket Tournament</h3>
+                                <h3 className="text-2xl font-bold text-[#272A5D] text-center md:text-left text-[32px] text-avenir">Cricket Tournament</h3>
                                 <p className="text-gray-600 text-sm text-justify">
                                     BIMT cricket tournament was well-organized by Alumni Association of BIMT Campus. This game proved a true leadership and team sprit throughout the whole day of the matches. Main theme of the cricket tournament was to build a Positive behavior that make cricket an exciting game that encourages leadership, friendship, and teamwork.
                                 </p>

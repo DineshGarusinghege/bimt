@@ -10,7 +10,7 @@ const fadeInUp = {
 
 const ExpertSection = () => {
   return (
-    <div className="max-w-[1450px] mx-auto section-about ExpertSectionMain mt-[110px]">
+    <div className="max-w-[1450px] mx-auto section-about ExpertSectionMain mt-[180px]">
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[1450px] mx-auto gap-6">
         {/* Card 1 */}
         <motion.div

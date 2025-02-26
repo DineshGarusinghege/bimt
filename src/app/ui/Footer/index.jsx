@@ -32,7 +32,7 @@ export default function Footer() {
             {/* Heading */}
             <h2
               className="text-3xl lg:text-4xl font-bold mb-4 font-avenir footerHeadingContinue"
-             
+
             >
               Continue Your Studies at Our University
             </h2>
@@ -60,7 +60,7 @@ export default function Footer() {
             <div className="flex justify-center pt-4 px-6">
               <Link href={'/Register'}>
                 <button
-                  className="flex items-end border-2 border-[#fff] rounded-lg px-4 py-4 font-semibold text-[#fff] text-lg relative"
+                  className="flex items-end border-2 border-[#fff] rounded-lg px-4 py-4 font-semibold text-[#fff] text-lg relative transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
                   style={{
                     fontFamily: 'Playfair',
                     fontSize: '20px',
@@ -72,7 +72,7 @@ export default function Footer() {
                   }}
                 >
                   {/* Icon with Rotation */}
-                  <div className="absolute -top-3 -left-6 transform -rotate-10">
+                  <div className="absolute -top-3 -left-6 transform -rotate-10 transition-transform duration-300 hover:rotate-0">
                     <Image
                       src="/images/graduate 1 (2).png"
                       width={61.25}
@@ -88,6 +88,7 @@ export default function Footer() {
                 </button>
               </Link>
             </div>
+
           </div>
 
           {/* Optional Overlay */}
@@ -290,10 +291,10 @@ export default function Footer() {
           </div>
         </div>
         {/* Footer Bottom */}
-        <div className="w-[1450px] w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-6 flex flex-col items-center justify-center">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-6 flex flex-col items-center justify-center">
           <hr className="w-full h-[2px] bg-gray-300 border-0" />
           <h2
-            className="text-white py-10 font-normal leading-[12.9px] font-['Work_Sans'] decoration-skip-ink-none"
+            className="text-white py-10 font-normal leading-[1.5] md:leading-[2] lg:leading-[2.5] font-['Work_Sans'] decoration-skip-ink-none text-sm md:text-base lg:text-lg"
           >
             Copyright © BIMT {new Date().getFullYear()} . All rights reserved. | Designed by
             <a
@@ -306,6 +307,7 @@ export default function Footer() {
             </a>
           </h2>
         </div>
+
       </div>
     </>
   );
