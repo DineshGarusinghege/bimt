@@ -1,18 +1,20 @@
 .scaling-section {
     transform: scale(1);
     transition: transform 0.5s ease-in-out;
-
+    left:2700px
 }
 
 @media (max-width: 1920px) {
     .scaling-section {
         transform: scale(0.9);
+        left:0px;
     }
 }
 
 @media (max-width: 1820px) {
     .scaling-section {
-        transform: scale(0.9);
+        transform: scale(0.8);
+        left:-50px
     }
 }
 
@@ -21,6 +23,7 @@
     .scaling-section {
         transform: scale(0.8);
         transform-origin: top left;
+        left: 0px;
         /* Change scaling point */
         transition: transform 0.5s ease-in-out;
     }
@@ -30,6 +33,13 @@
 @media (max-width: 1280px) {
     .scaling-section {
         transform: scale(0.6);
+        left:40px;
+    }
+}
+
+@media(max-width:1110px){
+    .scaling-section{
+        transform: scale(0.5);
     }
 }
 
@@ -37,6 +47,7 @@
 @media (max-width: 1024px) {
     .scaling-section {
         transform: scale(0.5);
+        left:-10px;
     }
 }
 
@@ -46,6 +57,26 @@
         transform: scale(0.4);
     }
 }
+
+@media(max-width:640px){
+    .scaling-section{
+        transform: scale(0.3);
+        left: 30px;
+    }
+}
+
+@media(max-width:481px){
+    .scaling-section{
+        transform: scale(0.8);
+    }
+}
+
+.breadcrumbABousUs{
+    @media(max-width:768px){
+        padding-top: 20px;
+    }
+}
+
 
 .overViewSection {
     height: 1000px;
@@ -76,13 +107,21 @@
 }
 
 
+.aboutsectionbgremove{
+    @media(max-width:576px){
+        background:none;
+    }
+}
+
+
+
+
 
 .section-about {
     margin-top: 100px;
 
     .heading {
         color: #272A5D;
-        font-family: "Work Sans";
         font-size: 24px;
         font-style: normal;
         font-weight: 400;
@@ -171,11 +210,13 @@
     .paragraph {
         color: #5A5A5A;
         text-align: justify;
-        font-family: "Work Sans";
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: 26px;
+        @media(max-width:480px){
+            font-size: 14px;
+        }
         /* 130% */
     }
 
@@ -411,7 +452,6 @@ img {
 .VisionHeader {
     color: #000;
     text-align: center;
-    font-family: 'Avenir LT Std';
     font-size: 64px;
     /* Default for desktop */
     font-weight: 700;
@@ -449,7 +489,6 @@ img {
 .VisionParagraph {
     color: #5A5A5A;
     text-align: center;
-    font-family: "Work Sans";
     font-size: 20px;
     /* Default for desktop */
     font-style: normal;
@@ -471,7 +510,6 @@ img {
     @media (max-width: 480px) {
         color: #5A5A5A;
         text-align: center;
-        font-family: "Work Sans";
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
@@ -493,21 +531,20 @@ img {
     /* Y-axis adjustment for desktop */
 
     @media (max-width: 1024px) {
-        left: -100px;
+        left: -180px;
         /* Adjust for tablets */
         top: -120px;
     }
 
     @media (max-width: 768px) {
-        left: -50px;
+        left: -180px;
         /* Adjust for mobile */
-        top: -80px;
+        top: -150px;
     }
 
     @media (max-width: 480px) {
-        left: -460px;
-        /* Center for smaller devices */
-        top: -360px;
+        left: -434px;
+        top: -349px;
     }
 }
 
@@ -544,7 +581,6 @@ img {
     align-self: stretch;
     color: #000;
     text-align: center;
-    font-family: Avenir LT Std;
     font-size: 64px;
     font-style: normal;
     font-weight: 700;
@@ -554,7 +590,6 @@ img {
     @media (max-width: 480px) {
         color: #000000;
         text-align: center;
-        font-family: "Avenir LT Std";
         font-size: 24px;
         font-style: normal;
         font-weight: 700;
@@ -582,7 +617,6 @@ img {
         padding-top: 0px;
         color: #5A5A5A;
         text-align: center;
-        font-family: "Work Sans";
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
@@ -599,14 +633,14 @@ img {
 
     @media (max-width: 1024px) {
         /* Tablet */
-        left: -100px;
-        top: -120px;
+        left: -170px;
+        top: -140px;
     }
 
     @media (max-width: 768px) {
         /* Mobile */
-        left: -50px;
-        top: -80px;
+        left: -170px;
+        top: -140px;
     }
 
     @media (max-width: 480px) {
@@ -648,7 +682,6 @@ img {
 .coreValueHeading {
     color: #000;
     text-align: center;
-    font-family: Avenir LT Std;
     font-size: 64px;
     font-style: normal;
     font-weight: 600;
@@ -658,7 +691,6 @@ img {
     @media (max-width: 480px) {
         color: #000;
         text-align: center;
-        font-family: "Avenir LT Std";
         font-size: 32px;
         font-style: normal;
         font-weight: 600;
@@ -672,8 +704,8 @@ img {
 
 .intergerityBox {
     @media (max-width: 480px) {
-        left: -860px;
-        top: -265px;
+        left: -831px;
+        top: -206px;
     }
 }
 
@@ -706,7 +738,6 @@ img {
 
 .IntergrityHeading {
     color: #fff;
-    font-family: Avenir LT Std;
     font-size: 25px;
     font-style: normal;
     font-weight: 600;
@@ -715,7 +746,6 @@ img {
 
     @media (max-width: 480px) {
         color: #FFF;
-        font-family: "Avenir LT Std";
         font-size: 18px;
         font-style: normal;
         font-weight: 600;
@@ -764,7 +794,6 @@ img {
 
 .accountabilityHeading {
     color: #fff;
-    font-family: Avenir LT Std;
     font-size: 25px;
     font-style: normal;
     font-weight: 600;
@@ -774,7 +803,6 @@ img {
 
     @media (max-width: 480px) {
         color: #FFF;
-        font-family: "Avenir LT Std";
         font-size: 16px;
         font-style: normal;
         font-weight: 600;
@@ -824,7 +852,6 @@ img {
 
 .InnovationHeading {
     color: #fff;
-    font-family: Avenir LT Std;
     font-size: 25px;
     font-style: normal;
     font-weight: 600;
@@ -834,7 +861,6 @@ img {
 
     @media (max-width: 480px) {
         color: #FFF;
-        font-family: "Avenir LT Std";
         font-size: 18px;
         font-style: normal;
         font-weight: 600;
@@ -881,7 +907,6 @@ img {
 
 .RespectHeading {
     color: #fff;
-    font-family: Avenir LT Std;
     font-size: 25px;
     font-style: normal;
     font-weight: 600;
@@ -891,7 +916,6 @@ img {
 
     @media (max-width: 480px) {
         color: #FFF;
-        font-family: "Avenir LT Std";
         font-size: 18px;
         font-style: normal;
         font-weight: 600;
@@ -944,7 +968,6 @@ img {
 
 .LearningHeading {
     color: #fff;
-    font-family: Avenir LT Std;
     font-size: 25px;
     font-style: normal;
     font-weight: 600;
@@ -953,7 +976,6 @@ img {
 
     @media (max-width: 480px) {
         color: #FFF;
-        font-family: "Avenir LT Std";
         font-size: 18px;
         font-style: normal;
         font-weight: 600;
@@ -1003,7 +1025,6 @@ img {
 
 .CommunityHeading {
     color: #fff;
-    font-family: Avenir LT Std;
     font-size: 25px;
     font-style: normal;
     font-weight: 600;
@@ -1012,7 +1033,6 @@ img {
 
     @media (max-width: 480px) {
         color: #FFF;
-        font-family: "Avenir LT Std";
         font-size: 18px;
         font-style: normal;
         font-weight: 600;
@@ -1024,16 +1044,34 @@ img {
 
 .mobileonlyShowBox {
     @media (max-width: 480) {
-        top: 900px;
-        width: 305px;
-        left: 10px;
+        top: 909px;
+        width: 346px;
+        left: -12px;
         color: #FFF;
         text-align: justify;
-        font-family: "Work Sans";
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: 25px;
+        margin-top: 70px;
+        padding: 20px;
         /* 156.25% */
+    }
+}
+
+.headerAboutMainSec{
+    padding-bottom: 450px;
+}
+
+
+.ourvalueIntergriy{
+    @media(max-width:768px){
+        margin-top: 20px;
+    }
+}
+
+.ourValuePadding{
+    @media(max-width:600px){
+        margin-top: 20px;
     }
 }

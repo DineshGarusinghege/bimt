@@ -4,6 +4,10 @@ import Link from 'next/link';
 import MainHeader from '../ui/MainHeader';
 // import AnnounsmentBar from '../ui/AnnounsmentBar';
 import '../styles/OurJourney.scss'
+import '../styles/Global.scss'
+
+
+
 export default function OurJourney() {
 
 
@@ -12,7 +16,7 @@ export default function OurJourney() {
 
         <>
             <head>
-                <title>Our Journey | BIMT Campus</title>
+                <title>Our Journey - BIMT Campus</title>
                 <meta
                     name="description"
                     content="Discover BIMT Campus's remarkable journey of growth and transformation. From our humble beginnings to becoming a leading educational institution, our story reflects a commitment to excellence, innovation, and empowering students to achieve their dreams."
@@ -20,10 +24,10 @@ export default function OurJourney() {
             </head>
             <MainHeader />
             {/* <AnnounsmentBar /> */}
-       
 
-         {/* Hero Section */}
-         <div>
+
+            {/* Hero Section */}
+            <div>
                 {/* Our Journey hero section */}
                 <div
                     className="relative w-full h-[70vh] bg-cover bg-center"
@@ -37,38 +41,27 @@ export default function OurJourney() {
                         {/* Breadcrumb Section */}
                         <div className="absolute container mx-auto px-6 lg:px-16 flex items-center h-full z-20 ">
                             <nav
-                                className="bg-gray-200 bg-opacity-80 py-2 px-4 rounded-lg text-sm text-gray-600"
+                                className="py-2 px-4 text-sm text-gray-700"
                                 style={{
-                                    display: 'inline-flex',
-                                    padding: '5px 25px',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    gap: '10px',
-                                    background: '#000000',
+                                    display: "inline-flex",
+                                    padding: "5px 25px",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    gap: "10px",
+                                    background: "#FFFFFF30",
+                                    borderRadius: '100px'
                                 }}
                             >
                                 <ol className="flex space-x-2">
                                     <li>
-                                        <Link
-                                            href="/"
-                                            className="hover:underline hover:text-blue-500"
-                                            style={{
-                                                color: 'gray',
-                                                fontFamily: 'Avenir LT Std',
-                                                fontSize: '16px',
-                                                fontStyle: 'normal',
-                                                fontWeight: '600',
-                                                lineHeight: 'normal',
-                                            }}
-                                        >
+                                        <Link href="/" className="text-black breadcrumbFontWhite font-avenir">
                                             Home
                                         </Link>
                                     </li>
-                                    <span className="text-gray-400">
+                                    <span className="text-gray-400 arroSvgCrumPadding">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            width="15"
-                                            height="15"
+                                            className="w-[12px] h-[12px] svgRightArrowBreadCrumb"
                                             viewBox="0 0 15 15"
                                             fill="none"
                                         >
@@ -78,27 +71,16 @@ export default function OurJourney() {
                                             />
                                         </svg>
                                     </span>
+
                                     <li>
-                                        <Link
-                                            href="/AboutUs"
-                                            className="hover:underline hover:text-blue-500"
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Avenir LT Std',
-                                                fontSize: '16px',
-                                                fontStyle: 'normal',
-                                                fontWeight: '600',
-                                                lineHeight: 'normal',
-                                            }}
-                                        >
+                                        <Link href="/OurJourney" className="breadcrumbFontWhite font-avenir">
                                             About Us
                                         </Link>
                                     </li>
-                                    <span className="text-gray-400">
+                                    <span className="text-gray-400 arroSvgCrumPadding">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            width="15"
-                                            height="15"
+                                            className="w-[12px] h-[12px] svgRightArrowBreadCrumb"
                                             viewBox="0 0 15 15"
                                             fill="none"
                                         >
@@ -109,19 +91,7 @@ export default function OurJourney() {
                                         </svg>
                                     </span>
                                     <li>
-                                        <span
-                                            className="text-gray-600"
-                                            style={{
-                                                color: '#fff',
-                                                fontFamily: 'Avenir LT Std',
-                                                fontSize: '16px',
-                                                fontStyle: 'normal',
-                                                fontWeight: '600',
-                                                lineHeight: 'normal',
-                                            }}
-                                        >
-                                            Our Journey
-                                        </span>
+                                        <span className="breadcrumbFontWhite font-avenir">Our Journey</span>
                                     </li>
                                 </ol>
                             </nav>
@@ -135,7 +105,7 @@ export default function OurJourney() {
 
 
 
-            <div className="w-full flex justify-center items-center">
+            <div className="hidden md:block w-full flex justify-center items-center">
                 <img
                     src="/images/our-journey-copy-1_page-0001-scaled.jpg"
                     alt="Descriptive Text"
@@ -144,7 +114,227 @@ export default function OurJourney() {
             </div>
 
 
-         
+            <div className="block md:hidden flex flex-col items-center w-full my-10">
+                {/* 2017 Section */}
+                <div className="flex items-center w-full max-w-md mb-8">
+                    <div className="relative flex flex-col items-center w-full">
+                        {/* Arrow & Icon */}
+                        <div className="flex items-center ourjourneyimg">
+                            <img
+                                src="/images/Screenshot-2025-01-05-103534.png"
+                                alt="Descriptive Text"
+                                className="object-cover"
+                            />
+                        </div>
+
+                        {/* Text Box */}
+                        <div className="text-white shadow-lg ourjourneybox bg-[#5CB4E4]">
+                            <ul className="list-disc list-outside pl-5 space-y-2 text-justify">
+                                <li className="text-white text-avenir">
+                                    Established in 2017 to offer opportunities to acquire the right knowledge in management and technology.
+                                </li>
+                                <li className="text-white text-avenir">
+                                    In the beginning, diploma programs were offered.
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                {/* 2018 */}
+                <div className="flex items-center w-full max-w-md mb-8">
+                    <div className="relative flex flex-col items-center w-full">
+                        {/* Arrow & Icon */}
+                        <div className="flex items-center ourjourneyimg">
+                            <img
+                                src="/images/Screenshot-2025-01-05-103634.png"
+                                alt="Descriptive Text"
+                                className="object-cover"
+                            />
+                        </div>
+
+                        {/* Text Box */}
+                        <div className="text-white shadow-lg ourjourneybox bg-[#9C3483]">
+                            <ul className="list-disc list-outside pl-5 space-y-2 text-justify">
+                                <li className="text-white text-avenir">
+                                    Obtained the Certificate of Incorporation from the Registrar of Companies and affliated with Lincoln University Malayasia to offer degree programs.
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                {/* 2019 */}
+                <div className="flex items-center w-full max-w-md mb-8">
+                    <div className="relative flex flex-col items-center w-full">
+                        {/* Arrow & Icon */}
+                        <div className="flex items-center ourjourneyimg">
+                            <img
+                                src="/images/Screenshot-2025-01-05-103703.png"
+                                alt="Descriptive Text"
+                                className="object-cover"
+                            />
+                        </div>
+
+                        {/* Text Box */}
+                        <div className="text-white shadow-lg ourjourneybox bg-[#AA1D25]">
+                            <ul className="list-disc list-outside pl-5 space-y-2 text-justify">
+                                <li className="text-white text-avenir">
+                                    Became the official country representative of the institute of Financial Accountants (IFA) in 2019.
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                {/* 2020 */}
+                <div className="flex items-center w-full max-w-md mb-8">
+                    <div className="relative flex flex-col items-center w-full">
+                        {/* Arrow & Icon */}
+                        <div className="flex items-center ourjourneyimg">
+                            <img
+                                src="/images/Screenshot-2025-01-05-103749.png"
+                                alt="Descriptive Text"
+                                className="object-cover"
+                            />
+                        </div>
+
+                        {/* Text Box */}
+                        <div className="text-white shadow-lg ourjourneybox bg-[#848444]">
+                            <ul className="list-disc list-outside pl-5 space-y-2 text-justify">
+                                <li className="text-white text-avenir">
+                                    BIMT Campus has cetebrated its inaugural Graduation Ceremony for 142 BBA Accounting Students.
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                {/* 2021 */}
+                <div className="flex items-center w-full max-w-md mb-8">
+                    <div className="relative flex flex-col items-center w-full">
+                        {/* Arrow & Icon */}
+                        <div className="flex items-center ourjourneyimg">
+                            <img
+                                src="/images/Screenshot-2025-01-05-103824.png"
+                                alt="Descriptive Text"
+                                className="object-cover"
+                            />
+                        </div>
+
+                        {/* Text Box */}
+                        <div className="text-white shadow-lg ourjourneybox bg-[#242D64]">
+                            <ul className="list-disc list-outside pl-5 space-y-2 text-justify">
+                                <li className="text-white text-avenir">
+                                    BIMT Campus has celebrated its second graduation ceremony for 372 BBA accounting students.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 2022 */}
+                <div className="flex items-center w-full max-w-md mb-8">
+                    <div className="relative flex flex-col items-center w-full">
+                        {/* Arrow & Icon */}
+                        <div className="flex items-center ourjourneyimg">
+                            <img
+                                src="/images/Screenshot-2025-01-05-104524.png"
+                                alt="Descriptive Text"
+                                className="object-cover"
+                            />
+                        </div>
+
+                        {/* Text Box */}
+                        <div className="text-white shadow-lg ourjourneybox bg-[#DB6325]">
+                            <ul className="list-disc list-outside pl-5 space-y-2 text-justify">
+                                <li className="text-white text-avenir">
+                                    The International Higher Diploma in Accounting and Finance was endorsed by the institute of Financial Accountants (IFA).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 2023 */}
+                <div className="flex items-center w-full max-w-md mb-8">
+                    <div className="relative flex flex-col items-center w-full">
+                        {/* Arrow & Icon */}
+                        <div className="flex items-center ourjourneyimg">
+                            <img
+                                src="/images/Screenshot-2025-01-05-104558.png"
+                                alt="Descriptive Text"
+                                className="object-cover"
+                            />
+                        </div>
+
+                        {/* Text Box */}
+                        <div className="text-white shadow-lg ourjourneybox bg-[#5CB4E3]">
+                            <ul className="list-disc list-outside pl-5 space-y-2 text-justify">
+                                <li className="text-white text-avenir">
+                                    Became ISO 9001 : 2015 certificate educational organization.
+                                </li>
+                                <li className="text-white text-avenir">
+                                    Received Asia Business and Leadership Excellence Award. BIMT Signed an agreement with Charatered Management Institute (CMI) to offer various Qualifications in the area of management.
+                                </li>
+                                <li className="text-white text-avenir">
+                                    Become an ATHE recognized Center.
+                                </li>
+                                <li className="text-white text-avenir">
+                                    Received Gold Award from the University of Kelaniya.
+                                </li>
+                                <li className="text-white text-avenir">
+                                    Became an EDUPRO UK Approved Center.
+                                </li>
+                                <li className="text-white text-avenir">
+                                    Become a Tertiary and Vocational Education Commission (TVEC) Approved Higher Education Provider, which is a goverment apex body.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 2024 */}
+                <div className="flex items-center w-full max-w-md mb-8">
+                    <div className="relative flex flex-col items-center w-full">
+                        {/* Arrow & Icon */}
+                        <div className="flex items-center ourjourneyimg">
+                            <img
+                                src="/images/Screenshot-2025-01-05-104654.png"
+                                alt="Descriptive Text"
+                                className="object-cover"
+                            />
+                        </div>
+
+                        {/* Text Box */}
+                        <div className="text-white shadow-lg ourjourneybox bg-[#9C3483]">
+                            <ul className="list-disc list-outside pl-5 space-y-2 text-justify">
+                                <li className="text-white text-avenir">
+                                    Received the National Business Excellence Awards 2024 from The National Chamber of Commerce.
+                                </li>
+                                <li className="text-white text-avenir">
+                                    Received Excellence student service award from Lincoln University.
+                                </li>
+                                <li className="text-white text-avenir">
+                                    Received Community service award from Lincoln University.
+                                </li>
+                                <li className="text-white text-avenir">
+                                    Established the Institute of Hybrid Learning (IHL) as a division for professional studies within the BIMT campus. Obtained approval from the charted Management Institue (CMI) for the Management Skill Development Programme.
+                                </li>
+                                <li className="text-white text-avenir">
+                                    BIMT Campus proudly Secures Two Prestigious Awars at the Sri Lana Entepreneur Awards by National Enterprise Development Authority - NEDA
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </>
     );
 }

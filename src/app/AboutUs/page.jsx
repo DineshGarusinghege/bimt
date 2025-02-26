@@ -6,7 +6,7 @@ import '../styles/AboutUs.scss'
 import Image from 'next/image';
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import BreadcrumbSection from "../componets/BreadcrumbAboutLinks";
+import '../styles/Global.scss'
 
 const AboutUs = () => {
 
@@ -31,12 +31,12 @@ const AboutUs = () => {
         "/images/edupro.jpg",
     ];
 
-    const breadcrumbLinks = [
-        { label: "Home", url: "/" },
-        { label: "About Us", url: "/AboutUs" },
-        { label: "OverView", url: "/AboutUs" },
+    // const breadcrumbLinks = [
+    //     { label: "Home", url: "/" },
+    //     { label: "About Us", url: "/AboutUs" },
+    //     { label: "OverView", url: "/AboutUs" },
 
-    ];
+    // ];
 
 
     const [activeIndex, setActiveIndex] = useState(null);
@@ -188,15 +188,71 @@ const AboutUs = () => {
 
     return (
         <>
-
-         
-            <MainHeader />
-
-            <section className="w-full flex justify-center items-center relative bg-gray-100">
+            <MainHeader />            
+            <section className="w-full flex justify-center items-center relative bg-gray-100 aboutsectionbgremove headerAboutMainSec">
                 {/* Full-width background */}
-                <div className="w-full bg-gray-100 scaling-section relative">
-                    <div className="relative bg-gray-100 overViewSection px-10 w-[1920px] mx-auto">
-                        <BreadcrumbSection breadcrumbLinks={breadcrumbLinks} />
+                <div className="w-full scaling-section relative aboutsectionbgremove">
+                    <div className="relative  overViewSection px-10 aboutsectionbgremove">
+                        <div className="relative max-w-[1450px] mx-auto py-50 bredcrumbSectionMain breadcrumbABousUs">
+                            {/* Breadcrumb Section */}
+                            <div className="relative flex w-full max-w-[1450px] gap-5 py-12 breadCrumbSubSection BreadCrumAbout">
+                                <nav
+                                    className="bg-opacity-80 py-2 text-sm text-gray-700 aboutsectionbgremove "
+                                    style={{
+                                        display: "inline-flex",
+                                        padding: "5px 25px",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                        gap: "10px",
+                                        background: "#FFFFFFDE",
+                                        borderRadius: '100px'
+                                    }}
+                                >
+                                    <ol className="flex space-x-2">
+                                        <li>
+                                            <Link href="/" className="text-black breadcrumbFontBlack font-avenir">
+                                                Home
+                                            </Link>
+                                        </li>
+                                        <span className="text-gray-400 arroSvgCrumPadding">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="w-[12px] h-[12px] svgRightArrowBreadCrumb"
+                                                viewBox="0 0 15 15"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M11.667 6.9147L4.99178 0.239632C4.83739 0.0851213 4.6313 0 4.41154 0C4.19179 0 3.98569 0.0851213 3.83131 0.239632L3.33972 0.731092C3.01985 1.05133 3.01985 1.57182 3.33972 1.89157L8.94504 7.49689L3.3335 13.1084C3.17912 13.2629 3.09387 13.4689 3.09387 13.6885C3.09387 13.9084 3.17912 14.1144 3.3335 14.269L3.82509 14.7604C3.9796 14.9149 4.18557 15 4.40533 15C4.62508 15 4.83118 14.9149 4.98556 14.7604L11.667 8.0792C11.8217 7.9242 11.9067 7.71725 11.9062 7.49726C11.9067 7.2764 11.8217 7.06958 11.667 6.9147Z"
+                                                    fill="black"
+                                                />
+                                            </svg>
+                                        </span>
+
+                                        <li>
+                                            <Link href="/AboutUs" className="breadcrumbFontBlack font-avenir">
+                                                About us
+                                            </Link>
+                                        </li>
+                                        <span className="text-gray-400 arroSvgCrumPadding">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="w-[12px] h-[12px] svgRightArrowBreadCrumb"
+                                                viewBox="0 0 15 15"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M11.667 6.9147L4.99178 0.239632C4.83739 0.0851213 4.6313 0 4.41154 0C4.19179 0 3.98569 0.0851213 3.83131 0.239632L3.33972 0.731092C3.01985 1.05133 3.01985 1.57182 3.33972 1.89157L8.94504 7.49689L3.3335 13.1084C3.17912 13.2629 3.09387 13.4689 3.09387 13.6885C3.09387 13.9084 3.17912 14.1144 3.3335 14.269L3.82509 14.7604C3.9796 14.9149 4.18557 15 4.40533 15C4.62508 15 4.83118 14.9149 4.98556 14.7604L11.667 8.0792C11.8217 7.9242 11.9067 7.71725 11.9062 7.49726C11.9067 7.2764 11.8217 7.06958 11.667 6.9147Z"
+                                                    fill="black"
+                                                />
+                                            </svg>
+                                        </span>
+                                        <li>
+                                            <span className="breadcrumbFontBlack font-avenir">Overview</span>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
                         {/* Breadcrum menubar */}
 
                         {/* Overlapping Boxes Section */}
@@ -222,7 +278,7 @@ const AboutUs = () => {
                                 >
                                     <div className="flex flex-col justify-center items-center h-full">
                                         <h1 className="VisionHeader">Vision</h1>
-                                        <p className="VisionParagraph">
+                                        <p className="VisionParagraph text-avenir">
                                             To be leaders in originating intellectuals who are immensely competent to face the global challenges
                                         </p>
                                     </div>
@@ -241,10 +297,10 @@ const AboutUs = () => {
 
                                 >
                                     <div style={{ display: 'flow', justifyContent: 'center', alignItems: 'center' }}>
-                                        <h1 className='missionHeading'>
+                                        <h1 className='missionHeading text-avenir'>
                                             Mission
                                         </h1>
-                                        <p className='missionParagraph'>
+                                        <p className='missionParagraph text-avenir'>
                                             To produce scholars who can secure momentous employment at strategic level within the corporate world
                                         </p>
                                     </div>
@@ -258,7 +314,7 @@ const AboutUs = () => {
                                 ></div>
                                 <div
                                     className="absolute left-[866px] top-[125px] w-[330px] h-[330px] shadow-lg hover:scale-105 active:scale-95 hover:shadow-xl transition-all duration-300 coreBoxSecondLine">
-                                    <h1 className='coreValueHeading' >
+                                    <h1 className='coreValueHeading text-avenir' >
                                         Core Values
                                     </h1>
                                 </div>
@@ -280,7 +336,7 @@ const AboutUs = () => {
                                     onClick={() => handleBoxClick("Learning")}
                                 >
                                     <div className="flex justify-center items-center h-full">
-                                        <h4 className="LearningHeading">Learning</h4>
+                                        <h4 className="LearningHeading text-avenir">Learning</h4>
                                     </div>
                                 </div>
                             </div>
@@ -299,7 +355,7 @@ const AboutUs = () => {
                                     onClick={() => handleBoxClick("Community")}
                                 >
                                     <div className="flex justify-center items-center">
-                                        <h4 className="CommunityHeading">Community</h4>
+                                        <h4 className="CommunityHeading text-avenir">Community</h4>
                                     </div>
                                 </div>
                             </div>
@@ -315,12 +371,12 @@ const AboutUs = () => {
 
                                 {/* Foreground Clickable Circle */}
                                 <div
-                                    className="absolute left-[1024px] top-[290px] w-[170px] h-[170px] shadow-lg hover:scale-105 active:scale-95 hover:shadow-xl transition-all duration-300 intergerityBoxLine"
+                                    className="absolute left-[1024px] top-[290px] w-[170px] h-[170px] shadow-lg hover:scale-105 active:scale-95 hover:shadow-xl transition-all duration-300 intergerityBoxLine ourvalueIntergriy"
 
                                     onClick={() => handleBoxClick("Integrity")}
-                                >
+                                   >
                                     <div className="flex justify-center items-center">
-                                        <h4 className="IntergrityHeading">Integrity</h4>
+                                        <h4 className="IntergrityHeading text-avenir">Integrity</h4>
                                     </div>
                                 </div>
                             </div>
@@ -340,7 +396,7 @@ const AboutUs = () => {
                                     onClick={() => handleBoxClick("Accountability")}
                                 >
                                     <div className="flex justify-center items-center">
-                                        <h4 className="accountabilityHeading">Accountability</h4>
+                                        <h4 className="accountabilityHeading text-avenir">Accountability</h4>
                                     </div>
                                 </div>
                             </div>
@@ -361,7 +417,7 @@ const AboutUs = () => {
                                     onClick={() => handleBoxClick("Innovation")}
                                 >
                                     <div className="flex justify-center items-center">
-                                        <h4 className="InnovationHeading">Innovation</h4>
+                                        <h4 className="InnovationHeading text-avenir">Innovation</h4>
                                     </div>
                                 </div>
                             </div>
@@ -375,7 +431,7 @@ const AboutUs = () => {
                                     className="absolute left-[1024px] top-[290px] bg-green-500 w-[170px] h-[170px] shadow-lg hover:scale-105 active:scale-95 hover:shadow-xl transition-all duration-300 RespectBoxLine"
                                 >
                                     <div style={{ display: 'flow', justifyContent: 'center', alignItems: 'center', zIndex: 6 }}>
-                                        <h4 className='RespectHeading' >Respect</h4>
+                                        <h4 className='RespectHeading text-avenir' >Respect</h4>
                                     </div>
                                 </div>
                                 <div
@@ -493,7 +549,7 @@ const AboutUs = () => {
                         <div className="hidden sm:block relative left-[1243px] top-[87px] z-50">
                             <div className="flex justify-center items-center p-4 bg-[#A02629] rounded-lg w-[600px] shadow-lg 
         transition-transform duration-300 hover:scale-110">
-                                <p className="text-white text-justify font-['Work_Sans'] text-[16px] font-normal leading-[25px]">
+                                <p className="text-white text-justify text-avenir text-[16px] font-normal leading-[25px]">
                                     Promoting a school community that appreciates the value of students, families, colleagues, and cultures.
                                 </p>
                             </div>
@@ -504,7 +560,7 @@ const AboutUs = () => {
                         <div className="hidden sm:block relative left-[1243px] top-[-134px] z-50">
                             <div className="flex justify-center items-center p-4 bg-[#818541] rounded-lg w-[600px] shadow-lg 
         transition-transform duration-300 hover:scale-110 active:scale-125">
-                                <p className="text-white text-justify font-['Work_Sans'] text-[16px] font-normal leading-[25px]">
+                                <p className="text-white text-justify text-avenir text-[16px] font-normal leading-[25px]">
                                     We challenge ourselves to create unique ideas and innovative solutions to meet the challenge of providing an inclusive and equitable education for all, we confront the global learning crisis by growing more leaders worldwide who will take the initiative to accelerate change.
                                 </p>
                             </div>
@@ -515,7 +571,7 @@ const AboutUs = () => {
                         <div className="hidden sm:block relative left-[1243px] top-[-380px] z-50">
                             <div className="flex justify-center items-center p-4 bg-[#272A5D] rounded-lg w-[600px] shadow-lg 
         transition-transform duration-300 hover:scale-110 active:scale-125">
-                                <p className="text-white text-justify font-['Work_Sans'] text-[16px] font-normal leading-[25px]">
+                                <p className="text-white text-justify text-avenir text-[16px] font-normal leading-[25px]">
                                     All of us contribute to the success of our students and our college. We act with responsibility when we do our job well and help others do the same. We act professionally and respectfully. We are accountable for what we say and do.
                                 </p>
                             </div>
@@ -526,7 +582,7 @@ const AboutUs = () => {
                         <div className="hidden sm:block relative left-[1243px] top-[-602px] z-50">
                             <div className="flex justify-center items-center p-4 bg-[#D86027] rounded-lg w-[600px] shadow-lg 
         transition-transform duration-300 hover:scale-110 active:scale-125">
-                                <p className="text-white text-justify font-['Work_Sans'] text-[16px] font-normal leading-[25px]">
+                                <p className="text-white text-justify text-avenir text-[16px] font-normal leading-[25px]">
                                     Trust and honesty are the cornerstones of our college. We keep our commitments, act consistently and fairly, and do what we say we will. Our students and constituents know what to expect when they deal with us. We are ethical and forthright.
                                 </p>
                             </div>
@@ -537,7 +593,7 @@ const AboutUs = () => {
                         <div className="hidden sm:block relative left-[1243px] top-[-823px] z-50">
                             <div className="flex justify-center items-center p-4 bg-[#5DB7E0] rounded-lg w-[600px] shadow-lg 
         transition-transform duration-300 hover:scale-110 active:scale-125">
-                                <p className="text-white text-justify font-[Work Sans] text-[16px] font-normal leading-[25px]">
+                                <p className="text-white text-justify text-avenir text-[16px] font-normal leading-[25px]">
                                     Creating and maintaining meaningful relationships among students, families, teachers, staff, and community partners to change the world for the better by building and supporting a sense of community.
                                 </p>
                             </div>
@@ -548,7 +604,7 @@ const AboutUs = () => {
                         <div className="hidden sm:block relative left-[1243px] top-[-1018px] z-50">
                             <div className="flex justify-center items-center p-4 bg-[#9F3181] rounded-lg w-[600px] shadow-lg 
         transition-transform duration-300 hover:scale-110 active:scale-125">
-                                <p className="text-white text-justify font-[Work Sans] text-[16px] font-normal leading-[25px]">
+                                <p className="text-white text-justify text-avenir text-[16px] font-normal leading-[25px]">
                                     Supporting a learning environment that continuously motivates all individuals to change the world by increasing knowledge and skills.
                                 </p>
                             </div>
@@ -742,16 +798,16 @@ const AboutUs = () => {
                 >
                     ABOUT US
                 </h3>
-                <p className="text-[#5A5A5A] text-justify font-workSans text-[16px] sm:text-[20px] font-normal leading-[1.5] paragraph">
+                <p className="text-[#5A5A5A] text-justify font-workSans text-[16px] sm:text-[20px] font-normal leading-[1.5] paragraph text-avenir">
                     The BIMT Campus was established to offer opportunities to acquire the right knowledge in the areas of management and technology with the collaboration of a  prominent international organization. We have aimed  to offer a high-standard education that is affordable for  students who are eager to study, while being one of  the tertiary education providers in Sri Lanka.
                 </p>
-                <p className="text-[#5A5A5A] text-justify font-workSans text-[16px] sm:text-[20px] font-normal leading-[1.5] paragraph pt-[25px]">
+                <p className="text-[#5A5A5A] text-justify font-workSans text-[16px] sm:text-[20px] font-normal leading-[1.5] paragraph pt-[25px] text-avenir">
                     We have created a unique learning environment that  will empower our students with the necessary skills to  achieve their corporate ambitions. Their success  depends upon the application of theoretical skills and  practical experience.
                 </p>
-                <p className="text-[#5A5A5A] text-justify font-workSans text-[16px] sm:text-[20px] font-normal leading-[1.5] paragraph pt-[25px]">
+                <p className="text-[#5A5A5A] text-justify font-workSans text-[16px] sm:text-[20px] font-normal leading-[1.5] paragraph pt-[25px] text-avenir">
                     The campus has a strong panel of lecturers who are  academically and professionally qualified to share  their knowledge and guide them to succeed in their  careers. Our lecturers are in the art of adapting  modern and structured coaching methods to make  the students employable.
                 </p>
-                <p className="text-[#5A5A5A] text-justify font-workSans text-[16px] sm:text-[20px] font-normal leading-[1.5] paragraph pt-[25px]">
+                <p className="text-[#5A5A5A] text-justify font-workSans text-[16px] sm:text-[20px] font-normal leading-[1.5] paragraph pt-[25px] text-avenir">
                     BIMT Campus is an ISO 9001:2015- certified educational organization and the fastest-growing private  sector higher educational institute in Sri Lanka. We  offer a range of internationally recognized education al programs in partnership with globally reputed  universities and awarding bodies. We have picked  the best courses that offer the qualifications suitable  for Sri Lankan students to gain a complete knowledge on subject matters.
                 </p>
             </section>
@@ -775,7 +831,7 @@ const AboutUs = () => {
                 >
 
                     {/* <!-- Card 1 --> */}
-                    <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
+                    <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800 ourValuePadding">
                         <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#9F3181] px-3 py-2" style={{ width: '92%', padding: '15px' }}>
                             <img
                                 src="/images/idea 1.svg"
@@ -790,7 +846,7 @@ const AboutUs = () => {
                     </div>
 
                     {/* <!-- Card 2 --> */}
-                    <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
+                    <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800 ourValuePadding">
                         <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#5DB7E0] px-3 py-2" style={{ width: '92%', padding: '15px' }}>
                             <img
                                 src="/images/communities 1.svg"
@@ -805,7 +861,7 @@ const AboutUs = () => {
                     </div>
 
                     {/* <!-- Card 3 --> */}
-                    <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
+                    <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800 ourValuePadding">
                         <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#D86027] px-3 py-2" style={{ width: '92%', padding: '15px' }}>
                             <img
                                 src="/images/data-integration 1.svg"
@@ -825,7 +881,7 @@ const AboutUs = () => {
                     style={{ marginTop: '60px' }}
                 >
                     {/* <!-- Card 4 --> */}
-                    <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
+                    <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800 ourValuePadding">
                         <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#232F65] px-3 py-2" style={{ width: '92%', padding: '15px' }}>
                             <img
                                 src="/images/accountability 1.svg"
@@ -840,7 +896,7 @@ const AboutUs = () => {
                     </div>
 
                     {/* <!-- Card 5 --> */}
-                    <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
+                    <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800 ourValuePadding">
                         <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#818541] px-3 py-2" style={{ width: '92%', padding: '15px' }}>
                             <img
                                 src="/images/innovation 1.svg"
@@ -855,8 +911,8 @@ const AboutUs = () => {
                     </div>
 
                     {/* <!-- Card 6 --> */}
-                    <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800">
-                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#A81E25] px-3 py-2" style={{ width: '92%', padding: '15px' }}>
+                    <div className="relative flex flex-col items-start p-6 border border-gray-300 border-b-4 border-red-800 ourvalueIntergriy ourValuePadding">
+                        <div className="absolute -top-6 left-4 flex items-center gap-2 bg-[#A81E25] px-3 py-2 " style={{ width: '92%', padding: '15px' }}>
                             <img
                                 src="/images/shake 1.svg"
                                 alt="Integrity Icon"
@@ -868,7 +924,6 @@ const AboutUs = () => {
                             Promoting a school community that appreciates the value of students, families, colleagues, and cultures.
                         </p>
                     </div>
-
                 </section>
             </div>
 
@@ -983,7 +1038,7 @@ const AboutUs = () => {
                 paddingBlock: '100px',
                 paddingLeft: '10px',
                 paddingRight: "10px"
-              }}>
+            }}>
                 {/* Outer Container */}
                 <div className="w-[90%] max-w-[1450px] mx-auto flex flex-col lg:flex-row items-center lg:items-start">
                     {/* Image Section */}
