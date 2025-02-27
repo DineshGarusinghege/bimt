@@ -23,9 +23,9 @@ export default function HigherNationalDiploma() {
         }
     };
 
-    const stopScrolling = () => {
-        cancelAnimationFrame(animationRef.current);
-    };
+    // const stopScrolling = () => {
+    //     cancelAnimationFrame(animationRef.current);
+    // };
 
     useEffect(() => {
         animationRef.current = requestAnimationFrame(startScrolling);
