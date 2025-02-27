@@ -188,7 +188,7 @@ export default function CAIDAP() {
                             </svg>
                         </span>
                         <li>
-                            <span className="hover:underline hover:text-blue-500 breadcrumbFontBlack font-avenir">Certificate in AI Driven Accounting Practices</span>
+                            <span className="breadcrumbFontBlack font-avenir">Certificate in AI Driven Accounting Practices</span>
                         </li>
                     </ol>
                 </nav>
@@ -216,7 +216,7 @@ export default function CAIDAP() {
                         <img
                             src="/images/Screenshot-2024-12-20-104154-e1734671699662.png"
                             alt="Certificate Programme"
-                            className="w-full object-cover rounded-lg"
+                            className="w-full object-cover rounded-lg p-[30px]"
                         />
                     </div>
                 </div>

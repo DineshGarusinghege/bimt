@@ -8,7 +8,7 @@ import './styles/Global.scss';
 import MainHeader from './ui/MainHeader';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useState, useEffect, ChangeEvent } from 'react';
+import { useState, useEffect, ChangeEvent, useRef } from 'react';
 import "@/app/globals.css";
 import { motion } from 'framer-motion';
 import ExpertSection from './componets/ExpertSection';
@@ -236,6 +236,36 @@ const HomePage: React.FC = () => {
         fetchSuggestions();
     }, [query]);
 
+    const [isPlaying, setIsPlaying] = useState<boolean>(true);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    useEffect(() => {
+        if (audioRef.current) {
+            const playAudio = async () => {
+                try {
+                    await audioRef.current!.play(); // Attempt to play audio
+                    setIsPlaying(true);
+                } catch (error) {
+                    console.log('Autoplay blocked. User interaction required:', error);
+                    setIsPlaying(false); // If autoplay is blocked, mark it as not playing
+                }
+            };
+
+            playAudio(); // Call function to autoplay
+        }
+    }, []);
+
+    const handleSoundClick = () => {
+        if (!audioRef.current) return;
+
+        if (isPlaying) {
+            audioRef.current.pause();
+        } else {
+            audioRef.current.play().catch((error) => console.log('Playback failed:', error));
+        }
+        setIsPlaying(!isPlaying);
+    };
+
 
     return (
         <>
@@ -288,6 +318,25 @@ const HomePage: React.FC = () => {
 
                             {/* Sound Icon */}
                             <div className="mt-4 pb-[50px]">
+                                <audio ref={audioRef} src="/Wesite_Video4 (1).mp3" loop />
+                                <button
+                                    className={`flex justify-center items-center w-12 h-12 rounded-full transition duration-200 ${isPlaying
+                                            ? 'bg-white text-blue-500 hover:bg-gray-500 hover:text-white'
+                                            : 'bg-gray-500 text-white'
+                                        }`}
+                                    onClick={handleSoundClick}
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-6 h-6"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M9 4.804v10.392a1 1 0 01-1.555.832L4.526 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.526l2.919-3.028A1 1 0 019 4.804zM13.707 5.293a1 1 0 011.414 0 7.978 7.978 0 012.121 5.657 7.978 7.978 0 01-2.121 5.657 1 1 0 01-1.414-1.414 5.978 5.978 0 001.415-4.243 5.978 5.978 0 00-1.415-4.243 1 1 0 010-1.414zM11.707 7.293a1 1 0 011.414 0 3.978 3.978 0 011.172 2.828 3.978 3.978 0 01-1.172 2.828 1 1 0 01-1.414-1.414A1.978 1.978 0 0012 10a1.978 1.978 0 00-.293-1.414 1 1 0 010-1.414z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            {/* <div className="mt-4 pb-[50px]">
                                 <button
                                     className="flex justify-center items-center w-12 h-12 rounded-full bg-white text-blue-500 hover:bg-blue-500 hover:text-white transition duration-200"
                                     onClick={() => console.log('Sound icon clicked!')}
@@ -303,7 +352,7 @@ const HomePage: React.FC = () => {
                                         />
                                     </svg>
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Right Section (Centered Navigation Links) */}
@@ -1605,7 +1654,7 @@ const HomePage: React.FC = () => {
                         <div className="relative flex flex-col items-center w-full CampingEvent">
                             <img src="/images/activitiy2.png" alt="Camping Night - Kabaragala" className="w-full h-auto object-cover" />
                             <div className="absolute bg-white p-4 shadow eventDescriptionContainer" style={{ minHeight: "250px" }}>
-                                <h3 className="text-[32px] font-bold text-[#272A5D] text-center md:text-left text-avenir">Camping Night -<br/> Kabaragala</h3>
+                                <h3 className="text-[32px] font-bold text-[#272A5D] text-center md:text-left text-avenir">Camping Night -<br /> Kabaragala</h3>
                                 <p className="text-gray-600 text-sm text-justify">
                                     This Camping Night was organized to build the confidence of our students to dream big and to make them such people who are driver, to achieve their dreams.
                                 </p>
