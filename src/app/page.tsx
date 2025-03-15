@@ -118,7 +118,7 @@ const HomePage: React.FC = () => {
             }
         };
 
-        fetchSuggestions();
+        fetchSuggestions();   
     }, [query]);
 
     // Handle search navigation
